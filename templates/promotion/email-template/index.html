@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Email Template Example</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: lightgrey;
+    }
+    article {
+      text-align: center;
+      padding: 0.5em;
+    }
+    .preview {
+      display: inline-block;
+      vertical-align: top;
+      margin: 0.5em;
+    }
+    .preview-frame { border: 0; }
+    a.home-link {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      background: rgba(0,0,0,.75);
+      padding: .75em 1em;
+      color: white;
+      text-decoration: none;
+      border-top-right-radius: 3px;
+      font-family: monospace;
+      text-transform: uppercase;
+      opacity: .25;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+    }
+    a.home-link:before {
+      content: '/';
+      margin-right: .5em;
+    }
+    a.home-link:hover {
+      opacity: 1;
+    }
+  </style>
+</head>
+  <body>
+    <article>
+      <div class='preview' style='height: calc(100vh - 2em);; width: calc(100vw - 2em);'>
+        <iframe class='preview-frame' data-xml-url="//net-engine.github.io/healthwise-outfit-templates/templates/promotion/email-template/email.html" height='100%' width='100%'></iframe>
+      </div>
+      <div id="data" data-template-data="{&quot;brand-logo-reverse&quot;:&quot;http://localhost:4000/global-assets/images/logos/healthwise-logo-reverse-no-clearance.svg&quot;,&quot;brand-color-primary&quot;:&quot;rgb(196, 18, 48)&quot;,&quot;brand-color-secondary&quot;:&quot;rgb(0, 69, 124)&quot;,&quot;heading&quot;:&quot;Heading&quot;,&quot;sub-heading&quot;:&quot;Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus.&quot;,&quot;artwork&quot;:&quot;https://s3-ap-southeast-2.amazonaws.com/hwms-assets-production/media_items/images/6670/original/excercise-bike.jpg&quot;,&quot;body&quot;:&quot;&lt;h1&gt;Praesent Id Metus Massa&lt;/h1&gt; &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus. Mauris iaculis.&lt;/p&gt; &lt;h2&gt;Curabitur Vulputate&lt;/h2&gt; &lt;p&gt;Porttitor posuere. Praesent id metus massa, ut blandit odio. Proin quis tortor orci. Etiam at risus et justo dignissim congue. Donec congue lacinia dui, a porttitor lectus condimentum laoreet. Nunc eu ullamcorper orci. Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque faucibus vestibulum. Nulla at nulla justo, eget luctus tortor. Nulla facilisi. Duis aliquet egestas purus in blandit. Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, ac egestas est urna sit amet arcu. Class aptent taciti.&lt;/p&gt;&quot;,&quot;call-to-action&quot;:&quot;&lt;p&gt;To find out more visit &lt;br /&gt;&lt;a href=\&quot;htt[://www.healthwiseglobal.com\&quot;&gt;www.healthwiseglobal.com&lt;/a&gt;&lt;/p&gt;&quot;,&quot;call-to-action-url&quot;:&quot;https://www.healthwiseglobal.com/&quot;,&quot;disclaimer&quot;:&quot;Proin quis tortor orci. Etiam at risus et justo dignissim congue. Donec congue lacinia dui, a porttitor lectus condimentum laoreet.&quot;,&quot;facebook-url&quot;:&quot;http://facebook.com&quot;,&quot;twitter-url&quot;:&quot;http://twitter.com&quot;,&quot;linkedin-url&quot;:&quot;http://linkedin.com&quot;}"></div>
+    </article>
+
+    <a class="home-link" href="//net-engine.github.io/healthwise-outfit-templates/">Home</a>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.min.js"></script>
+    <script src="//net-engine.github.io/healthwise-outfit-templates/global-assets/javascripts/previews.js" type="text/javascript"></script>
+  </body>
+</html>

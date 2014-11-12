@@ -1,0 +1,231 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta name="viewport" content="width = device-width">
+    <style type="text/css">
+      /*  Enhancements  */
+
+      body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
+        font-weight: 300;
+      }
+
+      #content h1,
+      #content h2,
+      #content h3,
+      #content h4 {
+        margin-top: 1.25em;
+        margin-bottom: 0.75em;
+        line-height: 1.25em;
+        color: {{ brand-color-primary }};
+      }
+
+      #content h1:first-child { margin-top: 0.5em; }
+      #content h2:first-child { margin-top: 0.5em; }
+      #content h3:first-child { margin-top: 0.5em; }
+      #content h4:first-child { margin-top: 0.5em; }
+
+      #content h1 { font-size: 1.5em; }
+      #content h2 { font-size: 1.25em; }
+      #content h3 { font-size: 1em; }
+      #content h4 { font-size: 1em; }
+
+      #artwork { border: 2px solid white; }
+
+      .grid td {
+        height: 106px; 
+        width: 106px; 
+        border-top: 2px solid white; 
+        border-left: 2px solid white;
+      }
+
+      .grid td:first-child { border-left: none; }
+      .grid:first-child td { border-top: none; }
+
+      .grid-pane {
+        width: 108px;
+        height: 108px;
+      }
+
+      .grid-pane.yellow { background-color: rgb(255, 196, 35);  opacity: 0.4; }
+      .grid-pane.blue   { background-color: rgb(0, 69, 124); opacity: 0.4; }
+
+      a.social-link {
+        margin: 0 4px;
+        line-height: 1em;
+      }
+
+      img.social-icon { 
+        width: 20px; 
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 2px;
+      }
+
+      #call-to-action {
+        font-size: 1.25em;
+        color: {{ brand-color-secondary }};
+      }
+
+      #call-to-action a {
+        text-decoration: none;
+        color: {{ brand-color-primary }};
+        font-weight: bold;
+      }
+
+    </style>
+
+    <style type="text/css" media="screen and (max-width: 620px)">
+      /*  Mobile styles  */
+
+      table { width: 100% !important; }
+    </style>
+  </head>
+  <body style="margin: 0; padding: 0; background: #eee; ">
+    <table cellspacing="0" cellpadding="0" width="600px" style="font-family: Helvetica Neue, sans-serif; font-size: 100%; line-height: 1.5em; width: 100%; margin: 0 auto;">
+      <tbody>
+        <tr>
+          <td>
+
+            {{!-- Container --}}
+
+            <table cellspacing="0" cellpadding="0" width="600px" background="" style="margin: 0 auto; font-family: Helvetica Neue, sans-serif; font-size: 100%; line-height: 1.5em;">
+              <tbody>
+                <tr>
+                  <td style="padding: 2em; background-color: {{ brand-color-primary }}; color: white">
+                    <img src="{{{ brand-logo-reverse }}}" style="display: block; float: right; margin: auto; border: 0; max-height: 4em; max-width: 33.333%;">
+                    
+                    <h1 style="font-weight: 200; font-size: 4.5em; line-height: 1em; margin: 0 0 0.25em">{{ heading }}</h1>
+                    <p style="font-size: 1.25em; margin-bottom: 0">{{ sub-heading }}</p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            {{#artwork}}
+
+            <table id="artwork" cellspacing="0" cellpadding="0" width="652px" background="{{{ artwork }}}" style="margin: 0 auto; font-family: Helvetica Neue, sans-serif; font-size: 100%; line-height: 1.5em; -webkit-background-size: cover; -moz-background-size: cover; background-size: cover;">
+              <tbody>
+                <tr class="grid">
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td><div class="grid-pane yellow"></td>
+                </tr>
+                <tr class="grid">
+                  <td><div class="grid-pane blue"></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+
+            {{/artwork}}
+
+            {{^artwork}}
+
+            <table cellspacing="0" cellpadding="0" width="600px" style="margin: 0 auto; font-family: Helvetica Neue, sans-serif; font-size: 100%; background-color: {{ brand-color-primary }};">
+              <tbody>
+                <tr>
+                  <td style="height: .6667em;">
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            {{/artwork}}
+
+            <table cellspacing="0" cellpadding="0" width="600px" style="background-color: #EAE5D9; margin: 0 auto; font-family: Helvetica Neue, sans-serif; font-size: 100%; line-height: 1.5em;">
+              <tbody>
+                <tr>
+                  <td style="padding: 1.5em;">
+
+                    <table cellspacing="0" cellpadding="0" style="width: 100%; font-family: Helvetica Neue, sans-serif; font-size: 100%; text-align: left; line-height: 1.5em;">
+                      <tbody>
+                        <tr>
+                          <td id="content">
+                            {{{ body }}}
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            {{#call-to-action}}
+
+            <table id="call-to-action" cellspacing="0" cellpadding="0" style="width: 100%; font-family: Helvetica Neue, sans-serif; font-size: 100%; text-align: center; line-height: 1.5em;">
+              <tbody>
+                <tr>
+                  <td style="padding: 1em;">
+                    {{{ call-to-action }}}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            {{/call-to-action}}
+
+            <table cellspacing="0" cellpadding="0" width="600px" style="margin: 0 auto; font-family: Helvetica Neue, sans-serif; font-size: 100%; line-height: 1.5em; text-align: center;">
+              <tbody>
+                <tr>
+                  <td style="font-size: 80%; line-height: 1.5em; color: #888; padding: 1.5em;">
+                    {{{ disclaimer }}}
+                  </td>
+                </tr>
+                <tr>
+                  <td style="font-size: 90%; line-height: 1.25em;">
+                    {{#facebook-url}}
+                    <a class="social-link" href="{{ facebook-url }}" style="color: #666; text-decoration: none;  display: inline-block; background-position: left; background-repeat: no-repeat;">
+                      <img class="social-icon" src="//net-engine.github.io/healthwise-outfit-templates/global-assets/images/icons/facebook.svg" />
+                      Facebook
+                    </a>
+                    {{/facebook-url}}
+                    {{#twitter-url}}
+                      <a class="social-link" href="{{ twitter-url }}" style="color: #666; text-decoration: none;  display: inline-block; background-position: left; background-repeat: no-repeat">
+                        <img class="social-icon" src="//net-engine.github.io/healthwise-outfit-templates/global-assets/images/icons/twitter.svg" />
+                        Twitter
+                      </a>
+                    {{/twitter-url}}
+                    {{#linkedin-url}}
+                      <a class="social-link" href="{{ linkedin-url }}" style="color: #666; text-decoration: none;  display: inline-block; background-position: left; background-repeat: no-repeat">
+                        <img class="social-icon" src="//net-engine.github.io/healthwise-outfit-templates/global-assets/images/icons/linkedin.svg" />
+                        Linkedin
+                      </a>
+                    {{/linkedin-url}}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <table cellspacing="0" cellpadding="0">
+              <tbody>
+                <tr>
+                  <td style="padding: 1em;"></td>
+                </tr>
+              </tbody>
+            </table>
+
+            {{!-- End Container --}}
+
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
+
+
+
+
