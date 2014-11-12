@@ -1,4 +1,3 @@
-SalesKickOffTemplates
-=====================
+# Red Hat SKO Templates
 
-Outfit Template generator for the Sales Kick Off
+The gulp + metalsmith builder for SKO Templates
