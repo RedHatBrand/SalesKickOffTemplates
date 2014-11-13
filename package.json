@@ -33,6 +33,8 @@
     "metalsmith-ignore": "^0.1.2",
     "metalsmith-sass": "^0.4.0",
     "metalsmith-templates": "^0.6.0",
-    "q": "^1.0.1"
+    "q": "^1.0.1",
+    "red-hat-brand-palette": "^1.0.2",
+    "red-hat-brand-typography": "^1.0.0"
   }
 }

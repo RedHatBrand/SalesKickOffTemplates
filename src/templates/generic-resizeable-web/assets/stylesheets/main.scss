@@ -1,0 +1,7 @@
+@import '../../../../../node_modules/red-hat-brand-typography/scss/rh-typography';
+@import '../../../../../node_modules/red-hat-brand-palette/scss/red-hat-palette';
+
+body {
+  margin: 0;
+  background-color: $color-rh-grey;
+}
