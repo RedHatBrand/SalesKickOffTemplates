@@ -53,7 +53,7 @@ body {
     transform: translate(-50%,-50%) rotate(-45deg);
     width: 200%;
     
-    svg { stroke: darken($color-rh-white, 10%); }
+    svg { stroke: rgba($color-rh-white, 0.4); }
   }
 }
 
