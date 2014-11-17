@@ -1,7 +1,70 @@
 @import '../../../../../node_modules/red-hat-brand-typography/scss/rh-typography';
 @import '../../../../../node_modules/red-hat-brand-palette/scss/red-hat-palette';
 
+@keyframes shape-in {
+  0% {
+    transform: translate(-100%,-50%) rotate(-45deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-50%,-50%) rotate(-45deg);
+    opacity: 1;
+  }
+}
+
 body {
   margin: 0;
-  background-color: $color-rh-grey;
+  background-color: $color-rh-white;
+  position: relative;
+}
+
+#artwork {
+  position: absolute;
+  left: 0; right: 0;
+  top: 0; bottom: 0;
+  overflow: hidden;
+
+  background-image: radial-gradient(ellipse at 50% 50%, transparent 0%, transparent 25%, rgba($color-rh-black, 0.33) 100%);
+
+  * { margin: 0; }
+
+  .artwork-shape {
+    background-color: rgba(lighten($color-rh-grey, 5%), 0.25);
+    position: absolute;
+    top: 50%;
+    transform-origin: 50% 50%;
+    transform: translate(-100%,-50%) rotate(-45deg);
+    width: 200%;
+    height: 33.333%;
+    margin: 0;
+  }
+
+  .animate-in {
+    transform: translate(-50%,-50%) rotate(-45deg);
+    animation-name: shape-in;
+    animation-timing-function: ease;
+  }
+
+  .artwork-pattern {
+    position: absolute;
+    left: 20%;
+    top: 20%;
+    transform-origin: 50% 50%;
+    transform: translate(-50%,-50%) rotate(-45deg);
+    width: 200%;
+    
+    svg { stroke: darken($color-rh-white, 10%); }
+  }
+}
+
+#content {
+  margin: 0;
+  position: absolute;
+  left: 50%; 
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.logotext {
+  fill: lighten($color-rh-black, 20%);
 }

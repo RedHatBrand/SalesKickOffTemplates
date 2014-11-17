@@ -6,9 +6,16 @@ height: 500px
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" href="//redhatbrand.github.io/RedHatTemplates/global-assets/stylesheets/general/tile-pattern-fill.css">
     <link rel="stylesheet" href="<%=baseUrl%>/templates/generic-resizeable-web/assets/stylesheets/main.css" />
   </head>
   <body style="width: {{ width }}px; height: {{ height }}px">
-    <% include ../../shared/event-logo-lockup.svg %> 
+    <div id="artwork"></div>
+    <main id="content">
+      <% include ../../shared/event-logo-lockup.svg %>
+    </main>
+
+    <script src="<%=baseUrl%>/templates/generic-resizeable-web/assets/javascripts/artwork.js"></script>
+    <script src="//redhatbrand.github.io/RedHatTemplates/global-assets/javascripts/tile-pattern.js"></script>
   </body>
 </html>
