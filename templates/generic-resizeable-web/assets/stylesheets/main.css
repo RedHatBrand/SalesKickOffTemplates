@@ -250,6 +250,87 @@ pre {
   color: white;
   background-color: dimgrey; }
 
+@-webkit-keyframes shape-in {
+  0% {
+    -webkit-transform: translate(-100%, -50%) rotate(-45deg);
+    transform: translate(-100%, -50%) rotate(-45deg);
+    opacity: 0; }
+
+  100% {
+    -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+    transform: translate(-50%, -50%) rotate(-45deg);
+    opacity: 1; } }
+
+@keyframes shape-in {
+  0% {
+    -webkit-transform: translate(-100%, -50%) rotate(-45deg);
+    transform: translate(-100%, -50%) rotate(-45deg);
+    opacity: 0; }
+
+  100% {
+    -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+    transform: translate(-50%, -50%) rotate(-45deg);
+    opacity: 1; } }
+
 body {
   margin: 0;
-  background-color: #D1D4D3; }
+  background-color: #ffffff;
+  position: relative; }
+
+#artwork {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  overflow: hidden;
+  background-image: -webkit-radial-gradient(50% 50%, ellipse, transparent 0%, transparent 25%, rgba(17, 17, 17, 0.33) 100%);
+  background-image: radial-gradient(ellipse at 50% 50%, transparent 0%, transparent 25%, rgba(17, 17, 17, 0.33) 100%); }
+  #artwork * {
+    margin: 0; }
+  #artwork .artwork-shape {
+    background-color: rgba(222, 224, 224, 0.25);
+    position: absolute;
+    top: 50%;
+    -webkit-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -webkit-transform: translate(-100%, -50%) rotate(-45deg);
+    -ms-transform: translate(-100%, -50%) rotate(-45deg);
+    transform: translate(-100%, -50%) rotate(-45deg);
+    width: 200%;
+    height: 33.333%;
+    margin: 0; }
+  #artwork .animate-in {
+    -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+    -ms-transform: translate(-50%, -50%) rotate(-45deg);
+    transform: translate(-50%, -50%) rotate(-45deg);
+    -webkit-animation-name: shape-in;
+    animation-name: shape-in;
+    -webkit-animation-timing-function: ease;
+    animation-timing-function: ease; }
+  #artwork .artwork-pattern {
+    position: absolute;
+    left: 20%;
+    top: 20%;
+    -webkit-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+    -ms-transform: translate(-50%, -50%) rotate(-45deg);
+    transform: translate(-50%, -50%) rotate(-45deg);
+    width: 200%; }
+    #artwork .artwork-pattern svg {
+      stroke: #e6e6e6; }
+
+#content {
+  margin: 0;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); }
+
+.logotext {
+  fill: #444444; }
