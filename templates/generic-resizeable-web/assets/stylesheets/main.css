@@ -321,7 +321,7 @@ body {
     transform: translate(-50%, -50%) rotate(-45deg);
     width: 200%; }
     #artwork .artwork-pattern svg {
-      stroke: #e6e6e6; }
+      stroke: rgba(255, 255, 255, 0.4); }
 
 #content {
   margin: 0;
