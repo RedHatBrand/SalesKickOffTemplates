@@ -43,7 +43,7 @@
 
   function addPattern () {
     var div = document.createElement('div');
-    div.classList.add('js-pattern-fill');
+    div.setAttribute('data-red-hat-pattern', 'corporate');
     div.classList.add('artwork-pattern');
     canvas.appendChild(div);
     div.classList.add('rotate-animate-in');
