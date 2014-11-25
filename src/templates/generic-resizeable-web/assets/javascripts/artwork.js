@@ -35,11 +35,10 @@
     div.style.top     = randomArrayElem(artwork.gridPositions.slice(1)).toString() + '%';
     div.style.height  = randomArrayElem(artwork.gridPositions.slice(1)).toString() + '%';
     div.style.width   = randomArrayElem(artwork.gridPositions.slice(1)).toString() + '%';
-    div.style.opacity = getRandomArbitrary(0.125, 0.5);
+    div.style.opacity = randomArrayElem([0.25, 0.5, 0.75]);
     canvas.appendChild(div);
     div.classList.add('skew-animate-in');
     div.style.animationDuration = getRandomInt(1,3).toString() + 's';
-    div.classList.add(i % 2 === 0 ? 'fast' : 'slow');
   }
 
   function addPattern () {
