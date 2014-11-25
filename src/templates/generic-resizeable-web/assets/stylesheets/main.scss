@@ -1,48 +1,88 @@
 @import '../../../../../node_modules/red-hat-brand-typography/scss/rh-typography';
 @import '../../../../../node_modules/red-hat-brand-palette/scss/red-hat-palette';
 
-@keyframes shape-in {
+@keyframes skew-shape-in {
   0% {
-    transform: translate(-100%,-50%) rotate(-45deg);
-    opacity: 0;
+    transform: translate3d(-100%,-50%,0) skewX(-45deg);
   }
   100% {
-    transform: translate(-50%,-50%) rotate(-45deg);
+    transform: translate3d(-50%,-50%,0) skewX(-45deg);
+  }
+}
+
+@keyframes rotate-shape-in {
+  0% {
+    transform: translate3d(-100%,-50%,0) rotate(-45deg);
+  }
+  100% {
+    transform: translate3d(-50%,-50%,0) rotate(-45deg);
+  }
+}
+
+@keyframes fade-out {
+  0% {
     opacity: 1;
   }
+  100% {
+    opacity: 0;
+  } 
 }
 
 body {
   margin: 0;
-  background-color: $color-rh-white;
+  background-color: lighten($color-rh-slate, 20%);
   position: relative;
+  overflow: hidden;
 }
 
 #artwork {
   position: absolute;
   left: 0; right: 0;
-  top: 0; bottom: 0;
+  top: 0; bottom: auto; 
   overflow: hidden;
+  margin: 0;
+  background-image: radial-gradient(ellipse at 50% 50%, rgba($color-rh-white, 0.5) 0%, rgba($color-rh-white, 0.5) 50%, rgba($color-rh-white, 0.0001) 100%);
+  
+  &:before {
+    content: '';
+    display: block;
+    padding-bottom: 100%;
+  }
 
-  background-image: radial-gradient(ellipse at 50% 50%, transparent 0%, transparent 25%, rgba($color-rh-black, 0.33) 100%);
+  &:after {
+    content: '';
+    animation-name: fade-out;
+    animation-duration: 0.75s;
+    animation-timing-function: ease;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: white;
+    opacity: 0;
+  }
 
   * { margin: 0; }
 
   .artwork-shape {
-    background-color: rgba(lighten($color-rh-grey, 5%), 0.25);
+    background-color: $color-rh-slate;
     position: absolute;
     top: 50%;
     transform-origin: 50% 50%;
-    transform: translate(-100%,-50%) rotate(-45deg);
-    width: 200%;
-    height: 33.333%;
+    transform: translate3d(-100%,-50%,0) skewX(-45deg);
     margin: 0;
   }
 
-  .animate-in {
-    transform: translate(-50%,-50%) rotate(-45deg);
-    animation-name: shape-in;
+  .skew-animate-in {
+    transform: translate3d(-50%,-50%,0) skewX(-45deg);
+    animation-name: skew-shape-in;
     animation-timing-function: ease;
+  }
+
+  .rotate-animate-in {
+    transform: translate3d(-50%,-50%,0) rotate(-45deg);
+    animation-name: rotate-shape-in;
   }
 
   .artwork-pattern {
@@ -53,8 +93,18 @@ body {
     transform: translate(-50%,-50%) rotate(-45deg);
     width: 200%;
     
-    svg { stroke: rgba($color-rh-white, 0.4); }
+    svg { stroke: lighten($color-rh-slate, 22.5%); }
   }
+}
+
+main {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: 0;
+  background-image: radial-gradient(ellipse at 50% 50%, rgba($color-rh-white, 0.75) 0%, rgba($color-rh-white, 0.75) 25%, rgba($color-rh-white, 0.0001) 100%);
 }
 
 #content {
