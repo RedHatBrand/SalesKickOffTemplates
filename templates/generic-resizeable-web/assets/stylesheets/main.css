@@ -303,6 +303,7 @@ pre {
 body {
   margin: 0;
   background-color: #919da4;
+  background-size: cover;
   position: relative;
   overflow: hidden; }
 
@@ -314,27 +315,12 @@ body {
   bottom: auto;
   overflow: hidden;
   margin: 0;
-  background-image: -webkit-radial-gradient(50% 50%, ellipse, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0.0001) 100%);
-  background-image: radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0.0001) 100%); }
+  background-image: -webkit-radial-gradient(50% 50%, ellipse, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0.75) 50%, rgba(255, 255, 255, 0.0001) 100%);
+  background-image: radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0.75) 50%, rgba(255, 255, 255, 0.0001) 100%); }
   #artwork:before {
     content: '';
     display: block;
     padding-bottom: 100%; }
-  #artwork:after {
-    content: '';
-    -webkit-animation-name: fade-out;
-    animation-name: fade-out;
-    -webkit-animation-duration: 0.75s;
-    animation-duration: 0.75s;
-    -webkit-animation-timing-function: ease;
-    animation-timing-function: ease;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    background-color: white;
-    opacity: 0; }
   #artwork * {
     margin: 0; }
   #artwork .artwork-shape {
@@ -358,7 +344,9 @@ body {
     -webkit-transform: translate3d(-50%, -50%, 0) rotate(-45deg);
     transform: translate3d(-50%, -50%, 0) rotate(-45deg);
     -webkit-animation-name: rotate-shape-in;
-    animation-name: rotate-shape-in; }
+    animation-name: rotate-shape-in;
+    -webkit-animation-timing-function: ease;
+    animation-timing-function: ease; }
   #artwork .artwork-pattern {
     position: absolute;
     left: 20%;
@@ -388,9 +376,13 @@ main {
   position: absolute;
   left: 50%;
   top: 50%;
+  min-width: 50%;
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%); }
+
+.sko-logo {
+  width: 100%; }
 
 .logotext {
   fill: #444444; }
