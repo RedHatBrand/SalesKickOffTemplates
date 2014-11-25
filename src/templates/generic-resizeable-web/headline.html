@@ -13,10 +13,11 @@ height: calc(100vh - 2em);
     <div id="artwork"></div>
     <main>
       <div id="content">
-        <% include ../../shared/event-logo-lockup.svg %>
+        <h1 data-lining>{{{ headline }}}</h1>
       </div>
     </main>
 
+    <script src="//cdn.jsdelivr.net/lining.js/0.3.2/lining.min.js"></script>
     <script src="<%=baseUrl%>/templates/generic-resizeable-web/assets/javascripts/artwork.js"></script>
     <script src="//redhatbrand.github.io/RedHatPatterns/red-hat-patterns.js"></script>
   </body>
