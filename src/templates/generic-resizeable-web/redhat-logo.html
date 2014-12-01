@@ -1,0 +1,25 @@
+---
+width: calc(100vw - 2em);
+height: calc(100vh - 2em);
+---
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="//redhatbrand.github.io/RedHatTemplates/global-assets/stylesheets/general/tile-pattern-fill.css">
+    <link rel="stylesheet" href="<%=baseUrl%>/templates/generic-resizeable-web/assets/stylesheets/main.css" />
+  </head>
+  <body style="width: {{ width }}vw; height: {{ height }}vh">
+    <div id="artwork"></div>
+    <main>
+      <div id="content">
+        <div class="brand">
+          <% include ../../shared/images/rh-logo-black.svg %>
+        </div>
+      </div>
+    </main>
+
+    <script src="<%=baseUrl%>/shared/javascripts/artwork.js"></script>
+    <script src="//redhatbrand.github.io/RedHatPatterns/red-hat-patterns.js"></script>
+  </body>
+</html>

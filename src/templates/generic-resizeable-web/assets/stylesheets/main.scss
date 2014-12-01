@@ -141,15 +141,25 @@ main {
     clear: both;
 }
 
-[data-lining] {
+.data-lining {
   @extend .clearfix;
 }
 
-[data-lining] .line {
+.data-lining .line {
   float: left;
   clear: both;
   padding: 0.1em 0.15em 0.05em;
   background-color: $color-rh-white;
   color: lighten($color-rh-black, 20%);
-  margin: 0;
+  margin: 1px;
+}
+
+.brand {
+  .one-half { 
+    float: left;
+    margin: 0;
+  }
+  
+  .one-half:first-child { width: 55%; }
+  .one-half:last-child { width: 45%; }
 }
