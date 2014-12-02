@@ -145,11 +145,9 @@ main {
   @extend .clearfix;
 }
 
-.data-lining .line {
+.split .line {
   float: left;
   clear: both;
-  padding: 0.1em 0.15em 0.05em;
-  background-color: $color-rh-white;
   color: lighten($color-rh-black, 20%);
   margin: 0;
 }
