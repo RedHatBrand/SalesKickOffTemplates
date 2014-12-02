@@ -1,0 +1,208 @@
+@import '../../../../../node_modules/red-hat-brand-typography/scss/red-hat-typography';
+@import '../../../../../node_modules/red-hat-brand-palette/scss/red-hat-palette';
+
+@keyframes skew-shape-in {
+  0% {
+    transform: translate3d(-100%,-50%,0) skewX(-45deg);
+  }
+  100% {
+    transform: translate3d(-50%,-50%,0) skewX(-45deg);
+  }
+}
+
+@keyframes rotate-shape-in {
+  0% {
+    transform: translate3d(-100%,-50%,0) rotate(45deg);
+  }
+  100% {
+    transform: translate3d(-50%,-50%,0) rotate(45deg);
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  } 
+}
+
+body {
+  margin: 0;
+  background-color: lighten($color-rh-slate, 20%);
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+  color: #444;
+}
+
+#artwork {
+  position: absolute;
+  left: 0; right: 0;
+  top: 0; bottom: auto; 
+  overflow: hidden;
+  margin: 0;
+  background-image: radial-gradient(ellipse at 50% 50%, rgba($color-rh-white, 0.75) 0%, rgba($color-rh-white, 0.75) 50%, rgba($color-rh-white, 0.0001) 100%);
+  
+  &:before {
+    content: '';
+    display: block;
+    padding-bottom: 100%;
+  }
+
+  * { margin: 0; }
+
+  .artwork-shape {
+    background-color: $color-rh-slate;
+    position: absolute;
+    top: 50%;
+    transform-origin: 50% 50%;
+    transform: translate3d(-100%,-50%,0) skewX(-45deg);
+    margin: 0;
+  }
+
+  .skew-animate-in {
+    transform: translate3d(-50%,-50%,0) skewX(-45deg);
+    animation-name: skew-shape-in;
+    animation-timing-function: ease;
+  }
+
+  .rotate-animate-in {
+    transform: translate3d(-50%,-50%,0) rotate(-45deg);
+    animation-name: rotate-shape-in;
+    animation-timing-function: ease;
+  }
+
+  .artwork-pattern {
+    position: absolute;
+    left: 10%;
+    top: 10%;
+    transform-origin: 50% 50%;
+    transform: translate(-50%,-50%) rotate(45deg);
+    height: 150%;
+    width: 7%;
+    
+    svg {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      stroke: lighten($color-rh-slate, 22.5%); 
+      stroke-width: 0.5;
+    }
+  }
+}
+
+.tile-pattern-tile {
+  width: 100%;
+  position: relative;
+
+  &:before {
+    content: '';
+    display: block;
+    padding-bottom: 100%;
+  }
+}
+
+main {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: 0;
+  background-image: radial-gradient(ellipse at 50% 50%, rgba($color-rh-white, 0.75) 0%, rgba($color-rh-white, 0.75) 25%, rgba($color-rh-white, 0.0001) 100%);
+}
+
+#content {
+  margin: 0;
+  position: absolute;
+  left: 50%; 
+  top: 30%;
+  min-width: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.sko-logo {
+  width: 100%;
+  height: 100%;
+}
+
+.logotext {
+  fill: lighten($color-rh-black, 20%);
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.complex-logo { 
+  transition: all .5s ease;
+  
+  &.line-icon {
+    transition-delay:2s;
+    
+    path { 
+      transition: all 1s ease .52s;
+      stroke-dasharray:100 ,10;
+      animation: ani-line-icon 2s ease  alternate;
+    }
+
+  }
+  
+  .event-name { 
+    transition-delay:1s;
+    animation: ani-event-name 2s ease  alternate;
+  }
+
+  .logomark { 
+    animation: ani-logomark 2s ease  alternate;
+  }
+
+  .location { 
+    transition-delay:1.4s;   
+    animation: ani-location 2s ease  alternate;
+  }
+}
+
+@keyframes ani-logomark { 
+  0%  { transform: translate(0,-5em); }
+  20% { transform: translate(0,0); }
+}
+
+@keyframes ani-line-icon { 
+  0%    { stroke-dasharray: 0,100 }
+  20%   { stroke-dasharray:0,100 }
+  100%  { stroke-dasharray:100,0 }
+}
+
+@keyframes ani-event-name {
+  0%    { transform: translate(-2em,0);   opacity:0; }
+  60%   { transform: translate(-2em,0);   opacity:0; }
+  100%  { transform: translate(0,0);      opacity:1; }
+  100%  { transform: translate(0,0);      opacity:1; }
+}
+
+@keyframes ani-location {
+  0%    { transform: translate(0,1em);  opacity:0 }
+  80%   { transform: translate(0,1em);  opacity:0 }
+  100%  { transform: translate(0,0);    opacity:1 }
+}
+
+#skew-container {
+  position: absolute;
+  width: 200%;
+  background: none repeat scroll 0% 0% #FFF;
+  transform: translate3d(-50%, 0px, 0px) skewX(-45deg);
+  
+  article {
+    padding: 1em 0px;
+    transform: translate3d(50%, 0px, 0px) skewX(45deg);
+  }
+}
