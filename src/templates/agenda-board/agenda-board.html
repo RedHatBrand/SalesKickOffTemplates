@@ -20,10 +20,9 @@ height: calc(100vh - 2em);
           <article>
             <h1>Agenda</h1>
             <ul class="agenda-list">
-                <li>Lorem ipsum dolor sit amet - MM/DD/YYYY</li>
-                <li>Dolor sit amet lorem ipsum - MM/DD/YYYY</li>
-                <li>Lorem ipsum dolor sit amet - MM/DD/YYYY</li>
-                <li>Dolor sit amet lorem ipsum - MM/DD/YYYY</li>
+              {{# agendas }}
+                <li>{{{ name }}} - {{{ date }}}</li>
+              {{/ agendas }}
             </ul> 
           </article>
         </div>

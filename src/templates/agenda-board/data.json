@@ -4,6 +4,23 @@
     "year": "FY14",
     "width": "100",
     "height": "100",
-    "headline": "Collaborate. Accelerate. Win."
+    "agendas": [
+      {
+        "name": "Lorem ipsum dolor sit amet",
+        "date": "DD/MM/YYYY"
+      },
+      {
+        "name": "Dolor sit amet lorem ipsum",
+        "date": "DD/MM/YYYY"
+      },
+      {
+        "name": "Lorem ipsum dolor sit amet",
+        "date": "DD/MM/YYYY"
+      },
+      {
+        "name": "Dolor sit amet lorem ipsum",
+        "date": "DD/MM/YYYY"
+      }
+    ]
   }
 }
