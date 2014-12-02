@@ -1,0 +1,45 @@
+---
+width: calc(100vw - 2em);
+height: calc(100vh - 2em);
+---
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="//redhatbrand.github.io/RedHatTemplates/global-assets/stylesheets/general/tile-pattern-fill.css">
+    <link rel="stylesheet" href="<%=baseUrl%>/templates/wayfinding/assets/stylesheets/main.css" />
+    
+    <style>
+      main {
+        background-image: url(<%=baseUrl%>/templates/wayfinding/assets/images/arrow-right.svg);
+        background-blend-mode: multiply;
+        background-repeat: no-repeat;
+      }
+    </style>
+  </head> 
+  <body style="width: {{ width }}vw; height: {{ height }}vh"> 
+    <div id="artwork"></div>
+    <main>
+      <div id="content">
+        <div class="headline">
+          <h1 class="">{{{ headline }}}</h1>
+        </div>
+      </div>
+      <div class="brand">
+        <% include ../../shared/images/event-logo-lockup.svg %>
+      </div>
+    </main>
+    <!-- Doesn't seem to work if the jquery lib is not loaded first !-->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="<%=baseUrl%>/shared/javascripts/jquery.splitlines.js"></script>
+    <script src="<%=baseUrl%>/shared/javascripts/artwork.js"></script>
+    <script src="//redhatbrand.github.io/RedHatPatterns/red-hat-patterns.js"></script>
+    <script>
+      $('.data-lining').splitLines({
+          tag: '<span class="line">',
+          width: 200,
+          keepHtml: true
+      });
+    </script>
+  </body>
+</html>
