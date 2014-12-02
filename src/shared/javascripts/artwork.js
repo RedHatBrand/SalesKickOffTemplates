@@ -36,18 +36,18 @@
     div.style.height  = randomArrayElem(artwork.gridPositions.slice(1)).toString() + '%';
     div.style.width   = randomArrayElem(artwork.gridPositions.slice(1)).toString() + '%';
     div.style.opacity = randomArrayElem([0.25, 0.5, 0.75]);
+    div.style.animationDuration = getRandomInt(1,3).toString() + 's';
     canvas.appendChild(div);
     div.classList.add('skew-animate-in');
-    div.style.animationDuration = getRandomInt(1,3).toString() + 's';
   }
 
   function addPattern () {
     var div = document.createElement('div');
     div.setAttribute('data-red-hat-pattern', 'corporate');
     div.classList.add('artwork-pattern');
+    div.style.animationDuration = getRandomInt(1,3).toString() + 's';
     canvas.appendChild(div);
     div.classList.add('rotate-animate-in');
-    div.style.animationDuration = getRandomInt(1,3).toString() + 's';
   }
 
   function populateCanvas () {
