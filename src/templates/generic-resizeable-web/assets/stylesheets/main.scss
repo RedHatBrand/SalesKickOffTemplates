@@ -37,6 +37,7 @@ body {
 }
 
 #artwork {
+  height: 100%;
   position: absolute;
   left: 0; right: 0;
   top: 0; bottom: auto; 
@@ -145,11 +146,9 @@ main {
   @extend .clearfix;
 }
 
-.data-lining .line {
+.split .line {
   float: left;
   clear: both;
-  padding: 0.1em 0.15em 0.05em;
-  background-color: $color-rh-white;
   color: lighten($color-rh-black, 20%);
   margin: 0;
 }
