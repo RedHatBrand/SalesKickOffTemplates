@@ -1,0 +1,24 @@
+---
+width: calc(300mm + 6mm);
+height: calc(300mm + 6mm);
+---
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="//redhatbrand.github.io/RedHatTemplates/global-assets/stylesheets/general/tile-pattern-fill.css">
+    <link rel="stylesheet" href="<%=baseUrl%>/shared/stylesheets/main.css" />
+    <link rel="stylesheet" href="<%=baseUrl%>/templates/generic-resizeable-print/assets/stylesheets/main.css" />
+  </head>
+  <body style="width: {{ width }}mm; height: {{ height }}mm"> 
+    <div id="artwork"></div>
+    <main>
+      <div id="content">
+        <% include ../../shared/images/event-logo-lockup.svg %>
+      </div>
+    </main>
+
+    <script src="<%=baseUrl%>/shared/javascripts/artwork.js"></script>
+    <script src="//redhatbrand.github.io/RedHatPatterns/red-hat-patterns.js"></script>
+  </body>
+</html>

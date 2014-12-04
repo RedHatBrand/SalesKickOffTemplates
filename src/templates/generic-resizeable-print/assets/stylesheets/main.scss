@@ -1,0 +1,16 @@
+body { margin: 3mm auto; }
+
+h1 {
+  font-size: 5em;
+  line-height: 5rem;
+}
+
+.brand {
+  .one-half { 
+    float: left;
+    margin: 0;
+  }
+  
+  .one-half:first-child { width: 55%; }
+  .one-half:last-child { width: 45%; }
+}
