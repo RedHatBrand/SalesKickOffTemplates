@@ -4,22 +4,36 @@
     "year": "FY14",
     "width": "100",
     "height": "100",
-    "agendas": [
+    "day": [
       {
-        "name": "Lorem ipsum dolor sit amet",
-        "date": "DD/MM/YYYY"
+        "day-name": "Monday",
+        "schedule": [
+          {
+            "time": "08:00",
+            "duration": 60,
+            "activity": "Arrivals & Registration"
+          },
+          {
+            "time": "09:00",
+            "duration": 60,
+            "activity": "Breakfast"
+          }
+        ]
       },
       {
-        "name": "Dolor sit amet lorem ipsum",
-        "date": "DD/MM/YYYY"
-      },
-      {
-        "name": "Lorem ipsum dolor sit amet",
-        "date": "DD/MM/YYYY"
-      },
-      {
-        "name": "Dolor sit amet lorem ipsum",
-        "date": "DD/MM/YYYY"
+        "day-name": "Tuesday",
+        "schedule": [
+          {
+            "time": "08:00",
+            "duration": 60,
+            "activity": "Arrivals"
+          },
+          {
+            "time": "09:00",
+            "duration": 60,
+            "activity": "Breakfast"
+          }
+        ]
       }
     ]
   }

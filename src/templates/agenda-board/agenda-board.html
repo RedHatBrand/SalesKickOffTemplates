@@ -7,28 +7,52 @@ height: calc(100vh - 2em);
 <html>
   <head>
     <link rel="stylesheet" href="//redhatbrand.github.io/RedHatTemplates/global-assets/stylesheets/general/tile-pattern-fill.css">
+    <link rel="stylesheet" href="<%=baseUrl%>/shared/stylesheets/main.css" />
     <link rel="stylesheet" href="<%=baseUrl%>/templates/agenda-board/assets/stylesheets/main.css" />
   </head>
   <body style="width: {{ width }}vw; height: {{ height }}vh">
     <div id="artwork"></div>
-    <main> 
+    <main>
+      <div class="brand bottom">
+        <% include ../../shared/images/event-logo-lockup.svg %>
+      </div>
       <div id="content">
-        <div class="brand">
-          <% include ../../shared/images/event-logo-lockup.svg %>
-        </div>
-        <div id="skew-container">
-          <article>
+        <section class='section-agenda' id='agenda'>
+          <div class='container'>
             <h1>Agenda</h1>
-            <ul class="agenda-list">
-              {{# agendas }}
-                <li>{{{ name }}} - {{{ date }}}</li>
-              {{/ agendas }}
-            </ul> 
-          </article>
-        </div>
+            {{#day}}
+            <input id='{{ day-name }}' name='active-day' type='radio'>
+            <label for='{{ day-name }}'>{{ day-name }}</label>
+            {{/day}}
+            {{#day}}
+            <div class='time-table-{{ day-name }}'>
+              <table class="calendar">
+                <tr class="headings">
+                  <th class="time">Time</th>
+                  <th class="duration">Duration</th>
+                  <th class="topic">Activity</th>
+                </tr>
+                {{#schedule}}
+                <tr>
+                  <td class="time">{{time}}</td>
+                  <td class="duration">{{duration}}</td>
+
+                  <td>
+                    {{#activity}}
+                    <p>{{activity}}</p>
+                    {{/activity}}
+                  </td>
+                </tr>
+                {{/schedule}}
+              </table>
+            </div>
+            {{/day}}
+          </div>
+        </section>
       </div>
     </main>
-
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="<%=baseUrl%>/templates/agenda-board/assets/javascripts/main.js"></script>
     <script src="<%=baseUrl%>/shared/javascripts/artwork.js"></script>
     <script src="//redhatbrand.github.io/RedHatPatterns/red-hat-patterns.js"></script>
   </body>
