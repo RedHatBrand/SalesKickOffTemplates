@@ -7,25 +7,20 @@ height: calc(100vh - 2em);
 <html>
   <head>
     <link rel="stylesheet" href="//redhatbrand.github.io/RedHatTemplates/global-assets/stylesheets/general/tile-pattern-fill.css">
-    <link rel="stylesheet" href="<%=baseUrl%>/templates/agenda-board/assets/stylesheets/main.css" />
+    <link rel="stylesheet" href="<%=baseUrl%>/shared/stylesheets/main.css" />
+    <link rel="stylesheet" href="<%=baseUrl%>/templates/registration-board/assets/stylesheets/main.css" />
   </head>
   <body style="width: {{ width }}vw; height: {{ height }}vh">
     <div id="artwork"></div>
-    <main> 
+    <main>
+      <div class="brand bottom">
+        <% include ../../shared/images/event-logo-lockup.svg %>
+      </div>
       <div id="content">
-        <div class="brand">
-          <% include ../../shared/images/event-logo-lockup.svg %>
-        </div>
-        <div id="skew-container">
-          <article>
-            <h1>Registration</h1>
-            <ul class="schedule-list">
-              {{# schedules }}
-                <li>{{{ place }}} - {{{ date }}}</li>
-              {{/ schedules }}
-            </ul> 
-          </article>
-        </div>
+        <article>
+          <h2>{{ text }}</h2>
+          <h1>{{ letter-range }}</h1>
+        </article>
       </div>
     </main>
 
