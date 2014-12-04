@@ -1,0 +1,23 @@
+.headline {
+  h1 {
+    font-size: 8em;
+    line-height: 8rem;
+  }
+}
+
+.brand {
+  width: 20em;
+  
+  &.redhat {
+    width: 15em;
+    margin-top: 2.3em;
+    transform: translate(325%, 0px);
+  }
+}
+
+.corner-shape {
+  width: 20em;
+  position: absolute;
+  right: 0px;
+  bottom: -0.5em;
+}
