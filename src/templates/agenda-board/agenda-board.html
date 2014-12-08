@@ -25,6 +25,7 @@ height: calc(100vh - 2em);
         }
       
         .logotext { fill: white; }
+        h2, .time { color: #444 !important; }
       {{/ background-image }} 
     </style>
   </head>
@@ -39,26 +40,18 @@ height: calc(100vh - 2em);
           <div class='container'>
             <h1>Agenda</h1>
             {{#day}}
-            <input id='{{ day-name }}' name='active-day' type='radio'>
-            <label for='{{ day-name }}'>{{ day-name }}</label>
+            <h2>{{ date }}</h2>
             {{/day}}
             {{#day}}
             <div class='time-table-{{ day-name }}'>
               <table class="calendar">
-                <tr class="headings">
-                  <th class="time">Time</th>
-                  <th class="duration">Duration</th>
-                  <th class="topic">Activity</th>
-                </tr>
                 {{#schedule}}
                 <tr>
                   <td class="time">{{time}}</td>
-                  <td class="duration">{{duration}}</td>
 
                   <td>
-                    {{#activity}}
-                    <p>{{activity}}</p>
-                    {{/activity}}
+                    <h3>{{activity}}</h3>
+                    <p>{{duration}}</p>
                   </td>
                 </tr>
                 {{/schedule}}
@@ -69,8 +62,6 @@ height: calc(100vh - 2em);
         </section>
       </div>
     </main>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="<%=baseUrl%>/templates/agenda-board/assets/javascripts/main.js"></script>
     <script src="<%=baseUrl%>/shared/javascripts/artwork.js"></script>
     <script src="//redhatbrand.github.io/RedHatPatterns/red-hat-patterns.js"></script>
   </body>

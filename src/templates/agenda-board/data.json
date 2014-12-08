@@ -6,32 +6,22 @@
     "height": "100",
     "day": [
       {
-        "day-name": "Monday",
+        "date": "Dec 24, 2014",
         "schedule": [
           {
             "time": "08:00",
-            "duration": 60,
+            "duration": "60 mins",
             "activity": "Arrivals & Registration"
           },
           {
             "time": "09:00",
-            "duration": 60,
+            "duration": "60 mins",
             "activity": "Breakfast"
-          }
-        ]
-      },
-      {
-        "day-name": "Tuesday",
-        "schedule": [
-          {
-            "time": "08:00",
-            "duration": 60,
-            "activity": "Arrivals"
           },
           {
-            "time": "09:00",
-            "duration": 60,
-            "activity": "Breakfast"
+            "time": "10:00",
+            "duration": "60 mins",
+            "activity": "Play"
           }
         ]
       }
