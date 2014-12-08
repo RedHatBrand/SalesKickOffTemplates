@@ -9,6 +9,25 @@ height: 105mm;
     <link rel="stylesheet" href="//redhatbrand.github.io/RedHatTemplates/global-assets/stylesheets/general/tile-pattern-fill.css">
     <link rel="stylesheet" href="<%=baseUrl%>/shared/stylesheets/main.css" />
     <link rel="stylesheet" href="<%=baseUrl%>/templates/speaker/table-setting/assets/main.css" />
+    <style>
+      {{# background-image }}
+        main {
+          background-image: 
+            url('<%=baseUrl%>/shared/images/grid-06-06.svg'),
+            url('{{{ background-image }}}');
+
+          background-repeat: no-repeat;
+          background-blend-mode: multiply;
+          background-size: 100% auto, cover;
+          background-position: center center, center center;
+          
+          color: white;
+        }
+      
+        .logotext { fill: white; }
+        h1 { color: white; }
+      {{/ background-image }} 
+    </style>
   </head> 
   <body style="width: {{ width }}mm; height: {{ height }}mm">
     <div id="artwork"></div>

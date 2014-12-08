@@ -11,11 +11,32 @@ height: calc(100vh - 2em);
     <link rel="stylesheet" href="<%=baseUrl%>/templates/wayfinding/assets/stylesheets/main.css" />
     
     <style>
-      main {
-        background-image: url(<%=baseUrl%>/templates/wayfinding/assets/images/arrow-right.svg);
-        background-blend-mode: multiply;
-        background-repeat: no-repeat;
-      }
+      {{# background-image }}
+        main {
+          background-image: 
+            url(<%=baseUrl%>/templates/wayfinding/assets/images/arrow-right.svg),
+            url('{{{ background-image }}}');
+
+          background-repeat: no-repeat;
+          background-blend-mode: multiply;
+          background-size: auto 100%, cover;
+          background-position: left center, center center;
+          
+          color: white;
+        }
+      
+        .logotext { fill: white; }
+      {{/ background-image }}
+      
+      {{^ background-image }}
+        main {
+          background-image: url(<%=baseUrl%>/templates/wayfinding/assets/images/arrow-right.svg);   
+          background-repeat: no-repeat;
+          color: white;
+        }
+      
+        .logotext { fill: white; }
+      {{/ background-image }}
     </style>
   </head> 
   <body style="width: {{ width }}vw; height: {{ height }}vh"> 
