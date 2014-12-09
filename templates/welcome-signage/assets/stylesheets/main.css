@@ -1,0 +1,13 @@
+h1 {
+  font-size: 15em;
+  letter-spacing: -0.1em;
+  line-height: 10rem; }
+
+.brand {
+  width: 20em; }
+  .brand.redhat {
+    width: 15em;
+    margin-top: 2.3em;
+    -webkit-transform: translate(335%, 0px);
+    -ms-transform: translate(335%, 0px);
+    transform: translate(335%, 0px); }

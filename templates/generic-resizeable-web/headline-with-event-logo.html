@@ -3,7 +3,26 @@
 <html>
   <head>
     <link rel="stylesheet" href="//redhatbrand.github.io/RedHatTemplates/global-assets/stylesheets/general/tile-pattern-fill.css">
+    <link rel="stylesheet" href="//redhatbrand.github.io/SalesKickOffTemplates/shared/stylesheets/main.css" />
     <link rel="stylesheet" href="//redhatbrand.github.io/SalesKickOffTemplates/templates/generic-resizeable-web/assets/stylesheets/main.css" />
+    <style>
+      {{# background-image }}
+        main {
+          background-image: 
+            url('//redhatbrand.github.io/SalesKickOffTemplates/shared/images/grid-06-06.svg'),
+            url('{{{ background-image }}}');
+
+          background-repeat: no-repeat;
+          background-blend-mode: multiply;
+          background-size: 100% auto, cover;
+          background-position: center center, center center;
+          
+          color: white;
+        }
+      
+        .logotext { fill: white; }
+      {{/ background-image }} 
+    </style>
   </head>
   <body style="width: {{ width }}vw; height: {{ height }}vh">
     <div id="artwork"></div>

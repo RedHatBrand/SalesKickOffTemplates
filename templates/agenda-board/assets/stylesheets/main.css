@@ -1,0 +1,44 @@
+body {
+  margin: 3mm auto; }
+
+#artwork {
+  overflow: visible; }
+
+.brand {
+  width: 20em; }
+  .brand.bottom {
+    position: absolute;
+    right: -3%;
+    bottom: 3%; }
+
+.section-agenda {
+  background: rgba(255, 255, 255, 0.5); }
+  .section-agenda .container {
+    position: relative;
+    padding: 1.5em; }
+  .section-agenda table, .section-agenda table thead tr, .section-agenda table tr:first-child {
+    border: none; }
+  .section-agenda table tr {
+    border-color: #ddd; }
+  .section-agenda table td {
+    vertical-align: middle; }
+  .section-agenda table thead th, .section-agenda table tbody th {
+    background-color: transparent; }
+  .section-agenda h1, .section-agenda h2 {
+    display: inline-block;
+    margin-bottom: 0; }
+  .section-agenda h1 {
+    margin-right: 0.3em; }
+  .section-agenda h2 {
+    font-size: 24px;
+    color: #08A8E5; }
+  .section-agenda h3 {
+    text-transform: none;
+    font-size: 24px;
+    margin: 0; }
+  .section-agenda p {
+    margin: 0; }
+  .section-agenda .time {
+    color: #aaa;
+    font-size: 2em;
+    font-weight: 300; }
