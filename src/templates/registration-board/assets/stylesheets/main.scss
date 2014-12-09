@@ -1,0 +1,22 @@
+body { margin: 3mm auto; }
+
+#artwork { overflow: visible; }
+
+#content { top: 30%; }
+
+h1 {
+  font-size: 20em;
+  position: relative;
+  top: 0.5em;
+}
+
+.brand {
+  width: 20em;
+  &.bottom {
+    position: absolute;
+    right: -3%;
+    bottom: 3%;
+  }
+}
+
+main { text-align: center; }

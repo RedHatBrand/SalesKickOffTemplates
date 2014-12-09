@@ -4,7 +4,7 @@
     "year": "FY14",
     "width": "100",
     "height": "100",
-    "direction": "This way to Asia Pacific's best event yet.",
-    "background-image": ""
+    "welcome-message": "Welcome",
+    "background-image": "../../shared/images/gray_clouds.jpg"
   }
 }

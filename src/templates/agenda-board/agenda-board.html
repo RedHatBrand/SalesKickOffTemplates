@@ -1,6 +1,6 @@
 ---
-width: calc(100vw - 2em);
-height: calc(100vh - 2em);
+width: calc(300mm + 6mm);
+height: calc(200mm + 6mm);
 ---
 
 <!DOCTYPE html>
@@ -8,7 +8,7 @@ height: calc(100vh - 2em);
   <head>
     <link rel="stylesheet" href="//redhatbrand.github.io/RedHatTemplates/global-assets/stylesheets/general/tile-pattern-fill.css">
     <link rel="stylesheet" href="<%=baseUrl%>/shared/stylesheets/main.css" />
-    <link rel="stylesheet" href="<%=baseUrl%>/templates/generic-resizeable-web/assets/stylesheets/main.css" />
+    <link rel="stylesheet" href="<%=baseUrl%>/templates/agenda-board/assets/stylesheets/main.css" />
     <style>
       {{# background-image }}
         main {
@@ -25,17 +25,43 @@ height: calc(100vh - 2em);
         }
       
         .logotext { fill: white; }
+        h2, .time { color: #444 !important; }
       {{/ background-image }} 
     </style>
   </head>
-  <body style="width: {{ width }}vw; height: {{ height }}vh">
+  <body style="width: {{ width }}mm; height: {{ height }}mm">
     <div id="artwork"></div>
     <main>
-      <div id="content">
+      <div class="brand bottom">
         <% include ../../shared/images/event-logo-lockup.svg %>
       </div>
-    </main>
+      <div id="content">
+        <section class='section-agenda' id='agenda'>
+          <div class='container'>
+            <h1>Agenda</h1>
+            {{#day}}
+            <h2>{{ date }}</h2>
+            {{/day}}
+            {{#day}}
+            <div class='time-table-{{ day-name }}'>
+              <table class="calendar">
+                {{#schedule}}
+                <tr>
+                  <td class="time">{{time}}</td>
 
+                  <td>
+                    <h3>{{activity}}</h3>
+                    <p>{{duration}}</p>
+                  </td>
+                </tr>
+                {{/schedule}}
+              </table>
+            </div>
+            {{/day}}
+          </div>
+        </section>
+      </div>
+    </main>
     <script src="<%=baseUrl%>/shared/javascripts/artwork.js"></script>
     <script src="//redhatbrand.github.io/RedHatPatterns/red-hat-patterns.js"></script>
   </body>
