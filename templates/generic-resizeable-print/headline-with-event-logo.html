@@ -25,7 +25,9 @@
     </style>
   </head>
   <body style="width: {{ width }}mm; height: {{ height }}mm">
+    {{^ background-image }}
     <div id="artwork"></div>
+    {{/ background-image }}
     <main>
       <div id="content">
         <div class="brand"> 
@@ -55,11 +57,22 @@
           <h1 class="">{{{ headline }}}</h1>
         </div>
       </div>
+
+      <div class="corner-shapes-bottom-right">
+        <div class="corner-shape-solid-triangle"></div>
+        <div data-red-hat-pattern="corporate" class="pattern-red corner-shape-pattern"></div>
+        <div class="corner-shape-bottom-right-logo rh-logo">
+          <img src="//redhatbrand.github.io/SalesKickOffTemplates/shared/images/rh-logo.svg" />
+        </div>
+      </div>
     </main>
-    <!-- Doesn't seem to work if the jquery lib is not loaded first !-->
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="//redhatbrand.github.io/SalesKickOffTemplates/shared/javascripts/jquery.splitlines.js"></script>
+    
+    {{^ background-image }}
     <script src="//redhatbrand.github.io/SalesKickOffTemplates/shared/javascripts/artwork.js"></script>
+    {{/ background-image }}
+    
     <script src="//redhatbrand.github.io/RedHatPatterns/red-hat-patterns.js"></script>
     <script>
       $('.data-lining').splitLines({

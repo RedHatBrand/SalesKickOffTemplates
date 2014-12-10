@@ -25,9 +25,11 @@
     </style>
   </head>
   <body style="width: {{ width }}mm; height: {{ height }}mm">
+    {{^ background-image }}
     <div id="artwork"></div>
+    {{/ background-image }}
     <main>
-      <div class="brand bottom">
+      <div class="brand sko">
         <svg class="sko-logo logo complex-logo line-icon" width="440" viewBox="0 0 440 128" height="128">
   <g class="logomark">
     <path style="fill:#08a8e5; " d="m 106.25906,6.5174789 -101.2590608,0 0,101.4567711 101.2590608,0.16476 z"></path>
@@ -50,15 +52,27 @@
 </svg>
 
       </div>
+
       <div id="content">
         <article>
-          <h2>{{ text }}</h2>
+          <p>{{ text }}</p>
           <h1>{{ letter-range }}</h1>
         </article>
       </div>
+
+      <div class="corner-shapes-bottom-right">
+        <div class="corner-shape-solid-triangle"></div>
+        <div data-red-hat-pattern="corporate" class="pattern-red corner-shape-pattern"></div>
+        <div class="corner-shape-bottom-right-logo rh-logo">
+          <img src="//redhatbrand.github.io/SalesKickOffTemplates/shared/images/rh-logo-black.svg" />
+        </div>
+      </div>
     </main>
 
+    {{^ background-image }}
     <script src="//redhatbrand.github.io/SalesKickOffTemplates/shared/javascripts/artwork.js"></script>
+    {{/ background-image }}
+
     <script src="//redhatbrand.github.io/RedHatPatterns/red-hat-patterns.js"></script>
   </body>
 </html>

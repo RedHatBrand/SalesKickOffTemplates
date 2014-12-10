@@ -1,20 +1,20 @@
-article h1 {
-  font-size: 5em;
-  line-height: 3rem; }
-article h2 {
-  font-weight: 700; }
+:root, html {
+  font-size: 10pt; }
 
-.brand {
-  width: 20em; }
-  .brand.redhat {
-    width: 15em;
-    margin-top: 2.3em;
-    -webkit-transform: translate(325%, 0px);
-    -ms-transform: translate(325%, 0px);
-    transform: translate(325%, 0px); }
+.brand.sko {
+  width: 66.667%; }
 
-.corner-shape {
-  width: 20em;
-  position: absolute;
-  right: 0px;
-  bottom: -0.5em; }
+#content {
+  left: 4.5em;
+  top: 4.5em;
+  right: 25%;
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none; }
+
+.corner-shapes-bottom-right {
+  width: 50%; }
+
+.corner-shapes-bottom-right .corner-shape-bottom-right-logo {
+  right: 2em;
+  bottom: 2em; }

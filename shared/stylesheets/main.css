@@ -313,15 +313,17 @@ body {
   left: 0;
   right: 0;
   top: 0;
-  bottom: auto;
+  bottom: 0;
   overflow: hidden;
   margin: 0;
   background-image: -webkit-radial-gradient(50% 50%, ellipse, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0.75) 50%, rgba(255, 255, 255, 0.0001) 100%);
   background-image: radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0.75) 50%, rgba(255, 255, 255, 0.0001) 100%); }
-  #artwork:before {
-    content: '';
-    display: block;
-    padding-bottom: 100%; }
+  #artwork .artwork-inner {
+    position: relative; }
+    #artwork .artwork-inner:before {
+      content: '';
+      display: block;
+      padding-bottom: 100%; }
   #artwork * {
     margin: 0; }
   #artwork .artwork-shape {
@@ -389,11 +391,12 @@ main {
   margin: 0;
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 45%;
   min-width: 50%;
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%); }
+  transform: translate(-50%, -50%);
+  max-width: 80%; }
 
 .sko-logo {
   width: 100%;
@@ -556,3 +559,56 @@ main {
     -webkit-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1; } }
+
+.corner-shapes-bottom-right {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 50%;
+  height: auto; }
+  .corner-shapes-bottom-right:before {
+    content: '';
+    display: block;
+    padding-bottom: 100%; }
+  .corner-shapes-bottom-right .corner-shape-pattern {
+    margin-top: 0;
+    height: 200%;
+    width: 12.5%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform-origin: 0 50%;
+    -ms-transform-origin: 0 50%;
+    transform-origin: 0 50%;
+    -webkit-transform: translateY(-50%) rotate(45deg);
+    -ms-transform: translateY(-50%) rotate(45deg);
+    transform: translateY(-50%) rotate(45deg); }
+    .corner-shapes-bottom-right .corner-shape-pattern svg {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      stroke-width: 0.5pt;
+      stroke: #e5e8e9; }
+  .corner-shapes-bottom-right .corner-shape-solid-triangle {
+    background-color: #e5e8e9;
+    height: 200%;
+    width: 100%;
+    position: absolute;
+    left: 58.75%;
+    top: 58.75%;
+    -webkit-transform-origin: 0 50%;
+    -ms-transform-origin: 0 50%;
+    transform-origin: 0 50%;
+    -webkit-transform: translateY(-50%) rotate(45deg);
+    -ms-transform: translateY(-50%) rotate(45deg);
+    transform: translateY(-50%) rotate(45deg); }
+  .corner-shapes-bottom-right .corner-shape-bottom-right-logo {
+    position: absolute;
+    right: 3em;
+    bottom: 3em;
+    width: 40%; }
+
+@media all and (orientation: portrait) {
+  .corner-shapes-bottom-right {
+    width: 80%; }
+ }

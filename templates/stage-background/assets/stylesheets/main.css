@@ -1,18 +1,9 @@
-.headline h1 {
-  font-size: 8em;
-  line-height: 8rem; }
+:root, html {
+  font-size: 2vw; }
 
-.brand {
-  width: 20em; }
-  .brand.redhat {
-    width: 15em;
-    margin-top: 2.3em;
-    -webkit-transform: translate(325%, 0px);
-    -ms-transform: translate(325%, 0px);
-    transform: translate(325%, 0px); }
+.brand.sko {
+  width: 66.667%; }
 
-.corner-shape {
-  width: 20em;
-  position: absolute;
-  right: 0px;
-  bottom: -0.5em; }
+.corner-shapes-bottom-right .corner-shape-bottom-right-logo {
+  right: 2em;
+  bottom: 2em; }

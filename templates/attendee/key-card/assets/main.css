@@ -1,22 +1,20 @@
-h1 {
-  font-size: 2em;
-  line-height: 2rem;
-  margin: 0px; }
+:root, html {
+  font-size: 6pt; }
 
-h2 {
-  font-size: 1em; }
+#content {
+  left: 2em;
+  right: 2em;
+  top: 2.5em;
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none; }
 
-h3 {
-  font-size: 0.5em;
-  line-height: 0.8rem;
-  margin-bottom: 1em; }
+.corner-shapes-bottom-right {
+  width: 100%; }
 
-.brand.sko {
-  width: 8em;
-  padding: 0.3em; }
+.corner-shapes-bottom-right .corner-shape-bottom-right-logo {
+  right: 2em;
+  bottom: 2em; }
 
-.corner-shape {
-  width: 8em;
-  position: absolute;
-  right: 0px;
-  bottom: -0.5em; }
+.corner-shapes-bottom-right .corner-shape-pattern svg {
+  stroke-width: 0.2pt; }

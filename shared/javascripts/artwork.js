@@ -1,6 +1,28 @@
 (function (global) {
-  var canvas  = document.getElementById('artwork');
+  var canvasWrapper = document.getElementById('artwork');
+  var canvas = document.createElement('div');
+  canvas.classList.add('artwork-inner');
+  canvasWrapper.appendChild(canvas);
+
+  var complexity = global.redhatArtComplexity || 10;
   global.redhatBrandPattern = 'corporate';
+
+  function isPortrait (element) {
+    return element.offsetWidth < element.offsetHeight;
+  }
+
+  function setCanvasSize () {
+    if (isPortrait(canvasWrapper)) {
+      canvas.style.width = canvasWrapper.offsetHeight + 'px';
+    } else {
+      canvas.style.width = 'initial';
+    }
+  }
+
+  setCanvasSize();
+  window.addEventListener('resize', function () {
+    setCanvasSize();
+  });
 
   function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
@@ -50,12 +72,12 @@
     div.classList.add('rotate-animate-in');
   }
 
-  function populateCanvas () {
-    for (var i = 0; i < 20; i++) {
+  function populateCanvas (complexity) {
+    for (var i = 0; i < complexity; i++) {
       createShape(i);
     }
 
     addPattern();
   }
-  populateCanvas();
+  populateCanvas(complexity);
 })(window);

@@ -25,7 +25,9 @@
     </style>
   </head>
   <body style="width: {{ width }}mm; height: {{ height }}mm">
+    {{^ background-image }}
     <div id="artwork"></div>
+    {{/ background-image }}
     <main>
       <div id="content">
         <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id='svg3466' preserveAspectRatio='xMidYMid meet' viewBox='0 0 473 170' >
@@ -40,7 +42,10 @@
       </div>
     </main>
 
+    {{^ background-image }}
     <script src="//redhatbrand.github.io/SalesKickOffTemplates/shared/javascripts/artwork.js"></script>
+    {{/ background-image }}
+
     <script src="//redhatbrand.github.io/RedHatPatterns/red-hat-patterns.js"></script>
   </body>
 </html>

@@ -25,7 +25,9 @@
     </style>
   </head>
   <body style="width: {{ width }}mm; height: {{ height }}mm"> 
+    {{^ background-image }}
     <div id="artwork"></div>
+    {{/ background-image }}
     <main>
       <div id="content">
         <div class="brand">
@@ -41,8 +43,11 @@
         </div>
       </div>
     </main>
-
+    
+    {{^ background-image }}
     <script src="//redhatbrand.github.io/SalesKickOffTemplates/shared/javascripts/artwork.js"></script>
+    {{/ background-image }}
+    
     <script src="//redhatbrand.github.io/RedHatPatterns/red-hat-patterns.js"></script>
   </body>
 </html>
