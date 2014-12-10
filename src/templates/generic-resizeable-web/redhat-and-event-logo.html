@@ -29,7 +29,9 @@ height: calc(100vh - 2em);
     </style>
   </head>
   <body style="width: {{ width }}vw; height: {{ height }}vh">
+    {{^ background-image }}
     <div id="artwork"></div>
+    {{/ background-image }}
     <main>
       <div id="content">
         <div class="brand">
@@ -43,7 +45,11 @@ height: calc(100vh - 2em);
       </div>
     </main>
 
+    
+    {{^ background-image }}
     <script src="<%=baseUrl%>/shared/javascripts/artwork.js"></script>
+    {{/ background-image }}
+    
     <script src="//redhatbrand.github.io/RedHatPatterns/red-hat-patterns.js"></script>
   </body>
 </html>

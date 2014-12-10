@@ -40,16 +40,21 @@ body {
 #artwork {
   position: absolute;
   left: 0; right: 0;
-  top: 0; bottom: auto; 
+  top: 0; bottom: 0; 
   overflow: hidden;
   margin: 0;
   background-image: radial-gradient(ellipse at 50% 50%, rgba($color-rh-white, 0.75) 0%, rgba($color-rh-white, 0.75) 50%, rgba($color-rh-white, 0.0001) 100%);
   
-  &:before {
-    content: '';
-    display: block;
-    padding-bottom: 100%;
+  .artwork-inner {
+    position: relative;
+    
+    &:before {
+      content: '';
+      display: block;
+      padding-bottom: 100%;
+    }
   }
+  
 
   * { margin: 0; }
 

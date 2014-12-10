@@ -29,7 +29,9 @@ height: calc(2000mm + 6mm);
     </style>
   </head>
   <body style="width: {{ width }}mm; height: {{ height }}mm">
+    {{^ background-image }}
     <div id="artwork"></div>
+    {{/ background-image }}
     <main>
       <div id="content">
         <div class="headline">
@@ -38,7 +40,10 @@ height: calc(2000mm + 6mm);
       </div>
     </main>
 
+    {{^ background-image }}
     <script src="<%=baseUrl%>/shared/javascripts/artwork.js"></script>
+    {{/ background-image }}
+
     <script src="//redhatbrand.github.io/RedHatPatterns/red-hat-patterns.js"></script>
   </body>
 </html>
