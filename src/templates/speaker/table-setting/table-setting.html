@@ -25,30 +25,38 @@ height: 105mm;
         }
       
         .logotext { fill: white; }
-        h1 { color: white; }
       {{/ background-image }} 
     </style>
-  </head> 
+  </head>
   <body style="width: {{ width }}mm; height: {{ height }}mm">
     {{^ background-image }}
     <div id="artwork"></div>
     {{/ background-image }}
     <main>
-      <div class="brand sko"><% include ../../../shared/images/event-logo-lockup.svg %></div>
       <div id="content">
+        <div class="brand sko">
+          <% include ../../../shared/images/event-logo-lockup.svg %>
+        </div>
         <article>
           <h1>{{{ name }}}</h1>  
           <h3>{{{ position }}}</h3>  
           <h2>{{{ company }}}</h2>  
         </article>
       </div>
-      <div class="corner-shape redhat"><% include ../../../shared/images/triangle-with-logo-bottom.svg %></div>
+      
+      <div class="corner-shapes-bottom-right">
+        <div class="corner-shape-solid-triangle"></div>
+        <div data-red-hat-pattern="corporate" class="pattern-red corner-shape-pattern"></div>
+        <div class="corner-shape-bottom-right-logo rh-logo">
+          <img src="<%=baseUrl%>/shared/images/rh-logo-black.svg" />
+        </div>
+      </div>
     </main>
 
     {{^ background-image }}
     <script src="<%=baseUrl%>/shared/javascripts/artwork.js"></script>
     {{/ background-image }}
-    
+
     <script src="//redhatbrand.github.io/RedHatPatterns/red-hat-patterns.js"></script>
   </body>
 </html>

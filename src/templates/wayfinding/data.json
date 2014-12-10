@@ -2,9 +2,10 @@
   "data": {
     "region": "Asia Pacific",
     "year": "FY14",
-    "width": "100",
-    "height": "100",
-    "direction": "This way to Asia Pacific's best event yet.",
+    "width": "426",
+    "height": "597",
+    "message": "This way to Asia Pacific's best event yet.",
+    "direction": "right",
     "background-image": ""
   }
 }

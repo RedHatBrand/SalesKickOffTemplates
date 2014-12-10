@@ -1,15 +1,25 @@
 @import '../../../../../node_modules/red-hat-brand-typography/scss/red-hat-typography';
 @import '../../../../../node_modules/red-hat-brand-palette/scss/red-hat-palette';
 
-#content { left: 60%; }
+html, :root { font-size: 24pt; }
 
 .headline { color: $color-rh-white; }
 
-.brand {
-  width: 20vw;
-  &.bottom {
-    position: absolute;
-    right: -3%;
-    bottom: 3%;
+.brand.sko {
+  position: relative;
+  z-index: 2;
+  width: 50%;
+  margin: 3em;
+}
+
+#content {
+  transform: translateY(-50%);
+  width: 200%;
+  max-width: initial;
+}
+
+.right {
+  #content {
+    left: 3em;
   }
 }

@@ -4,7 +4,7 @@
   canvas.classList.add('artwork-inner');
   canvasWrapper.appendChild(canvas);
 
-  var complexity = global.redhatArtComplexity || 15;
+  var complexity = global.redhatArtComplexity || 10;
   global.redhatBrandPattern = 'corporate';
 
   function isPortrait (element) {

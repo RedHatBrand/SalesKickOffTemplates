@@ -1,22 +1,26 @@
-body { margin: 3mm auto; }
-
-#artwork { overflow: visible; }
-
-#content { top: 30%; }
-
-h1 {
-  font-size: 20em;
-  position: relative;
-  top: 0.5em;
+html, :root {
+  font-size: 54pt;
+  line-height: 1.25em;
 }
 
-.brand {
-  width: 20em;
-  &.bottom {
-    position: absolute;
-    right: -3%;
-    bottom: 3%;
-  }
+#content {
+  min-width: 75%;
+}
+
+.brand.sko {
+  width: 50%;
+  margin: 2em;
+}
+
+h1 {
+  font-size: 6rem;
+  line-height: 6rem;
+  margin: 0;
 }
 
 main { text-align: center; }
+
+.corner-shapes-bottom-right .corner-shape-bottom-right-logo {
+  right: 2em;
+  bottom: 2em;
+}

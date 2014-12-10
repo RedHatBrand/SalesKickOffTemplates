@@ -1,6 +1,6 @@
 ---
-width: calc(300mm + 6mm);
-height: calc(300mm + 6mm);
+width: calc(420mm + 6mm);
+height: calc(597mm + 6mm);
 ---
 
 <!DOCTYPE html>
@@ -37,6 +37,14 @@ height: calc(300mm + 6mm);
         <% include ../../shared/images/event-logo-lockup.svg %>
       </div>
     </main>
+
+    <div class="corner-shapes-bottom-right">
+      <div class="corner-shape-solid-triangle"></div>
+      <div data-red-hat-pattern="corporate" class="pattern-red corner-shape-pattern"></div>
+      <div class="corner-shape-bottom-right-logo rh-logo">
+        <img src="<%=baseUrl%>/shared/images/rh-logo.svg" />
+      </div>
+    </div>
 
     {{^ background-image }}
     <script src="<%=baseUrl%>/shared/javascripts/artwork.js"></script>

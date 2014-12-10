@@ -1,6 +1,6 @@
 ---
-width: calc(100vw - 2em);
-height: calc(100vh - 2em);
+width: calc(210mm + 6mm);
+height: calc(148mm + 6mm);
 ---
 
 <!DOCTYPE html>
@@ -28,7 +28,7 @@ height: calc(100vh - 2em);
       {{/ background-image }} 
     </style>
   </head>
-  <body style="width: {{ width }}vw; height: {{ height }}vh">
+  <body style="width: {{ width }}mm; height: {{ height }}mm">
     {{^ background-image }}
     <div id="artwork"></div>
     {{/ background-image }}
@@ -40,7 +40,14 @@ height: calc(100vh - 2em);
           <h1 class="">{{{ name }}}</h1>
         </article>
       </div>
-      <div class="corner-shape redhat"><% include ../../../shared/images/triangle-with-logo-bottom.svg %></div>
+      
+      <div class="corner-shapes-bottom-right">
+        <div class="corner-shape-solid-triangle"></div>
+        <div data-red-hat-pattern="corporate" class="pattern-red corner-shape-pattern"></div>
+        <div class="corner-shape-bottom-right-logo rh-logo">
+          <img src="<%=baseUrl%>/shared/images/rh-logo-black.svg" />
+        </div>
+      </div>
     </main>
     
     {{^ background-image }}

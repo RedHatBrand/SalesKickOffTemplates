@@ -1,6 +1,6 @@
 ---
-width: 101.6mm;
-height: 152.4mm;
+width: 101.6mm
+height: 152.4mm
 ---
 
 <!DOCTYPE html>
@@ -18,22 +18,21 @@ height: 152.4mm;
 
           background-repeat: no-repeat;
           background-blend-mode: multiply;
-          background-size: 150% auto, cover;
+          background-size: 100% auto, cover;
           background-position: center center, center center;
           
           color: white;
         }
       
         .logotext { fill: white; }
-        h1 { color: white !important; }
       {{/ background-image }} 
     </style>
-  </head> 
+  </head>
   <body style="width: {{ width }}mm; height: {{ height }}mm">
     {{^ background-image }}
     <div id="artwork"></div>
     {{/ background-image }}
-    <main>
+    <main> 
       <div id="content">
         <div class="brand sko"><% include ../../../shared/images/event-logo-lockup.svg %></div>
         <article>
@@ -41,6 +40,14 @@ height: 152.4mm;
           <h3>{{{ position }}}</h3>  
           <h2>{{{ company }}}</h2>  
         </article>
+      </div>
+
+      <div class="corner-shapes-bottom-right">
+        <div class="corner-shape-solid-triangle"></div>
+        <div data-red-hat-pattern="corporate" class="pattern-red corner-shape-pattern"></div>
+        <div class="corner-shape-bottom-right-logo rh-logo">
+          <img src="<%=baseUrl%>/shared/images/rh-logo-black.svg" />
+        </div>
       </div>
     </main>
 
@@ -51,3 +58,4 @@ height: 152.4mm;
     <script src="//redhatbrand.github.io/RedHatPatterns/red-hat-patterns.js"></script>
   </body>
 </html>
+

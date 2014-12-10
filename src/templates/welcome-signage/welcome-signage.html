@@ -1,6 +1,6 @@
 ---
-width: calc(100vw - 2em);
-height: calc(100vh - 2em);
+width: calc(420mm + 6mm);
+height: calc(597mm + 6mm);
 ---
 
 <!DOCTYPE html>
@@ -18,7 +18,7 @@ height: calc(100vh - 2em);
 
           background-repeat: no-repeat;
           background-blend-mode: multiply;
-          background-size: 100% auto, cover;
+          background-size: cover;
           background-position: center center, center center;
           
           color: white;
@@ -28,7 +28,7 @@ height: calc(100vh - 2em);
       {{/ background-image }} 
     </style>
   </head>
-  <body style="width: {{ width }}vw; height: {{ height }}vh">
+  <body style="width: {{ width }}mm; height: {{ height }}mm">
     {{^ background-image }}
     <div id="artwork"></div>
     {{/ background-image }}
@@ -38,7 +38,16 @@ height: calc(100vh - 2em);
         <article>
           <h1>{{{ welcome-message }}}</h1>  
         </article>
-        <div class="brand redhat"><% include ../../shared/images/rh-logo-black.svg %></div>
+        
+        {{^ background-image }}
+        <div class="corner-shapes-bottom-right redhat">
+          <div class="corner-shape-solid-triangle"></div>
+          <div data-red-hat-pattern="corporate" class="pattern-red corner-shape-pattern"></div>
+          <div class="corner-shape-bottom-right-logo rh-logo">
+            <img src="<%=baseUrl%>/shared/images/rh-logo-black.svg" />
+          </div>
+        </div>
+        {{/ background-image }}
       </div>
     </main>
 

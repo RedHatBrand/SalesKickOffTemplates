@@ -1,18 +1,33 @@
-body { margin: 3mm auto; }
-
-#artwork { overflow: visible; }
-
-h1 {
-  font-size: 5em;
-  line-height: 5rem;
+html, :root {
+  font-size: 36pt;
 }
 
 .brand {
   .one-half { 
     float: left;
     margin: 0;
+    width: 50%;
+    box-sizing: border-box;
+    padding: 1em;
   }
   
-  .one-half:first-child { width: 55%; }
-  .one-half:last-child { width: 45%; }
+  .one-half:first-child {
+    border-right: thin solid white;
+  }
+
+  // Red Hat Logo, too tired to do this right
+
+  .one-half:first-child svg {
+    width: 75%;
+  }
+}
+
+#content {
+  min-width: 75%;
+}
+
+@media all and (orientation: portrait) {
+  .corner-shapes-bottom-right {
+    width: 80%;
+  }
 }

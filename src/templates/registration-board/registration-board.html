@@ -1,6 +1,6 @@
 ---
-width: calc(350mm + 6mm);
-height: calc(200mm + 6mm);
+width: calc(420mm + 6mm);
+height: calc(597mm + 6mm);
 ---
 
 <!DOCTYPE html>
@@ -31,16 +31,25 @@ height: calc(200mm + 6mm);
   <body style="width: {{ width }}mm; height: {{ height }}mm">
     {{^ background-image }}
     <div id="artwork"></div>
-    {{/ background-image }}>
+    {{/ background-image }}
     <main>
-      <div class="brand bottom">
+      <div class="brand sko">
         <% include ../../shared/images/event-logo-lockup.svg %>
       </div>
+
       <div id="content">
         <article>
-          <h2>{{ text }}</h2>
+          <p>{{ text }}</p>
           <h1>{{ letter-range }}</h1>
         </article>
+      </div>
+
+      <div class="corner-shapes-bottom-right">
+        <div class="corner-shape-solid-triangle"></div>
+        <div data-red-hat-pattern="corporate" class="pattern-red corner-shape-pattern"></div>
+        <div class="corner-shape-bottom-right-logo rh-logo">
+          <img src="<%=baseUrl%>/shared/images/rh-logo-black.svg" />
+        </div>
       </div>
     </main>
 

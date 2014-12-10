@@ -1,11 +1,23 @@
-.brand {
-  width: 20em;
+:root, html {
+  font-size: 10pt;
 }
 
-article {
-  h1 {
-    font-size: 5em;
-    line-height: 4rem;
-    margin-bottom: 0;
-  }
+#content {
+  left: 2em;
+  right: 2em;
+  top: 2.5em;
+  transform: none;
+}
+
+.corner-shapes-bottom-right {
+  width: 100%; 
+}
+
+.corner-shapes-bottom-right .corner-shape-bottom-right-logo {
+  right: 2em;
+  bottom: 2em;
+}
+
+.corner-shapes-bottom-right .corner-shape-pattern svg {
+  stroke-width: 0.2pt;
 }

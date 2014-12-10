@@ -1,6 +1,6 @@
 ---
-width: 89.027mm;
-height: 56.515mm;
+width: 56.515mm
+height: 89.027mm
 ---
 
 <!DOCTYPE html>
@@ -32,16 +32,23 @@ height: 56.515mm;
     {{^ background-image }}
     <div id="artwork"></div>
     {{/ background-image }}
-    <main>
-      <div class="brand sko"><% include ../../../shared/images/event-logo-lockup.svg %></div>
+    <main> 
       <div id="content">
+        <div class="brand sko"><% include ../../../shared/images/event-logo-lockup.svg %></div>
         <article>
           <h1>{{{ name }}}</h1>  
           <h3>{{{ position }}}</h3>  
           <h2>{{{ company }}}</h2>  
         </article>
       </div>
-      <div class="corner-shape redhat"><% include ../../../shared/images/triangle-with-logo-bottom.svg %></div>
+
+      <div class="corner-shapes-bottom-right">
+        <div class="corner-shape-solid-triangle"></div>
+        <div data-red-hat-pattern="corporate" class="pattern-red corner-shape-pattern"></div>
+        <div class="corner-shape-bottom-right-logo rh-logo">
+          <img src="<%=baseUrl%>/shared/images/rh-logo-black.svg" />
+        </div>
+      </div>
     </main>
 
     {{^ background-image }}

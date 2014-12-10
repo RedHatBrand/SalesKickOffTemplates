@@ -1,14 +1,8 @@
-body { margin: 3mm auto; }
-
-#artwork { overflow: visible; }
-
-.brand {
-  width: 20em;
-  &.bottom {
-    position: absolute;
-    right: -3%;
-    bottom: 3%;
-  }
+#content {
+  left: 2em;
+  right: 2em;
+  transform: translateY(-50%);
+  max-width: initial;
 }
 
 // Agenda
@@ -23,6 +17,8 @@ $line-height:       1.5em;
   .container {
     position: relative;
     padding: $line-height;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   table,

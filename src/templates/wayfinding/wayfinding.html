@@ -1,6 +1,6 @@
 ---
-width: calc(100vw - 2em);
-height: calc(100vh - 2em);
+width: calc(420mm + 6mm);
+height: calc(597mm + 6mm);
 ---
 
 <!DOCTYPE html>
@@ -11,6 +11,17 @@ height: calc(100vh - 2em);
     <link rel="stylesheet" href="<%=baseUrl%>/templates/wayfinding/assets/stylesheets/main.css" />
     
     <style>
+      .arrow {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background-size: contain;
+        background-repeat: no-repeat;
+        mix-blend-mode: multiply;
+      }
+
       {{# background-image }}
         main {
           background-image: 
@@ -29,7 +40,7 @@ height: calc(100vh - 2em);
       {{/ background-image }}
       
       {{^ background-image }}
-        main {
+        .arrow {
           background-image: url(<%=baseUrl%>/templates/wayfinding/assets/images/arrow-right.svg);   
           background-repeat: no-repeat;
           color: white;
@@ -39,25 +50,47 @@ height: calc(100vh - 2em);
       {{/ background-image }}
     </style>
   </head> 
-  <body style="width: {{ width }}vw; height: {{ height }}vh"> 
+  <body style="width: {{ width }}mm; height: {{ height }}mm" class="{{ direction }}"> 
     {{^ background-image }}
     <div id="artwork"></div>
     {{/ background-image }}
     <main>
+      <div class="arrow"></div>
+
       <div id="content">
         <div class="headline">
-          <h1 class="">{{{ direction }}}</h1>
+          <h1 class="data-lining">{{{ message }}}</h1>
         </div>
       </div>
-      <div class="brand bottom">
+      <div class="brand sko">
         <% include ../../shared/images/event-logo-lockup.svg %>
       </div>
+
+      {{^ background-image }}
+      <div class="corner-shapes-bottom-right redhat">
+        <div class="corner-shape-solid-triangle"></div>
+        <div data-red-hat-pattern="corporate" class="pattern-red corner-shape-pattern"></div>
+        <div class="corner-shape-bottom-right-logo rh-logo">
+          <img src="<%=baseUrl%>/shared/images/rh-logo-black.svg" />
+        </div>
+      </div>
+      {{/ background-image }}
     </main>
+    
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="<%=baseUrl%>/shared/javascripts/jquery.splitlines.js"></script>
     
     {{^ background-image }}
     <script src="<%=baseUrl%>/shared/javascripts/artwork.js"></script>
     {{/ background-image }}
     
     <script src="//redhatbrand.github.io/RedHatPatterns/red-hat-patterns.js"></script>
+    <script>
+      $('.data-lining').splitLines({
+          tag: '<span class="line">',
+          width: 'auto',
+          keepHtml: true
+      });
+    </script>
   </body>
 </html>
