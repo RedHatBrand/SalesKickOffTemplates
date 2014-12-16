@@ -18,4 +18,4 @@ The gulp + metalsmith builder for SKO Templates
 
     # Deploy
 
-    gulp buidl && gulp deploy
+    gulp build && gulp deploy
