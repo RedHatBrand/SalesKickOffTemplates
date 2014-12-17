@@ -2,13 +2,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="//redhatbrand.github.io/RedHatTemplates/global-assets/stylesheets/general/tile-pattern-fill.css">
+    <link rel="stylesheet" href="//redhatbrand.github.io/RedHatTemplates/global-assets/stylesheets/general/tile-pattern-fill.css" />
     <link rel="stylesheet" href="//redhatbrand.github.io/SalesKickOffTemplates/shared/stylesheets/main.css" />
     <link rel="stylesheet" href="//redhatbrand.github.io/SalesKickOffTemplates/templates/attendee/lanyard/assets/main.css" />
-    <style>
+    <style type="text/css">
       {{# background-image }}
         main {
-          background-image: 
+          background-image:
             url('//redhatbrand.github.io/SalesKickOffTemplates/shared/images/grid-06-06.svg'),
             url('{{{ background-image }}}');
 
@@ -16,19 +16,19 @@
           background-blend-mode: multiply;
           background-size: 100% auto, cover;
           background-position: center center, center center;
-          
+
           color: white;
         }
-      
+
         .logotext { fill: white; }
-      {{/ background-image }} 
+      {{/ background-image }}
     </style>
   </head>
   <body style="width: {{ width }}mm; height: {{ height }}mm">
     {{^ background-image }}
     <div id="artwork"></div>
     {{/ background-image }}
-    <main> 
+    <main>
       <div id="content">
         <div class="brand sko"><svg class="sko-logo logo line-icon" width="440" viewBox="0 0 440 128" height="128">
   <g class="logomark">
@@ -52,9 +52,9 @@
 </svg>
 </div>
         <article>
-          <h1>{{{ name }}}</h1>  
-          <h3>{{{ position }}}</h3>  
-          <h2>{{{ company }}}</h2>  
+          <h1>{{{ name }}}</h1>
+          <h3>{{{ position }}}</h3>
+          <h2>{{{ company }}}</h2>
         </article>
       </div>
 
@@ -70,7 +70,7 @@
     {{^ background-image }}
     <script src="//redhatbrand.github.io/SalesKickOffTemplates/shared/javascripts/artwork.js"></script>
     {{/ background-image }}
-    
+
     <script src="//redhatbrand.github.io/RedHatPatterns/red-hat-patterns.js"></script>
   </body>
 </html>
