@@ -8,7 +8,7 @@
     <style>
       {{# background-image }}
         main {
-          background-image: 
+          background-image:
             url('//redhatbrand.github.io/SalesKickOffTemplates/shared/images/grid-06-06.svg'),
             url('{{{ background-image }}}');
 
@@ -16,12 +16,12 @@
           background-blend-mode: multiply;
           background-size: 105% auto, cover;
           background-position: center center, center center;
-          
+
           color: white;
         }
-      
+
         .logotext { fill: white; }
-      {{/ background-image }} 
+      {{/ background-image }}
     </style>
   </head>
   <body style="width: {{ width }}mm; height: {{ height }}mm">
@@ -29,8 +29,8 @@
     <div id="artwork"></div>
     {{/ background-image }}
     <main>
-      <div id="content">
-        <div class="brand"> 
+      <div id="content" class='large-content'>
+        <div class="brand">
           <svg class="sko-logo logo line-icon" width="440" viewBox="0 0 440 128" height="128">
   <g class="logomark">
     <path style="fill:#08a8e5; " d="m 106.25906,6.5174789 -101.2590608,0 0,101.4567711 101.2590608,0.16476 z"></path>
@@ -68,11 +68,11 @@
     </main>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="//redhatbrand.github.io/SalesKickOffTemplates/shared/javascripts/jquery.splitlines.js"></script>
-    
+
     {{^ background-image }}
     <script src="//redhatbrand.github.io/SalesKickOffTemplates/shared/javascripts/artwork.js"></script>
     {{/ background-image }}
-    
+
     <script src="//redhatbrand.github.io/RedHatPatterns/red-hat-patterns.js"></script>
     <script>
       $('.data-lining').splitLines({

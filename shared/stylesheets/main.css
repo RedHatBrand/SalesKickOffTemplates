@@ -385,19 +385,21 @@ main {
   top: 0;
   bottom: 0;
   margin: 0;
+  overflow: hidden;
   background-image: -webkit-radial-gradient(50% 50%, ellipse, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0.75) 25%, rgba(255, 255, 255, 0.0001) 100%);
   background-image: radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0.75) 25%, rgba(255, 255, 255, 0.0001) 100%); }
 
 #content {
   margin: 0;
   position: absolute;
+  top: 50%;
   left: 50%;
-  top: 45%;
   min-width: 50%;
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  max-width: 80%; }
+  max-width: 80%;
+  z-index: 20; }
 
 .sko-logo {
   width: 100%;
@@ -612,4 +614,39 @@ main {
 @media all and (orientation: portrait) {
   .corner-shapes-bottom-right {
     width: 80%; }
+ }
+
+@media screen and (min-aspect-ratio: 16/9) {
+  #content {
+    -webkit-transform: translate(-50%, -50%) scale(0.75);
+    -ms-transform: translate(-50%, -50%) scale(0.75);
+    transform: translate(-50%, -50%) scale(0.75); }
+
+  .corner-shapes-bottom-right .corner-shape-bottom-right-logo {
+    right: 1.5em;
+    bottom: 1.5em;
+    width: 30%; }
+ }
+
+@media screen and (min-aspect-ratio: 3/1) {
+  #content {
+    -webkit-transform: translate(-50%, -50%) scale(0.5);
+    -ms-transform: translate(-50%, -50%) scale(0.5);
+    transform: translate(-50%, -50%) scale(0.5); }
+
+  .corner-shapes-bottom-right .corner-shape-bottom-right-logo {
+    width: 25%;
+    bottom: 1em; }
+ }
+
+@media screen and (min-aspect-ratio: 4/1) {
+  #content {
+    -webkit-transform: translate(-50%, -50%) scale(0.33);
+    -ms-transform: translate(-50%, -50%) scale(0.33);
+    transform: translate(-50%, -50%) scale(0.33); }
+
+  .corner-shapes-bottom-right .corner-shape-bottom-right-logo {
+    width: 15%;
+    bottom: 0.5em;
+    right: 1em; }
  }

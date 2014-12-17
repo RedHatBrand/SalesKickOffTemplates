@@ -1,52 +1,9 @@
 :root, html {
   font-size: 2vw; }
 
-main {
-  overflow: hidden; }
-
 .brand.sko {
   width: 66.667%; }
 
 .corner-shapes-bottom-right .corner-shape-bottom-right-logo {
   right: 2em;
   bottom: 2em; }
-
-#content {
-  z-index: 10; }
-
-@media screen and (min-aspect-ratio: 16/9) {
-  #content {
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%) scale(0.75);
-    -ms-transform: translate(-50%, -50%) scale(0.75);
-    transform: translate(-50%, -50%) scale(0.75); }
-
-  .corner-shapes-bottom-right .corner-shape-bottom-right-logo {
-    right: 1.5em;
-    bottom: 1.5em;
-    width: 30%; }
- }
-
-@media screen and (min-aspect-ratio: 3/1) {
-  #content {
-    -webkit-transform: translate(-50%, -50%) scale(0.5);
-    -ms-transform: translate(-50%, -50%) scale(0.5);
-    transform: translate(-50%, -50%) scale(0.5); }
-
-  .corner-shapes-bottom-right .corner-shape-bottom-right-logo {
-    width: 25%;
-    bottom: 1em; }
- }
-
-@media screen and (min-aspect-ratio: 4/1) {
-  #content {
-    -webkit-transform: translate(-50%, -50%) scale(0.33);
-    -ms-transform: translate(-50%, -50%) scale(0.33);
-    transform: translate(-50%, -50%) scale(0.33); }
-
-  .corner-shapes-bottom-right .corner-shape-bottom-right-logo {
-    width: 15%;
-    bottom: 0.5em;
-    right: 1em; }
- }

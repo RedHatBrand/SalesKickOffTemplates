@@ -8,7 +8,7 @@
     <style>
       {{# background-image }}
         main {
-          background-image: 
+          background-image:
             url('//redhatbrand.github.io/SalesKickOffTemplates/shared/images/grid-06-06.svg'),
             url('{{{ background-image }}}');
 
@@ -16,15 +16,15 @@
           background-blend-mode: multiply;
           background-size: 105% auto, cover;
           background-position: center center, center center;
-          
+
           color: white;
         }
-      
+
         .logotext, #path8455 { fill: white !important; }
-      {{/ background-image }} 
+      {{/ background-image }}
     </style>
   </head>
-  <body style="width: {{ width }}mm; height: {{ height }}mm"> 
+  <body style="width: {{ width }}mm; height: {{ height }}mm">
     {{^ background-image }}
     <div id="artwork"></div>
     {{/ background-image }}
@@ -43,11 +43,11 @@
         </div>
       </div>
     </main>
-    
+
     {{^ background-image }}
     <script src="//redhatbrand.github.io/SalesKickOffTemplates/shared/javascripts/artwork.js"></script>
     {{/ background-image }}
-    
+
     <script src="//redhatbrand.github.io/RedHatPatterns/red-hat-patterns.js"></script>
   </body>
 </html>

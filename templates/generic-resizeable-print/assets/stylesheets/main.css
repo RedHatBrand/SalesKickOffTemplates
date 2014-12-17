@@ -9,7 +9,8 @@ html, :root {
   box-sizing: border-box;
   padding: 1em; }
 .brand .one-half:first-child {
-  border-right: thin solid white; }
+  border-right: thin solid white;
+  text-align: right; }
 .brand .one-half:first-child svg {
   width: 75%; }
 
@@ -19,4 +20,18 @@ html, :root {
 @media all and (orientation: portrait) {
   .corner-shapes-bottom-right {
     width: 80%; }
+ }
+
+@media screen and (min-aspect-ratio: 16/9) {
+  #content.large-content {
+    -webkit-transform: translate(-50%, -50%) scale(0.5);
+    -ms-transform: translate(-50%, -50%) scale(0.5);
+    transform: translate(-50%, -50%) scale(0.5); }
+ }
+
+@media screen and (min-aspect-ratio: 3/1) {
+  #content.large-content {
+    -webkit-transform: translate(-50%, -50%) scale(0.45);
+    -ms-transform: translate(-50%, -50%) scale(0.45);
+    transform: translate(-50%, -50%) scale(0.45); }
  }
