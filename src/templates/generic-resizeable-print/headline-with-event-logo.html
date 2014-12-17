@@ -12,7 +12,7 @@ height: calc(597mm + 6mm);
     <style>
       {{# background-image }}
         main {
-          background-image: 
+          background-image:
             url('<%=baseUrl%>/shared/images/grid-06-06.svg'),
             url('{{{ background-image }}}');
 
@@ -20,12 +20,12 @@ height: calc(597mm + 6mm);
           background-blend-mode: multiply;
           background-size: 105% auto, cover;
           background-position: center center, center center;
-          
+
           color: white;
         }
-      
+
         .logotext { fill: white; }
-      {{/ background-image }} 
+      {{/ background-image }}
     </style>
   </head>
   <body style="width: {{ width }}mm; height: {{ height }}mm">
@@ -33,8 +33,8 @@ height: calc(597mm + 6mm);
     <div id="artwork"></div>
     {{/ background-image }}
     <main>
-      <div id="content">
-        <div class="brand"> 
+      <div id="content" class='large-content'>
+        <div class="brand">
           <% include ../../shared/images/event-logo-lockup.svg %>
         </div>
         <div class="headline">
@@ -52,11 +52,11 @@ height: calc(597mm + 6mm);
     </main>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="<%=baseUrl%>/shared/javascripts/jquery.splitlines.js"></script>
-    
+
     {{^ background-image }}
     <script src="<%=baseUrl%>/shared/javascripts/artwork.js"></script>
     {{/ background-image }}
-    
+
     <script src="//redhatbrand.github.io/RedHatPatterns/red-hat-patterns.js"></script>
     <script>
       $('.data-lining').splitLines({

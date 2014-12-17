@@ -12,7 +12,7 @@ height: calc(597mm + 6mm);
     <style>
       {{# background-image }}
         main {
-          background-image: 
+          background-image:
             url('<%=baseUrl%>/shared/images/grid-06-06.svg'),
             url('{{{ background-image }}}');
 
@@ -20,36 +20,37 @@ height: calc(597mm + 6mm);
           background-blend-mode: multiply;
           background-size: 105% auto, cover;
           background-position: center center, center center;
-          
+
           color: white;
         }
-      
+
         .logotext { fill: white; }
-      {{/ background-image }} 
+      {{/ background-image }}
     </style>
   </head>
-  <body style="width: {{ width }}mm; height: {{ height }}mm"> 
+  <body style="width: {{ width }}mm; height: {{ height }}mm">
     {{^ background-image }}
     <div id="artwork"></div>
     {{/ background-image }}
+
     <main>
       <div id="content">
         <% include ../../shared/images/event-logo-lockup.svg %>
       </div>
-    </main>
 
-    <div class="corner-shapes-bottom-right">
-      <div class="corner-shape-solid-triangle"></div>
-      <div data-red-hat-pattern="corporate" class="pattern-red corner-shape-pattern"></div>
-      <div class="corner-shape-bottom-right-logo rh-logo">
-        <img src="<%=baseUrl%>/shared/images/rh-logo.svg" />
+      <div class="corner-shapes-bottom-right">
+        <div class="corner-shape-solid-triangle"></div>
+        <div data-red-hat-pattern="corporate" class="pattern-red corner-shape-pattern"></div>
+        <div class="corner-shape-bottom-right-logo rh-logo">
+          <img src="<%=baseUrl%>/shared/images/rh-logo.svg" />
+        </div>
       </div>
-    </div>
+    </main>
 
     {{^ background-image }}
     <script src="<%=baseUrl%>/shared/javascripts/artwork.js"></script>
     {{/ background-image }}
-    
+
     <script src="//redhatbrand.github.io/RedHatPatterns/red-hat-patterns.js"></script>
   </body>
 </html>

@@ -3,16 +3,18 @@ html, :root {
 }
 
 .brand {
-  .one-half { 
+
+  .one-half {
     float: left;
     margin: 0;
     width: 50%;
     box-sizing: border-box;
     padding: 1em;
   }
-  
+
   .one-half:first-child {
     border-right: thin solid white;
+    text-align: right;
   }
 
   // Red Hat Logo, too tired to do this right
@@ -30,4 +32,13 @@ html, :root {
   .corner-shapes-bottom-right {
     width: 80%;
   }
+}
+
+
+@media screen and (min-aspect-ratio: 16/9) {
+  #content.large-content { transform: translate(-50%, -50%) scale(0.5); }
+}
+
+@media screen and (min-aspect-ratio: 3/1) {
+  #content.large-content { transform: translate(-50%, -50%) scale(0.45); }
 }
