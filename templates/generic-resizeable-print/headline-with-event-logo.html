@@ -2,10 +2,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="//redhatbrand.github.io/RedHatTemplates/global-assets/stylesheets/general/tile-pattern-fill.css">
+    <link rel="stylesheet" href="//redhatbrand.github.io/RedHatTemplates/global-assets/stylesheets/general/tile-pattern-fill.css" />
     <link rel="stylesheet" href="//redhatbrand.github.io/SalesKickOffTemplates/shared/stylesheets/main.css" />
     <link rel="stylesheet" href="//redhatbrand.github.io/SalesKickOffTemplates/templates/generic-resizeable-print/assets/stylesheets/main.css" />
-    <style>
+    <style type='text/css'>
       {{# background-image }}
         main {
           background-image:
@@ -24,7 +24,7 @@
       {{/ background-image }}
     </style>
   </head>
-  <body width="{{ width }}mm" height="{{ height }}mm">
+  <body width="{{ width }}mm" height="{{ height }}mm" style="width: {{width}}mm; height: {{height}}mm;">
     {{^ background-image }}
     <div id="artwork"></div>
     {{/ background-image }}
@@ -66,8 +66,8 @@
         </div>
       </div>
     </main>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="//redhatbrand.github.io/SalesKickOffTemplates/shared/javascripts/jquery.splitlines.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="//redhatbrand.github.io/SalesKickOffTemplates/shared/javascripts/jquery.splitlines.js"></script>
 
     {{#artwork-complexity}}
     <script type="text/javascript">
@@ -76,16 +76,9 @@
     {{/artwork-complexity}}
 
     {{^ background-image }}
-    <script src="//redhatbrand.github.io/SalesKickOffTemplates/shared/javascripts/artwork.js"></script>
+    <script type="text/javascript" src="//redhatbrand.github.io/SalesKickOffTemplates/shared/javascripts/artwork.js"></script>
     {{/ background-image }}
 
-    <script src="//redhatbrand.github.io/RedHatPatterns/red-hat-patterns.js"></script>
-    <script>
-      $('.data-lining').splitLines({
-          tag: '<span class="line">',
-          width: 200,
-          keepHtml: true
-      });
-    </script>
+    <script type="text/javascript" src="//redhatbrand.github.io/RedHatPatterns/red-hat-patterns.js"></script>
   </body>
 </html>
