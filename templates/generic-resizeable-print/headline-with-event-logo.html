@@ -62,12 +62,18 @@
         <div class="corner-shape-solid-triangle"></div>
         <div data-red-hat-pattern="corporate" class="pattern-red corner-shape-pattern"></div>
         <div class="corner-shape-bottom-right-logo rh-logo">
-          <img src="//redhatbrand.github.io/SalesKickOffTemplates/shared/images/rh-logo.svg" />
+          <img src="//redhatbrand.github.io/SalesKickOffTemplates/shared/images/rh-logo-black.svg" />
         </div>
       </div>
     </main>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="//redhatbrand.github.io/SalesKickOffTemplates/shared/javascripts/jquery.splitlines.js"></script>
+
+    {{#artwork-complexity}}
+    <script type="text/javascript">
+      window.redhatArtComplexity = {{ artwork-complexity }};
+    </script>
+    {{/artwork-complexity}}
 
     {{^ background-image }}
     <script src="//redhatbrand.github.io/SalesKickOffTemplates/shared/javascripts/artwork.js"></script>
