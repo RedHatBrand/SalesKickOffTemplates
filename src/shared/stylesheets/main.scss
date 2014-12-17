@@ -113,19 +113,21 @@ body {
 
 main {
   position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
+  top: 3mm;
+  bottom: 3mm;
+  left: 3mm;
+  right: 3mm;
   margin: 0;
-  overflow: hidden;
   background-image: radial-gradient(ellipse at 50% 50%, rgba($color-rh-white, 0.75) 0%, rgba($color-rh-white, 0.75) 25%, rgba($color-rh-white, 0.0001) 100%);
+
+  .crop-mark { margin: 0; }
 }
+
 
 #content {
   margin: 0;
   position: absolute;
-  top: 50%;
+  top: 45%;
   left: 50%;
   min-width: 50%;
   transform: translate(-50%,-50%);
@@ -271,6 +273,8 @@ main {
 }
 
 @media all and (orientation: portrait) {
+  #content { top: 50%; }
+
   .corner-shapes-bottom-right {
     width: 80%;
   }
