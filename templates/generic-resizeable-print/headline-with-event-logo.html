@@ -2,7 +2,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel='stylesheet' href='http://redhatbrand.github.io/RedHatTemplates/global-assets/stylesheets/print/crop-marks.css' />
     <link rel="stylesheet" href="//redhatbrand.github.io/RedHatTemplates/global-assets/stylesheets/general/tile-pattern-fill.css">
     <link rel="stylesheet" href="//redhatbrand.github.io/SalesKickOffTemplates/shared/stylesheets/main.css" />
     <link rel="stylesheet" href="//redhatbrand.github.io/SalesKickOffTemplates/templates/generic-resizeable-print/assets/stylesheets/main.css" />
@@ -25,7 +24,7 @@
       {{/ background-image }}
     </style>
   </head>
-  <body style="width: {{ width }}mm; height: {{ height }}mm">
+  <body width="{{ width }}mm" height="{{ height }}mm">
     {{^ background-image }}
     <div id="artwork"></div>
     {{/ background-image }}
@@ -66,11 +65,6 @@
           <img src="//redhatbrand.github.io/SalesKickOffTemplates/shared/images/rh-logo-black.svg" />
         </div>
       </div>
-
-      <div class='crop-mark top-left' style="width: 6mm; height: 6mm"></div>
-      <div class='crop-mark top-right' style="width: 6mm; height: 6mm"></div>
-      <div class='crop-mark bottom-left' style="width: 6mm; height: 6mm"></div>
-      <div class='crop-mark bottom-right' style="width: 6mm; height: 6mm"></div>
     </main>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="//redhatbrand.github.io/SalesKickOffTemplates/shared/javascripts/jquery.splitlines.js"></script>
