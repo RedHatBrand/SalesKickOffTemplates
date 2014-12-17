@@ -7,7 +7,7 @@ height: 100vh
 <html lang='en'>
   <head>
     <meta charset='utf-8' />
-    <title>{{ title }}</title>
+    <title>{{ headline }}</title>
     <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible' />
     <meta content='initial-scale=1.0' name='viewport' />
     <meta content='Red Hat' name='author' />
@@ -27,16 +27,14 @@ height: 100vh
     <!--[if lt IE 9]> <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script> <![endif]-->
   </head>
   <body>
-    <div class='wrapper'> 
-      <header class='header' role='banner'> 
+    <div class='wrapper'>
+      <header class='header' role='banner'>
         <figure class='hero'>
           <div id="artwork"></div>
           <div class="gradient"></div>
           <div class='container layer-three'>
-            <h1 class='title'>{{ title }}</h1>
-            
-            <% include ../../shared/images/event-logo-lockup.svg %>
-
+            <h1 class='title'>{{ headline }}</h1>
+            <% include ../../shared/images/event-logo-lockup-complex.svg %>
             <div class='event-details'>
               <h3 class="dates">
                 {{ dates }}
@@ -216,10 +214,10 @@ height: 100vh
                 </li>
               </ul>
               <div class='one-half social-links'>
-                <a class='social-link icon-twitter icon-only icon-in-circle' href='//www.twitter.com/red_hat_apac' target='_blank'>Twitter</a>
-                <a class='social-link icon-facebook icon-only icon-in-circle' href='//www.facebook.com/RedhatAPAC' target='_blank'>Facebook</a>
-                <a class='social-link icon-youtube icon-only icon-in-circle' href='//www.youtube.com/user/RedHatVideos' target='_blank'>youtube</a>
-                <a class='social-link icon-linkedin icon-only icon-in-circle' href='//www.linkedin.com/groups/Red-Hat-Certified-Professionals-in-3124596?mostPopular=&amp;amp;gid=3124596' target='_blank'>LinkedIn</a>
+                <a href='//www.twitter.com/red_hat_apac' target='_blank' class='social-link icon-only icon-twitter'>Twitter</a>
+                <a href='//www.facebook.com/RedhatAPAC' target='_blank' class='social-link icon-only icon-facebook'>Facebook</a>
+                <a href='//www.youtube.com/user/RedHatVideos' target='_blank' class='social-link icon-only icon-youtube'>Youtube</a>
+                <a href='//www.linkedin.com/groups/Red-Hat-Certified-Professionals-in-3124596?mostPopular=&amp;amp;gid=3124596' target='_blank' class='social-link icon-only icon-linkedin'>LinkedIn</a>
               </div>
             </div>
           </div>
@@ -233,6 +231,12 @@ height: 100vh
         </section>
       </footer>
     </div>
+
+    {{#artwork-complexity}}
+    <script type="text/javascript">
+      window.redhatArtComplexity = {{ artwork-complexity }};
+    </script>
+    {{/artwork-complexity}}
 
     <script src="<%=baseUrl%>/shared/javascripts/artwork.js"></script>
   </body>

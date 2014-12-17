@@ -30,6 +30,27 @@
         margin-bottom: $line-height;
       }
     }
+
+    .social-links {
+      margin-top: 0;
+      text-align: right;
+    }
+
+    .social-link {
+      display: inline-block;
+      vertical-align: top;
+      width: 2em;
+      height: 2em;
+
+      color: $gray-dark;
+      background-color: $white;
+
+      &:hover {
+        color: $color-primary;
+        background-color: $white;
+      }
+    }
+
   }
 
   .tertiary {
@@ -50,15 +71,6 @@
     }
   }
 
-  .social-link:before {
-    color: $gray-dark;
-    background-color: $white;
-
-    &:hover {
-      color: $color-primary;
-      background-color: $white;
-    }
-  }
 }
 
 aside {

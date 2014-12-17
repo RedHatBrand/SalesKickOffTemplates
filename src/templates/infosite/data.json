@@ -2,7 +2,7 @@
   "title": "Event Microsite",
   "template": "preview.hbt",
   "data": {
-    "title": "Collaborate. Accelerate. Win.",
+    "headline": "Collaborate. Accelerate. Win.",
     "dates": "2 - 4 December 2014",
     "location": "Macau",
     "event-logo": "http://netengine-io-assets-production.s3.amazonaws.com/renders/attachments/000/000/669/original/full_color_reverse_standard.png",
@@ -13,6 +13,7 @@
     "author-signoff": "Best Regards,",
     "author-name": "The enablement team",
     "author-company": "Red Hat Asia Pacific",
+    "artwork-complexity": "10",
     "section": [
       {
         "name": "Lorem",
