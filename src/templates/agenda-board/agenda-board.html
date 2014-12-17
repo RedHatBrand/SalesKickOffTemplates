@@ -6,13 +6,13 @@ height: calc(597mm + 6mm);
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="//redhatbrand.github.io/RedHatTemplates/global-assets/stylesheets/general/tile-pattern-fill.css">
+    <link rel="stylesheet" href="//redhatbrand.github.io/RedHatTemplates/global-assets/stylesheets/general/tile-pattern-fill.css" />
     <link rel="stylesheet" href="<%=baseUrl%>/shared/stylesheets/main.css" />
     <link rel="stylesheet" href="<%=baseUrl%>/templates/agenda-board/assets/stylesheets/main.css" />
-    <style>
+    <style type="text/css">
       {{# background-image }}
         main {
-          background-image: 
+          background-image:
             url('<%=baseUrl%>/shared/images/grid-06-06.svg'),
             url('{{{ background-image }}}');
 
@@ -20,13 +20,13 @@ height: calc(597mm + 6mm);
           background-blend-mode: multiply;
           background-size: 100% auto, cover;
           background-position: center center, center center;
-          
+
           color: white;
         }
-      
+
         .logotext { fill: white; }
         h2, .time { color: #444 !important; }
-      {{/ background-image }} 
+      {{/ background-image }}
     </style>
   </head>
   <body style="width: {{ width }}mm; height: {{ height }}mm">
@@ -64,11 +64,11 @@ height: calc(597mm + 6mm);
         </section>
       </div>
     </main>
-    
+
     {{^ background-image }}
     <script src="<%=baseUrl%>/shared/javascripts/artwork.js"></script>
     {{/ background-image }}
-    
+
     <script src="//redhatbrand.github.io/RedHatPatterns/red-hat-patterns.js"></script>
   </body>
 </html>

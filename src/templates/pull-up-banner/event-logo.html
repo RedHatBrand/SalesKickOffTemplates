@@ -6,13 +6,13 @@ height: calc(2000mm + 6mm);
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="//redhatbrand.github.io/RedHatTemplates/global-assets/stylesheets/general/tile-pattern-fill.css">
+    <link rel="stylesheet" href="//redhatbrand.github.io/RedHatTemplates/global-assets/stylesheets/general/tile-pattern-fill.css" />
     <link rel="stylesheet" href="<%=baseUrl%>/shared/stylesheets/main.css" />
     <link rel="stylesheet" href="<%=baseUrl%>/templates/pull-up-banner/assets/stylesheets/main.css" />
-    <style>
+    <style type="text/css">
       {{# background-image }}
         main {
-          background-image: 
+          background-image:
             url('<%=baseUrl%>/shared/images/grid-06-06.svg'),
             url('{{{ background-image }}}');
 
@@ -20,12 +20,12 @@ height: calc(2000mm + 6mm);
           background-blend-mode: multiply;
           background-size: 240% auto, cover;
           background-position: center center, center center;
-          
+
           color: white;
         }
-      
+
         .logotext { fill: white; }
-      {{/ background-image }} 
+      {{/ background-image }}
     </style>
   </head>
   <body style="width: {{ width }}mm; height: {{ height }}mm">
