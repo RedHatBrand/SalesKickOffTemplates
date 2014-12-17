@@ -392,7 +392,7 @@ main {
 #content {
   margin: 0;
   position: absolute;
-  top: 50%;
+  top: 45%;
   left: 50%;
   min-width: 50%;
   -webkit-transform: translate(-50%, -50%);
@@ -612,6 +612,9 @@ main {
     width: 40%; }
 
 @media all and (orientation: portrait) {
+  #content {
+    top: 50%; }
+
   .corner-shapes-bottom-right {
     width: 80%; }
  }
