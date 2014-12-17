@@ -6,11 +6,10 @@ height: calc(597mm + 6mm);
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel='stylesheet' href='http://redhatbrand.github.io/RedHatTemplates/global-assets/stylesheets/print/crop-marks.css' />
-    <link rel="stylesheet" href="//redhatbrand.github.io/RedHatTemplates/global-assets/stylesheets/general/tile-pattern-fill.css">
+    <link rel="stylesheet" href="//redhatbrand.github.io/RedHatTemplates/global-assets/stylesheets/general/tile-pattern-fill.css" />
     <link rel="stylesheet" href="<%=baseUrl%>/shared/stylesheets/main.css" />
     <link rel="stylesheet" href="<%=baseUrl%>/templates/generic-resizeable-print/assets/stylesheets/main.css" />
-    <style>
+    <style type='text/css'>
       {{# background-image }}
         main {
           background-image:
@@ -29,7 +28,7 @@ height: calc(597mm + 6mm);
       {{/ background-image }}
     </style>
   </head>
-  <body style="width: {{ width }}mm; height: {{ height }}mm">
+  <body width="{{ width }}mm" height="{{ height }}mm" style="width: {{width}}mm; height: {{height}}mm;">
     {{^ background-image }}
     <div id="artwork"></div>
     {{/ background-image }}
@@ -50,14 +49,9 @@ height: calc(597mm + 6mm);
           <img src="<%=baseUrl%>/shared/images/rh-logo-black.svg" />
         </div>
       </div>
-
-      <div class='crop-mark top-left' style="width: 6mm; height: 6mm"></div>
-      <div class='crop-mark top-right' style="width: 6mm; height: 6mm"></div>
-      <div class='crop-mark bottom-left' style="width: 6mm; height: 6mm"></div>
-      <div class='crop-mark bottom-right' style="width: 6mm; height: 6mm"></div>
     </main>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="<%=baseUrl%>/shared/javascripts/jquery.splitlines.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="<%=baseUrl%>/shared/javascripts/jquery.splitlines.js"></script>
 
     {{#artwork-complexity}}
     <script type="text/javascript">
@@ -66,16 +60,9 @@ height: calc(597mm + 6mm);
     {{/artwork-complexity}}
 
     {{^ background-image }}
-    <script src="<%=baseUrl%>/shared/javascripts/artwork.js"></script>
+    <script type="text/javascript" src="<%=baseUrl%>/shared/javascripts/artwork.js"></script>
     {{/ background-image }}
 
-    <script src="//redhatbrand.github.io/RedHatPatterns/red-hat-patterns.js"></script>
-    <script>
-      $('.data-lining').splitLines({
-          tag: '<span class="line">',
-          width: 200,
-          keepHtml: true
-      });
-    </script>
+    <script type="text/javascript" src="//redhatbrand.github.io/RedHatPatterns/red-hat-patterns.js"></script>
   </body>
 </html>

@@ -113,14 +113,13 @@ body {
 
 main {
   position: absolute;
-  top: 3mm;
-  bottom: 3mm;
-  left: 3mm;
-  right: 3mm;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   margin: 0;
+  overflow: hidden;
   background-image: radial-gradient(ellipse at 50% 50%, rgba($color-rh-white, 0.75) 0%, rgba($color-rh-white, 0.75) 25%, rgba($color-rh-white, 0.0001) 100%);
-
-  .crop-mark { margin: 0; }
 }
 
 
