@@ -380,14 +380,15 @@ body {
 
 main {
   position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
+  top: 3mm;
+  bottom: 3mm;
+  left: 3mm;
+  right: 3mm;
   margin: 0;
-  overflow: hidden;
   background-image: -webkit-radial-gradient(50% 50%, ellipse, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0.75) 25%, rgba(255, 255, 255, 0.0001) 100%);
   background-image: radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0.75) 25%, rgba(255, 255, 255, 0.0001) 100%); }
+  main .crop-mark {
+    margin: 0; }
 
 #content {
   margin: 0;
