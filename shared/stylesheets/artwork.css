@@ -278,6 +278,10 @@ pre {
     -webkit-transform: translate3d(-100%, -50%, 0) skewX(-45deg);
     transform: translate3d(-100%, -50%, 0) skewX(-45deg);
     margin: 0; }
+    #artwork .artwork-shape:nth-child(even) {
+      background-color: white;
+      background-image: none !important;
+      border-right: 0.1em solid rgba(255, 255, 255, 0.7); }
   #artwork .skew-animate-in {
     -webkit-transform: translate3d(-50%, -50%, 0) skewX(-45deg);
     transform: translate3d(-50%, -50%, 0) skewX(-45deg);

@@ -16,21 +16,24 @@
           background-blend-mode: multiply;
           background-size: 105% auto, cover;
           background-position: center center, center center;
-
           color: white;
         }
 
         .logotext { fill: white; }
       {{/ background-image }}
+
+      {{artwork-option}}
     </style>
+    {{{colormode}}}
   </head>
-  <body width="{{ width }}mm" height="{{ height }}mm" style="width: {{width}}mm; height: {{height}}mm;">
+  <body style="width: {{ width }}{{unit}}; height: {{ height }}{{unit}}" width="{{ width }}{{unit}}" height="{{ height }}{{unit}}">
     {{^ background-image }}
+    <div class="overlay"></div>
     <div id="artwork"></div>
     {{/ background-image }}
     <main>
       <div id="content" class='large-content'>
-        <div class="brand">
+        <div class="brand sko">
           <svg class="sko-logo logo line-icon" width="440" viewBox="0 0 440 128" height="128">
   <g class="logomark">
     <path style="fill:#08a8e5; " d="m 106.25906,6.5174789 -101.2590608,0 0,101.4567711 101.2590608,0.16476 z"></path>
@@ -66,19 +69,26 @@
         </div>
       </div>
     </main>
+
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="//redhatbrand.github.io/SalesKickOffTemplates/shared/javascripts/jquery.splitlines.js"></script>
 
-    {{#artwork-complexity}}
-    <script type="text/javascript">
-      window.redhatArtComplexity = {{ artwork-complexity }};
-    </script>
-    {{/artwork-complexity}}
-
     {{^ background-image }}
+    <script type="text/javascript">
+      window.redhatArtComplexity = {{ artwork-complexity }}
+    </script>
+
     <script type="text/javascript" src="//redhatbrand.github.io/SalesKickOffTemplates/shared/javascripts/artwork.js"></script>
     {{/ background-image }}
 
     <script type="text/javascript" src="//redhatbrand.github.io/RedHatPatterns/red-hat-patterns.js"></script>
+
+    <script type="text/javascript">
+      $('.data-lining').splitLines({
+        tag: '<span class="line">',
+        width: 200,
+        keepHtml: true
+      });
+    </script>
   </body>
 </html>
