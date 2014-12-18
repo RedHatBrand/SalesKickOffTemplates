@@ -7,6 +7,8 @@
     body {
       margin: 0;
       background-color: lightgrey;
+      font-family: monospace;
+      text-transform: uppercase;
     }
     article {
       text-align: center;
@@ -14,10 +16,23 @@
     }
     .preview {
       display: inline-block;
+      position: relative;
       vertical-align: top;
       margin: 0.5em;
       box-shadow: 0 0.125em 0.125em 0 rgba(0, 0, 0, 0.125);
     }
+
+    label {
+      position: absolute;
+      top: 0.25em;
+      left: 0.25em;
+      line-height: 1;
+      opacity: 0;
+      transition: opacity .15s ease;
+    }
+
+    .preview:hover label { opacity: .5; }
+
     .preview-frame { border: 0; }
     a.home-link {
       position: fixed;
@@ -28,8 +43,6 @@
       color: white;
       text-decoration: none;
       border-top-right-radius: 3px;
-      font-family: monospace;
-      text-transform: uppercase;
       opacity: .25;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
@@ -47,6 +60,7 @@
   <body>
     <article>
       <div class='preview' style='height: 152.4mm; width: 101.6mm'>
+        <label>templates/attendee/lanyard/lanyard.html</label>
         <iframe class='preview-frame' data-xml-url="//redhatbrand.github.io/SalesKickOffTemplates/templates/attendee/lanyard/lanyard.html" height='100%' width='100%'></iframe>
       </div>
       <div id="data" data-template-data="{&quot;year&quot;:&quot;FY14&quot;,&quot;width&quot;:&quot;101.6&quot;,&quot;height&quot;:&quot;152.4&quot;,&quot;name&quot;:&quot;Brad Parker&quot;,&quot;company&quot;:&quot;NetEngine&quot;,&quot;position&quot;:&quot;Designer / Front-end Developer&quot;,&quot;background-image&quot;:&quot;&quot;}"></div>

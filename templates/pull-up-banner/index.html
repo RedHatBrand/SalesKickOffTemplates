@@ -7,6 +7,8 @@
     body {
       margin: 0;
       background-color: lightgrey;
+      font-family: monospace;
+      text-transform: uppercase;
     }
     article {
       text-align: center;
@@ -14,10 +16,23 @@
     }
     .preview {
       display: inline-block;
+      position: relative;
       vertical-align: top;
       margin: 0.5em;
       box-shadow: 0 0.125em 0.125em 0 rgba(0, 0, 0, 0.125);
     }
+
+    label {
+      position: absolute;
+      top: 0.25em;
+      left: 0.25em;
+      line-height: 1;
+      opacity: 0;
+      transition: opacity .15s ease;
+    }
+
+    .preview:hover label { opacity: .5; }
+
     .preview-frame { border: 0; }
     a.home-link {
       position: fixed;
@@ -28,8 +43,6 @@
       color: white;
       text-decoration: none;
       border-top-right-radius: 3px;
-      font-family: monospace;
-      text-transform: uppercase;
       opacity: .25;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
@@ -47,12 +60,15 @@
   <body>
     <article>
       <div class='preview' style='height: calc(2000mm + 6mm);; width: calc(850mm + 6mm);'>
+        <label>templates/pull-up-banner/event-logo.html</label>
         <iframe class='preview-frame' data-xml-url="//redhatbrand.github.io/SalesKickOffTemplates/templates/pull-up-banner/event-logo.html" height='100%' width='100%'></iframe>
       </div>
       <div class='preview' style='height: calc(2000mm + 6mm);; width: calc(850mm + 6mm);'>
+        <label>templates/pull-up-banner/headline.html</label>
         <iframe class='preview-frame' data-xml-url="//redhatbrand.github.io/SalesKickOffTemplates/templates/pull-up-banner/headline.html" height='100%' width='100%'></iframe>
       </div>
       <div class='preview' style='height: calc(2000mm + 6mm);; width: calc(850mm + 6mm);'>
+        <label>templates/pull-up-banner/redhat-logo.html</label>
         <iframe class='preview-frame' data-xml-url="//redhatbrand.github.io/SalesKickOffTemplates/templates/pull-up-banner/redhat-logo.html" height='100%' width='100%'></iframe>
       </div>
       <div id="data" data-template-data="{&quot;region&quot;:&quot;Asia Pacific&quot;,&quot;year&quot;:&quot;FY14&quot;,&quot;width&quot;:&quot;856&quot;,&quot;height&quot;:&quot;2006&quot;,&quot;headline&quot;:&quot;Collaborate. Accelerate. Win.&quot;,&quot;background-image&quot;:&quot;&quot;}"></div>
