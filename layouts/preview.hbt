@@ -7,6 +7,8 @@
     body {
       margin: 0;
       background-color: lightgrey;
+      font-family: monospace;
+      text-transform: uppercase;
     }
     article {
       text-align: center;
@@ -14,10 +16,23 @@
     }
     .preview {
       display: inline-block;
+      position: relative;
       vertical-align: top;
       margin: 0.5em;
       box-shadow: 0 0.125em 0.125em 0 rgba(0, 0, 0, 0.125);
     }
+
+    label {
+      position: absolute;
+      top: 0.25em;
+      left: 0.25em;
+      line-height: 1;
+      opacity: 0;
+      transition: opacity .15s ease;
+    }
+
+    .preview:hover label { opacity: .5; }
+
     .preview-frame { border: 0; }
     a.home-link {
       position: fixed;
@@ -28,8 +43,6 @@
       color: white;
       text-decoration: none;
       border-top-right-radius: 3px;
-      font-family: monospace;
-      text-transform: uppercase;
       opacity: .25;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
@@ -48,6 +61,7 @@
     <article>
       {{#each this.siblings}}
       <div class='preview' style='height: {{ this.height }}; width: {{ this.width  }}'>
+        <label>{{this.url}}</label>
         <iframe class='preview-frame' data-xml-url="<%=baseUrl%>/{{this.url}}" height='100%' width='100%'></iframe>
       </div>
       {{/each}}
