@@ -111,6 +111,50 @@ body {
   }
 }
 
+.overlay {
+  display: none;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: #d00;
+  z-index: 1;
+  -webkit-blend-mode: multiply;
+  mix-blend-mode: multiply;
+}
+
+
+// Themes
+
+.red {
+  .overlay {
+    display: block;
+    background-color: #d00;
+  }
+
+  .logotext, .logotype,
+  h1, h2, h3, text, p, tspan {
+    color: #fff;
+    fill: #fff !important;
+  }
+}
+
+.silver {
+  .overlay {
+    display: block;
+    background-color: #fff;
+    opacity: .5;
+  }
+}
+
+.full-height {
+  .artwork-shape {
+    top: 0 !important;
+    bottom: 0 !important;
+    height: 200% !important;
+  }
+}
+
+
 main {
   position: absolute;
   top: 0;
@@ -119,7 +163,7 @@ main {
   right: 0;
   margin: 0;
   overflow: hidden;
-  background-image: radial-gradient(ellipse at 50% 50%, rgba($color-rh-white, 0.75) 0%, rgba($color-rh-white, 0.75) 25%, rgba($color-rh-white, 0.0001) 100%);
+  background-image: radial-gradient(ellipse at 50% 50%, rgba($color-rh-white, 0.75) 0%, rgba($color-rh-white, 0.0001) 100%);
 }
 
 
@@ -132,11 +176,46 @@ main {
   transform: translate(-50%,-50%);
   max-width: 80%;
   z-index: 20;
+
+  &.middle-large { top: 50%; }
 }
 
 .sko-logo {
   width: 100%;
   height: 100%;
+}
+
+.sko-logo-center {
+  width: 120%;
+  margin-left: -10%;
+
+  .sko-logo { width: 135%; }
+}
+
+.rh-logo {
+  z-index: 20;
+  margin: 0;
+}
+
+.redhat-logo {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  z-index: 20;
+}
+
+.top-left-logo {
+  position: absolute;
+  z-index: 10;
+  top: 5%;
+  left: 5%;
+  max-width: 15%;
+  min-width: 10%;
+}
+
+.headline h1 {
+  border-top: .1em solid;
+  padding-top: .5em;
 }
 
 .logotext {
@@ -276,47 +355,6 @@ main {
 
   .corner-shapes-bottom-right {
     width: 80%;
-  }
-}
-
-
-@media screen and (min-aspect-ratio: 16/9) {
-
-  #content {
-    transform: translate(-50%, -50%) scale(.75);
-  }
-
-  .corner-shapes-bottom-right .corner-shape-bottom-right-logo {
-    right: 1.5em;
-    bottom: 1.5em;
-    width: 30%;
-  }
-}
-
-
-@media screen and (min-aspect-ratio: 3/1) {
-
-  #content {
-    transform: translate(-50%, -50%) scale(.5);
-  }
-
-  .corner-shapes-bottom-right .corner-shape-bottom-right-logo {
-    width: 25%;
-    bottom: 1em;
-  }
-}
-
-
-@media screen and (min-aspect-ratio: 4/1) {
-
-  #content {
-    transform: translate(-50%, -50%) scale(.33);
-  }
-
-  .corner-shapes-bottom-right .corner-shape-bottom-right-logo {
-    width: 15%;
-    bottom: .5em;
-    right: 1em;
   }
 }
 

@@ -3,7 +3,9 @@
 
 html, :root { font-size: 24pt; }
 
-.headline { color: $color-rh-white; }
+.headline {
+  color: $color-rh-white;
+}
 
 .brand.sko {
   position: relative;

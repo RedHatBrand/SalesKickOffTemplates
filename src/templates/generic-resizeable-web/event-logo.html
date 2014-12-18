@@ -30,6 +30,7 @@ height: calc(100vh - 2em);
   </head>
   <body style="width: {{ width }}vw; height: {{ height }}vh">
     {{^ background-image }}
+    <div class="overlay"></div>
     <div id="artwork"></div>
     {{/ background-image }}
     <main>

@@ -1,6 +1,6 @@
 ---
-width: calc(210mm + 6mm);
-height: calc(148mm + 6mm);
+width: 1003px;
+height: 279px;
 ---
 
 <!DOCTYPE html>
@@ -8,7 +8,7 @@ height: calc(148mm + 6mm);
   <head>
     <link rel="stylesheet" href="//redhatbrand.github.io/RedHatTemplates/global-assets/stylesheets/general/tile-pattern-fill.css" />
     <link rel="stylesheet" href="<%=baseUrl%>/shared/stylesheets/main.css" />
-    <link rel="stylesheet" href="<%=baseUrl%>/templates/speaker/thank-you/assets/stylesheets/main.css" />
+    <link rel="stylesheet" href="<%=baseUrl%>/templates/email-header/assets/stylesheets/main.css" />
     <style type="text/css">
       {{# background-image }}
         main {
@@ -28,34 +28,36 @@ height: calc(148mm + 6mm);
       {{/ background-image }}
     </style>
   </head>
-  <body style="width: {{ width }}mm; height: {{ height }}mm">
+
+  <body style="width: 1003px; height: 279px;" class="{{artwork-option}} {{{colormode}}}">
     {{^ background-image }}
     <div class="overlay"></div>
     <div id="artwork"></div>
     {{/ background-image }}
     <main>
       <div id="content">
-        <div class="brand sko"><% include ../../../shared/images/event-logo-lockup.svg %></div>
-        <article>
-          <h2>Welcome!</h2>
-          <h1 class="">{{{ name }}}</h1>
-        </article>
+        <% include ../../shared/images/event-logo-lockup.svg %>
       </div>
 
       <div class="corner-shapes-bottom-right">
         <div class="corner-shape-solid-triangle"></div>
         <div data-red-hat-pattern="corporate" class="pattern-red corner-shape-pattern"></div>
         <div class="corner-shape-bottom-right-logo rh-logo">
-          <img src="<%=baseUrl%>/shared/images/rh-logo-black.svg" />
+          <% include ../../shared/images/rh-logo-black.svg %>
         </div>
       </div>
     </main>
 
+    {{#artwork-complexity}}
+    <script type="text/javascript">
+      window.redhatArtComplexity = {{ artwork-complexity }};
+    </script>
+    {{/artwork-complexity}}
+
     {{^ background-image }}
-    <script src="<%=baseUrl%>/shared/javascripts/artwork.js"></script>
+    <script type="text/javascript" src="<%=baseUrl%>/shared/javascripts/artwork.js"></script>
     {{/ background-image }}
 
-    <script src="//redhatbrand.github.io/RedHatPatterns/red-hat-patterns.js"></script>
+    <script type="text/javascript" src="//redhatbrand.github.io/RedHatPatterns/red-hat-patterns.js"></script>
   </body>
 </html>
-

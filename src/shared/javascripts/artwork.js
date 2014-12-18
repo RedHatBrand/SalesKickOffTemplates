@@ -60,16 +60,16 @@
     div.style.opacity = randomArrayElem([0.25, 0.5, 0.75]);
     div.style.animationDuration = getRandomInt(1,3).toString() + 's';
     canvas.appendChild(div);
-    div.classList.add('skew-animate-in');
+    // div.classList.add('skew-animate-in');
   }
 
   function addPattern () {
     var div = document.createElement('div');
-    div.setAttribute('data-red-hat-pattern', 'corporate');
+    div.setAttribute('data-red-hat-pattern', global.redhatBrandPattern);
     div.classList.add('artwork-pattern');
     div.style.animationDuration = getRandomInt(1,3).toString() + 's';
     canvas.appendChild(div);
-    div.classList.add('rotate-animate-in');
+    // div.classList.add('rotate-animate-in');
   }
 
   function populateCanvas (complexity) {

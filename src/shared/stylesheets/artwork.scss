@@ -4,21 +4,21 @@
 #artwork {
   position: absolute;
   left: 0; right: 0;
-  top: 0; bottom: 0; 
+  top: 0; bottom: 0;
   overflow: hidden;
   margin: 0;
   background-image: radial-gradient(ellipse at 50% 50%, rgba($color-rh-white, 0.75) 0%, rgba($color-rh-white, 0.75) 50%, rgba($color-rh-white, 0.0001) 100%);
-  
+
   .artwork-inner {
     position: relative;
-    
+
     &:before {
       content: '';
       display: block;
       padding-bottom: 100%;
     }
   }
-  
+
 
   * { margin: 0; }
 
@@ -29,6 +29,12 @@
     transform-origin: 50% 50%;
     transform: translate3d(-100%,-50%,0) skewX(-45deg);
     margin: 0;
+
+    &:nth-child(even) {
+      background-color: white;
+      background-image: none !important;
+      border-right: .1em solid rgba(white, 0.7);
+    }
   }
 
   .skew-animate-in {
@@ -51,12 +57,12 @@
     transform: translate(-50%,-50%) rotate(45deg);
     height: 150%;
     width: 7%;
-    
+
     svg {
       position: absolute;
       width: 100%;
       height: 100%;
-      stroke: lighten($color-rh-slate, 22.5%); 
+      stroke: lighten($color-rh-slate, 22.5%);
       stroke-width: 0.5;
     }
   }
@@ -86,6 +92,6 @@
   }
   100% {
     opacity: 0;
-  } 
+  }
 }
 

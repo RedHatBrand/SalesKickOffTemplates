@@ -1,0 +1,17 @@
+
+#content {
+  top: 50%;
+  left: 2em;
+  transform: translateY(-50%);
+  max-width: 80%;
+}
+
+.corner-shapes-bottom-right .corner-shape-bottom-right-logo {
+  height: 3.75em;
+  margin: 0;
+  width: 10em;
+  bottom: 1.5em;
+  right: 2.5em;
+
+  svg { height: 100%; }
+}

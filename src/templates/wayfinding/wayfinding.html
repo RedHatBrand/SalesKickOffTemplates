@@ -52,6 +52,7 @@ height: calc(597mm + 6mm);
   </head>
   <body style="width: {{ width }}mm; height: {{ height }}mm" class="{{ direction }}">
     {{^ background-image }}
+    <div class="overlay"></div>
     <div id="artwork"></div>
     {{/ background-image }}
     <main>

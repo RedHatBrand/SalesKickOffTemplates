@@ -30,6 +30,7 @@ height: 105mm;
   </head>
   <body style="width: {{ width }}mm; height: {{ height }}mm">
     {{^ background-image }}
+    <div class="overlay"></div>
     <div id="artwork"></div>
     {{/ background-image }}
     <main>
