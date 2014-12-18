@@ -178,6 +178,27 @@ main {
   z-index: 20;
 
   &.middle-large { top: 50%; }
+
+  &.fy16-container {
+    width: 50vw;
+    min-width: 0;
+    font-size: 2vw;
+
+    .headline h1 { border-top-width: .15em; }
+
+    .fy16 {
+      font-weight: 700;
+      letter-spacing: 0em;
+      font-size: 11em;
+      line-height: 0.8;
+    }
+
+    .sko-logo text,
+    .sko-logo tspan,
+    .sko-logo .logomark path {
+        fill: #444 !important;
+    }
+  }
 }
 
 .sko-logo {
@@ -188,8 +209,6 @@ main {
 .sko-logo-center {
   width: 120%;
   margin-left: -10%;
-
-  .sko-logo { width: 135%; }
 }
 
 .rh-logo {
@@ -213,9 +232,12 @@ main {
   min-width: 10%;
 }
 
-.headline h1 {
-  border-top: .1em solid;
-  padding-top: .5em;
+.headline {
+  h1 {
+    border-top: .1em solid;
+    padding-top: .5em;
+    line-height: 1em;
+  }
 }
 
 .logotext {

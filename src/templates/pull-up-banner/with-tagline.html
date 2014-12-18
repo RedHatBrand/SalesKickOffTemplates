@@ -31,10 +31,10 @@ height: 1000px;
       @media screen and (max-height: {{#divide}}{{width}}/2{{/divide}}{{unit}}) {
         #content { transform: translate(-50%, -50%) scale(.75); }
 
-        .top-left-logo {
-          top: 2em;
-          left: 2em;
-          max-width: 12.5%;
+        .corner-shapes-bottom-right .corner-shape-bottom-right-logo {
+          right: 1.5em;
+          bottom: 1.5em;
+          width: 30%;
         }
       }
 
@@ -42,13 +42,22 @@ height: 1000px;
       @media screen and (max-height: {{#divide}}{{width}}/3{{/divide}}{{unit}}) {
         #content { transform: translate(-50%, -50%) scale(.5); }
 
-        .top-left-logo {
-          top: 1.5em;
-          left: 1.5em;
-          max-width: 10%;
+        .corner-shapes-bottom-right .corner-shape-bottom-right-logo {
+          width: 25%;
+          bottom: 1em;
         }
       }
 
+      /* Aspect Ratio 4/1 */
+      @media screen and (max-height: {{#divide}}{{width}}/4{{/divide}}{{unit}}) {
+        #content { transform: translate(-50%, -50%) scale(.33); }
+
+        .corner-shapes-bottom-right .corner-shape-bottom-right-logo {
+          width: 15%;
+          bottom: .5em;
+          right: 1em;
+        }
+      }
     </style>
   </head>
 
@@ -58,8 +67,11 @@ height: 1000px;
     <div id="artwork"></div>
     {{/ background-image }}
     <main>
-      <div id="content" class="middle-large">
-        <div class="sko-logo-center"><% include ../../shared/images/event-logo-lockup.svg %></div>
+      <div id="content">
+        <% include ../../shared/images/event-logo-lockup.svg %>
+        <div class="headline">
+          <h1>{{{ headline }}}</h1>
+        </div>
       </div>
 
       {{^ background-image }}

@@ -1,6 +1,6 @@
 ---
-width: calc(850mm + 6mm);
-height: calc(2000mm + 6mm);
+width: 500px;
+height: 1000px;
 ---
 
 <!DOCTYPE html>
@@ -28,16 +28,32 @@ height: calc(2000mm + 6mm);
       {{/ background-image }}
     </style>
   </head>
-  <body style="width: {{ width }}mm; height: {{ height }}mm">
+  <body style="width: {{ width }}{{unit}}; height: {{ height }}{{unit}}" class="{{artwork-option}} {{{colormode}}}">
     {{^ background-image }}
     <div class="overlay"></div>
     <div id="artwork"></div>
     {{/ background-image }}
     <main>
-      <div id="content">
+      <div id="content" class="middle-large">
         <% include ../../shared/images/rh-logo-include.svg %>
       </div>
+
+      {{^ background-image }}
+      <div class="corner-shapes-bottom-right redhat">
+        <div class="corner-shape-solid-triangle"></div>
+        <div data-red-hat-pattern="corporate" class="pattern-red corner-shape-pattern"></div>
+        <div class="corner-shape-bottom-right-logo rh-logo">
+          <% include ../../shared/images/event-logo-lockup.svg %>
+        </div>
+      </div>
+      {{/ background-image }}
     </main>
+
+    {{#artwork-complexity}}
+    <script type="text/javascript">
+      window.redhatArtComplexity = {{ artwork-complexity }};
+    </script>
+    {{/artwork-complexity}}
 
     {{^ background-image }}
     <script src="<%=baseUrl%>/shared/javascripts/artwork.js"></script>
