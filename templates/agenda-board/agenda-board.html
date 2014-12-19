@@ -25,7 +25,7 @@
       {{/ background-image }}
     </style>
   </head>
-  <body style="width: {{ width }}mm; height: {{ height }}mm">
+  <body style="width: {{ width }}{{unit}}; height: {{ height }}{{unit}}" class="{{ direction }} {{artwork-option}} {{colormode}}">
     {{^ background-image }}
     <div class="overlay"></div>
     <div id="artwork"></div>
@@ -67,7 +67,6 @@
                 {{#schedule}}
                 <tr>
                   <td class="time">{{time}}</td>
-
                   <td>
                     <h3>{{activity}}</h3>
                     <p>{{duration}}</p>
@@ -81,6 +80,12 @@
         </section>
       </div>
     </main>
+
+    {{#artwork-complexity}}
+    <script type="text/javascript">
+      window.redhatArtComplexity = {{ artwork-complexity }};
+    </script>
+    {{/artwork-complexity}}
 
     {{^ background-image }}
     <script src="//redhatbrand.github.io/SalesKickOffTemplates/shared/javascripts/artwork.js"></script>

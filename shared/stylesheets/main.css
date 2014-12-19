@@ -388,6 +388,10 @@ body {
   -webkit-blend-mode: multiply;
   mix-blend-mode: multiply; }
 
+.logo {
+  position: relative;
+  z-index: 20; }
+
 .red .overlay {
   display: block;
   background-color: #d00; }

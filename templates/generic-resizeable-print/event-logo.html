@@ -24,7 +24,7 @@
       {{/ background-image }}
     </style>
   </head>
-  <body width="{{ width }}mm" height="{{ height }}mm" style="width: {{width}}mm; height: {{height}}mm;">
+  <body style="width: {{ width }}{{unit}}; height: {{ height }}{{unit}}" class="{{ direction }} {{artwork-option}} {{colormode}}">
     {{^ background-image }}
     <div class="overlay"></div>
     <div id="artwork"></div>

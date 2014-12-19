@@ -7,46 +7,32 @@
     <link rel="stylesheet" href="//redhatbrand.github.io/SalesKickOffTemplates/templates/wayfinding/assets/stylesheets/main.css" />
 
     <style type="text/css">
-      .arrow {
-        position: absolute;
-        left: 0;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        background-size: contain;
-        background-repeat: no-repeat;
-        mix-blend-mode: multiply;
-      }
+      .arrow { background-image: url(//redhatbrand.github.io/SalesKickOffTemplates/templates/wayfinding/assets/images/arrow.svg); }
 
       {{# background-image }}
         main {
           background-image:
-            url(//redhatbrand.github.io/SalesKickOffTemplates/templates/wayfinding/assets/images/arrow-right.svg),
+            url('//redhatbrand.github.io/SalesKickOffTemplates/shared/images/grid-06-06.svg'),
             url('{{{ background-image }}}');
 
           background-repeat: no-repeat;
           background-blend-mode: multiply;
-          background-size: auto 100%, cover;
-          background-position: left center, center center;
+          background-size: cover;
+          background-position: center center, center center;
 
           color: white;
         }
 
-        .logotext { fill: white; }
-      {{/ background-image }}
-
-      {{^ background-image }}
         .arrow {
-          background-image: url(//redhatbrand.github.io/SalesKickOffTemplates/templates/wayfinding/assets/images/arrow-right.svg);
-          background-repeat: no-repeat;
-          color: white;
+          background-image: url(//redhatbrand.github.io/SalesKickOffTemplates/templates/wayfinding/assets/images/arrow-white.svg);
+          opacity: .75;
         }
 
         .logotext { fill: white; }
       {{/ background-image }}
     </style>
   </head>
-  <body style="width: {{ width }}mm; height: {{ height }}mm" class="{{ direction }}">
+  <body style="width: {{ width }}{{unit}}; height: {{ height }}{{unit}}" class="{{ direction }} {{artwork-option}} {{colormode}}">
     {{^ background-image }}
     <div class="overlay"></div>
     <div id="artwork"></div>

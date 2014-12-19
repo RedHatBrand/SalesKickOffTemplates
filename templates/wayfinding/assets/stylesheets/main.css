@@ -255,6 +255,9 @@ html, :root {
 
 .headline {
   color: #ffffff; }
+  .headline h1 {
+    border: 0;
+    padding: 0; }
 
 .brand.sko {
   position: relative;
@@ -271,3 +274,49 @@ html, :root {
 
 .right #content {
   left: 3em; }
+
+.arrow {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-size: contain;
+  background-repeat: no-repeat;
+  mix-blend-mode: multiply;
+  z-index: 1; }
+
+.left .arrow {
+  background-size: 275% 108%;
+  background-position: 0 50%; }
+.left #content {
+  left: auto;
+  right: 3em; }
+  .left #content .line {
+    float: right; }
+
+.up .arrow, .down .arrow {
+  background-size: 204.25% 150%; }
+.up #content, .down #content {
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  text-align: center;
+  max-width: 55%; }
+  .up #content .line, .down #content .line {
+    float: none;
+    display: inline-block;
+    white-space: nowrap;
+    margin: 0.025em auto; }
+
+.up .arrow {
+  background-position: 0 -50%; }
+.up #content {
+  top: 25%; }
+
+.down .arrow {
+  background-position: 0 180%; }
+.down #content {
+  top: auto;
+  bottom: 25%; }
