@@ -27,8 +27,8 @@
   </head>
   <body style="width: {{ width }}{{unit}}; height: {{ height }}{{unit}}" class="{{ direction }} {{artwork-option}} {{colormode}}">
     {{^ background-image }}
-    <div class="overlay"></div>
     <div id="artwork"></div>
+    <div class="overlay"></div>
     {{/ background-image }}
     <main>
       <div id="content">
@@ -58,10 +58,10 @@
         <section class='section-agenda' id='agenda'>
           <div class='container'>
             <h1>Agenda</h1>
-            {{#day}}
+            {{#date}}
             <h2>{{ date }}</h2>
-            {{/day}}
-            {{#day}}
+            {{/date}}
+            {{#date}}
             <div class='time-table-{{ day-name }}'>
               <table class="calendar">
                 {{#schedule}}
@@ -75,7 +75,7 @@
                 {{/schedule}}
               </table>
             </div>
-            {{/day}}
+            {{/date}}
           </div>
         </section>
       </div>

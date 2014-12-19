@@ -383,10 +383,7 @@ body {
   position: absolute;
   height: 100%;
   width: 100%;
-  background-color: #d00;
-  z-index: 1;
-  -webkit-blend-mode: multiply;
-  mix-blend-mode: multiply; }
+  z-index: 1; }
 
 .logo {
   position: relative;
@@ -394,7 +391,9 @@ body {
 
 .red .overlay {
   display: block;
-  background-color: #d00; }
+  background-color: #d00;
+  -webkit-blend-mode: multiply;
+  mix-blend-mode: multiply; }
 .red .logotext, .red .logotype, .red h1, .red h2, .red h3, .red text, .red p, .red tspan {
   color: #fff;
   fill: #fff !important; }
