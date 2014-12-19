@@ -116,10 +116,8 @@ body {
   position: absolute;
   height: 100%;
   width: 100%;
-  background-color: #d00;
   z-index: 1;
-  -webkit-blend-mode: multiply;
-  mix-blend-mode: multiply;
+  margin: 0;
 }
 
 .logo {
@@ -134,6 +132,8 @@ body {
   .overlay {
     display: block;
     background-color: #d00;
+    -webkit-blend-mode: multiply;
+    mix-blend-mode: multiply;
   }
 
   .logotext, .logotype,
