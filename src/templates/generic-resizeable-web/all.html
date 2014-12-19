@@ -1,6 +1,6 @@
 ---
 width: 500px;
-height: 1000px;
+height: 500px;
 ---
 
 <!DOCTYPE html>
@@ -8,28 +8,22 @@ height: 1000px;
   <head>
     <link rel="stylesheet" href="//redhatbrand.github.io/RedHatTemplates/global-assets/stylesheets/general/tile-pattern-fill.css" />
     <link rel="stylesheet" href="<%=baseUrl%>/shared/stylesheets/main.css" />
-    <link rel="stylesheet" href="<%=baseUrl%>/templates/pull-up-banner/assets/stylesheets/main.css" />
+    <link rel="stylesheet" href="<%=baseUrl%>/templates/generic-resizable-web/assets/stylesheets/main.css" />
     <style type="text/css">
-      {{# background-image }}
-        main {
-          background-image:
-            url('<%=baseUrl%>/shared/images/grid-06-06.svg'),
-            url('{{{ background-image }}}');
+      /* Aspect Ratio 2/1 */
+      @media screen and (max-height: {{width}}{{unit}}) {
+        #content { transform: translate(-50%, -50%) scale(.75); }
 
-          background-repeat: no-repeat;
-          background-blend-mode: multiply;
-          background-size: 100% auto, cover;
-          background-position: center center, center center;
-
-          color: white;
+        .corner-shapes-bottom-right .corner-shape-bottom-right-logo {
+          right: 1.5em;
+          bottom: 1.5em;
+          width: 30%;
         }
-
-        .logotext { fill: white; }
-      {{/ background-image }}
+      }
 
       /* Aspect Ratio 2/1 */
       @media screen and (max-height: {{#divide}}{{width}}/2{{/divide}}{{unit}}) {
-        #content { transform: translate(-50%, -50%) scale(.75); }
+        #content { transform: translate(-50%, -50%) scale(.5); }
 
         .corner-shapes-bottom-right .corner-shape-bottom-right-logo {
           right: 1.5em;
@@ -40,7 +34,7 @@ height: 1000px;
 
       /* Aspect Ratio 3/1 */
       @media screen and (max-height: {{#divide}}{{width}}/3{{/divide}}{{unit}}) {
-        #content { transform: translate(-50%, -50%) scale(.5); }
+        #content { transform: translate(-50%, -50%) scale(.333); }
 
         .corner-shapes-bottom-right .corner-shape-bottom-right-logo {
           width: 25%;
@@ -50,7 +44,7 @@ height: 1000px;
 
       /* Aspect Ratio 4/1 */
       @media screen and (max-height: {{#divide}}{{width}}/4{{/divide}}{{unit}}) {
-        #content { transform: translate(-50%, -50%) scale(.33); }
+        #content { transform: translate(-50%, -50%) scale(.25); }
 
         .corner-shapes-bottom-right .corner-shape-bottom-right-logo {
           width: 15%;
@@ -61,26 +55,26 @@ height: 1000px;
     </style>
   </head>
 
-  <body style="width: {{ width }}{{unit}}; height: {{ height }}{{unit}}" class="{{artwork-option}} {{colormode}}">
+  <body style="width: {{ width }}px; height: {{ height }}px" class="{{artwork-option}} {{colormode}}">
     {{^ background-image }}
     <div class="overlay"></div>
     <div id="artwork"></div>
     {{/ background-image }}
     <main>
       <div id="content">
-        <% include ../../shared/images/event-logo-lockup.svg %>
         <div class="headline">
+          <h2 class='fy16'>FY16</h2>
           <h1>{{{ headline }}}</h1>
         </div>
       </div>
+
+      <div class="sko-logo-container"><% include ../../shared/images/event-logo-lockup.svg %></div>
+      <div class="rh-logo-container"><% include ../../shared/images/rh-logo-include.svg %></div>
 
       {{^ background-image }}
       <div class="corner-shapes-bottom-right redhat">
         <div class="corner-shape-solid-triangle"></div>
         <div data-red-hat-pattern="corporate" class="pattern-red corner-shape-pattern"></div>
-        <div class="corner-shape-bottom-right-logo rh-logo">
-          <% include ../../shared/images/rh-logo-include.svg %>
-        </div>
       </div>
       {{/ background-image }}
     </main>

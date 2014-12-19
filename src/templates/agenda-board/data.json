@@ -4,6 +4,7 @@
     "year": "FY14",
     "width": "426",
     "height": "603",
+    "unit": "mm",
     "day": [
       {
         "date": "Dec 24, 2014",
@@ -26,6 +27,9 @@
         ]
       }
     ],
-    "background-image": ""
+    "background-image": "",
+    "artwork-complexity": 10,
+    "artwork-option": "fractals",
+    "colormode": "platinum"
   }
 }

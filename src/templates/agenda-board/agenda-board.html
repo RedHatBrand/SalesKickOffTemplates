@@ -1,6 +1,6 @@
 ---
-width: calc(420mm + 6mm);
-height: calc(597mm + 6mm);
+width: 426mm;
+height: 603mm;
 ---
 
 <!DOCTYPE html>
@@ -29,7 +29,7 @@ height: calc(597mm + 6mm);
       {{/ background-image }}
     </style>
   </head>
-  <body style="width: {{ width }}mm; height: {{ height }}mm">
+  <body style="width: {{ width }}{{unit}}; height: {{ height }}{{unit}}" class="{{ direction }} {{artwork-option}} {{colormode}}">
     {{^ background-image }}
     <div class="overlay"></div>
     <div id="artwork"></div>
@@ -51,7 +51,6 @@ height: calc(597mm + 6mm);
                 {{#schedule}}
                 <tr>
                   <td class="time">{{time}}</td>
-
                   <td>
                     <h3>{{activity}}</h3>
                     <p>{{duration}}</p>
@@ -65,6 +64,12 @@ height: calc(597mm + 6mm);
         </section>
       </div>
     </main>
+
+    {{#artwork-complexity}}
+    <script type="text/javascript">
+      window.redhatArtComplexity = {{ artwork-complexity }};
+    </script>
+    {{/artwork-complexity}}
 
     {{^ background-image }}
     <script src="<%=baseUrl%>/shared/javascripts/artwork.js"></script>

@@ -95,3 +95,44 @@
   80%   { transform: translate(0,1em);  opacity:0 }
   100%  { transform: translate(0,0);    opacity:1 }
 }
+
+
+.overlay {
+  display: none;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  margin: 0;
+  -webkit-blend-mode: multiply;
+  mix-blend-mode: multiply;
+}
+
+.red {
+  .overlay {
+    display: block;
+    background-color: #d00;
+  }
+
+  .logotext, .logotype,
+  h1, h2, h3, text, p, tspan {
+    color: #fff;
+    fill: #fff !important;
+  }
+}
+
+.silver {
+  .overlay {
+    display: block;
+    background-color: #fff;
+    opacity: .5;
+  }
+}
+
+.full-height {
+  .artwork-shape {
+    top: 0 !important;
+    bottom: 0 !important;
+    height: 200% !important;
+  }
+}

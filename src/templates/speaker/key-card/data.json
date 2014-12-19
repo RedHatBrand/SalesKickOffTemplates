@@ -3,9 +3,13 @@
     "year": "FY14",
     "width": "56.515",
     "height": "89.027",
+    "unit": "mm",
     "name": "Brad Parker",
     "company": "NetEngine",
     "position": "Designer / Front-end Developer",
-    "background-image": ""
+    "background-image": "",
+    "artwork-complexity": 10,
+    "artwork-option": "fractals",
+    "colormode": "platinum"
   }
 }

@@ -5,6 +5,11 @@ html, :root { font-size: 24pt; }
 
 .headline {
   color: $color-rh-white;
+
+  h1 {
+    border: 0;
+    padding: 0;
+  }
 }
 
 .brand.sko {
@@ -23,5 +28,66 @@ html, :root { font-size: 24pt; }
 .right {
   #content {
     left: 3em;
+  }
+}
+
+.arrow {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-size: contain;
+  background-repeat: no-repeat;
+  mix-blend-mode: multiply;
+  z-index: 1;
+}
+
+.left {
+  .arrow {
+    background-size: 275% 108%;
+    background-position: 0 50%;
+  }
+
+  #content {
+    left: auto;
+    right: 3em;
+
+    .line { float: right; }
+  }
+}
+
+
+.up, .down {
+
+  .arrow { background-size: 204.25% 150%; }
+
+  #content {
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    max-width: 55%;
+
+    .line {
+      float: none;
+      display: inline-block;
+      white-space: nowrap;
+      margin: .025em auto;
+    }
+  }
+}
+
+.up {
+  .arrow { background-position: 0 -50%; }
+
+  #content { top: 25%; }
+}
+
+.down {
+  .arrow { background-position: 0 180%; }
+
+  #content {
+    top: auto;
+    bottom: 25%;
   }
 }

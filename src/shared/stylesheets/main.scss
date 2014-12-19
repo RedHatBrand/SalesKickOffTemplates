@@ -122,6 +122,11 @@ body {
   mix-blend-mode: multiply;
 }
 
+.logo {
+  position: relative;
+  z-index: 20;
+}
+
 
 // Themes
 

@@ -2,13 +2,13 @@
   "data": {
     "region": "Asia Pacific",
     "year": "FY14",
-    "width": "2000",
-    "height": "500",
-    "unit": "px",
+    "width": "826",
+    "height": "603",
+    "unit": "mm",
     "headline": "Collaborate. Accelerate. Win.",
     "background-image": "",
     "artwork-complexity": "10",
-    "artwork-option": "full-height",
+    "artwork-option": "fractals",
     "colormode": "platinum"
   }
 }

@@ -1,6 +1,6 @@
 ---
-width: calc(420mm + 6mm);
-height: calc(597mm + 6mm);
+width: 426mm;
+height: 603mm;
 ---
 
 <!DOCTYPE html>
@@ -9,7 +9,7 @@ height: calc(597mm + 6mm);
     <link rel="stylesheet" href="//redhatbrand.github.io/RedHatTemplates/global-assets/stylesheets/general/tile-pattern-fill.css" />
     <link rel="stylesheet" href="<%=baseUrl%>/shared/stylesheets/main.css" />
     <link rel="stylesheet" href="<%=baseUrl%>/templates/generic-resizeable-print/assets/stylesheets/main.css" />
-    <style type='text/css'>
+    <style type="text/css">
       {{# background-image }}
         main {
           background-image:
@@ -18,61 +18,83 @@ height: calc(597mm + 6mm);
 
           background-repeat: no-repeat;
           background-blend-mode: multiply;
-          background-size: 105% auto, cover;
+          background-size: 100% auto, cover;
           background-position: center center, center center;
+
           color: white;
         }
 
         .logotext { fill: white; }
       {{/ background-image }}
 
-      {{artwork-option}}
+      /* Aspect Ratio 2/1 */
+      @media screen and (max-height: {{#divide}}{{width}}/2{{/divide}}{{unit}}) {
+        #content { transform: translate(-50%, -50%) scale(.75); }
+
+        .corner-shapes-bottom-right .corner-shape-bottom-right-logo {
+          right: 1.5em;
+          bottom: 1.5em;
+          width: 30%;
+        }
+      }
+
+      /* Aspect Ratio 3/1 */
+      @media screen and (max-height: {{#divide}}{{width}}/3{{/divide}}{{unit}}) {
+        #content { transform: translate(-50%, -50%) scale(.5); }
+
+        .corner-shapes-bottom-right .corner-shape-bottom-right-logo {
+          width: 25%;
+          bottom: 1em;
+        }
+      }
+
+      /* Aspect Ratio 4/1 */
+      @media screen and (max-height: {{#divide}}{{width}}/4{{/divide}}{{unit}}) {
+        #content { transform: translate(-50%, -50%) scale(.33); }
+
+        .corner-shapes-bottom-right .corner-shape-bottom-right-logo {
+          width: 15%;
+          bottom: .5em;
+          right: 1em;
+        }
+      }
     </style>
-    {{{colormode}}}
   </head>
-  <body style="width: {{ width }}{{unit}}; height: {{ height }}{{unit}}" width="{{ width }}{{unit}}" height="{{ height }}{{unit}}">
+
+  <body style="width: {{ width }}{{unit}}; height: {{ height }}{{unit}}" class="{{artwork-option}} {{colormode}}">
     {{^ background-image }}
     <div class="overlay"></div>
     <div id="artwork"></div>
     {{/ background-image }}
     <main>
-      <div id="content" class='large-content'>
-        <div class="brand sko">
-          <% include ../../shared/images/event-logo-lockup.svg %>
-        </div>
+      <div id="content">
+        <% include ../../shared/images/event-logo-lockup.svg %>
         <div class="headline">
-          <h1 class="">{{{ headline }}}</h1>
+          <h1>{{{ headline }}}</h1>
         </div>
       </div>
 
-      <div class="corner-shapes-bottom-right">
+      {{^ background-image }}
+      <div class="corner-shapes-bottom-right redhat">
         <div class="corner-shape-solid-triangle"></div>
         <div data-red-hat-pattern="corporate" class="pattern-red corner-shape-pattern"></div>
         <div class="corner-shape-bottom-right-logo rh-logo">
-          <img src="<%=baseUrl%>/shared/images/rh-logo-black.svg" />
+          <% include ../../shared/images/rh-logo-include.svg %>
         </div>
       </div>
+      {{/ background-image }}
     </main>
 
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script type="text/javascript" src="<%=baseUrl%>/shared/javascripts/jquery.splitlines.js"></script>
+    {{#artwork-complexity}}
+    <script type="text/javascript">
+      window.redhatArtComplexity = {{ artwork-complexity }};
+    </script>
+    {{/artwork-complexity}}
 
     {{^ background-image }}
-    <script type="text/javascript">
-      window.redhatArtComplexity = {{ artwork-complexity }}
-    </script>
-
-    <script type="text/javascript" src="<%=baseUrl%>/shared/javascripts/artwork.js"></script>
+    <script src="<%=baseUrl%>/shared/javascripts/artwork.js"></script>
     {{/ background-image }}
 
-    <script type="text/javascript" src="//redhatbrand.github.io/RedHatPatterns/red-hat-patterns.js"></script>
-
-    <script type="text/javascript">
-      $('.data-lining').splitLines({
-        tag: '<span class="line">',
-        width: 200,
-        keepHtml: true
-      });
-    </script>
+    <script src="//redhatbrand.github.io/RedHatPatterns/red-hat-patterns.js"></script>
   </body>
 </html>

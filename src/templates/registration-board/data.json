@@ -4,8 +4,12 @@
     "year": "FY14",
     "width": "426",
     "height": "603",
+    "unit": "mm",
     "text": "Company names that start with",
     "letter-range": "H-N",
-    "background-image": ""
+    "background-image": "",
+    "artwork-complexity": 10,
+    "artwork-option": "full-height",
+    "colormode": "silver"
   }
 }

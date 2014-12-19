@@ -4,8 +4,12 @@
     "year": "FY14",
     "width": "426",
     "height": "597",
+    "unit": "mm",
     "message": "This way to Asia Pacific's best event yet.",
-    "direction": "right",
-    "background-image": ""
+    "direction": "left",
+    "background-image": "",
+    "artwork-complexity": 20,
+    "artwork-option": "fractals",
+    "colormode": "platinum"
   }
 }

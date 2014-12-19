@@ -13,7 +13,9 @@
     "author-signoff": "Best Regards,",
     "author-name": "The enablement team",
     "author-company": "Red Hat Asia Pacific",
-    "artwork-complexity": "10",
+    "artwork-complexity": 25,
+    "artwork-option": "fractals",
+    "colormode": "silver",
     "section": [
       {
         "name": "Lorem",

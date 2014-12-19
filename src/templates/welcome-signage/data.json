@@ -4,7 +4,12 @@
     "year": "FY14",
     "width": "426",
     "height": "603",
+    "unit": "mm",
     "welcome-message": "Welcome",
-    "background-image": "../../shared/images/gray_clouds.jpg"
+    "background-image": "../../shared/images/gray_clouds.jpg",
+    "artwork-complexity": 15,
+    "artwork-option": "fractals",
+    "colormode": "platinum",
+    "brand-elements": "large-event-logo"
   }
 }
