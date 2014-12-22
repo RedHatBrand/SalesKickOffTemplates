@@ -39,7 +39,6 @@ html, :root { font-size: 24pt; }
   bottom: 0;
   background-size: contain;
   background-repeat: no-repeat;
-  mix-blend-mode: multiply;
   z-index: 1;
 }
 
@@ -59,7 +58,6 @@ html, :root { font-size: 24pt; }
 
 
 .up, .down {
-
   .arrow { background-size: 204.25% 150%; }
 
   #content {

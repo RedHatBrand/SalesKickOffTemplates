@@ -1,5 +1,17 @@
 :root, html {
-  font-size: 3vw;
+  font-size: 9pt;
+}
+
+@media (min-height: 150mm) and (min-width: 150mm) {
+  :root, html {
+    font-size: 12pt;
+  }
+}
+
+@media (min-height: 200mm) and (min-width: 200mm) {
+  :root, html {
+    font-size: 24pt;
+  }
 }
 
 .brand.sko {
@@ -13,15 +25,13 @@
   }
 }
 
-
 .brand {
-
   .one-half {
     float: left;
     margin: 0;
     width: 50%;
     box-sizing: border-box;
-    padding: 1em;
+    padding: 1.5em;
   }
 
   .one-half:first-child {
@@ -37,8 +47,8 @@
 }
 
 #content.brand {
-  width: 80%;
-
+  width: 75%;
+  
   .one-half {
     height: 100%;
     svg {
@@ -46,23 +56,18 @@
       height: 100%;
     }
   }
-}
 
-@media all and (orientation: portrait) {
-  .corner-shapes-bottom-right {
-    width: 80%;
+  &.one-logo {
+    width: 50%;
   }
 }
 
 
-@media screen and (min-aspect-ratio: 16/9) {
-  #content.large-content { transform: translate(-50%, -50%) scale(0.5); }
-}
 
-@media screen and (min-aspect-ratio: 3/1) {
-  #content.large-content { transform: translate(-50%, -50%) scale(0.33); }
-}
-
-@media screen and (min-aspect-ratio: 4/1) {
-  #content.large-content { transform: translate(-50%, -50%) scale(0.25); }
+@media all and (orientation: portrait) {
+  #content { width: initial }
+  
+  .corner-shapes-bottom-right {
+    width: 80%;
+  }
 }
