@@ -423,7 +423,7 @@ main {
 #content {
   margin: 0;
   position: absolute;
-  top: 45%;
+  top: 50%;
   left: 50%;
   min-width: 50%;
   -webkit-transform: translate(-50%, -50%);
@@ -433,19 +433,16 @@ main {
   z-index: 20; }
   #content.middle-large {
     top: 50%; }
-  #content.fy16-container {
-    width: 50vw;
-    min-width: 0;
-    font-size: 2vw; }
-    #content.fy16-container .headline h1 {
-      border-top-width: 0.15em; }
-    #content.fy16-container .fy16 {
-      font-weight: 700;
-      letter-spacing: 0em;
-      font-size: 11em;
-      line-height: 0.8; }
-    #content.fy16-container .sko-logo text, #content.fy16-container .sko-logo tspan, #content.fy16-container .sko-logo .logomark path {
-      fill: #444 !important; }
+  #content.fy16-container .headline h1 {
+    border-top-width: 0.15em; }
+  #content.fy16-container .fy16 {
+    font-weight: 700;
+    letter-spacing: 0em;
+    line-height: 0.8em;
+    margin-bottom: 1.25rem;
+    margin-left: -0.03em; }
+  #content.fy16-container .sko-logo text, #content.fy16-container .sko-logo tspan, #content.fy16-container .sko-logo .logomark path {
+    fill: #444 !important; }
 
 .sko-logo {
   width: 100%;
@@ -690,4 +687,27 @@ main {
 
   .corner-shapes-bottom-right {
     width: 80%; }
+ }
+
+@media all and (orientation: landscape) {
+  #content.fy16-container {
+    width: 75%; }
+    #content.fy16-container .headline, #content.fy16-container .sko-logo {
+      float: left;
+      width: 50%;
+      margin: 0;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      padding: 1.5em; }
+
+  #content.event-logo-and-headline {
+    width: 75%; }
+    #content.event-logo-and-headline .headline, #content.event-logo-and-headline .sko-logo {
+      width: 50%;
+      margin: 0;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      padding: 1em; }
+    #content.event-logo-and-headline .sko-logo {
+      float: right; }
  }

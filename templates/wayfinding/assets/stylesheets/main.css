@@ -283,7 +283,6 @@ html, :root {
   bottom: 0;
   background-size: contain;
   background-repeat: no-repeat;
-  mix-blend-mode: multiply;
   z-index: 1; }
 
 .left .arrow {

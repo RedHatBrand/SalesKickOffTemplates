@@ -1,5 +1,15 @@
 :root, html {
-  font-size: 3vw; }
+  font-size: 9pt; }
+
+@media (min-height: 150mm) and (min-width: 150mm) {
+  :root, html {
+    font-size: 12pt; }
+ }
+
+@media (min-height: 200mm) and (min-width: 200mm) {
+  :root, html {
+    font-size: 24pt; }
+ }
 
 .brand.sko {
   width: 66.667%; }
@@ -14,7 +24,7 @@
   width: 50%;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  padding: 1em; }
+  padding: 1.5em; }
 .brand .one-half:first-child {
   border-right: thin solid white;
   text-align: right; }
@@ -22,35 +32,19 @@
   width: 75%; }
 
 #content.brand {
-  width: 80%; }
+  width: 75%; }
   #content.brand .one-half {
     height: 100%; }
     #content.brand .one-half svg {
       width: 100%;
       height: 100%; }
+  #content.brand.one-logo {
+    width: 50%; }
 
 @media all and (orientation: portrait) {
+  #content {
+    width: initial; }
+
   .corner-shapes-bottom-right {
     width: 80%; }
- }
-
-@media screen and (min-aspect-ratio: 16/9) {
-  #content.large-content {
-    -webkit-transform: translate(-50%, -50%) scale(0.5);
-    -ms-transform: translate(-50%, -50%) scale(0.5);
-    transform: translate(-50%, -50%) scale(0.5); }
- }
-
-@media screen and (min-aspect-ratio: 3/1) {
-  #content.large-content {
-    -webkit-transform: translate(-50%, -50%) scale(0.33);
-    -ms-transform: translate(-50%, -50%) scale(0.33);
-    transform: translate(-50%, -50%) scale(0.33); }
- }
-
-@media screen and (min-aspect-ratio: 4/1) {
-  #content.large-content {
-    -webkit-transform: translate(-50%, -50%) scale(0.25);
-    -ms-transform: translate(-50%, -50%) scale(0.25);
-    transform: translate(-50%, -50%) scale(0.25); }
  }
