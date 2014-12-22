@@ -1451,9 +1451,6 @@ html {
   background-color: whitesmoke;
   color: #282c2e; }
 
-body {
-  position: relative; }
-
 [class^="icon-"]:before, [class*=" icon-"]:before {
   font-family: FontAwesome;
   font-weight: normal;
@@ -1485,7 +1482,8 @@ body {
 body {
   letter-spacing: 0.06667;
   font-weight: 300;
-  margin: 0; }
+  margin: 0;
+  position: relative; }
   body a {
     font-weight: normal; }
 
@@ -1499,8 +1497,10 @@ img {
 button {
   outline: none; }
 
-h1, h2, h3 {
-  text-transform: uppercase; }
+h4, h4:first-child, h5, h5:first-child, h6, h6:first-child {
+  margin-bottom: 0; }
+h4 + *, h5 + *, h6 + * {
+  margin-top: 0; }
 
 @media screen and (min-width: 75em) {
   .container {
