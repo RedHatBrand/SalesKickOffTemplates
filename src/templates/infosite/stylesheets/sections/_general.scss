@@ -19,10 +19,6 @@ html {
   color:darken($color-shade,20%);
 }
 
-body {
-  position: relative;
-}
-
 [class^="icon-"]:before, [class*=" icon-"]:before {
   font-family: FontAwesome;
   font-weight: normal;
@@ -57,6 +53,7 @@ body {
   letter-spacing:.0666666;
   font-weight: 300;
   margin: 0;
+  position: relative;
 
   a {
     font-weight:  normal
@@ -76,8 +73,14 @@ button {
   outline: none;
 }
 
-h1, h2, h3 {
-  text-transform: uppercase;
+h4, h5, h6 {
+  &, &:first-child {
+    margin-bottom: 0;
+  }
+  
+  & + * {
+    margin-top: 0;
+  }
 }
 
 @media screen and (min-width: $breakpoint-large) {
