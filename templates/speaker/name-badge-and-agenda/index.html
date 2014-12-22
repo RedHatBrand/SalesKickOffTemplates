@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title></title>
+  <style>
+    body {
+      margin: 0;
+      background-color: lightgrey;
+    }
+    article {
+      text-align: center;
+      padding: 0.5em;
+    }
+    .preview {
+      display: inline-block;
+      vertical-align: top;
+      margin: 0.5em;
+      box-shadow: 0 0.125em 0.125em 0 rgba(0, 0, 0, 0.125);
+    }
+    .preview-frame { border: 0; }
+    a.home-link {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      background: rgba(0,0,0,.75);
+      padding: .75em 1em;
+      color: white;
+      text-decoration: none;
+      border-top-right-radius: 3px;
+      font-family: monospace;
+      text-transform: uppercase;
+      opacity: .25;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+    }
+    a.home-link:before {
+      content: '/';
+      margin-right: .5em;
+    }
+    a.home-link:hover {
+      opacity: 1;
+    }
+  </style>
+</head>
+  <body>
+    <article>
+      <div id="data" data-template-data="{&quot;year&quot;:&quot;FY14&quot;}"></div>
+    </article>
+
+    <a class="home-link" href="//redhatbrand.github.io/SalesKickOffTemplates/">Home</a>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.min.js"></script>
+    <script src="//redhatbrand.github.io/SalesKickOffTemplates/previews.js" type="text/javascript"></script>
+  </body>
+</html>
