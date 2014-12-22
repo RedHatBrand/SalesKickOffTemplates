@@ -21,17 +21,16 @@ height: 100vh
     <script src='//redhatbrand.github.io/RedHatTemplates/global-assets/javascripts/vendor/jquery.js'></script>
     <script src='//redhatbrand.github.io/RedHatTemplates/global-assets/javascripts/vendor/jquery.fitvids.js'></script>
     <script src='//redhatbrand.github.io/RedHatTemplates/global-assets/javascripts/vendor/jquery.fittext.js'></script>
-    <script src='//redhatbrand.github.io/RedHatTemplates/global-assets/javascripts/vendor/jquery.scrollspy.js'></script>
+    <script src='<%= baseUrl %>/templates/infosite/javascripts/scrollspy.js'></script>
     <script src='//redhatbrand.github.io/RedHatTemplates/global-assets/javascripts/vendor/jquery.smooth-scroll.js'></script>
     <script src='<%= baseUrl %>/templates/infosite/javascripts/main.js'></script>
     <!--[if lt IE 9]> <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script> <![endif]-->
   </head>
-  <body>
+  <body data-spy="scroll" data-target=".nav-menu" data-offset="100">
     <div class='wrapper'>
       <header class='header' role='banner'>
         <figure class='hero {{colormode}} {{artwork-option}}'>
           <div id="artwork"></div>
-          <div class="overlay"></div>
           <div class="gradient"></div>
           <div class='container layer-three'>
             <h1 class='title'>{{ headline }}</h1>
@@ -58,7 +57,7 @@ height: 100vh
       </button>
       <nav class='nav-menu animated fadeInDown fixed-left-nav-only-medium-break layer-four nav-hide'>
         <div class='container'>
-          <ul>
+          <ul class="nav">
             {{#section }}
             <li><a class='menu-link' href='#{{ slug }}'>{{ name }}</a></li>
             {{/section}}

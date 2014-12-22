@@ -2,7 +2,7 @@
   color: white;
   position: relative;
   overflow: hidden;
-  background-color: lighten($color-rh-slate, 50%);
+  background-color: lighten($color-rh-slate, 15%);
   padding-top: 4em;
   padding-bottom: $line-height;
   margin: 0;
@@ -50,16 +50,6 @@
       left: 2em;
     }
   }
-
-  &:after {
-		content: '';
-		position: absolute;
-		left: 0;
-		right: 0;
-		top: 0;
-		bottom: 0;
-		background-color: rgba(0, 0, 0, 0.25);
-	}
 }
 
 h1.title {

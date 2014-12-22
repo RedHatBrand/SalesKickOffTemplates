@@ -3,6 +3,7 @@
 .nav-menu {
   background: white;
   position: fixed;
+  z-index: 5;
 
   .container {
     padding-top: 0;
@@ -23,9 +24,9 @@
       font-size: .85em;
 
       &:hover { color: $color-primary; }
-
-      &.active { background-color: $color-primary; color:white; }
     }
+
+    &.active a { background-color: $color-primary; color:white; }
 
     ul {
       display: none;
