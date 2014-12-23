@@ -35,19 +35,19 @@ height: 603mm;
     <div id="artwork"></div>
     {{/ background-image }}
     <main>
-      {{#day}}
       <article id="content">
         <div class="brand sko">
           <% include ../../shared/images/event-logo-lockup.svg %>
         </div>
-
-        <section class="section-agenda">
-          <header id="title" style="-webkit-column-span: all;">
+        
+        {{#day}}
+        <section class="section-agenda day-{{#slugify}}{{ day-name }}{{/slugify}}">
+          <header class="agenda-title">
             <h1>Agenda</h1>
             <h2>{{ date }}</h2>
           </header>
 
-          <div id="agenda">
+          <div class="agenda-content">
             {{#schedule}}
             {{#time}}
             <div class="time-slot">
@@ -105,8 +105,8 @@ height: 603mm;
             {{/schedule}}
           </div>
         </section>
+        {{/day}}
       </article>
-      {{/day}}
     </main>
 
     {{#artwork-complexity}}
@@ -120,5 +120,12 @@ height: 603mm;
     {{/ background-image }}
 
     <script src="//redhatbrand.github.io/RedHatPatterns/red-hat-patterns.js"></script>
+
+    {{#selected-day}}
+    <script type="text/javascript">
+      window.redhatSelectedDay = {{ selected-day}};
+    </script>
+    {{/selected-day}}}
+    <script src="<%=baseUrl%>/templates/agenda-board/assets/javascripts/main.js"></script>
   </body>
 </html>

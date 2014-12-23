@@ -23,6 +23,7 @@ $line-height:       1.5em;
 .section-agenda {
   background: hsl(205,10%,90%);
   padding: 2em;
+  display: none;
 
   h1, h2 { 
     display: inline-block;
@@ -41,17 +42,15 @@ $line-height:       1.5em;
   }
 }
 
-#content {
+.agenda-content {
+  column-count: 3;
+  column-gap: 3em;
+  column-fill: balance;
+
   .time-slot {
     break-inside: avoid-column;
     page-break-inside:avoid;
   }
-}
-
-#agenda {
-  column-count: 3;
-  column-gap: 3em;
-  column-fill: balance;
 }
 
 [class*="track-"] {
