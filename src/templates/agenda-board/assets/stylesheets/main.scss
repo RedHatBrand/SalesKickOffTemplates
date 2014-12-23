@@ -1,8 +1,17 @@
+html, :root {
+  font-size: 14pt;
+}
+
 #content {
-  left: 2em;
-  right: 2em;
-  transform: translateY(-50%);
   max-width: initial;
+  left: 4em;
+  right: 4em;
+  top: 5em;
+  transform: none;
+
+  .sko-logo {
+    width: 50%;
+  }
 }
 
 // Agenda
@@ -12,51 +21,68 @@ $color-shade:       #aaa;
 $line-height:       1.5em;
 
 .section-agenda {
-  background: rgba(255, 255, 255, 0.5);
-  
-  .container {
-    position: relative;
-    padding: $line-height;
-    width: 100%;
-    box-sizing: border-box;
-  }
+  background: hsl(205,10%,90%);
+  padding: 2em;
 
-  table,
-  table thead tr,
-  table tr:first-child {
-    border: none;
-  }
-  
-  table tr { border-color: #ddd; }
-  table td { vertical-align: middle; }
-
-  table thead th, table tbody th {
-    background-color: transparent;
-  }
-  
   h1, h2 { 
     display: inline-block;
     margin-bottom: 0;
   }
-  
+
+  h2 { color: $color-primary; }
+
   h1 { margin-right: 0.3em; }
-  
-  h2 { 
-    font-size: 24px;
-    color: $color-primary;
-  }
-  
-  h3 {
-    text-transform: none;
-    font-size: 24px;
-    margin: 0;
-  }
-  
+
   p { margin: 0; }
-  
+
   .time {
-    color:$color-shade;
-    font-size:2em;
-    font-weight:300;
+    font-size: 2em;
+    font-weight: 300;
   }
 }
+
+#content {
+  .time-slot {
+    break-inside: avoid-column;
+    page-break-inside:avoid;
+  }
+}
+
+#agenda {
+  column-count: 3;
+  column-gap: 3em;
+  column-fill: balance;
+}
+
+[class*="track-"] {
+  h6 {
+    font-size: 1em;
+    line-height: 1.5em;
+    margin: 0.5em 0;
+  }
+}
+
+.time-slot-header {
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+  border-bottom: thin solid $color-shade;
+
+  .time,
+  .duration {
+    display: inline-block;
+    vertical-align: baseline;
+    margin-right: 0.5em;
+  }
+
+  .time {
+    font-size: 1.5em;
+    line-height: 1em;
+  }
+  .duration {
+    font-size: 1em;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: lighten($color-shade, 5%);
+  }
+}
+

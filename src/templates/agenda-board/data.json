@@ -6,30 +6,148 @@
     "height": "603",
     "unit": "mm",
     "day": [
+    {
+      "date": "Dec 24, 2014",
+      "schedule": [
       {
-        "date": "Dec 24, 2014",
-        "schedule": [
-          {
-            "time": "08:00",
-            "duration": "60 mins",
-            "activity": "Arrivals & Registration"
-          },
-          {
-            "time": "09:00",
-            "duration": "60 mins",
-            "activity": "Breakfast"
-          },
-          {
-            "time": "10:00",
-            "duration": "60 mins",
-            "activity": "Play"
-          }
-        ]
+        "time": "08:00",
+        "duration": "60 mins",
+        "topic": "Arrivals & Registration"
+      },
+      {
+        "time": "09:00",
+        "duration": "60 mins",
+        "topic": "Breakfast"
+      },
+      {
+        "time": "10:00",
+        "duration": "60 mins",
+        "topic": "Play"
       }
+      ]
+    },
+    {
+      "date": "Dec 25, 2014",
+      "schedule": [
+      {
+        "time": "8:30",
+        "duration": "10 mins",
+        "topic": "Kick off - Dirk-Peter van Leeuwen, Senior Vice President Red Hat APAC"
+      },
+      {
+        "time": "8:40",
+        "duration": "10 mins",
+        "topic": "Enablement - Quinten Laureijs, Field Readiness Manager APAC"
+      },
+      {
+        "time": "8:50",
+        "duration": "10 mins",
+        "topic": "Opening Address - Sachin Shridhar, Senior Director Services Red Hat APAC"
+      },
+      {
+        "time": "9:00",
+        "duration": "45 mins",
+        "topic": "Out of the Box and Into The Future - Mark Little - Red Hat VP of Engineering and CTO of JBoss Middleware"
+      },
+      {
+        "time": "9:45",
+        "duration": "45 mins",
+        "topic": "Application Centric IT - Daniel Riek, Senior Director, Systems Design and Engineering"
+      },
+      {
+        "time": "10:30",
+        "duration": "30 mins",
+        "topic": "BREAK"
+      },
+      {
+        "time": "11:00",
+        "duration": "45 mins",
+        "topic": "Strategic Solutions Management & Communities of Practice - Jeremy Phuah, Principal Product Manager, Services Solutions Management APAC"
+      },
+      {
+        "time": "11:45",
+        "duration": "15 mins",
+        "topic": "Andy Karandikar - Customer Experience & Engagement"
+      },
+      {
+        "time": "12:00",
+        "duration": "90 mins",
+        "topic": "LUNCH"
+      },
+      {
+        "time": "13:30",
+        "duration": "60 mins",
+        "track-a": "Track A",
+        "track-a-content": "Messaging: Lessons from the field - Noel O'Connor",
+        "track-b": "Track B",
+        "track-b-content": "VMware vs. Red Hat - John Hardy",
+        "track-c": "Track C",
+        "track-c-content": "BPM Product and Proof of concept overview - Jey Paulraj",
+        "track-d": "Track D",
+        "track-d-content": "Inktank Ceph Enterprise Architecture and Solution Design - Andrew Hatfield"
+      },
+      {
+        "time": "14:30",
+        "duration": "60 mins",
+        "track-a": "Track A",
+        "track-a-content": "Enterprise IoT - Mark Little",
+        "track-b": "Track B",
+        "track-b-content": "Satellite Module (1/4): Satellite 6 overview - Rich Jerrido",
+        "track-c": "Track C",
+        "track-c-content": "JBoss Fuse Service Works: A Common Framework for Web Services - Wayne Toh",
+        "track-d": "Track D",
+        "track-d-content": "OpenStack deployments across the globe - Uli Hitzel"
+      },
+      {
+        "time": "15:30",
+        "duration": "30 mins",
+        "topic": "BREAK"
+      },
+      {
+        "time": "16:00",
+        "duration": "60 mins",
+        "track-a": "Track A",
+        "track-a-content": "Bruno George - Mobility",
+        "track-b": "Track B",
+        "track-b-content": "Managing Customer Relationships from Service Engagement to Support Delivery - Ronaldo Rivera & Kyuseok (Rogan) Lee",
+        "track-c": "Track C",
+        "track-c-content": "The Red Hat JBoss Real Time Big Data Analytics Framework - Yuhei Miki & Jeremy Phuah",
+        "track-d": "Track D",
+        "track-d-content": "Technical Sales At The CxO Level - Thomas Cameron"
+      },
+      {
+        "time": "17:00",
+        "duration": "60 mins",
+        "track-a": "Track A",
+        "track-a-content": "CloudForms Basics - John Hardy",
+        "track-b": "Track B",
+        "track-b-content": "[Recorded] Fuse POC Design and Implementation - David Faulkner",
+        "track-c": "Track C",
+        "track-c-content": "aPaaS - Thomas Qvarnstrom",
+        "track-d": "Track D",
+        "track-d-content": "Project Atomic and Kubernetes technical Overview - Daniel Riek"
+      },
+      {
+        "time": "18:00",
+        "duration": "30 mins",
+        "topic": "FREE AND EASY"
+      },
+      {
+        "time": "18:45",
+        "duration": "15 mins",
+        "topic": "Assemble at the registration desk"
+      },
+      {
+        "time": "19:00",
+        "duration": "120 mins",
+        "topic": "Drinks, Bites, Networking @ Bene"
+      }
+      ]
+    }
     ],
-    "background-image": "",
-    "artwork-complexity": 10,
-    "artwork-option": "fractals",
-    "colormode": "platinum"
+      "background-image": "",
+      "artwork-complexity": 10,
+      "artwork-option": "fractals",
+      "colormode": "platinum"
   }
 }

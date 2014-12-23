@@ -1,6 +1,6 @@
 ---
-width: 210mm
-height: 147mm
+width: calc(100vw - 2em)
+height: calc(100vh - 2em)
 ---
 
 <!DOCTYPE html>
@@ -61,7 +61,7 @@ height: 147mm
     </style>
   </head>
 
-  <body style="width: {{ width }}{{unit}}; height: {{ height }}{{unit}}" class="{{artwork-option}} {{colormode}}">
+  <body style="width: {{ width }}%; height: {{ height }}{{unit}}" class="{{artwork-option}} {{colormode}}">
     {{^ background-image }}
     <div class="overlay"></div>
     <div id="artwork"></div>
