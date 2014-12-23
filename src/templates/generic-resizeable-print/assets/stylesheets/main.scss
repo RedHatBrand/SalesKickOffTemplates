@@ -34,6 +34,8 @@
     padding: 1.5em;
   }
 
+  svg { display: block; }
+
   .one-half:first-child {
     border-right: thin solid white;
     text-align: right;
@@ -50,6 +52,15 @@
   .brand .one-half {
     float: none;
     width: 100%;
+  }
+
+  .brand .one-half:first-child {
+    border-right: none;
+    border-bottom: thin solid white;
+  }
+
+  .one-half:last-child {
+    padding-top: 3em;
   }
 }
 
