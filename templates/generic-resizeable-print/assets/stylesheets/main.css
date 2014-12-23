@@ -31,6 +31,12 @@
 .brand .one-half:first-child svg {
   width: 75%; }
 
+@media all and (orientation: portrait) {
+  .brand .one-half {
+    float: none;
+    width: 100%; }
+ }
+
 #content.brand {
   width: 75%; }
   #content.brand .one-half {

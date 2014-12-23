@@ -1,11 +1,5 @@
-$(function() {
-  var countDays, selectFirstDay;
-  if ($("[name='active-day']").length > 0) {
-    (function selectFirstDay() {
-      return $("[name='active-day']").first().attr('checked', 'checked');
-    })();
-  }
-  (function countDays() {
-    return $(".section-agenda").addClass("agenda-" + ($("[name='active-day']").length));
-  })();
-});
+(function (global) {
+  var days = document.getElementsByClassName('section-agenda');
+  var day = days[(global.redhatSelectedDay || 1) - 1];
+  (day && day.style || {}).display = 'block';
+})(window)

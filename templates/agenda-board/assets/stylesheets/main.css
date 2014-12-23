@@ -1,42 +1,67 @@
+html, :root {
+  font-size: 14pt; }
+
 #content {
-  left: 2em;
-  right: 2em;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  max-width: initial; }
+  max-width: initial;
+  left: 4em;
+  right: 4em;
+  top: 5em;
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none; }
+  #content .sko-logo {
+    width: 50%; }
 
 .section-agenda {
-  background: rgba(255, 255, 255, 0.5); }
-  .section-agenda .container {
-    position: relative;
-    padding: 1.5em;
-    width: 100%;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box; }
-  .section-agenda table, .section-agenda table thead tr, .section-agenda table tr:first-child {
-    border: none; }
-  .section-agenda table tr {
-    border-color: #ddd; }
-  .section-agenda table td {
-    vertical-align: middle; }
-  .section-agenda table thead th, .section-agenda table tbody th {
-    background-color: transparent; }
+  background: #e3e6e8;
+  padding: 2em;
+  display: none; }
   .section-agenda h1, .section-agenda h2 {
     display: inline-block;
     margin-bottom: 0; }
+  .section-agenda h2 {
+    color: #08A8E5; }
   .section-agenda h1 {
     margin-right: 0.3em; }
-  .section-agenda h2 {
-    font-size: 24px;
-    color: #08A8E5; }
-  .section-agenda h3 {
-    text-transform: none;
-    font-size: 24px;
-    margin: 0; }
   .section-agenda p {
     margin: 0; }
   .section-agenda .time {
-    color: #aaa;
     font-size: 2em;
     font-weight: 300; }
+
+.agenda-content {
+  -webkit-column-count: 3;
+  -moz-column-count: 3;
+  column-count: 3;
+  -webkit-column-gap: 3em;
+  -moz-column-gap: 3em;
+  column-gap: 3em;
+  -webkit-column-fill: balance;
+  -moz-column-fill: balance;
+  column-fill: balance; }
+  .agenda-content .time-slot {
+    -webkit-column-break-inside: avoid;
+    break-inside: avoid-column;
+    page-break-inside: avoid; }
+
+[class*="track-"] h6 {
+  font-size: 1em;
+  line-height: 1.5em;
+  margin: 0.5em 0; }
+
+.time-slot-header {
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+  border-bottom: thin solid #aaa; }
+  .time-slot-header .time, .time-slot-header .duration {
+    display: inline-block;
+    vertical-align: baseline;
+    margin-right: 0.5em; }
+  .time-slot-header .time {
+    font-size: 1.5em;
+    line-height: 1em; }
+  .time-slot-header .duration {
+    font-size: 1em;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #b7b7b7; }
