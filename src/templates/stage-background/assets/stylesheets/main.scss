@@ -2,11 +2,38 @@
   font-size: 2vw;
 }
 
-.brand.sko {
+.brand {
   width: 66.667%;
 }
 
 .corner-shapes-bottom-right .corner-shape-bottom-right-logo {
   right: 2em;
   bottom: 2em;
+}
+
+.headline-and-logo {
+  width: 50%;
+}
+
+@media all and (orientation: portrait) {
+  .headline-and-logo {
+    width: 75%;
+  }
+}
+
+@media all and (min-aspect-ratio: 3/2) {
+  .headline-and-logo {
+    width: 75%;
+  }
+
+  .brand, .headline {
+    width: 50%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 2em;
+  }
+
+  .brand {
+    float: right; 
+  }
 }

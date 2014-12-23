@@ -1,6 +1,6 @@
 ---
-width: 1000px;
-height: 500px;
+width: calc(100vw - 2em);
+height: calc(100vh - 2em);
 ---
 
 <!DOCTYPE html>
@@ -28,9 +28,7 @@ height: 500px;
       {{/ background-image }}
 
       /* Aspect Ratio 2/1 */
-      @media screen and (max-height: {{#divide}}{{width}}/2{{/divide}}{{unit}}) {
-        #content { transform: translate(-50%, -50%) scale(.75); }
-
+      @media all and (max-height: {{#divide}}{{width}}/2{{/divide}}{{unit}}) {
         .corner-shapes-bottom-right .corner-shape-bottom-right-logo {
           right: 1.5em;
           bottom: 1.5em;
@@ -39,9 +37,7 @@ height: 500px;
       }
 
       /* Aspect Ratio 3/1 */
-      @media screen and (max-height: {{#divide}}{{width}}/3{{/divide}}{{unit}}) {
-        #content { transform: translate(-50%, -50%) scale(.5); }
-
+      @media all and (max-height: {{#divide}}{{width}}/3{{/divide}}{{unit}}) {
         .corner-shapes-bottom-right .corner-shape-bottom-right-logo {
           width: 25%;
           bottom: 1em;
@@ -49,9 +45,7 @@ height: 500px;
       }
 
       /* Aspect Ratio 4/1 */
-      @media screen and (max-height: {{#divide}}{{width}}/4{{/divide}}{{unit}}) {
-        #content { transform: translate(-50%, -50%) scale(.33); }
-
+      @media all and (max-height: {{#divide}}{{width}}/4{{/divide}}{{unit}}) {
         .corner-shapes-bottom-right .corner-shape-bottom-right-logo {
           width: 15%;
           bottom: .5em;
@@ -61,13 +55,13 @@ height: 500px;
     </style>
   </head>
 
-  <body style="width: {{ width }}{{unit}}; height: {{ height }}{{unit}}" class="{{artwork-option}} {{colormode}}">
+  <body style="width: 100vw; height: 100vh" class="{{artwork-option}} {{colormode}}">
     {{^ background-image }}
     <div class="overlay"></div>
     <div id="artwork"></div>
     {{/ background-image }}
     <main>
-      <div id="content">
+      <div id="content" class="headline-and-logo">
         <div class="brand sko"><% include ../../shared/images/event-logo-lockup.svg %></div>
         <div class="headline">
           <h1>{{{ headline }}}</h1>
@@ -96,5 +90,8 @@ height: 500px;
     {{/ background-image }}
 
     <script src="//redhatbrand.github.io/RedHatPatterns/red-hat-patterns.js"></script>
+    <script src="//redhatbrand.github.io/RedHatTemplates/global-assets/javascripts/vendor/jquery.js"></script>
+    <script src="//redhatbrand.github.io/RedHatTemplates/global-assets/javascripts/vendor/jquery.fittext.js"></script>
+    <script src="<%=baseUrl%>/templates/generic-resizeable-print/assets/javascripts/main.js"></script>
   </body>
 </html>
