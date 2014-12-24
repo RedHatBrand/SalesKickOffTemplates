@@ -68,6 +68,19 @@
   }
 }
 
+// Pattern Tiles
+
+.tile-pattern-tile {
+  width: 100%;
+  position: relative;
+
+  &:before {
+    content: '';
+    display: block;
+    padding-bottom: 100%;
+  }
+}
+
 @keyframes skew-shape-in {
   0% {
     transform: translate3d(-100%,-50%,0) skewX(-45deg);

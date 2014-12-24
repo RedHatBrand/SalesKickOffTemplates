@@ -1,5 +1,5 @@
-$('.headline h1').css({
-  'word-spacing': $('.headline').width()
+$('.js-headline').css({
+  'word-spacing': $('.js-headline').width()
 });
-$('.headline h1').fitText(0.8);
-$('.headline h2').fitText(0.3);
+$('.js-headline').fitText(0.8);
+$('.js-fy16').fitText(0.23);

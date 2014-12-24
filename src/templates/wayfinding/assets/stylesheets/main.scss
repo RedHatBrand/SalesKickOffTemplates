@@ -25,6 +25,13 @@ html, :root { font-size: 24pt; }
   max-width: initial;
 }
 
+.headline {
+  border: none;
+  margin: 0;
+
+  &:before { border: none }
+}
+
 .right {
   #content {
     left: 3em;

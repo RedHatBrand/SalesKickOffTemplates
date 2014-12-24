@@ -1,6 +1,6 @@
 ---
-width: 1000px;
-height: 500px;
+width: calc(100vw - 2em)
+height: calc(100vh - 2em)
 ---
 
 <!DOCTYPE html>
@@ -8,7 +8,7 @@ height: 500px;
   <head>
     <link rel="stylesheet" href="//redhatbrand.github.io/RedHatTemplates/global-assets/stylesheets/general/tile-pattern-fill.css" />
     <link rel="stylesheet" href="<%=baseUrl%>/shared/stylesheets/main.css" />
-    <link rel="stylesheet" href="<%=baseUrl%>/templates/stage-background/assets/stylesheets/main.css" />
+    <link rel="stylesheet" href="<%=baseUrl%>/templates/generic-resizeable-print/assets/stylesheets/main.css" />
     <style type="text/css">
       {{# background-image }}
         main {
@@ -18,7 +18,7 @@ height: 500px;
 
           background-repeat: no-repeat;
           background-blend-mode: multiply;
-          background-size: 100% auto, cover;
+          background-size: 105% auto, cover;
           background-position: center center, center center;
 
           color: white;
@@ -26,44 +26,24 @@ height: 500px;
 
         .logotext { fill: white; }
       {{/ background-image }}
-
-      /* Aspect Ratio 2/1 */
-      @media screen and (max-height: {{#divide}}{{width}}/2{{/divide}}{{unit}}) {
-        #content { transform: translate(-50%, -50%) scale(.75); }
-
-        .top-left-logo {
-          top: 2em;
-          left: 2em;
-          max-width: 12.5%;
-        }
-      }
-
-      /* Aspect Ratio 3/1 */
-      @media screen and (max-height: {{#divide}}{{width}}/3{{/divide}}{{unit}}) {
-        #content { transform: translate(-50%, -50%) scale(.5); }
-
-        .top-left-logo {
-          top: 1.5em;
-          left: 1.5em;
-          max-width: 10%;
-        }
-      }
-
     </style>
   </head>
+  <body
+    style="width: {{ width }}%; height: {{ height }}{{unit}}"
+    class="{{#background-image}}background-image{{/background-image}} {{artwork-option}} {{colormode}}">
 
-  <body style="width: {{ width }}{{unit}}; height: {{ height }}{{unit}}" class="{{artwork-option}} {{colormode}}">
     {{^ background-image }}
     <div class="overlay"></div>
     <div id="artwork"></div>
     {{/ background-image }}
+
     <main>
-      <div id="content" class="middle-large">
-        <div class="sko-logo-center"><% include ../../shared/images/event-logo-lockup.svg %></div>
+      <div id="content" class="container_one-logo">
+        <% include ../../shared/images/event-logo-lockup.svg %>
       </div>
 
       {{^ background-image }}
-      <div class="corner-shapes-bottom-right redhat">
+      <div class="corner-shapes-bottom-right">
         <div class="corner-shape-solid-triangle"></div>
         <div data-red-hat-pattern="corporate" class="pattern-red corner-shape-pattern"></div>
         <div class="corner-shape-bottom-right-logo rh-logo">
@@ -80,9 +60,10 @@ height: 500px;
     {{/artwork-complexity}}
 
     {{^ background-image }}
-    <script src="<%=baseUrl%>/shared/javascripts/artwork.js"></script>
+    <script type="text/javascript" src="<%=baseUrl%>/shared/javascripts/artwork.js"></script>
     {{/ background-image }}
 
-    <script src="//redhatbrand.github.io/RedHatPatterns/red-hat-patterns.js"></script>
+    <script type="text/javascript" src="//redhatbrand.github.io/RedHatPatterns/red-hat-patterns.js"></script>
   </body>
 </html>
+

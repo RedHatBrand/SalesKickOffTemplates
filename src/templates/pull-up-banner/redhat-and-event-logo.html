@@ -1,6 +1,6 @@
 ---
-width: calc(100vw - 2em)
-height: calc(100vh - 2em)
+width: 500mm
+height: 1000mm
 ---
 
 <!DOCTYPE html>
@@ -9,7 +9,7 @@ height: calc(100vh - 2em)
     <link rel="stylesheet" href="//redhatbrand.github.io/RedHatTemplates/global-assets/stylesheets/general/tile-pattern-fill.css" />
     <link rel="stylesheet" href="<%=baseUrl%>/shared/stylesheets/main.css" />
     <link rel="stylesheet" href="<%=baseUrl%>/templates/generic-resizeable-print/assets/stylesheets/main.css" />
-    <style type="text/css">
+    <style type='text/css'>
       {{# background-image }}
         main {
           background-image:
@@ -18,19 +18,18 @@ height: calc(100vh - 2em)
 
           background-repeat: no-repeat;
           background-blend-mode: multiply;
-          background-size: 100% auto, cover;
+          background-size: 105% auto, cover;
           background-position: center center, center center;
 
           color: white;
         }
 
-        .logotext { fill: white; }
+        .logotext, #path8455 { fill: white !important; }
       {{/ background-image }}
     </style>
   </head>
-
   <body
-    style="width: {{ width }}%; height: {{ height }}{{unit}}"
+    style="width: {{ width }}{{unit}}; height: {{ height }}{{unit}}"
     class="{{#background-image}}background-image{{/background-image}} {{artwork-option}} {{colormode}}">
 
     {{^ background-image }}
@@ -38,24 +37,14 @@ height: calc(100vh - 2em)
     <div id="artwork"></div>
     {{/ background-image }}
     <main>
-      <div id="content" class="container_headline-and-event-logo">
+      <div id="content" class="container_two-logos">
+        <div class="rh-logo-container">
+          <% include ../../shared/images/rh-logo-include.svg %>
+        </div>
         <div class="event-logo-container">
           <% include ../../shared/images/event-logo-lockup.svg %>
         </div>
-        <div class="headline-container">
-          <h1 class="headline js-headline">{{{ headline }}}</h1>
-        </div>
       </div>
-
-      {{^ background-image }}
-      <div class="corner-shapes-bottom-right redhat">
-        <div class="corner-shape-solid-triangle"></div>
-        <div data-red-hat-pattern="corporate" class="pattern-red corner-shape-pattern"></div>
-        <div class="corner-shape-bottom-right-logo rh-logo">
-          <% include ../../shared/images/rh-logo-include.svg %>
-        </div>
-      </div>
-      {{/ background-image }}
     </main>
 
     {{#artwork-complexity}}
@@ -65,14 +54,10 @@ height: calc(100vh - 2em)
     {{/artwork-complexity}}
 
     {{^ background-image }}
-    <script src="<%=baseUrl%>/shared/javascripts/artwork.js"></script>
+    <script type="text/javascript" src="<%=baseUrl%>/shared/javascripts/artwork.js"></script>
     {{/ background-image }}
 
-    <script src="//redhatbrand.github.io/RedHatPatterns/red-hat-patterns.js"></script>
-
-    <script src="//redhatbrand.github.io/RedHatTemplates/global-assets/javascripts/vendor/jquery.js"></script>
-    <script src="//redhatbrand.github.io/RedHatTemplates/global-assets/javascripts/vendor/jquery.fittext.js"></script>
-    <script src="<%=baseUrl%>/shared/javascripts/generic-fittext.js"></script>
+    <script type="text/javascript" src="//redhatbrand.github.io/RedHatPatterns/red-hat-patterns.js"></script>
   </body>
 </html>
 

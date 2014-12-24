@@ -3,32 +3,9 @@
 @import '../../../node_modules/red-hat-brand-typography/scss/red-hat-typography';
 @import '../../../node_modules/red-hat-brand-palette/scss/red-hat-palette';
 
-@keyframes skew-shape-in {
-  0% {
-    transform: translate3d(-100%,-50%,0) skewX(-45deg);
-  }
-  100% {
-    transform: translate3d(-50%,-50%,0) skewX(-45deg);
-  }
-}
-
-@keyframes rotate-shape-in {
-  0% {
-    transform: translate3d(-100%,-50%,0) rotate(45deg);
-  }
-  100% {
-    transform: translate3d(-50%,-50%,0) rotate(45deg);
-  }
-}
-
-@keyframes fade-out {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
+@import 'corner-shapes';
+@import 'logo-animations';
+@import 'artwork';
 
 body {
   margin: 0;
@@ -39,76 +16,130 @@ body {
   color: #444;
 }
 
-#artwork {
+// Base Styles
+
+main {
   position: absolute;
-  left: 0; right: 0;
-  top: 0; bottom: 0;
-  overflow: hidden;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   margin: 0;
-  background-image: radial-gradient(ellipse at 50% 50%, rgba($color-rh-white, 0.75) 0%, rgba($color-rh-white, 0.75) 50%, rgba($color-rh-white, 0.0001) 100%);
-
-  .artwork-inner {
-    position: relative;
-
-    &:before {
-      content: '';
-      display: block;
-      padding-bottom: 100%;
-    }
-  }
-
-  * { margin: 0; }
-
-  .artwork-shape {
-    background-color: $color-rh-slate;
-    position: absolute;
-    top: 50%;
-    transform-origin: 50% 50%;
-    transform: translate3d(-100%,-50%,0) skewX(-45deg);
-    margin: 0;
-  }
-
-  .skew-animate-in {
-    transform: translate3d(-50%,-50%,0) skewX(-45deg);
-    animation-name: skew-shape-in;
-    animation-timing-function: ease;
-  }
-
-  .rotate-animate-in {
-    transform: translate3d(-50%,-50%,0) rotate(-45deg);
-    animation-name: rotate-shape-in;
-    animation-timing-function: ease;
-  }
-
-  .artwork-pattern {
-    position: absolute;
-    left: 10%;
-    top: 10%;
-    transform-origin: 50% 50%;
-    transform: translate(-50%,-50%) rotate(45deg);
-    height: 150%;
-    width: 7%;
-
-    svg {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      stroke: lighten($color-rh-slate, 22.5%);
-      stroke-width: 0.5;
-    }
-  }
+  overflow: hidden;
+  background-image: radial-gradient(ellipse at 50% 50%, rgba($color-rh-white, 0.75) 0%, rgba($color-rh-white, 0.0001) 100%);
 }
 
-.tile-pattern-tile {
-  width: 100%;
+#content {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  max-width: 80%;
+  z-index: 20;
+}
+
+.headline {
+  border-top-width: 0;
+  padding-top: 0.5em;
   position: relative;
+  margin-left: -0.05em;
+  padding-right: 1.5em;
+  line-height: 1.125em;
 
   &:before {
     content: '';
-    display: block;
-    padding-bottom: 100%;
+    position: absolute;
+    left: 0.05em;
+    right: 0;
+    top: 0;
+    border-top: 0.2em solid;
   }
 }
+
+svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.sko-logo {
+  .logotext, .location {
+    fill: #444 !important;
+  }
+}
+
+// Containers
+
+@mixin half ($pad: 2em) {
+  @if $pad != 'no-pad' {
+    padding: $pad;
+  }
+  width: 50%;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.one-half {
+  @include half;
+}
+
+.container_one-logo {
+  width: 50%;
+}
+
+.container_two-logos {
+  width: 75%;
+
+  [class*="-logo-container"] {
+    @extend .one-half;
+    float: left;
+  }
+}
+
+.container_headline-and-event-logo {
+  width: 75%;
+
+  .event-logo-container,
+  .headline-container {
+    @extend .one-half;
+  }
+
+  .event-logo-container {
+    float: right;
+  }
+}
+
+.container_fy16-and-headline-and-event-logo {
+  width: 75%;
+
+  .event-logo-container,
+  .headline-container {
+    @extend .one-half;
+    float: left;
+  }
+
+  .fy16 {
+    font-weight: 700;
+    line-height: 0.8em;
+    margin-left: -0.08em;
+    margin-bottom: 0;
+
+    letter-spacing: -0.025em;
+  }
+
+  .headline {
+    margin-top: 0.3em;
+  }
+
+  .sko-logo text,
+  .sko-logo tspan,
+  .sko-logo .logomark path {
+    fill: #444 !important;
+  }
+}
+
+// Themes
 
 .overlay {
   display: none;
@@ -119,14 +150,6 @@ body {
   margin: 0;
 }
 
-.logo {
-  position: relative;
-  z-index: 20;
-}
-
-
-// Themes
-
 .red {
   .overlay {
     display: block;
@@ -134,11 +157,27 @@ body {
     -webkit-blend-mode: multiply;
     mix-blend-mode: multiply;
   }
+}
 
+.background-image, .red {
   .logotext, .logotype,
   h1, h2, h3, text, p, tspan {
     color: #fff;
     fill: #fff !important;
+  }
+
+  #content {
+    .sko-logo .logomark path {
+      fill: $color-rh-blue !important;
+    }
+
+    .sko-logo text,
+    .sko-logo tspan,
+    .logotext, .logotype,
+    h1, h2, h3, text, p, tspan {
+      color: #fff;
+      fill: #fff !important;
+    }
   }
 }
 
@@ -154,105 +193,18 @@ body {
   .artwork-shape {
     top: 0 !important;
     bottom: 0 !important;
-    height: 200% !important;
+    height: 150% !important;
   }
-}
-
-
-main {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: 0;
-  overflow: hidden;
-  background-image: radial-gradient(ellipse at 50% 50%, rgba($color-rh-white, 0.75) 0%, rgba($color-rh-white, 0.0001) 100%);
-}
-
-
-#content {
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  min-width: 50%;
-  transform: translate(-50%,-50%);
-  max-width: 80%;
-  z-index: 20;
-
-  &.middle-large { top: 50%; }
-
-  &.fy16-container {
-    .headline h1 { border-top-width: .15em; }
-
-    .fy16 {
-      font-weight: 700;
-      letter-spacing: 0em;
-      line-height: 0.8em;
-      margin-bottom: 1.25rem;
-      margin-left: -0.03em;
-    }
-
-    .sko-logo text,
-    .sko-logo tspan,
-    .sko-logo .logomark path {
-        fill: #444 !important;
-    }
-  }
-}
-
-.sko-logo {
-  width: 100%;
-  height: 100%;
-}
-
-.sko-logo-center {
-  width: 120%;
-  margin-left: -10%;
-}
-
-.rh-logo {
-  z-index: 20;
-  margin: 0;
-}
-
-.redhat-logo {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  z-index: 20;
-}
-
-.top-left-logo {
-  position: absolute;
-  z-index: 10;
-  top: 5%;
-  left: 5%;
-  max-width: 15%;
-  min-width: 10%;
-}
-
-.headline {
-  h1 {
-    border-top: .1em solid;
-    padding-top: .5em;
-    line-height: 1em;
-  }
-}
-
-.logotext {
-  fill: lighten($color-rh-black, 20%);
 }
 
 .clearfix:before,
 .clearfix:after {
-    content: " "; /* 1 */
-    display: table; /* 2 */
+  content: " "; /* 1 */
+  display: table; /* 2 */
 }
 
 .clearfix:after {
-    clear: both;
+  clear: both;
 }
 
 .data-lining {
@@ -268,142 +220,69 @@ main {
   margin: 0;
 }
 
-.complex-logo {
-  transition: all .5s ease;
-
-  &.line-icon {
-    transition-delay:2s;
-
-    path {
-      transition: all 1s ease .52s;
-      stroke-dasharray:100 ,10;
-      animation: ani-line-icon 2s ease  alternate;
-    }
-
-  }
-
-  .event-name {
-    transition-delay:1s;
-    animation: ani-event-name 2s ease  alternate;
-  }
-
-  .logomark {
-    animation: ani-logomark 2s ease  alternate;
-  }
-
-  .location {
-    transition-delay:1.4s;
-    animation: ani-location 2s ease  alternate;
-  }
-}
-
-@keyframes ani-logomark {
-  0%  { transform: translate(0,-5em); }
-  20% { transform: translate(0,0); }
-}
-
-@keyframes ani-line-icon {
-  0%    { stroke-dasharray: 0,100 }
-  20%   { stroke-dasharray:0,100 }
-  100%  { stroke-dasharray:100,0 }
-}
-
-@keyframes ani-event-name {
-  0%    { transform: translate(-2em,0);   opacity:0; }
-  60%   { transform: translate(-2em,0);   opacity:0; }
-  100%  { transform: translate(0,0);      opacity:1; }
-  100%  { transform: translate(0,0);      opacity:1; }
-}
-
-@keyframes ani-location {
-  0%    { transform: translate(0,1em);  opacity:0 }
-  80%   { transform: translate(0,1em);  opacity:0 }
-  100%  { transform: translate(0,0);    opacity:1 }
-}
-
-.corner-shapes-bottom-right {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 50%;
-  height: auto;
-
-  &:before {
-    content: '';
-    display: block;
-    padding-bottom: 100%;
-  }
-
-  .corner-shape-pattern {
-    margin-top: 0;
-    height: 200%;
-    width: 12.5%;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform-origin: 0 50%;
-    transform: translateY(-50%) rotate(45deg);
-
-    svg {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-
-      stroke-width: 0.5pt;
-      stroke: lighten($color-rh-slate, 50%);
-    }
-  }
-
-  .corner-shape-solid-triangle {
-    background-color: lighten($color-rh-slate, 50%);
-    height: 200%;
-    width: 100%;
-    position: absolute;
-    left: 58.75%;
-    top: 58.75%;
-    transform-origin: 0 50%;
-    transform: translateY(-50%) rotate(45deg);
-  }
-
-  .corner-shape-bottom-right-logo {
-    position: absolute;
-    right: 3em;
-    bottom: 3em;
-    width: 40%;
-  }
-}
+// Respond
 
 @media all and (orientation: portrait) {
-  #content { top: 50%; }
+  #content, #content[class*=container_] { width: 50% }
+
+  .one-half {
+    width: initial;
+    float: none;
+  }
 
   .corner-shapes-bottom-right {
     width: 80%;
   }
 }
 
-@media all and (orientation: landscape) {
-  #content.fy16-container {
-    width: 75%;
-    .headline, .sko-logo {
-      float: left;
-      width: 50%;
-      margin: 0;
-      box-sizing: border-box;
-      padding: 1.5em;
-    }
+@media all and (min-aspect-ratio: 3/1) {
+  #content {
+    width: 50%;
+  }
+}
+
+@media all and (min-aspect-ratio: 4/1) {
+  #content {
+    width: 40%;
+    transform: translate(0, -50%);
+    left: 5%;
   }
 
-  #content.event-logo-and-headline {
-    width: 75%;
-    .headline, .sko-logo {
-      width: 50%;
-      margin: 0;
-      box-sizing: border-box;
-      padding: 1em;
+  #content.container_fy16-and-headline-and-event-logo {
+    width: 60%;
+
+    .headline-container {
+      width: 33.333%;
     }
-    .sko-logo {
-      float: right;
-    }    
+
+    .event-logo-container {
+      width: 66.667%;
+    }
+  }
+}
+
+@media all and (min-aspect-ratio: 5/1) {
+  #content { left: 0; }
+
+  #content.container_fy16-and-headline-and-event-logo {
+    width: 60%;
+
+    .headline-container {
+      width: 66.667%;
+
+      .fy16, .headline {
+        @include half('no-pad');
+        float: left;
+      }
+
+      .fy16 {
+        padding-right: 4rem;
+      }
+    }
+
+    .event-logo-container {
+      width: 33.333%;
+    }
   }
 }
 

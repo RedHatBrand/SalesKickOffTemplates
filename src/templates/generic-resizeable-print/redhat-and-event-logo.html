@@ -28,17 +28,20 @@ height: calc(100vh - 2em)
       {{/ background-image }}
     </style>
   </head>
-  <body style="width: {{ width }}%; height: {{ height }}{{unit}}" class="{{ direction }} {{artwork-option}} {{colormode}}">
+  <body
+    style="width: {{ width }}%; height: {{ height }}{{unit}}"
+    class="{{#background-image}}background-image{{/background-image}} {{artwork-option}} {{colormode}}">
+
     {{^ background-image }}
     <div class="overlay"></div>
     <div id="artwork"></div>
     {{/ background-image }}
     <main>
-      <div id="content" class="brand">
-        <div class="one-half">
+      <div id="content" class="container_two-logos">
+        <div class="rh-logo-container">
           <% include ../../shared/images/rh-logo-include.svg %>
         </div>
-        <div class="one-half">
+        <div class="event-logo-container">
           <% include ../../shared/images/event-logo-lockup.svg %>
         </div>
       </div>
