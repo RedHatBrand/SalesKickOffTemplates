@@ -272,6 +272,12 @@ html, :root {
   width: 200%;
   max-width: initial; }
 
+.headline {
+  border: none;
+  margin: 0; }
+  .headline:before {
+    border: none; }
+
 .right #content {
   left: 3em; }
 
