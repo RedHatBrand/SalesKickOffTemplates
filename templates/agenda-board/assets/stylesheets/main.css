@@ -937,6 +937,7 @@ svg {
 .container_two-logos {
   width: 75%; }
   .container_two-logos [class*="-logo-container"] {
+    padding: 5%;
     float: left; }
 
 .container_headline-and-event-logo {
@@ -947,6 +948,7 @@ svg {
 .container_fy16-and-headline-and-event-logo {
   width: 75%; }
   .container_fy16-and-headline-and-event-logo .event-logo-container, .container_fy16-and-headline-and-event-logo .headline-container {
+    padding: 7.5%;
     float: left; }
   .container_fy16-and-headline-and-event-logo .fy16 {
     font-weight: 700;

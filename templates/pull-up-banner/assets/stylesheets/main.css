@@ -1,0 +1,4 @@
+@media (orientation: portrait) {
+  #content, #content[class*=container_] {
+    width: 66.667%; }
+ }
