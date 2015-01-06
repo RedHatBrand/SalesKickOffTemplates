@@ -296,8 +296,8 @@ pre {
     transform: translateY(-50%) rotate(45deg); }
   .corner-shapes-bottom-right .corner-shape-bottom-right-logo {
     position: absolute;
-    right: 3em;
-    bottom: 3em;
+    right: 8%;
+    bottom: 8%;
     width: 40%; }
 
 .complex-logo {
@@ -811,7 +811,7 @@ body {
   stroke: #98a3aa; }
 
 #artwork .artwork-shape {
-  background-color: #5E6A71; }
+  background-color: #75848d; }
 
 .background-image, .red {
   color: #fff; }
