@@ -7,7 +7,6 @@
   top: 0; bottom: 0;
   overflow: hidden;
   margin: 0;
-  background-image: radial-gradient(ellipse at 50% 50%, rgba($color-rh-white, 0.75) 0%, rgba($color-rh-white, 0.75) 50%, rgba($color-rh-white, 0.0001) 100%);
 
   .artwork-inner {
     position: relative;
@@ -23,18 +22,11 @@
   * { margin: 0; }
 
   .artwork-shape {
-    background-color: $color-rh-slate;
     position: absolute;
     top: 50%;
     transform-origin: 50% 50%;
     transform: translate3d(-100%,-50%,0) skewX(-45deg);
     margin: 0;
-
-    &:nth-child(even) {
-      background-color: white;
-      background-image: none !important;
-      border-right: .1em solid rgba(white, 0.7);
-    }
   }
 
   .skew-animate-in {

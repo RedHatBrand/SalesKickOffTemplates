@@ -11,7 +11,7 @@ height: calc(100vh - 2em)
     <link rel="stylesheet" href="<%=baseUrl%>/templates/generic-resizeable-print/assets/stylesheets/main.css" />
     <style type='text/css'>
       {{# background-image }}
-        main {
+        .background-image main {
           background-image:
             url('<%=baseUrl%>/shared/images/grid-06-06.svg'),
             url('{{{ background-image }}}');
@@ -33,9 +33,9 @@ height: calc(100vh - 2em)
     class="{{#background-image}}background-image{{/background-image}} {{artwork-option}} {{colormode}}">
 
     {{^ background-image }}
-    <div class="overlay"></div>
     <div id="artwork"></div>
     {{/ background-image }}
+
     <main>
       <div id="content" class="container_one-logo">
         <% include ../../shared/images/rh-logo-include.svg %>

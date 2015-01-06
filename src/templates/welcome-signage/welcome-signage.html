@@ -11,7 +11,7 @@ height: 603mm;
     <link rel="stylesheet" href="<%=baseUrl%>/templates/welcome-signage/assets/stylesheets/main.css" />
     <style type="text/css">
       {{# background-image }}
-        main {
+        .background-image main {
           background-image:
             url('<%=baseUrl%>/shared/images/grid-06-06.svg'),
             url('{{{ background-image }}}');
@@ -28,28 +28,34 @@ height: 603mm;
       {{/ background-image }}
     </style>
   </head>
-  <body style="width: {{ width }}{{unit}}; height: {{ height }}{{unit}}" class="{{ direction }} {{artwork-option}} {{colormode}}">
+  <body
+    style="width: {{ width }}{{unit}}; height: {{ height }}{{unit}}"
+    class="{{#background-image}}background-image{{/background-image}} {{artwork-option}} {{colormode}}">
+
     {{^ background-image }}
-    <div class="overlay"></div>
     <div id="artwork"></div>
     {{/ background-image }}
+
     <main>
       <div id="content">
-        <div class="brand sko"><% include ../../shared/images/event-logo-lockup.svg %></div>
+        <div class="brand sko">
+          <% include ../../shared/images/event-logo-lockup.svg %>
+        </div>
+
         <article>
           <h1>{{{ welcome-message }}}</h1>
         </article>
-
-        {{^ background-image }}
-        <div class="corner-shapes-bottom-right redhat">
-          <div class="corner-shape-solid-triangle"></div>
-          <div data-red-hat-pattern="corporate" class="pattern-red corner-shape-pattern"></div>
-          <div class="corner-shape-bottom-right-logo rh-logo">
-            <img src="<%=baseUrl%>/shared/images/rh-logo-black.svg" />
-          </div>
-        </div>
-        {{/ background-image }}
       </div>
+
+      {{^ background-image }}
+      <div class="corner-shapes-bottom-right redhat">
+        <div class="corner-shape-solid-triangle"></div>
+        <div data-red-hat-pattern="corporate" class="pattern-red corner-shape-pattern"></div>
+        <div class="corner-shape-bottom-right-logo rh-logo">
+          <% include ../../shared/images/rh-logo-include.svg %>
+        </div>
+      </div>
+      {{/ background-image }}
     </main>
 
     {{#artwork-complexity}}

@@ -6,10 +6,10 @@
 @import 'corner-shapes';
 @import 'logo-animations';
 @import 'artwork';
+@import 'colors';
 
 body {
   margin: 0;
-  background-color: lighten($color-rh-slate, 20%);
   background-size: cover;
   position: relative;
   overflow: hidden;
@@ -139,61 +139,12 @@ svg {
   }
 }
 
-// Themes
-
-.overlay {
-  display: none;
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  z-index: 1;
-  margin: 0;
-}
-
-.red {
-  .overlay {
-    display: block;
-    background-color: #d00;
-    -webkit-blend-mode: multiply;
-    mix-blend-mode: multiply;
-  }
-}
-
-.background-image, .red {
-  .logotext, .logotype,
-  h1, h2, h3, text, p, tspan {
-    color: #fff;
-    fill: #fff !important;
-  }
-
-  #content {
-    .sko-logo .logomark path {
-      fill: $color-rh-blue !important;
-    }
-
-    .sko-logo text,
-    .sko-logo tspan,
-    .logotext, .logotype,
-    h1, h2, h3, text, p, tspan {
-      color: #fff;
-      fill: #fff !important;
-    }
-  }
-}
-
-.silver {
-  .overlay {
-    display: block;
-    background-color: #fff;
-    opacity: .5;
-  }
-}
-
 .full-height {
   .artwork-shape {
     top: 0 !important;
     bottom: 0 !important;
-    height: 150% !important;
+    height: 100% !important;
+    transform: translate3d(-100%, 0, 0) skewX(-45deg) !important;
   }
 }
 

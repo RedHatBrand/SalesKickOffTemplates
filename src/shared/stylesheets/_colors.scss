@@ -1,0 +1,87 @@
+body {
+  background-color: lighten($color-rh-slate, 20%);
+}
+
+#artwork {
+  background-image: radial-gradient(ellipse at 50% 50%, rgba($color-rh-white, 0.75) 0%, rgba($color-rh-white, 0.75) 50%, rgba($color-rh-white, 0.0001) 100%);
+}
+
+.artwork-pattern svg { stroke: lighten($color-rh-slate, 22.5%); }
+
+#artwork .artwork-shape {
+  background-color: $color-rh-slate;
+}
+
+.background-image, .red {
+  color: #fff;
+  .logotext, .logotype, h1, h2, h3, text, tspan {
+    color: #fff;
+    fill: #fff !important;
+  }
+
+  #content {
+    color: #fff;
+
+    .sko-logo .logomark path {
+      fill: $color-rh-blue !important;
+    }
+
+    .sko-logo text,
+    .sko-logo tspan,
+    .logotext, .logotype,
+    h1, h2, h3, text, tspan {
+      color: #fff;
+      fill: #fff !important;
+    }
+  }
+}
+
+// RED
+
+body.red {
+  background-color: darken($color-rh-red, 5%);
+}
+
+.red main {
+  background-image: radial-gradient(ellipse at 50% 50%, rgba($color-rh-red, 0.75) 0%, rgba($color-rh-red, 0.0001) 100%);
+}
+
+.red .corner-shape-pattern svg { stroke: $color-rh-red; }
+.red .corner-shape-solid-triangle { background-color: $color-rh-red; }
+
+.red #artwork {
+  background-image: radial-gradient(ellipse at 50% 50%, rgba($color-rh-red, 0.75) 0%, rgba($color-rh-red, 0.75) 50%, rgba($color-rh-red, 0.0001) 100%);
+}
+.red #artwork .artwork-shape { background-color: darken($color-rh-red, 15%); }
+.red #artwork .artwork-pattern svg { stroke: $color-rh-red; }
+
+// SILVER
+
+body.silver {
+  background-color: darken($color-rh-white, 5%);
+}
+
+.silver main {
+  background-image: radial-gradient(ellipse at 50% 50%, rgba($color-rh-white, 0.75) 0%, rgba($color-rh-white, 0.0001) 100%);
+}
+
+.silver .corner-shape-pattern svg { stroke: $color-rh-white; }
+.silver .corner-shape-solid-triangle { background-color: $color-rh-white; }
+
+.silver #artwork {
+  background-image: radial-gradient(ellipse at 50% 50%, rgba($color-rh-white, 0.75) 0%, rgba($color-rh-white, 0.75) 50%, rgba($color-rh-white, 0.0001) 100%);
+}
+.silver #artwork .artwork-shape { background-color: darken($color-rh-white, 15%); }
+.silver #artwork .artwork-pattern svg { stroke: $color-rh-white; }
+
+// Background image
+
+.background-image #content {
+  .brand {
+    text-align: right;
+
+    svg {
+      display: inline-block;
+    }
+  }
+}

@@ -14,7 +14,7 @@ height: 597mm;
       .arrow { background-image: url(<%=baseUrl%>/templates/wayfinding/assets/images/arrow.svg); }
 
       {{# background-image }}
-        main {
+        .background-image main {
           background-image:
             url('<%=baseUrl%>/shared/images/grid-06-06.svg'),
             url('{{{ background-image }}}');
@@ -36,11 +36,14 @@ height: 597mm;
       {{/ background-image }}
     </style>
   </head>
-  <body style="width: {{ width }}{{unit}}; height: {{ height }}{{unit}}" class="{{ direction }} {{artwork-option}} {{colormode}}">
+  <body
+    style="width: {{ width }}{{unit}}; height: {{ height }}{{unit}}"
+    class="{{#background-image}}background-image{{/background-image}} {{direction}} {{artwork-option}} {{colormode}}">
+
     {{^ background-image }}
-    <div class="overlay"></div>
     <div id="artwork"></div>
     {{/ background-image }}
+
     <main>
       <div class="arrow"></div>
 
@@ -58,7 +61,7 @@ height: 597mm;
         <div class="corner-shape-solid-triangle"></div>
         <div data-red-hat-pattern="corporate" class="pattern-red corner-shape-pattern"></div>
         <div class="corner-shape-bottom-right-logo rh-logo">
-          <img src="<%=baseUrl%>/shared/images/rh-logo-black.svg" />
+          <% include ../../shared/images/rh-logo-black.svg %>
         </div>
       </div>
       {{/ background-image }}

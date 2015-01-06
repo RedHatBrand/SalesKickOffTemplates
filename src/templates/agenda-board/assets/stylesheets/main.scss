@@ -1,13 +1,17 @@
+@import '../../../../shared/stylesheets/main.scss';
+
 html, :root {
   font-size: 14pt;
 }
 
 #content {
   max-width: initial;
+  width: initial;
   left: 4em;
   right: 4em;
   top: 5em;
   transform: none;
+  height: 100%;
 
   .sko-logo {
     width: 50%;
@@ -24,8 +28,9 @@ $line-height:       1.5em;
   background: hsl(205,10%,90%);
   padding: 2em;
   display: none;
+  height: 75%;
 
-  h1, h2 { 
+  h1, h2 {
     display: inline-block;
     margin-bottom: 0;
   }
@@ -43,13 +48,20 @@ $line-height:       1.5em;
 }
 
 .agenda-content {
-  column-count: 3;
-  column-gap: 3em;
-  column-fill: balance;
+  display: flex;
+  flex-flow: column wrap;
+  height: 95%;
+  margin-left: -1em;
+  margin-right: -1em;
 
   .time-slot {
+    padding: 1em;
+    margin: 0;
     break-inside: avoid-column;
     page-break-inside:avoid;
+    flex: 0 0 auto;
+    width: 33.333%;
+    box-sizing: border-box;
   }
 }
 
@@ -62,14 +74,15 @@ $line-height:       1.5em;
 }
 
 .time-slot-header {
-  margin-bottom: 1em;
-  padding-bottom: 1em;
+  margin-bottom: 0.75em;
+  padding-bottom: 0.75em;
   border-bottom: thin solid $color-shade;
 
   .time,
   .duration {
     display: inline-block;
     vertical-align: baseline;
+    margin: 0;
     margin-right: 0.5em;
   }
 
@@ -85,3 +98,47 @@ $line-height:       1.5em;
   }
 }
 
+.time-slot-header + div {
+  margin-top: 0;
+}
+
+.red {
+  color: $color-rh-white;
+
+  .section-agenda {
+    background: $color-rh-red;
+
+    h2 { color: $color-rh-white; }
+  }
+
+  .time-slot-header {
+    border-bottom: thin solid $color-rh-white;
+
+    .duration {
+      color: $color-rh-white;
+    }
+  }
+}
+
+.silver {
+  .section-agenda {
+    background: darken($color-rh-white, 2.5%);
+  }
+}
+
+.background-image #content {
+  color: #444;
+
+  .brand {
+    text-align: right;
+
+    svg {
+      display: inline-block;
+    }
+  }
+
+  .section-agenda {
+    color: #444;
+    h1, h2 { color: #444; }
+  }
+}
