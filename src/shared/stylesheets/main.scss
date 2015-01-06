@@ -93,6 +93,7 @@ svg {
 
   [class*="-logo-container"] {
     @extend .one-half;
+    padding: 5%;
     float: left;
   }
 }
@@ -116,6 +117,7 @@ svg {
   .event-logo-container,
   .headline-container {
     @extend .one-half;
+    padding: 7.5%;
     float: left;
   }
 
