@@ -9,7 +9,7 @@ body {
 .artwork-pattern svg { stroke: lighten($color-rh-slate, 22.5%); }
 
 #artwork .artwork-shape {
-  background-color: $color-rh-slate;
+  background-color: lighten($color-rh-slate, 10%);
 }
 
 .background-image, .red {
