@@ -301,19 +301,15 @@ pre {
     width: 40%; }
 
 .complex-logo {
-  -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease; }
   .complex-logo.line-icon {
-    -webkit-transition-delay: 2s;
     transition-delay: 2s; }
     .complex-logo.line-icon path {
-      -webkit-transition: all 1s ease 0.52s;
       transition: all 1s ease 0.52s;
       stroke-dasharray: 100, 10;
       -webkit-animation: ani-line-icon 2s ease alternate;
       animation: ani-line-icon 2s ease alternate; }
   .complex-logo .event-name {
-    -webkit-transition-delay: 1s;
     transition-delay: 1s;
     -webkit-animation: ani-event-name 2s ease alternate;
     animation: ani-event-name 2s ease alternate; }
@@ -321,7 +317,6 @@ pre {
     -webkit-animation: ani-logomark 2s ease alternate;
     animation: ani-logomark 2s ease alternate; }
   .complex-logo .location {
-    -webkit-transition-delay: 1.4s;
     transition-delay: 1.4s;
     -webkit-animation: ani-location 2s ease alternate;
     animation: ani-location 2s ease alternate; }
@@ -697,9 +692,7 @@ pre {
   top: 0;
   bottom: 0;
   overflow: hidden;
-  margin: 0;
-  background-image: -webkit-radial-gradient(50% 50%, ellipse, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0.75) 50%, rgba(255, 255, 255, 0.0001) 100%);
-  background-image: radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0.75) 50%, rgba(255, 255, 255, 0.0001) 100%); }
+  margin: 0; }
   #artwork .artwork-inner {
     position: relative; }
     #artwork .artwork-inner:before {
@@ -709,7 +702,6 @@ pre {
   #artwork * {
     margin: 0; }
   #artwork .artwork-shape {
-    background-color: #5E6A71;
     position: absolute;
     top: 50%;
     -webkit-transform-origin: 50% 50%;
@@ -718,10 +710,6 @@ pre {
     -webkit-transform: translate3d(-100%, -50%, 0) skewX(-45deg);
     transform: translate3d(-100%, -50%, 0) skewX(-45deg);
     margin: 0; }
-    #artwork .artwork-shape:nth-child(even) {
-      background-color: white;
-      background-image: none !important;
-      border-right: 0.1em solid rgba(255, 255, 255, 0.7); }
   #artwork .skew-animate-in {
     -webkit-transform: translate3d(-50%, -50%, 0) skewX(-45deg);
     transform: translate3d(-50%, -50%, 0) skewX(-45deg);
@@ -814,8 +802,79 @@ pre {
     opacity: 0; } }
 
 body {
+  background-color: #919da4; }
+
+#artwork {
+  background-image: radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0.75) 50%, rgba(255, 255, 255, 0.0001) 100%); }
+
+.artwork-pattern svg {
+  stroke: #98a3aa; }
+
+#artwork .artwork-shape {
+  background-color: #5E6A71; }
+
+.background-image, .red {
+  color: #fff; }
+  .background-image .logotext, .background-image .logotype, .background-image h1, .background-image h2, .background-image h3, .background-image text, .background-image tspan, .red .logotext, .red .logotype, .red h1, .red h2, .red h3, .red text, .red tspan {
+    color: #fff;
+    fill: #fff !important; }
+  .background-image #content, .red #content {
+    color: #fff; }
+    .background-image #content .sko-logo .logomark path, .red #content .sko-logo .logomark path {
+      fill: #0088CE !important; }
+    .background-image #content .sko-logo text, .background-image #content .sko-logo tspan, .background-image #content .logotext, .background-image #content .logotype, .background-image #content h1, .background-image #content h2, .background-image #content h3, .background-image #content text, .background-image #content tspan, .red #content .sko-logo text, .red #content .sko-logo tspan, .red #content .logotext, .red #content .logotype, .red #content h1, .red #content h2, .red #content h3, .red #content text, .red #content tspan {
+      color: #fff;
+      fill: #fff !important; }
+
+body.red {
+  background-color: #b30000; }
+
+.red main {
+  background-image: radial-gradient(ellipse at 50% 50%, rgba(204, 0, 0, 0.75) 0%, rgba(204, 0, 0, 0.0001) 100%); }
+
+.red .corner-shape-pattern svg {
+  stroke: #cc0000; }
+
+.red .corner-shape-solid-triangle {
+  background-color: #cc0000; }
+
+.red #artwork {
+  background-image: radial-gradient(ellipse at 50% 50%, rgba(204, 0, 0, 0.75) 0%, rgba(204, 0, 0, 0.75) 50%, rgba(204, 0, 0, 0.0001) 100%); }
+
+.red #artwork .artwork-shape {
+  background-color: maroon; }
+
+.red #artwork .artwork-pattern svg {
+  stroke: #cc0000; }
+
+body.silver {
+  background-color: #f2f2f2; }
+
+.silver main {
+  background-image: radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0.0001) 100%); }
+
+.silver .corner-shape-pattern svg {
+  stroke: #ffffff; }
+
+.silver .corner-shape-solid-triangle {
+  background-color: #ffffff; }
+
+.silver #artwork {
+  background-image: radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0.75) 50%, rgba(255, 255, 255, 0.0001) 100%); }
+
+.silver #artwork .artwork-shape {
+  background-color: #d9d9d9; }
+
+.silver #artwork .artwork-pattern svg {
+  stroke: #ffffff; }
+
+.background-image #content .brand {
+  text-align: right; }
+  .background-image #content .brand svg {
+    display: inline-block; }
+
+body {
   margin: 0;
-  background-color: #919da4;
   background-size: cover;
   position: relative;
   overflow: hidden;
@@ -829,7 +888,6 @@ main {
   right: 0;
   margin: 0;
   overflow: hidden;
-  background-image: -webkit-radial-gradient(50% 50%, ellipse, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0.0001) 100%);
   background-image: radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0.0001) 100%); }
 
 #content {
@@ -901,38 +959,12 @@ svg {
   .container_fy16-and-headline-and-event-logo .sko-logo text, .container_fy16-and-headline-and-event-logo .sko-logo tspan, .container_fy16-and-headline-and-event-logo .sko-logo .logomark path {
     fill: #444 !important; }
 
-.overlay {
-  display: none;
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  z-index: 1;
-  margin: 0; }
-
-.red .overlay {
-  display: block;
-  background-color: #d00;
-  -webkit-blend-mode: multiply;
-  mix-blend-mode: multiply; }
-
-.background-image .logotext, .background-image .logotype, .background-image h1, .background-image h2, .background-image h3, .background-image text, .background-image p, .background-image tspan, .red .logotext, .red .logotype, .red h1, .red h2, .red h3, .red text, .red p, .red tspan {
-  color: #fff;
-  fill: #fff !important; }
-.background-image #content .sko-logo .logomark path, .red #content .sko-logo .logomark path {
-  fill: #0088CE !important; }
-.background-image #content .sko-logo text, .background-image #content .sko-logo tspan, .background-image #content .logotext, .background-image #content .logotype, .background-image #content h1, .background-image #content h2, .background-image #content h3, .background-image #content text, .background-image #content p, .background-image #content tspan, .red #content .sko-logo text, .red #content .sko-logo tspan, .red #content .logotext, .red #content .logotype, .red #content h1, .red #content h2, .red #content h3, .red #content text, .red #content p, .red #content tspan {
-  color: #fff;
-  fill: #fff !important; }
-
-.silver .overlay {
-  display: block;
-  background-color: #fff;
-  opacity: 0.5; }
-
 .full-height .artwork-shape {
   top: 0 !important;
   bottom: 0 !important;
-  height: 150% !important; }
+  height: 100% !important;
+  -webkit-transform: translate3d(-100%, 0, 0) skewX(-45deg) !important;
+  transform: translate3d(-100%, 0, 0) skewX(-45deg) !important; }
 
 .clearfix:before, .data-lining:before, .clearfix:after, .data-lining:after {
   content: " ";

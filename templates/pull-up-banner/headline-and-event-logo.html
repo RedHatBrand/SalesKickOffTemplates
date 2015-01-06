@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="//redhatbrand.github.io/SalesKickOffTemplates/templates/generic-resizeable-print/assets/stylesheets/main.css" />
     <style type="text/css">
       {{# background-image }}
-        main {
+        .background-image main {
           background-image:
             url('//redhatbrand.github.io/SalesKickOffTemplates/shared/images/grid-06-06.svg'),
             url('{{{ background-image }}}');
@@ -30,9 +30,9 @@
     class="{{#background-image}}background-image{{/background-image}} {{artwork-option}} {{colormode}}">
 
     {{^ background-image }}
-    <div class="overlay"></div>
     <div id="artwork"></div>
     {{/ background-image }}
+
     <main>
       <div id="content" class="container_headline-and-event-logo">
         <div class="event-logo-container">

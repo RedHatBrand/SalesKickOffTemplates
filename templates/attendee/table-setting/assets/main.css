@@ -10,7 +10,8 @@
   right: 25%;
   -webkit-transform: none;
   -ms-transform: none;
-  transform: none; }
+  transform: none;
+  width: initial; }
 
 .corner-shapes-bottom-right {
   width: 50%; }

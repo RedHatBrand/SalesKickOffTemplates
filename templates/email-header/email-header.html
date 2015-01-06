@@ -7,15 +7,15 @@
     <link rel="stylesheet" href="//redhatbrand.github.io/SalesKickOffTemplates/templates/email-header/assets/stylesheets/main.css" />
     <style type="text/css">
       {{# background-image }}
-        main {
+        .background-image main {
           background-image:
             url('//redhatbrand.github.io/SalesKickOffTemplates/shared/images/grid-06-06.svg'),
-            url('{{{ background-image }}}');
+            url('{{{ background-image }}}') !important;
 
           background-repeat: no-repeat;
           background-blend-mode: multiply;
-          background-size: 100% auto, cover;
-          background-position: center center, center center;
+          background-size: cover;
+          background-position: center center;
           color: white;
         }
 
@@ -24,11 +24,14 @@
     </style>
   </head>
 
-  <body style="width: 1003px; height: 279px;" class="{{artwork-option}} {{colormode}}">
+  <body
+    style="width: 1003px; height: 279px;"
+    class="{{#background-image}}background-image{{/background-image}} {{artwork-option}} {{colormode}}">
+
     {{^ background-image }}
-    <div class="overlay"></div>
     <div id="artwork"></div>
     {{/ background-image }}
+
     <main>
       <div id="content">
         <svg class="sko-logo logo line-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="5 6.5 315 120">
@@ -59,6 +62,7 @@
 
       </div>
 
+      {{^ background-image }}
       <div class="corner-shapes-bottom-right">
         <div class="corner-shape-solid-triangle"></div>
         <div data-red-hat-pattern="corporate" class="pattern-red corner-shape-pattern"></div>
@@ -72,6 +76,7 @@
 
         </div>
       </div>
+      {{/ background-image }}
     </main>
 
     {{#artwork-complexity}}
