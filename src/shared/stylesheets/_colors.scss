@@ -65,8 +65,8 @@ body.silver {
   background-image: radial-gradient(ellipse at 50% 50%, rgba($color-rh-white, 0.75) 0%, rgba($color-rh-white, 0.0001) 100%);
 }
 
-.silver .corner-shape-pattern svg { stroke: $color-rh-white; }
-.silver .corner-shape-solid-triangle { background-color: $color-rh-white; }
+.silver .corner-shape-pattern svg { stroke: darken($color-rh-white, 2%); }
+.silver .corner-shape-solid-triangle { background-color: darken($color-rh-white, 2%); }
 
 .silver #artwork {
   background-image: radial-gradient(ellipse at 50% 50%, rgba($color-rh-white, 0.75) 0%, rgba($color-rh-white, 0.75) 50%, rgba($color-rh-white, 0.0001) 100%);
