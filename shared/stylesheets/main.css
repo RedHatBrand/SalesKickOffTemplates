@@ -279,10 +279,8 @@ pre {
       width: 100%;
       height: 100%;
       position: absolute;
-      stroke-width: 0.5pt;
-      stroke: #e5e8e9; }
+      stroke-width: 0.5pt; }
   .corner-shapes-bottom-right .corner-shape-solid-triangle {
-    background-color: #e5e8e9;
     height: 200%;
     width: 100%;
     position: absolute;
@@ -740,7 +738,6 @@ pre {
       position: absolute;
       width: 100%;
       height: 100%;
-      stroke: #98a3aa;
       stroke-width: 0.5; }
 
 .tile-pattern-tile {
@@ -804,14 +801,44 @@ pre {
 body {
   background-color: #919da4; }
 
-#artwork {
-  background-image: radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0.75) 50%, rgba(255, 255, 255, 0.0001) 100%); }
+#artwork:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-image: radial-gradient(ellipse at 50% 50%, #ffffff 0%, #ffffff 50%, #75848d 100%);
+  opacity: 0.5;
+  z-index: 1; }
+
+.artwork-inner {
+  z-index: 2; }
+
+main {
+  z-index: 3; }
+
+main:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-image: radial-gradient(ellipse at 50% 50%, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+  opacity: 0.75; }
 
 .artwork-pattern svg {
-  stroke: #98a3aa; }
+  stroke: #9fa9af; }
 
 #artwork .artwork-shape {
   background-color: #75848d; }
+
+.corner-shape-pattern svg {
+  stroke: #c9cfd2; }
+
+.corner-shape-solid-triangle {
+  background-color: #c9cfd2; }
 
 .background-image, .red {
   color: #fff; }
@@ -829,8 +856,8 @@ body {
 body.red {
   background-color: #b30000; }
 
-.red main {
-  background-image: radial-gradient(ellipse at 50% 50%, rgba(204, 0, 0, 0.75) 0%, rgba(204, 0, 0, 0.0001) 100%); }
+.red main:before {
+  background-image: radial-gradient(ellipse at 50% 50%, #cc0000, #b30000 100%); }
 
 .red .corner-shape-pattern svg {
   stroke: #cc0000; }
@@ -838,8 +865,8 @@ body.red {
 .red .corner-shape-solid-triangle {
   background-color: #cc0000; }
 
-.red #artwork {
-  background-image: radial-gradient(ellipse at 50% 50%, rgba(204, 0, 0, 0.75) 0%, rgba(204, 0, 0, 0.75) 50%, rgba(204, 0, 0, 0.0001) 100%); }
+.red #artwork:before {
+  background-image: radial-gradient(ellipse at 50% 50%, #cc0000 0%, #cc0000 50%, #b30000 100%); }
 
 .red #artwork .artwork-shape {
   background-color: maroon; }
@@ -850,23 +877,29 @@ body.red {
 body.silver {
   background-color: #f2f2f2; }
 
-.silver main {
-  background-image: radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0.0001) 100%); }
+.silver main:before {
+  background-image: radial-gradient(ellipse at 50% 50%, #ffffff, #f2f2f2 100%); }
 
 .silver .corner-shape-pattern svg {
-  stroke: #ffffff; }
+  stroke: #fafafa; }
 
 .silver .corner-shape-solid-triangle {
-  background-color: #ffffff; }
+  background-color: #fafafa; }
 
-.silver #artwork {
-  background-image: radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0.75) 50%, rgba(255, 255, 255, 0.0001) 100%); }
+.silver #artwork:before {
+  background-image: radial-gradient(ellipse at 50% 50%, #ffffff, #ffffff 50%, #f2f2f2 100%); }
 
 .silver #artwork .artwork-shape {
   background-color: #d9d9d9; }
 
 .silver #artwork .artwork-pattern svg {
   stroke: #ffffff; }
+
+body.background-image, .background-color main {
+  background-color: white; }
+
+.background-image main:before, .background-image #artwork:before {
+  display: none; }
 
 .background-image #content .brand {
   text-align: right; }
@@ -887,8 +920,7 @@ main {
   left: 0;
   right: 0;
   margin: 0;
-  overflow: hidden;
-  background-image: radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0.0001) 100%); }
+  overflow: hidden; }
 
 #content {
   margin: 0;

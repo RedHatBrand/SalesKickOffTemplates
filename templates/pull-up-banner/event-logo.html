@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="//redhatbrand.github.io/SalesKickOffTemplates/templates/pull-up-banner/assets/stylesheets/main.css" />
     <style type="text/css">
       {{# background-image }}
+        body.background-image { background-color: white; }
         .background-image main {
           background-image:
             url('//redhatbrand.github.io/SalesKickOffTemplates/shared/images/grid-06-06.svg'),
@@ -15,10 +16,11 @@
 
           background-repeat: no-repeat;
           background-blend-mode: multiply;
-          background-size: 105% auto, cover;
-          background-position: center center, center center;
+          background-size: cover;
+          background-position: center center;
 
           color: white;
+          background-color: white;
         }
 
         .logotext { fill: white; }
