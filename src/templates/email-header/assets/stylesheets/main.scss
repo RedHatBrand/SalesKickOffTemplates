@@ -1,17 +1,24 @@
-
 #content {
   top: 50%;
-  left: 2em;
+  left: 0;
   transform: translateY(-50%);
-  max-width: 80%;
+  width: 66.667%;
+  padding: 2em;
 }
 
-.corner-shapes-bottom-right .corner-shape-bottom-right-logo {
-  height: 3.75em;
-  margin: 0;
-  width: 10em;
-  bottom: 1.5em;
-  right: 2.5em;
+.container_fy16-and-headline-and-event-logo .event-logo-container,
+.container_fy16-and-headline-and-event-logo .headline-container {
+  padding: 1.5em;
+}
 
-  svg { height: 100%; }
+.container_fy16-and-headline-and-event-logo .headline-container {
+  width: 40%;
+}
+
+.container_fy16-and-headline-and-event-logo .event-logo-container {
+  width: 60%;
+}
+
+.corner-shapes-bottom-right {
+  width: 40%;
 }

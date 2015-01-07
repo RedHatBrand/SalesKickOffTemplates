@@ -1,6 +1,6 @@
 ---
-width: 1003px;
-height: 279px;
+width: 900px
+height: 240px
 ---
 
 <!DOCTYPE html>
@@ -14,12 +14,12 @@ height: 279px;
         .background-image main {
           background-image:
             url('<%=baseUrl%>/shared/images/grid-06-06.svg'),
-            url('{{{ background-image }}}') !important;
+            url('{{{ background-image }}}');
 
           background-repeat: no-repeat;
           background-blend-mode: multiply;
-          background-size: cover;
-          background-position: center center;
+          background-size: 200% auto, cover;
+          background-position: 100% 50%, center center;
           color: white;
         }
 
@@ -29,7 +29,7 @@ height: 279px;
   </head>
 
   <body
-    style="width: 1003px; height: 279px;"
+    style="width: {{width}}px; height: {{#multiply}}{{width}}*0.266{{/multiply}}px"
     class="{{#background-image}}background-image{{/background-image}} {{artwork-option}} {{colormode}}">
 
     {{^ background-image }}
@@ -37,12 +37,18 @@ height: 279px;
     {{/ background-image }}
 
     <main>
-      <div id="content">
-        <% include ../../shared/images/event-logo-lockup.svg %>
+      <div id="content" class="container_fy16-and-headline-and-event-logo">
+        <div class="headline-container">
+          <h2 class="fy16 js-fy16">FY16</h2>
+          <h1 class="headline js-headline">{{{ headline }}}</h1>
+        </div>
+        <div class="event-logo-container">
+          <% include ../../shared/images/event-logo-lockup.svg %>
+        </div>
       </div>
 
       {{^ background-image }}
-      <div class="corner-shapes-bottom-right">
+      <div class="corner-shapes-bottom-right redhat">
         <div class="corner-shape-solid-triangle"></div>
         <div data-red-hat-pattern="corporate" class="pattern-red corner-shape-pattern"></div>
         <div class="corner-shape-bottom-right-logo rh-logo">
@@ -59,9 +65,13 @@ height: 279px;
     {{/artwork-complexity}}
 
     {{^ background-image }}
-    <script type="text/javascript" src="<%=baseUrl%>/shared/javascripts/artwork.js"></script>
+    <script src="<%=baseUrl%>/shared/javascripts/artwork.js"></script>
     {{/ background-image }}
 
-    <script type="text/javascript" src="//redhatbrand.github.io/RedHatPatterns/red-hat-patterns.js"></script>
+    <script src="//redhatbrand.github.io/RedHatPatterns/red-hat-patterns.js"></script>
+
+    <script src="//redhatbrand.github.io/RedHatTemplates/global-assets/javascripts/vendor/jquery.js"></script>
+    <script src="//redhatbrand.github.io/RedHatTemplates/global-assets/javascripts/vendor/jquery.fittext.js"></script>
+    <script src="<%=baseUrl%>/shared/javascripts/generic-fittext.js"></script>
   </body>
 </html>
