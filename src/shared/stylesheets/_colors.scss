@@ -9,7 +9,7 @@ body {
   right: 0;
   top: 0;
   bottom: 0;
-  background-image: radial-gradient(ellipse at 50% 50%, $color-rh-white 0%, $color-rh-white 50%, lighten($color-rh-slate, 10%) 100%);
+  background-image: radial-gradient(circle at center, $color-rh-white 0%, $color-rh-white 50%, lighten($color-rh-slate, 10%) 100%);
   opacity: 0.5;
   z-index: 1;
 }
@@ -29,7 +29,7 @@ main:before {
   right: 0;
   top: 0;
   bottom: 0;
-  background-image: radial-gradient(ellipse at 50% 50%, $color-rh-white 0%, rgba($color-rh-white, 0) 100%);
+  background-image: radial-gradient(circle at center, $color-rh-white 0%, rgba($color-rh-white, 0) 100%);
   opacity: 0.75;
 }
 
@@ -73,14 +73,14 @@ body.red {
 }
 
 .red main:before {
-  background-image: radial-gradient(ellipse at 50% 50%, $color-rh-red, darken($color-rh-red, 5%) 100%);
+  background-image: radial-gradient(circle at center, $color-rh-red, darken($color-rh-red, 5%) 100%);
 }
 
 .red .corner-shape-pattern svg { stroke: $color-rh-red; }
 .red .corner-shape-solid-triangle { background-color: $color-rh-red; }
 
 .red #artwork:before {
-  background-image: radial-gradient(ellipse at 50% 50%, $color-rh-red 0%, $color-rh-red 50%, darken($color-rh-red, 5%) 100%);
+  background-image: radial-gradient(circle at center, $color-rh-red 0%, $color-rh-red 50%, darken($color-rh-red, 5%) 100%);
 }
 .red #artwork .artwork-shape { background-color: darken($color-rh-red, 15%); }
 .red #artwork .artwork-pattern svg { stroke: $color-rh-red; }
@@ -92,14 +92,14 @@ body.silver {
 }
 
 .silver main:before {
-  background-image: radial-gradient(ellipse at 50% 50%, $color-rh-white, darken($color-rh-white, 5%) 100%);
+  background-image: radial-gradient(circle at center, $color-rh-white, darken($color-rh-white, 5%) 100%);
 }
 
 .silver .corner-shape-pattern svg { stroke: darken($color-rh-white, 2%); }
 .silver .corner-shape-solid-triangle { background-color: darken($color-rh-white, 2%); }
 
 .silver #artwork:before {
-  background-image: radial-gradient(ellipse at 50% 50%, $color-rh-white, $color-rh-white 50%, darken($color-rh-white, 5%) 100%);
+  background-image: radial-gradient(circle at center, $color-rh-white, $color-rh-white 50%, darken($color-rh-white, 5%) 100%);
 }
 .silver #artwork .artwork-shape { background-color: darken($color-rh-white, 15%); }
 .silver #artwork .artwork-pattern svg { stroke: $color-rh-white; }
