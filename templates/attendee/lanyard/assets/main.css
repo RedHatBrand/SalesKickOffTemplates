@@ -10,12 +10,20 @@
   transform: none;
   width: initial; }
 
-.corner-shapes-bottom-right {
-  width: 100%; }
+h1 {
+  font-size: 3.5rem;
+  line-height: 3.5rem; }
 
-.corner-shapes-bottom-right .corner-shape-bottom-right-logo {
-  right: 2em;
-  bottom: 2em; }
+.brand svg {
+  width: 66.667%; }
 
 .corner-shapes-bottom-right .corner-shape-pattern svg {
   stroke-width: 0.2pt; }
+
+.background-image #content .brand {
+  text-align: left; }
+
+@media (orientation: portrait) {
+  .corner-shapes-bottom-right {
+    width: 85.5%; }
+ }
