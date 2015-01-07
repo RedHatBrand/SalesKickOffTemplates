@@ -4,23 +4,48 @@ html, :root {
 }
 
 #content {
-  min-width: 75%;
+  min-width: initial;
+  width: initial;
+  transform: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 4.5em 3.5em;
 }
 
-.brand.sko {
-  width: 50%;
-  margin: 2em;
+.brand svg {
+  width: 66.667%;
 }
 
 h1 {
-  font-size: 6rem;
-  line-height: 6rem;
+  font-size: 8rem;
+  line-height: 8rem;
   margin: 0;
+  margin-left: -0.08em;
 }
-
-main { text-align: center; }
 
 .corner-shapes-bottom-right .corner-shape-bottom-right-logo {
   right: 2em;
   bottom: 2em;
+}
+
+.brand {
+  margin-top: 0rem;
+  padding-top: 1.5rem;
+  border-top: thin solid;
+}
+
+.background-image #content {
+  transform: translateY(-50%);
+  position: absolute;
+  left: 0;
+  top: 50%;
+  padding: 3.5em;
+}
+
+.background-image #content .brand {
+  text-align: left;
+  svg {
+    width: 75%;
+  }
 }

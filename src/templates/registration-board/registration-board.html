@@ -37,15 +37,15 @@ height: 603mm;
     {{/ background-image }}
 
     <main>
-      <div class="brand sko">
-        <% include ../../shared/images/event-logo-lockup.svg %>
-      </div>
-
       <div id="content">
         <article>
           <p>{{ text }}</p>
           <h1>{{ letter-range }}</h1>
         </article>
+
+        <div class="brand sko">
+          <% include ../../shared/images/event-logo-lockup.svg %>
+        </div>
       </div>
 
       {{^ background-image }}
