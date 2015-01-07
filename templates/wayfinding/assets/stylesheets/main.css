@@ -325,3 +325,8 @@ html, :root {
 .down #content {
   top: auto;
   bottom: 25%; }
+
+@media (orientation: portrait) {
+  .corner-shapes-bottom-right {
+    width: 53.333%; }
+ }
