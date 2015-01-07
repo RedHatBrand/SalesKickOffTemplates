@@ -50,6 +50,7 @@ $line-height:       1.5em;
 .agenda-content {
   display: flex;
   flex-flow: column wrap;
+  align-content: flex-start;
   height: 95%;
   margin-left: -1em;
   margin-right: -1em;
