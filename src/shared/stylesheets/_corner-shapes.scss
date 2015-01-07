@@ -28,12 +28,10 @@
       position: absolute;
 
       stroke-width: 0.5pt;
-      stroke: lighten($color-rh-slate, 50%);
     }
   }
 
   .corner-shape-solid-triangle {
-    background-color: lighten($color-rh-slate, 50%);
     height: 200%;
     width: 100%;
     position: absolute;
