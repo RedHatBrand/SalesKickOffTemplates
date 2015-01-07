@@ -375,7 +375,7 @@ body {
   right: 0;
   top: 0;
   bottom: 0;
-  background-image: radial-gradient(ellipse at 50% 50%, #ffffff 0%, #ffffff 50%, #75848d 100%);
+  background-image: radial-gradient(circle at center, #ffffff 0%, #ffffff 50%, #75848d 100%);
   opacity: 0.5;
   z-index: 1; }
 
@@ -392,7 +392,7 @@ main:before {
   right: 0;
   top: 0;
   bottom: 0;
-  background-image: radial-gradient(ellipse at 50% 50%, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+  background-image: radial-gradient(circle at center, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
   opacity: 0.75; }
 
 .artwork-pattern svg {
@@ -424,7 +424,7 @@ body.red {
   background-color: #b30000; }
 
 .red main:before {
-  background-image: radial-gradient(ellipse at 50% 50%, #cc0000, #b30000 100%); }
+  background-image: radial-gradient(circle at center, #cc0000, #b30000 100%); }
 
 .red .corner-shape-pattern svg {
   stroke: #cc0000; }
@@ -433,7 +433,7 @@ body.red {
   background-color: #cc0000; }
 
 .red #artwork:before {
-  background-image: radial-gradient(ellipse at 50% 50%, #cc0000 0%, #cc0000 50%, #b30000 100%); }
+  background-image: radial-gradient(circle at center, #cc0000 0%, #cc0000 50%, #b30000 100%); }
 
 .red #artwork .artwork-shape {
   background-color: maroon; }
@@ -445,7 +445,7 @@ body.silver {
   background-color: #f2f2f2; }
 
 .silver main:before {
-  background-image: radial-gradient(ellipse at 50% 50%, #ffffff, #f2f2f2 100%); }
+  background-image: radial-gradient(circle at center, #ffffff, #f2f2f2 100%); }
 
 .silver .corner-shape-pattern svg {
   stroke: #fafafa; }
@@ -454,7 +454,7 @@ body.silver {
   background-color: #fafafa; }
 
 .silver #artwork:before {
-  background-image: radial-gradient(ellipse at 50% 50%, #ffffff, #ffffff 50%, #f2f2f2 100%); }
+  background-image: radial-gradient(circle at center, #ffffff, #ffffff 50%, #f2f2f2 100%); }
 
 .silver #artwork .artwork-shape {
   background-color: #d9d9d9; }
