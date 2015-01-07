@@ -96,3 +96,9 @@ html, :root { font-size: 24pt; }
     bottom: 25%;
   }
 }
+
+@media (orientation: portrait) {
+  .corner-shapes-bottom-right {
+    width: 53.333%;
+  }
+}
