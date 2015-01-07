@@ -857,7 +857,7 @@ body.red {
   background-color: #b30000; }
 
 .red main:before {
-  background-image: radial-gradient(circle at center, #cc0000, #b30000 100%); }
+  background-image: radial-gradient(circle at center, #cc0000, transparent 100%); }
 
 .red .corner-shape-pattern svg {
   stroke: #cc0000; }
@@ -866,7 +866,7 @@ body.red {
   background-color: #cc0000; }
 
 .red #artwork:before {
-  background-image: radial-gradient(circle at center, #cc0000 0%, #cc0000 50%, #b30000 100%); }
+  background-image: radial-gradient(circle at center, #cc0000 0%, #cc0000 50%, transparent 100%); }
 
 .red #artwork .artwork-shape {
   background-color: maroon; }
@@ -878,7 +878,7 @@ body.silver {
   background-color: #f2f2f2; }
 
 .silver main:before {
-  background-image: radial-gradient(circle at center, #ffffff, #f2f2f2 100%); }
+  background-image: radial-gradient(circle at center, #ffffff, transparent 100%); }
 
 .silver .corner-shape-pattern svg {
   stroke: #fafafa; }
@@ -887,7 +887,7 @@ body.silver {
   background-color: #fafafa; }
 
 .silver #artwork:before {
-  background-image: radial-gradient(circle at center, #ffffff, #ffffff 50%, #f2f2f2 100%); }
+  background-image: radial-gradient(circle at center, #ffffff, #ffffff 50%, transparent 100%); }
 
 .silver #artwork .artwork-shape {
   background-color: #d9d9d9; }
@@ -974,6 +974,8 @@ svg {
 
 .container_headline-and-event-logo {
   width: 75%; }
+  .container_headline-and-event-logo .event-logo-container, .container_headline-and-event-logo .headline-container {
+    padding: 5%; }
   .container_headline-and-event-logo .event-logo-container {
     float: right; }
 
