@@ -956,8 +956,8 @@ svg {
 .sko-logo .logotext, .sko-logo .location {
   fill: #444 !important; }
 
-.one-half, .container_two-logos [class*="-logo-container"], .container_headline-and-event-logo .event-logo-container, .container_headline-and-event-logo .headline-container, .container_fy16-and-headline-and-event-logo .event-logo-container, .container_fy16-and-headline-and-event-logo .headline-container {
-  padding: 2em;
+.one-half, .container_two-logos [class*="-logo-container"], .container_headline-and-event-logo .event-logo-container, .container_headline-and-event-logo .headline-container {
+  padding: 2.5%;
   width: 50%;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -980,10 +980,14 @@ svg {
     float: right; }
 
 .container_fy16-and-headline-and-event-logo {
-  width: 75%; }
+  width: 40%; }
   .container_fy16-and-headline-and-event-logo .event-logo-container, .container_fy16-and-headline-and-event-logo .headline-container {
-    padding: 7.5%;
-    float: left; }
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 5%; }
+  .container_fy16-and-headline-and-event-logo .event-logo-container {
+    margin: 0;
+    width: 66.667%; }
   .container_fy16-and-headline-and-event-logo .fy16 {
     font-weight: 700;
     line-height: 0.8em;
@@ -1019,11 +1023,22 @@ svg {
   color: #444444;
   margin: 0; }
 
-@media all and (orientation: portrait) {
+@media all and (max-aspect-ratio: 210/297) {
+  .container_headline-and-event-logo, .container_fy16-and-headline-and-event-logo {
+    width: 60%; }
+    .container_headline-and-event-logo .one-half, .container_headline-and-event-logo .container_two-logos [class*="-logo-container"], .container_two-logos .container_headline-and-event-logo [class*="-logo-container"], .container_headline-and-event-logo .event-logo-container, .container_headline-and-event-logo .headline-container, .container_fy16-and-headline-and-event-logo .one-half, .container_fy16-and-headline-and-event-logo .container_two-logos [class*="-logo-container"], .container_two-logos .container_fy16-and-headline-and-event-logo [class*="-logo-container"], .container_fy16-and-headline-and-event-logo .container_headline-and-event-logo .event-logo-container, .container_headline-and-event-logo .container_fy16-and-headline-and-event-logo .event-logo-container, .container_fy16-and-headline-and-event-logo .container_headline-and-event-logo .headline-container, .container_headline-and-event-logo .container_fy16-and-headline-and-event-logo .headline-container {
+      width: initial;
+      float: none; }
+
+  .corner-shapes-bottom-right {
+    width: 60%; }
+ }
+
+@media all and (max-aspect-ratio: 1/2) {
   #content, #content[class*=container_] {
     width: 50%; }
 
-  .one-half, .container_two-logos [class*="-logo-container"], .container_headline-and-event-logo .event-logo-container, .container_headline-and-event-logo .headline-container, .container_fy16-and-headline-and-event-logo .event-logo-container, .container_fy16-and-headline-and-event-logo .headline-container {
+  .container_fy16-and-headline-and-event-logo .event-logo-container, .container_fy16-and-headline-and-event-logo .headline-container, .one-half, .container_two-logos [class*="-logo-container"], .container_headline-and-event-logo .event-logo-container, .container_headline-and-event-logo .headline-container {
     width: initial;
     float: none; }
 
@@ -1031,18 +1046,55 @@ svg {
     width: 80%; }
  }
 
-@media all and (min-aspect-ratio: 3/1) {
-  #content {
-    width: 50%; }
+@media all and (min-aspect-ratio: 297/210) {
+  #content.container_event-logo, #content.container_fy16-and-headline-and-event-logo, #content.container_headline-and-event-logo {
+    left: 10%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%); }
+
+  .container_headline-and-event-logo, .container_fy16-and-headline-and-event-logo {
+    width: 33.333%; }
+    .container_headline-and-event-logo .one-half, .container_headline-and-event-logo .container_two-logos [class*="-logo-container"], .container_two-logos .container_headline-and-event-logo [class*="-logo-container"], .container_headline-and-event-logo .event-logo-container, .container_headline-and-event-logo .headline-container, .container_fy16-and-headline-and-event-logo .one-half, .container_fy16-and-headline-and-event-logo .container_two-logos [class*="-logo-container"], .container_two-logos .container_fy16-and-headline-and-event-logo [class*="-logo-container"], .container_fy16-and-headline-and-event-logo .container_headline-and-event-logo .event-logo-container, .container_headline-and-event-logo .container_fy16-and-headline-and-event-logo .event-logo-container, .container_fy16-and-headline-and-event-logo .container_headline-and-event-logo .headline-container, .container_headline-and-event-logo .container_fy16-and-headline-and-event-logo .headline-container {
+      width: initial;
+      float: none; }
+
+  .corner-shapes-bottom-right {
+    width: 60%; }
  }
 
-@media all and (min-aspect-ratio: 4/1) {
-  #content {
-    width: 40%;
-    -webkit-transform: translate(0, -50%);
-    -ms-transform: translate(0, -50%);
-    transform: translate(0, -50%);
-    left: 5%; }
+@media all and (min-aspect-ratio: 2/1) {
+  #content, #content[class*=container_] {
+    width: 66.667%; }
+
+  .container_headline-and-event-logo .one-half, .container_headline-and-event-logo .container_two-logos [class*="-logo-container"], .container_two-logos .container_headline-and-event-logo [class*="-logo-container"], .container_headline-and-event-logo .event-logo-container, .container_headline-and-event-logo .headline-container {
+    padding: 2.5%;
+    width: 50%;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0; }
+
+  .container_headline-and-event-logo .event-logo-container {
+    float: right; }
+
+  .container_fy16-and-headline-and-event-logo .event-logo-container, .container_fy16-and-headline-and-event-logo .headline-container {
+    margin: 0;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 4%;
+    float: left; }
+  .container_fy16-and-headline-and-event-logo .event-logo-container {
+    width: 60%; }
+  .container_fy16-and-headline-and-event-logo .headline-container {
+    width: 40%; }
+
+  .corner-shapes-bottom-right {
+    width: 40%; }
+ }
+
+@media all and (min-aspect-ratio: 3/1) {
+  #content, #content[class*=container_] {
+    width: 50%; }
 
   #content.container_fy16-and-headline-and-event-logo {
     width: 60%; }
@@ -1052,14 +1104,26 @@ svg {
       width: 66.667%; }
  }
 
-@media all and (min-aspect-ratio: 5/1) {
+@media all and (min-aspect-ratio: 4/1) {
+  #content.container_one-logo {
+    width: 25%; }
+
   #content {
-    left: 0; }
+    width: 33.333%; }
+
+  #content.container_headline-and-event-logo {
+    width: 50%;
+    left: 2.5%; }
+
+  #content.container_event-logo {
+    left: 0;
+    padding: 2.5%; }
 
   #content.container_fy16-and-headline-and-event-logo {
-    width: 60%; }
+    width: 60%;
+    left: 0; }
     #content.container_fy16-and-headline-and-event-logo .headline-container {
-      width: 66.667%; }
+      width: 70%; }
       #content.container_fy16-and-headline-and-event-logo .headline-container .fy16, #content.container_fy16-and-headline-and-event-logo .headline-container .headline {
         width: 50%;
         -moz-box-sizing: border-box;
@@ -1067,9 +1131,32 @@ svg {
         margin: 0;
         float: left; }
       #content.container_fy16-and-headline-and-event-logo .headline-container .fy16 {
-        padding-right: 4rem; }
+        width: 56%; }
+      #content.container_fy16-and-headline-and-event-logo .headline-container .headline {
+        width: 44%; }
+      #content.container_fy16-and-headline-and-event-logo .headline-container .fy16 {
+        padding-right: 5%; }
     #content.container_fy16-and-headline-and-event-logo .event-logo-container {
-      width: 33.333%; }
+      width: 30%;
+      padding-left: 0; }
+
+  .corner-shapes-bottom-right {
+    width: 70%;
+    top: 50%;
+    bottom: auto;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    margin: 0; }
+    .corner-shapes-bottom-right .rh-logo {
+      margin: 0;
+      width: 20%;
+      right: 5%;
+      bottom: auto;
+      top: 50%;
+      -webkit-transform: translateY(-40%);
+      -ms-transform: translateY(-40%);
+      transform: translateY(-40%); }
  }
 
 html, :root {
