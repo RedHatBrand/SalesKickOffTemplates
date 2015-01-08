@@ -52,19 +52,14 @@ height: 597mm;
           <h1 class="data-lining">{{{ message }}}</h1>
         </div>
       </div>
+
       <div class="brand sko">
         <% include ../../shared/images/event-logo-lockup.svg %>
       </div>
 
-      {{^ background-image }}
-      <div class="corner-shapes-bottom-right redhat">
-        <div class="corner-shape-solid-triangle"></div>
-        <div data-red-hat-pattern="corporate" class="pattern-red corner-shape-pattern"></div>
-        <div class="corner-shape-bottom-right-logo rh-logo">
-          <% include ../../shared/images/rh-logo-black.svg %>
-        </div>
+      <div class="rh-logo">
+        <% include ../../shared/images/rh-logo-include.svg %>
       </div>
-      {{/ background-image }}
     </main>
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -78,7 +73,7 @@ height: 597mm;
     <script>
       $('.data-lining').splitLines({
           tag: '<span class="line">',
-          width: 'auto',
+          width: '100%',
           keepHtml: true
       });
     </script>

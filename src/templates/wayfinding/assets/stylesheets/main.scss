@@ -15,8 +15,17 @@ html, :root { font-size: 24pt; }
 .brand.sko {
   position: relative;
   z-index: 2;
-  width: 50%;
+  width: 33.333%;
   margin: 3em;
+}
+
+.rh-logo {
+  width: 33.333%;
+  position: absolute;
+  bottom: 3em;
+  left: 3em;
+  margin: 0;
+  transform: translateY(12.5%);
 }
 
 #content {
@@ -32,27 +41,24 @@ html, :root { font-size: 24pt; }
   &:before { border: none }
 }
 
-.right {
-  #content {
-    left: 3em;
-  }
-}
-
 .arrow {
+  background-color: $color-rh-blue;
+  width: 125%;
   position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  background-size: contain;
-  background-repeat: no-repeat;
-  z-index: 1;
+  top: 50%;
+  transform-origin: 50% 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+
+  &:before {
+    content: '';
+    padding-bottom: 100%;
+    display: block;
+  }
 }
 
 .left {
   .arrow {
-    background-size: 275% 108%;
-    background-position: 0 50%;
+    left: 100%;
   }
 
   #content {
@@ -63,9 +69,35 @@ html, :root { font-size: 24pt; }
   }
 }
 
+.right {
+  #content {
+    left: 3em;
+  }
+
+  .arrow {
+    left: 0;
+  }
+
+  .brand.sko {
+    float: right;
+  }
+
+  .rh-logo {
+    left: auto;
+    right: 3em;
+  }
+}
 
 .up, .down {
-  .arrow { background-size: 204.25% 150%; }
+  .arrow { left: 50%; }
+
+  .brand.sko {
+    width: 33.333%
+  }
+
+  .rh-logo {
+    width: 33.333%;
+  }
 
   #content {
     left: 50%;
@@ -77,23 +109,48 @@ html, :root { font-size: 24pt; }
       float: none;
       display: inline-block;
       white-space: nowrap;
-      margin: .025em auto;
+      margin: 0 auto;
     }
   }
 }
 
 .up {
-  .arrow { background-position: 0 -50%; }
+  .arrow { top: 100%; }
 
-  #content { top: 25%; }
+  .rh-logo {
+    bottom: auto;
+    top: 3em;
+    transform: none;
+    left: auto;
+    right: 3em;
+  }
+
+  #content {
+    top: 66.667%;
+  }
 }
 
 .down {
-  .arrow { background-position: 0 180%; }
+  .arrow { top: 0; }
 
   #content {
     top: auto;
-    bottom: 25%;
+    bottom: 66.667%;
+  }
+
+  .rh-logo {
+    bottom: 3em;
+    top: auto;
+    transform: none;
+    left: auto;
+    right: 3em;
+  }
+
+  .brand.sko {
+    position: absolute;
+    bottom: 3em;
+    left: 3em;
+    margin: 0;
   }
 }
 
