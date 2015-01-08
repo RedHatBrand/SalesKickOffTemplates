@@ -1,4 +1,4 @@
-body {
+body, .artwork-container.red {
   background-color: lighten($color-rh-slate, 20%);
 }
 
@@ -68,11 +68,11 @@ main:before {
 
 // RED
 
-body.red {
+body.red, .artwork-container.red {
   background-color: darken($color-rh-red, 5%);
 }
 
-.red main:before {
+.red main:before, .artwork-container.red:before {
   background-image: radial-gradient(circle at center, $color-rh-red, rgba($color-rh-red, 0) 100%);
 }
 
@@ -87,11 +87,11 @@ body.red {
 
 // SILVER
 
-body.silver {
+body.silver, .artwork-container.silver  {
   background-color: darken($color-rh-white, 5%);
 }
 
-.silver main:before {
+.silver main:before, .artwork-container.silver:before {
   background-image: radial-gradient(circle at center, $color-rh-white, rgba($color-rh-white, 0) 100%);
 }
 

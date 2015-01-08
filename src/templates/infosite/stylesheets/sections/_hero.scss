@@ -20,6 +20,9 @@
     background-image: radial-gradient(ellipse at 50% 50%, rgba(white, 0.75) 0%, rgba(white, 0.75) 25%, rgba(white, 0.0001) 100%);
   }
 
+  @media screen and (max-width: $breakpoint-medium) {
+    padding-top: 0;
+  }
 
   a.top-right {
     position: absolute;
@@ -69,6 +72,28 @@ h1.title {
     font-size: 2em;
     margin-top: 1.75em;
     font-weight: bold ;
+  }
+}
+
+.rh-logo .logotext.logotype {
+  fill: white !important;
+}
+
+.silver {
+  h1.title { color: $black; }
+  .sko-logo .event-name, .sko-logo .location {
+    fill: $black !important;
+  }
+  .rh-logo .logotext.logotype {
+    fill: $black !important;
+  }
+}
+
+.red, .background-image {
+  .event-details {
+    h1, h2, h3 {
+      color: $black;
+    }
   }
 }
 

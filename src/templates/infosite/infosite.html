@@ -14,22 +14,44 @@ height: 100vh
     <meta content='{{ meta-description }}' name='description' />
     <meta content='{{ meta-keywords }}' name='keywords' />
     <link href='//red-hat-assets.s3.amazonaws.com/assets/images/favicon.ico' rel='icon' type='image/ico' />
-    <link href='http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css' media='screen' rel='stylesheet' />
+    <link href='//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css' media='screen' rel='stylesheet' />
     <link href='<%= baseUrl %>/templates/infosite/stylesheets/main.css' media='screen' rel='stylesheet' />
-    <link href='http://red-hat-overpass-fonts.s3.amazonaws.com/overpass.css' rel='stylesheet' />
+    <link href='//red-hat-overpass-fonts.s3.amazonaws.com/overpass.css' rel='stylesheet' />
     <script src='//redhatbrand.github.io/RedHatTemplates/global-assets/javascripts/vendor/jquery.js'></script>
     <script src='//redhatbrand.github.io/RedHatTemplates/global-assets/javascripts/vendor/jquery.fitvids.js'></script>
     <script src='<%= baseUrl %>/templates/infosite/javascripts/scrollspy.js'></script>
     <script src='//redhatbrand.github.io/RedHatTemplates/global-assets/javascripts/vendor/jquery.smooth-scroll.js'></script>
     <script src='<%= baseUrl %>/templates/infosite/javascripts/main.js'></script>
     <!--[if lt IE 9]> <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script> <![endif]-->
+
+    <style type="text/css">
+      {{# background-image }}
+        .background-image.artwork-container { background-color: white; }
+        .background-image.artwork-container {
+          background-image:
+            url('<%=baseUrl%>/shared/images/grid-06-06.svg'),
+            url('{{{ background-image }}}');
+
+          background-repeat: no-repeat;
+          background-blend-mode: multiply;
+          background-size: cover;
+          background-position: center center;
+
+          color: white;
+          background-color: white;
+        }
+      {{/ background-image }}
+    </style>
   </head>
   <body data-spy="scroll" data-target=".nav-menu" data-offset="100">
     <div class='wrapper'>
       <header class='header' role='banner'>
-        <figure class='hero {{colormode}} {{artwork-option}}'>
-          <div id="artwork"></div>
-          <div class="gradient"></div>
+        <figure class='hero artwork-container {{colormode}} {{artwork-option}} {{#background-image}}background-image{{/background-image}}'>
+
+          {{^background-image}}
+          <div id="artwork" class="artwork-animate"></div>
+          {{/background-image}}
+
           <div class='container layer-three'>
             <h1 class='title'>{{ headline }}</h1>
             <% include ../../shared/images/event-logo-lockup-complex.svg %>
@@ -45,7 +67,7 @@ height: 100vh
               </div>
             </div>
             <a class='rh-logo' href='//www.redhat.com' target='_blank' title='Go to redhat.com'>
-              <img src='http://netengine.io-assets.s3.amazonaws.com/assets/images/png/logos/rh.png'>
+              <% include ../../shared/images/rh-logo-include.svg %>
             </a>
           </div>
         </figure>
@@ -91,7 +113,7 @@ height: 100vh
         </div>
       </section>
       {{#section}}
-      <section style="background-image: url('{{{ background-image }}}')" class='section-{{ name }} main {{ section-theme }}' id='{{ slug }}'>
+      <section style="background-image: url('{{{ section-background-image }}}')" class='section-{{ name }} main {{ section-theme }}' id='{{ slug }}'>
         <div class='container section-layout-{{ section-layout }}'>
           {{{ content }}}
         </div>
@@ -132,11 +154,11 @@ height: 100vh
       <section class='section-agenda main' id='agenda'>
         <div class='container'>
           <h1>Agenda</h1>
-          {{#day}}
+          {{#days}}
           <input id='{{ day-name }}' name='active-day' type='radio'>
           <label for='{{ day-name }}'>{{ day-name }} {{ day-name-translation }}</label>
-          {{/day}}
-          {{#day}}
+          {{/days}}
+          {{#days}}
           <div class='time-table-{{ day-name }}'>
             <table class="calendar">
               <tr class="headings">
@@ -193,7 +215,7 @@ height: 100vh
               {{/times}}
             </table>
           </div>
-          {{/day}}
+          {{/days}}
         </div>
       </section>
       <footer class='footer'>
