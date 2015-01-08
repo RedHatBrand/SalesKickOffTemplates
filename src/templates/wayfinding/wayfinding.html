@@ -11,8 +11,6 @@ height: 597mm;
     <link rel="stylesheet" href="<%=baseUrl%>/templates/wayfinding/assets/stylesheets/main.css" />
 
     <style type="text/css">
-      .arrow { background-image: url(<%=baseUrl%>/templates/wayfinding/assets/images/arrow.svg); }
-
       {{# background-image }}
         .background-image main {
           background-image:
@@ -25,11 +23,6 @@ height: 597mm;
           background-position: center center, center center;
 
           color: white;
-        }
-
-        .arrow {
-          background-image: url(<%=baseUrl%>/templates/wayfinding/assets/images/arrow-white.svg);
-          opacity: .75;
         }
 
         .logotext { fill: white; }
@@ -46,7 +39,6 @@ height: 597mm;
 
     <main>
       <div class="arrow"></div>
-
       <div id="content">
         <div class="headline">
           <h1 class="data-lining">{{{ message }}}</h1>
