@@ -262,8 +262,18 @@ html, :root {
 .brand.sko {
   position: relative;
   z-index: 2;
-  width: 50%;
+  width: 33.333%;
   margin: 3em; }
+
+.rh-logo {
+  width: 33.333%;
+  position: absolute;
+  bottom: 3em;
+  left: 3em;
+  margin: 0;
+  -webkit-transform: translateY(12.5%);
+  -ms-transform: translateY(12.5%);
+  transform: translateY(12.5%); }
 
 #content {
   -webkit-transform: translateY(-50%);
@@ -278,30 +288,46 @@ html, :root {
   .headline:before {
     border: none; }
 
-.right #content {
-  left: 3em; }
-
 .arrow {
+  background-color: #0088CE;
+  width: 125%;
   position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  background-size: contain;
-  background-repeat: no-repeat;
-  z-index: 1; }
+  top: 50%;
+  -webkit-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+  -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+  -ms-transform: translate(-50%, -50%) rotate(-45deg);
+  transform: translate(-50%, -50%) rotate(-45deg); }
+  .arrow:before {
+    content: '';
+    padding-bottom: 100%;
+    display: block; }
 
 .left .arrow {
-  background-size: 275% 108%;
-  background-position: 0 50%; }
+  left: 100%; }
 .left #content {
   left: auto;
   right: 3em; }
   .left #content .line {
     float: right; }
 
+.right #content {
+  left: 3em; }
+.right .arrow {
+  left: 0; }
+.right .brand.sko {
+  float: right; }
+.right .rh-logo {
+  left: auto;
+  right: 3em; }
+
 .up .arrow, .down .arrow {
-  background-size: 204.25% 150%; }
+  left: 50%; }
+.up .brand.sko, .down .brand.sko {
+  width: 33.333%; }
+.up .rh-logo, .down .rh-logo {
+  width: 33.333%; }
 .up #content, .down #content {
   left: 50%;
   -webkit-transform: translateX(-50%);
@@ -313,18 +339,39 @@ html, :root {
     float: none;
     display: inline-block;
     white-space: nowrap;
-    margin: 0.025em auto; }
+    margin: 0 auto; }
 
 .up .arrow {
-  background-position: 0 -50%; }
+  top: 100%; }
+.up .rh-logo {
+  bottom: auto;
+  top: 3em;
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+  left: auto;
+  right: 3em; }
 .up #content {
-  top: 25%; }
+  top: 66.667%; }
 
 .down .arrow {
-  background-position: 0 180%; }
+  top: 0; }
 .down #content {
   top: auto;
-  bottom: 25%; }
+  bottom: 66.667%; }
+.down .rh-logo {
+  bottom: 3em;
+  top: auto;
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+  left: auto;
+  right: 3em; }
+.down .brand.sko {
+  position: absolute;
+  bottom: 3em;
+  left: 3em;
+  margin: 0; }
 
 @media (orientation: portrait) {
   .corner-shapes-bottom-right {
