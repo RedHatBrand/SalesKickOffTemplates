@@ -1,6 +1,8 @@
 (function (global) {
   var canvasWrapper = document.getElementById('artwork');
-  var canvas = document.createElement('div');
+  var canvas        = document.createElement('div');
+  var animatable    = canvasWrapper.classList.contains('artwork-animate');
+
   canvas.classList.add('artwork-inner');
   canvasWrapper.appendChild(canvas);
 
@@ -60,7 +62,10 @@
     div.style.opacity = randomArrayElem([0.25, 0.5, 0.75]);
     div.style.animationDuration = getRandomInt(1,3).toString() + 's';
     canvas.appendChild(div);
-    // div.classList.add('skew-animate-in');
+
+    if (animatable) {
+      div.classList.add('skew-animate-in');
+    }
   }
 
   function addPattern () {
@@ -69,7 +74,10 @@
     div.classList.add('artwork-pattern');
     div.style.animationDuration = getRandomInt(1,3).toString() + 's';
     canvas.appendChild(div);
-    // div.classList.add('rotate-animate-in');
+
+    if (animatable) {
+      div.classList.add('rotate-animate-in');
+    }
   }
 
   function populateCanvas (complexity) {

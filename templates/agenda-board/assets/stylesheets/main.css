@@ -798,7 +798,7 @@ pre {
   100% {
     opacity: 0; } }
 
-body {
+body, .artwork-container.red {
   background-color: #919da4; }
 
 #artwork:before {
@@ -853,10 +853,10 @@ main:before {
       color: #fff;
       fill: #fff !important; }
 
-body.red {
+body.red, .artwork-container.red {
   background-color: #b30000; }
 
-.red main:before {
+.red main:before, .artwork-container.red:before {
   background-image: radial-gradient(circle at center, #cc0000, rgba(204, 0, 0, 0) 100%); }
 
 .red .corner-shape-pattern svg {
@@ -874,10 +874,10 @@ body.red {
 .red #artwork .artwork-pattern svg {
   stroke: #cc0000; }
 
-body.silver {
+body.silver, .artwork-container.silver {
   background-color: #f2f2f2; }
 
-.silver main:before {
+.silver main:before, .artwork-container.silver:before {
   background-image: radial-gradient(circle at center, #ffffff, rgba(255, 255, 255, 0) 100%); }
 
 .silver .corner-shape-pattern svg {
