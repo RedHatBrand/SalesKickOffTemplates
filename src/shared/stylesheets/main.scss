@@ -275,16 +275,23 @@ svg {
     width: 50%;
   }
 
+  #content.container_headline-and-event-logo {
+    width: 50%;
+    left: 2.5%;
+  }
+
+  #content.container_event-logo {
+    left: 2.5%;
+    padding: 2.5%;
+  }
+
   #content.container_fy16-and-headline-and-event-logo {
     width: 60%;
+    left: 2.5%;
+  }
 
-    .headline-container {
-      width: 33.333%;
-    }
-
-    .event-logo-container {
-      width: 66.667%;
-    }
+  #content.container_fy16-and-headline-and-event-logo {
+    width: 60%;
   }
 }
 
