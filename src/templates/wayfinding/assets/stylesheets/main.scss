@@ -9,6 +9,7 @@ html, :root { font-size: 24pt; }
   h1 {
     border: 0;
     padding: 0;
+    line-height: 1em;
   }
 }
 
@@ -30,7 +31,7 @@ html, :root { font-size: 24pt; }
 
 #content {
   transform: translateY(-50%);
-  width: 200%;
+  width: 66.667%;
   max-width: initial;
 }
 
@@ -64,6 +65,7 @@ html, :root { font-size: 24pt; }
   #content {
     left: auto;
     right: 3em;
+    text-align: right;
 
     .line { float: right; }
   }
@@ -103,7 +105,8 @@ html, :root { font-size: 24pt; }
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
-    max-width: 55%;
+    max-width: initial;
+    width: 66.667%;
 
     .line {
       float: none;

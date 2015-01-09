@@ -2,14 +2,14 @@
   "data": {
     "region": "Asia Pacific",
     "year": "FY14",
-    "width": "426",
-    "height": "597",
+    "width": "210",
+    "height": "297",
     "unit": "mm",
     "message": "This way to Asia Pacific's best event yet.",
-    "direction": "left",
-    "background-image": "//d3s84xo5cmutkt.cloudfront.net/assets/attachments/000/003/179/original/gray_clouds.jpg",
+    "direction": "right",
+    "_background-image": "//d3s84xo5cmutkt.cloudfront.net/assets/attachments/000/003/179/original/gray_clouds.jpg",
     "artwork-complexity": 20,
     "artwork-option": "fractals",
-    "colormode": "red"
+    "colormode": "platinum"
   }
 }
