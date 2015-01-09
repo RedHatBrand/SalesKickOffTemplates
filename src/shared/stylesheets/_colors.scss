@@ -52,8 +52,11 @@ main:before {
   #content {
     color: #fff;
 
+    .sko-logo .logomark path:first-child {
+      fill: #08A8E5 !important;
+    }
     .sko-logo .logomark path {
-      fill: $color-rh-blue !important;
+      fill: #0782C2 !important;
     }
 
     .sko-logo text,
