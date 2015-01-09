@@ -847,8 +847,10 @@ main:before {
     fill: #fff !important; }
   .background-image #content, .red #content {
     color: #fff; }
+    .background-image #content .sko-logo .logomark path:first-child, .red #content .sko-logo .logomark path:first-child {
+      fill: #08A8E5 !important; }
     .background-image #content .sko-logo .logomark path, .red #content .sko-logo .logomark path {
-      fill: #0088CE !important; }
+      fill: #0782C2 !important; }
     .background-image #content .sko-logo text, .background-image #content .sko-logo tspan, .background-image #content .logotext, .background-image #content .logotype, .background-image #content h1, .background-image #content h2, .background-image #content h3, .background-image #content text, .background-image #content tspan, .red #content .sko-logo text, .red #content .sko-logo tspan, .red #content .logotext, .red #content .logotype, .red #content h1, .red #content h2, .red #content h3, .red #content text, .red #content tspan {
       color: #fff;
       fill: #fff !important; }
