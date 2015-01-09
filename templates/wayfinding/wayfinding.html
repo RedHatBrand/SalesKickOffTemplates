@@ -37,7 +37,7 @@
       <div class="arrow"></div>
       <div id="content">
         <div class="headline">
-          <h1 class="data-lining">{{{ message }}}</h1>
+          <h1>{{{ message }}}</h1>
         </div>
       </div>
 
@@ -81,20 +81,14 @@
       </div>
     </main>
 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="//redhatbrand.github.io/SalesKickOffTemplates/shared/javascripts/jquery.splitlines.js"></script>
-
     {{^ background-image }}
     <script src="//redhatbrand.github.io/SalesKickOffTemplates/shared/javascripts/artwork.js"></script>
     {{/ background-image }}
 
-    <script src="//redhatbrand.github.io/RedHatPatterns/red-hat-patterns.js"></script>
+    <script src="//redhatbrand.github.io/RedHatTemplates/global-assets/javascripts/vendor/jquery.js"></script>
+    <script src="//redhatbrand.github.io/RedHatTemplates/global-assets/javascripts/vendor/jquery.fittext.js"></script>
     <script>
-      $('.data-lining').splitLines({
-          tag: '<span class="line">',
-          width: '100%',
-          keepHtml: true
-      });
+      $('.headline h1').fitText();
     </script>
   </body>
 </html>

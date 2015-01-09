@@ -257,7 +257,8 @@ html, :root {
   color: #ffffff; }
   .headline h1 {
     border: 0;
-    padding: 0; }
+    padding: 0;
+    line-height: 1em; }
 
 .brand.sko {
   position: relative;
@@ -279,7 +280,7 @@ html, :root {
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
-  width: 200%;
+  width: 66.667%;
   max-width: initial; }
 
 .headline {
@@ -308,7 +309,8 @@ html, :root {
   left: 100%; }
 .left #content {
   left: auto;
-  right: 3em; }
+  right: 3em;
+  text-align: right; }
   .left #content .line {
     float: right; }
 
@@ -334,7 +336,8 @@ html, :root {
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
   text-align: center;
-  max-width: 55%; }
+  max-width: initial;
+  width: 66.667%; }
   .up #content .line, .down #content .line {
     float: none;
     display: inline-block;
