@@ -36,7 +36,7 @@
     "days": [
       {
         "day-name": "Monday",
-        "times": [
+        "schedule": [
           {
             "time": "08:00",
             "duration": 60,
@@ -51,7 +51,7 @@
       },
       {
         "day-name": "Tuesday",
-        "times": [
+        "schedule": [
           {
             "time": "08:00",
             "duration": 60,

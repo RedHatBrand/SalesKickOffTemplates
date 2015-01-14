@@ -89,25 +89,15 @@ h1.title {
   }
 }
 
-.red, .background-image {
-  .event-details {
-    h1, h2, h3 {
-      color: $black;
-    }
-  }
-}
-
 .event-details {
   max-width: 25em;
   width: 100%;
   box-sizing: border-box;
 
-  background-color: $white;
-  padding: 1.4em;
+  padding: 0em;
   display: inline-block;
 
   h3, h4 {
-    color: $black;
     text-transform: uppercase;
   }
 
@@ -160,4 +150,25 @@ h1.title {
   &.button:visited:hover {
     color: $color-primary;
   }
+}
+
+.platinum .register-button:hover {
+  color: #c00;
+  border-color: #c00;
+  background-color: #eee;
+}
+
+.red .register-button:hover{
+  color: white;
+  border-color: white;
+}
+
+.where {
+  letter-spacing: 0.2em;
+  border-top: 0.1em solid;
+  padding-top: 1em;
+}
+
+.silver .event-details h3 {
+  color: #333;
 }

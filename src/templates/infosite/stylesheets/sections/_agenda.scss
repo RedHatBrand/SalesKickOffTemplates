@@ -125,23 +125,23 @@
 }
 
 
-.time-table-Monday,
-.time-table-Tuesday,
-.time-table-Wednesday,
-.time-table-Thursday,
-.time-table-Friday,
-.time-table-Saturday,
-.time-table-Sunday {
+.time-table-0,
+.time-table-1,
+.time-table-2,
+.time-table-3,
+.time-table-4,
+.time-table-5,
+.time-table-6 {
   display:none;
 }
 
-input#Monday:checked ~ .time-table-Monday,
-input#Tuesday:checked ~ .time-table-Tuesday,
-input#Wednesday:checked ~ .time-table-Wednesday,
-input#Thursday:checked ~ .time-table-Thursday,
-input#Friday:checked ~ .time-table-Friday,
-input#Saturday:checked ~ .time-table-Saturday,
-input#Sunday:checked ~ .time-table-Sunday {
+input#day-0:checked ~ .time-table-0,
+input#day-1:checked ~ .time-table-1,
+input#day-2:checked ~ .time-table-2,
+input#day-3:checked ~ .time-table-3,
+input#day-4:checked ~ .time-table-4,
+input#day-5:checked ~ .time-table-5,
+input#day-6:checked ~ .time-table-6 {
   display:block;
 }
 
@@ -179,13 +179,13 @@ input#Sunday:checked ~ .time-table-Sunday {
   width: 16.667%;
 }
 
-input#Monday:checked ~ label[for="Monday"],
-input#Tuesday:checked ~ label[for="Tuesday"],
-input#Wednesday:checked ~ label[for="Wednesday"],
-input#Thursday:checked ~ label[for="Thursday"],
-input#Friday:checked ~ label[for="Friday"],
-input#Saturday:checked ~ label[for="Saturday"],
-input#Sunday:checked ~ label[for="Sunday"] {
+input#day-0:checked ~ label[for="day-0"],
+input#day-1:checked ~ label[for="day-1"],
+input#day-2:checked ~ label[for="day-2"],
+input#day-3:checked ~ label[for="day-3"],
+input#day-4:checked ~ label[for="day-4"],
+input#day-5:checked ~ label[for="day-5"],
+input#day-6:checked ~ label[for="day-6"] {
   background-color: $color-primary;
   color: white;
 }

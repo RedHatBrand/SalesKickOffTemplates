@@ -15,13 +15,13 @@ height: 100vh
     <meta content='{{ meta-keywords }}' name='keywords' />
     <link href='//red-hat-assets.s3.amazonaws.com/assets/images/favicon.ico' rel='icon' type='image/ico' />
     <link href='//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css' media='screen' rel='stylesheet' />
-    <link href='<%= baseUrl %>/templates/infosite/stylesheets/main.css' media='screen' rel='stylesheet' />
+    <link href='<%=baseUrl%>/templates/infosite/stylesheets/main.css' media='screen' rel='stylesheet' />
     <link href='//red-hat-overpass-fonts.s3.amazonaws.com/overpass.css' rel='stylesheet' />
     <script src='//redhatbrand.github.io/RedHatTemplates/global-assets/javascripts/vendor/jquery.js'></script>
     <script src='//redhatbrand.github.io/RedHatTemplates/global-assets/javascripts/vendor/jquery.fitvids.js'></script>
-    <script src='<%= baseUrl %>/templates/infosite/javascripts/scrollspy.js'></script>
+    <script src='<%=baseUrl%>/templates/infosite/javascripts/scrollspy.js'></script>
     <script src='//redhatbrand.github.io/RedHatTemplates/global-assets/javascripts/vendor/jquery.smooth-scroll.js'></script>
-    <script src='<%= baseUrl %>/templates/infosite/javascripts/main.js'></script>
+    <script src='<%=baseUrl%>/templates/infosite/javascripts/main.js'></script>
     <!--[if lt IE 9]> <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script> <![endif]-->
 
     <style type="text/css">
@@ -41,6 +41,8 @@ height: 100vh
           background-color: white;
         }
       {{/ background-image }}
+
+      .red .logotype, .platinum .logotype{fill: white;}
     </style>
   </head>
   <body data-spy="scroll" data-target=".nav-menu" data-offset="100">
@@ -53,15 +55,13 @@ height: 100vh
           {{/background-image}}
 
           <div class='container layer-three'>
-            <h1 class='title'>{{ headline }}</h1>
             <% include ../../shared/images/event-logo-lockup-complex.svg %>
-            <div class='event-details'>
-              <h3 class="dates">
-                {{ dates }}
+
+            <div class='event-details ' style="color:0;;background-color: transparent;">
+              <h3 class="where" >
+                {{ dates }}  <strong>{{ location }}</strong>
               </h3>
-              <h4 class='location'>
-                {{ location }}
-              </h4>
+
               <div class='registration'>
                 <a class='button register-button' href='{{{ register-link }}}'>Register</a>
               </div>
@@ -93,6 +93,7 @@ height: 100vh
         <div class='container'>
           <div class="grid-container">
             <div class='two-thirds first'>
+               <h1 class='catch' style="font-size: 150%; line-height: 100%">{{ headline }}</h1><br>
               {{{ intro }}}
             </div>
             <div class='one-third last author-signoff'>
@@ -155,18 +156,22 @@ height: 100vh
         <div class='container'>
           <h1>Agenda</h1>
           {{#days}}
-          <input id='{{ day-name }}' name='active-day' type='radio'>
-          <label for='{{ day-name }}'>{{ day-name }} {{ day-name-translation }}</label>
+          <input name='active-day' type='radio'>
+          <label>{{ day-name }} {{ day-name-translation }}</label>
           {{/days}}
           {{#days}}
-          <div class='time-table-{{ day-name }}'>
+
+          <div class='time-table time-table-{{ day-name }}'>
+
+            <h2>{{ day-name }}  {{date}}</h2>
             <table class="calendar">
               <tr class="headings">
                 <th class="time">Timing</th>
                 <th class="duration">Duration</th>
                 <th class="topic">Topic</th>
               </tr>
-              {{#times}}
+              {{#schedule}}
+              {{#time}}
               <tr class="{{ type }}">
                 <td class="time">{{time}}</td>
                 <td class="duration">{{duration}}</td>
@@ -212,7 +217,8 @@ height: 100vh
                   {{/track-e}}
                 </td>
               </tr>
-              {{/times}}
+              {{/time}}
+              {{/schedule}}
             </table>
           </div>
           {{/days}}
@@ -258,8 +264,6 @@ height: 100vh
     </script>
     {{/artwork-complexity}}
 
-    {{^background-image}}
     <script src="<%=baseUrl%>/shared/javascripts/artwork.js"></script>
-    {{/background-image}}
   </body>
 </html>

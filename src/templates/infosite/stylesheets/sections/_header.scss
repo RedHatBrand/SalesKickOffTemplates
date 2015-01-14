@@ -8,12 +8,13 @@
   }
 
   .logo {
-    position: absolute;
-    top: 1.5em;
     margin: 0;
-    right: 0;
-    width: 33.333%;
-    max-width: 24em;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    width: 100%;
+    max-width: 36em;
+    height: 100%;
+    display: block;
 
     .event-name, .location {
       fill: white;
