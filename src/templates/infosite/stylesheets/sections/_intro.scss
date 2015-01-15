@@ -4,12 +4,14 @@
     margin-bottom: 1em;
     background-size: cover;
     background-position: 50% 50%;
+    max-width: 18em;
+    margin: 0 auto;
 
     img {
       width: 100%;
     }
   }
-  
+
   .author-signoff {
     text-align: center;
 
@@ -19,7 +21,7 @@
       font-size: 1.5em;
       margin-bottom: 0.6em;
     }
-    
+
     .author-signature {
       margin: 1em 0;
     }
