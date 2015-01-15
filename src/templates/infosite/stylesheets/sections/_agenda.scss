@@ -42,10 +42,10 @@
   .room {
     display: block;
     float: right;
-    opacity: 0.5;
-    padding: 0.4em .5em 0.2em;
-    background-color: $color-rh-white;
-    border: 2px solid darken($color-rh-white, 25%);
+    padding: 0.5em .5em 0.25em;
+    color: darken($color-rh-white, 30%);
+    background-color: darken($color-rh-white, 2.5%);
+    border: 2px solid darken($color-rh-white, 12.5%);
     line-height: 1.2em;
     max-width: 24em;
   }
