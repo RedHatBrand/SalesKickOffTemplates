@@ -152,6 +152,8 @@ h1.title {
   }
 }
 
+.red .logotype, .platinum .logotype { fill: white; }
+
 .platinum .register-button:hover {
   color: #c00;
   border-color: #c00;

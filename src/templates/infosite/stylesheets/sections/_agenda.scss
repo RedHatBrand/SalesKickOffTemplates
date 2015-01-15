@@ -29,18 +29,54 @@
     background-image: linear-gradient(-45deg, #fafafa 25%, transparent 25%, transparent 50%, #fafafa 50%, #fafafa 75%, transparent 75%, transparent);
     background-size: 20px 20px;
     background-position: 0 0;
-    color: $color-shade;
+    color: lighten($color-shade, 5%);
 
     td {
       font-weight: 400;
       text-transform: uppercase;
-      font-size: smaller;
       letter-spacing:.1em;
     }
 
   }
+
+  .room {
+    display: block;
+    float: right;
+    opacity: 0.5;
+    padding: 0.4em .5em 0.2em;
+    background-color: $color-rh-white;
+    border: 2px solid darken($color-rh-white, 25%);
+    line-height: 1.2em;
+    max-width: 24em;
+  }
 }
 
+.tracks {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  margin-top: 0.5em;
+}
+
+.tracks > div {
+  display: table-row
+}
+
+.track {
+  display: table-cell;
+  padding-right: 1em;
+  line-height: 1.2em;
+}
+
+@media screen and (max-width: 72em){
+  .calendar td:nth-child(2) {
+    margin-top: -1em !important;
+  }
+}
+
+@media screen and (max-width: 40em) {
+  .tracks, .tracks > div, .track { display:block; }
+}
 
 @media screen and (max-width: 42em) {
   .calendar tr{
@@ -53,12 +89,10 @@
   .calendar th,
   .calendar tbody,
   .calendar {
-    width: 100%;
     box-sizing: border-box;
-    display:inline-block;
+    display: block;
 
     .duration{display:none}
-
     tr.headings{display:none;}
 
     .time{
@@ -69,35 +103,28 @@
       font-weight:300;
       padding-left: .5em
     }
+
+    .room {
+      float: none;
+      width: auto;
+      max-width: initial;
+      background-color: transparent;
+      border: none;
+      padding-left: 0;
+      padding-right: 0;
+      border-bottom: thin solid lighten($color-shade, 50%);
+      margin-bottom: 0.25em;
+    }
   }
 
   .calendar tr {
     position:relative;
   }
-  td.duration {
-    display:inline-block;
-    position:absolute;
-    left: 0em;
-    top:$line-height;
-    opacity:.5;
-    width:100%;
-    color:$color-shade;
-    text-align:right;
-  }
-
-  .duration:after {
-    content:" minutes";
-    text-transform: uppercase;
-    font-size: .8em;
-  }
 
   .calendar {
-    .icon-user,
     .topic {
-      display:inline-block;
       width: auto;
     }
-
 
     tr:after {
       content:"";
@@ -113,7 +140,6 @@
     }
   }
 }
-
 
 .section-agenda input[type="radio"]{
   position:absolute;

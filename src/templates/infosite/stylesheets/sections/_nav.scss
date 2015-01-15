@@ -53,6 +53,18 @@
   transition: all 0.3s ease;
 }
 
+.nav-toggle.active { left: auto; right: 0; }
+.nav-toggle:hover { border-radius: 0; background-color:#c00; }
+.nav-toggle:hover > span,
+.nav-toggle:hover > span::before, .nav-toggle:hover > span::after{background-color: white;}
+.custom-background a {
+  background-color: #c00 !important;
+  color:white !important;
+  display:inline-block;
+  padding: .3333em .66666em;
+  margin: 0 .25em;
+}
+
 @media screen and (min-width: $breakpoint-medium) {
   .nav-menu {
     top: 0;
@@ -102,3 +114,5 @@
     }
   }
 }
+
+

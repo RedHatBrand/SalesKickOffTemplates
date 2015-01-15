@@ -7,7 +7,7 @@
     "location": "Macau",
     "region": "Asia Pacific",
     "background-image": "//d3s84xo5cmutkt.cloudfront.net/assets/attachments/000/003/179/original/gray_clouds.jpg",
-    "intro": "<p>Red Hat provides probably the best software in the world. And it is free, secure and open source too. And we have done quite job providing that value to our customers. It took 20 years to get here but we are merely at the beginning of what started out as an open source revolution. To go forward we will go one step at the time, one customer, one technology, one colleague.</p><p>The Red Hat Tech Exchange will provide all that practical knowledge and experience and best practice to you. Become part of a worldwide team of experts, thinkers, consultants, architects and leverage your knowledge while expanding your network at the same time. Besides typical knowledge transfer sessions, there will also be workshops, experience sharing sessions and interactive sessions.</p><p>The Red Hat Tech Exchange will host inspiring keynotes on the first morning before we break out in 4 parallel technical tracks. At the end of each day there will be opportunities to network and enjoy the time together. The Red Hat Tech Exchange will end with a panel discussion that recaptures the event. The last day will be used for collaborative initiatives.</p><p>The agenda is not fixed but will quickly take shape. If you have suggestions, do not hesitate to provide feedback or suggestions to <strong>quinten@redhat.com.</strong></p><p></p>",
+    "intro": "<p>Red Hat provides probably the best software in the world. And it is free, secure and open source too. And we have done quite job providing that value to our customers. It took 20 years to get here but we are merely at the beginning of what started out as an open source revolution. To go forward we will go one step at the time, one customer, one technology, one colleague.</p><p>The Red Hat Tech Exchange will provide all that practical knowledge and experience and best practice to you. Become part of a worldwide team of experts, thinkers, consultants, architects and leverage your knowledge while expanding your network at the same time. Besides typical knowledge transfer sessions, there will also be workshops, experience sharing sessions and interactive sessions.</p><p>The Red Hat Tech Exchange will host inspiring keynotes on the first morning before we break out in 4 parallel technical track-s. At the end of each day there will be opportunities to network and enjoy the time together. The Red Hat Tech Exchange will end with a panel discussion that recaptures the event. The last day will be used for collaborative initiatives.</p><p>The agenda is not fixed but will quickly take shape. If you have suggestions, do not hesitate to provide feedback or suggestions to <strong>quinten@redhat.com.</strong></p><p></p>",
     "author-image": "http://d3s84xo5cmutkt.cloudfront.net/renders/attachments/000/007/511/original/1412223351784_team-normal-dark-bg.png",
     "author-signoff": "Best Regards,",
     "author-name": "The enablement team",
@@ -16,53 +16,124 @@
     "artwork-option": "fractals",
     "colormode": "red",
     "section": [
-      {
-        "name": "Lorem",
-        "slug": "lorem",
-        "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>",
-        "section-theme": "light-grey-background",
-        "section-layout": "two-columns"
-      },
-      {
-        "name": "Ipsum",
-        "slug": "ipsum",
-        "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>",
-        "section-theme": "custom-background",
-        "section-background-image": "http://d3s84xo5cmutkt.cloudfront.net/assets/attachments/000/003/035/original/macau_penha_hill-jpg",
-        "section-layout": "two-columns"
-      }
+    {
+      "name": "Lorem",
+      "slug": "lorem",
+      "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>",
+      "section-theme": "light-grey-background",
+      "section-layout": "two-columns"
+    },
+    {
+      "name": "Ipsum",
+      "slug": "ipsum",
+      "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>",
+      "section-theme": "custom-background",
+      "section-background-image": "http://d3s84xo5cmutkt.cloudfront.net/assets/attachments/000/003/035/original/macau_penha_hill-jpg",
+      "section-layout": "two-columns"
+    }
     ],
-    "total-days": 2,
-    "days": [
+      "total-days": 2,
+      "days": [
       {
         "day-name": "Monday",
-        "schedule": [
-          {
-            "time": "08:00",
-            "duration": 60,
-            "topic": "Arrivals & Registration"
-          },
-          {
-            "time": "09:00",
-            "duration": 60,
-            "topic": "Breakfast"
-          }
+        "ttable": [
+        {
+          "time": "08:00",
+          "duration": 60,
+          "topic": "Arrivals & Registration"
+        },
+        {
+          "time": "09:00",
+          "duration": 60,
+          "topic": "Breakfast"
+        }
         ]
       },
       {
         "day-name": "Tuesday",
-        "schedule": [
+        "ttable": [
           {
-            "time": "08:00",
-            "duration": 60,
-            "track-a": "Foo",
-            "track-b": "Bar"
+            "time": "08.30 – 09.00",
+            "location": "Auditorium",
+            "speaker": "FY16 goal and strategic objectives",
+            "topic": "Werner Knoblich"
           },
           {
-            "time": "09:00",
-            "duration": 60,
-            "track-a": "Foo",
-            "track-b": "Baz"
+            "time": "09.00 – 09.45",
+            "location": "Auditorium",
+            "speaker": "Bi-Modal IT",
+            "topic": "Paul Cormier or Tim Yeaton & Andy Butler (Gartner)"
+          },
+          {
+            "time": "09.45 – 10.30",
+            "location": "Auditorium",
+            "speaker": "Emerging Technologies",
+            "topic": "Paul Cormier"
+          },
+          {
+            "type": "break",
+            "time": "10.30 – 11.00",
+            "speaker": "Coffee Break"
+          },
+          {
+            "time": "11.00 – 12.00",
+            "location": "Breakout Rooms",
+            "speaker": "Breakout Sessions"
+          },
+          {
+            "type": "break",
+            "time": "12.00 – 12.15",
+            "speaker": "Room Switching"
+          },
+          {
+            "time": "12.15 – 13.15",
+            "location": "Breakout Rooms",
+            "speaker": "Breakout Sessions"
+          },
+          {
+            "type": "break",
+            "time": "13.15 – 14.30",
+            "location": "Cormoranes & Estero Restaurant",
+            "speaker": "Lunch"
+          },
+          {
+            "time": "14.30 – 15.30",
+            "location": "Breakout Rooms",
+            "speaker": "Breakout Sessions"
+          },
+          {
+            "time": "15.30 – 15.45",
+            "speaker": "Room Switching"
+          },
+          {
+            "time": "15.45 – 16.45",
+            "location": "Breakout Rooms",
+            "speaker": "Breakout Sessions"
+          },
+          {
+            "type": "break",
+            "time": "16.45 – 18.00",
+            "speaker": "Free time to network, fresh up, email etc"
+          },
+          {
+            "time": "18.00 – 19.30",
+            "speaker": "Regional Breakout Sessions",
+            "track-a": "Colon III",
+            "track-a-content": "Phil Andrews (NEE)",
+            "track-b": "Colon II",
+            "track-b-content": "Brian Cornell (CE)",
+            "track-c": "Colon I",
+            "track-c-content": "Michel Isnard (SEMA)"
+          },
+          {
+            "time": "19.30 – 22.00",
+            "speaker": "Regional Dinners",
+            "track-a": "Cormoranes Restaurant",
+            "track-a-content": "Phil Andrews (NEE)",
+            "track-b": "Estero Restaurant",
+            "track-b-content": "Brian Cornell (CE)",
+            "track-c": "Bambu Restaurant",
+            "track-c-content": "Michel Isnard (SEMA)"
           }
         ]
       }
