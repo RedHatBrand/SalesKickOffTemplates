@@ -1,11 +1,11 @@
 $(function() {
   $(".main").fitVids();
-  
+
   $('.nav-toggle').on('click', function() {
     $(this).toggleClass('active');
     $('.nav-menu').toggleClass('nav-hide');
   });
-  
+
   $('a.menu-link').on('click', function() {
     var target;
     $('.nav-menu').addClass('nav-hide');
@@ -19,13 +19,13 @@ $(function() {
     });
     return false;
   });
-  
+
   function scaleHero() {
     if (document.getElementById('heroImage').height > window.innerHeight) {
       return fullHeight('.hero');
     }
   }
-  
+
   function fullHeight(elem) {
     if (!$(elem).get(0)) {
       return;
@@ -36,14 +36,32 @@ $(function() {
       }
     }
   }
-  
+
   if ($("[name='active-day']").length > 0) {
     (function selectFirstDay() {
       return $("[name='active-day']").first().attr('checked', 'checked');
     })();
   }
-  
+
   (function countDays() {
     return $(".section-agenda").addClass("agenda-" + ($("[name='active-day']").length));
+  })();
+
+  (function initAgenda () {
+    var $radios = $('#agenda input[type="radio"]');
+    var $labels = $('#agenda input[type="radio"] + label');
+    var $timeTables = $('.time-table');
+
+    $radios.each(function (index, radio) {
+      $(radio).attr('id', 'day-' + index);
+    });
+
+    $labels.each(function (index, label) {
+      $(label).attr('for', 'day-' + index);
+    });
+
+    $timeTables.each(function (index, table) {
+      $(table).addClass('time-table-' + index);
+    });
   })();
 });

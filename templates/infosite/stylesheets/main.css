@@ -1647,19 +1647,14 @@ h1.title {
 .silver .rh-logo .logotext.logotype {
   fill: #171717 !important; }
 
-.red .event-details h1, .red .event-details h2, .red .event-details h3, .background-image .event-details h1, .background-image .event-details h2, .background-image .event-details h3 {
-  color: #171717; }
-
 .event-details {
   max-width: 25em;
   width: 100%;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  background-color: white;
-  padding: 1.4em;
+  padding: 0em;
   display: inline-block; }
   .event-details h3, .event-details h4 {
-    color: #171717;
     text-transform: uppercase; }
   .event-details h3 {
     font-weight: 300;
@@ -1697,6 +1692,23 @@ h1.title {
   .register-button.button:visited:hover {
     color: #c12; }
 
+.platinum .register-button:hover {
+  color: #c00;
+  border-color: #c00;
+  background-color: #eee; }
+
+.red .register-button:hover {
+  color: white;
+  border-color: white; }
+
+.where {
+  letter-spacing: 0.2em;
+  border-top: 0.1em solid;
+  padding-top: 1em; }
+
+.silver .event-details h3 {
+  color: #333; }
+
 .header .container {
   position: relative;
   padding-top: 3em;
@@ -1704,12 +1716,13 @@ h1.title {
   margin-top: 0;
   z-index: 5; }
 .header .logo {
-  position: absolute;
-  top: 1.5em;
   margin: 0;
-  right: 0;
-  width: 33.333%;
-  max-width: 24em; }
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  width: 100%;
+  max-width: 36em;
+  height: 100%;
+  display: block; }
   .header .logo .event-name, .header .logo .location {
     fill: white; }
   @media screen and (max-width: 48em) {
@@ -2057,7 +2070,7 @@ button.full-width {
     margin-bottom: 0; }
 
 .light-grey-background {
-  background-color: #e6e6e6; }
+  background-color: rgba(255, 255, 255, 0.85); }
 
 .custom-background {
   background-position: top 50%;
@@ -2164,10 +2177,10 @@ button.full-width {
   z-index: -1;
   opacity: 0; }
 
-.time-table-Monday, .time-table-Tuesday, .time-table-Wednesday, .time-table-Thursday, .time-table-Friday, .time-table-Saturday, .time-table-Sunday {
+.time-table-0, .time-table-1, .time-table-2, .time-table-3, .time-table-4, .time-table-5, .time-table-6 {
   display: none; }
 
-input#Monday:checked ~ .time-table-Monday, input#Tuesday:checked ~ .time-table-Tuesday, input#Wednesday:checked ~ .time-table-Wednesday, input#Thursday:checked ~ .time-table-Thursday, input#Friday:checked ~ .time-table-Friday, input#Saturday:checked ~ .time-table-Saturday, input#Sunday:checked ~ .time-table-Sunday {
+input#day-0:checked ~ .time-table-0, input#day-1:checked ~ .time-table-1, input#day-2:checked ~ .time-table-2, input#day-3:checked ~ .time-table-3, input#day-4:checked ~ .time-table-4, input#day-5:checked ~ .time-table-5, input#day-6:checked ~ .time-table-6 {
   display: block; }
 
 .section-agenda input[type="radio"] + label {
@@ -2203,7 +2216,7 @@ input#Monday:checked ~ .time-table-Monday, input#Tuesday:checked ~ .time-table-T
 .section-agenda.agenda-6 input[type="radio"] + label {
   width: 16.667%; }
 
-input#Monday:checked ~ label[for="Monday"], input#Tuesday:checked ~ label[for="Tuesday"], input#Wednesday:checked ~ label[for="Wednesday"], input#Thursday:checked ~ label[for="Thursday"], input#Friday:checked ~ label[for="Friday"], input#Saturday:checked ~ label[for="Saturday"], input#Sunday:checked ~ label[for="Sunday"] {
+input#day-0:checked ~ label[for="day-0"], input#day-1:checked ~ label[for="day-1"], input#day-2:checked ~ label[for="day-2"], input#day-3:checked ~ label[for="day-3"], input#day-4:checked ~ label[for="day-4"], input#day-5:checked ~ label[for="day-5"], input#day-6:checked ~ label[for="day-6"] {
   background-color: #c12;
   color: white; }
 
