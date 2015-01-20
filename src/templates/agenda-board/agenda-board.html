@@ -43,72 +43,80 @@ height: 603mm;
           <% include ../../shared/images/event-logo-lockup.svg %>
         </div>
 
-        {{#day}}
-        <section class="section-agenda day-{{#slugify}}{{ day-name }}{{/slugify}}">
-          <header class="agenda-title">
-            <h1>Agenda</h1>
-            <h2>{{ date }}</h2>
-          </header>
+        <section class="section-agenda">
+          {{#days}}
+          <div class='time-table time-table-{{ day-name }}'>
+            <table class="calendar">
+              <tr class="headings">
+                <th class="time">Timing</th>
+                <th class="topic">Topic</th>
+              </tr>
+              {{#sessions}}
+              {{#time}}
+              <tr class="{{ type }}">
+                <td class="time">
+                  <h2>{{start}}</h2>  <span>{{#duration}}{{duration}}{{/duration}}</span>
+                </td>
 
-          <div class="agenda-content">
-            {{#schedule}}
-            {{#time}}
-            <div class="time-slot">
-              <header class="time-slot-header">
-                <div class="time">{{ time }}</div>
-                {{#duration}}<div class="duration">{{ duration }}</div>{{/duration}}
-              </header>
-              <div>
-                <p>{{{ topic }}}</p>
-              </div>
 
-              {{#track-a}}
-              <div class="track-a">
-                <h6>{{ track-a }}</h6>
-                <p>{{{ track-a-content }}}</p>
-              </div>
-              {{/track-a}}
+                <td class="event-item">
+                  {{#location}}
+                    <span class="room">{{location}}</span>
+                  {{/location}}
 
-              {{#track-b}}
-              <div class="track-b">
-                <h6>{{ track-b }}</h6>
-                <p>{{{ track-b-content }}}</p>
-              </div>
-              {{/track-b}}
+                  {{#topic}}
+                  <p class="event-item-content">
+                    <b class="topic">{{topic}}</b>&nbsp;
+                    {{#speaker}}<span class="speaker">{{speaker}}</span>{{/speaker}}
+                  </p>
+                  {{/topic}}
 
-              {{#track-c}}
-              <div class="track-c">
-                <h6>{{ track-c }}</h6>
-                <p>{{{ track-c-content }}}</p>
-              </div>
-              {{/track-c}}
+                  <div class="tracks">
+                    <div>
+                      {{#track-a}}
+                      <div class="track track-a">
+                        <h5>{{track-a}}</h5>
+                        <p>{{track-a-content}}</p>
+                      </div>
+                      {{/track-a}}
 
-              {{#track-d}}
-              <div class="track-d">
-                <h6>{{ track-d }}</h6>
-                <p>{{{ track-d-content }}}</p>
-              </div>
-              {{/track-d}}
+                      {{#track-b}}
+                      <div class="track track-b">
+                        <h5>{{track-b}}</h5>
+                        <p>{{track-b-content}}</p>
+                      </div>
+                      {{/track-b}}
 
-              {{#track-e}}
-              <div class="track-e">
-                <h6>{{ track-e }}</h6>
-                <p>{{{ track-e-content }}}</p>
-              </div>
-              {{/track-e}}
+                      {{#track-c}}
+                      <div class="track track-c">
+                        <h5>{{track-c}}</h5>
+                        <p>{{track-c-content}}</p>
+                      </div>
+                      {{/track-c}}
 
-              {{#track-f}}
-              <div class="track-f">
-                <h6>{{ track-f }}</h6>
-                <p>{{{ track-f-content }}}</p>
-              </div>
-              {{/track-f}}
-            </div>
-            {{/time}}
-            {{/schedule}}
+                      {{#track-d}}
+                      <div class="track track-d">
+                        <h5>{{track-d}}</h5>
+                        <p>{{track-d-content}}</p>
+                      </div>
+                      {{/track-d}}
+
+                      {{#track-e}}
+                      <div class="track track-e">
+                        <h5>{{track-e}}</h5>
+                        <p>{{track-e-content}}</p>
+                      </div>
+                      {{/track-e}}
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              {{/time}}
+              {{/sessions}}
+            </table>
           </div>
+          {{/days}}
         </section>
-        {{/day}}
       </article>
     </main>
 
