@@ -43,79 +43,34 @@ height: 603mm;
           <% include ../../shared/images/event-logo-lockup.svg %>
         </div>
 
-        <section class="section-agenda">
+        <section class="section-agenda" id="agenda">
           {{#days}}
-          <div class='time-table time-table-{{ day-name }}'>
-            <table class="calendar">
-              <tr class="headings">
-                <th class="time">Timing</th>
-                <th class="topic">Topic</th>
-              </tr>
-              {{#sessions}}
-              {{#time}}
-              <tr class="{{ type }}">
-                <td class="time">
-                  <h2>{{start}}</h2>  <span>{{#duration}}{{duration}}{{/duration}}</span>
-                </td>
-
-
-                <td class="event-item">
-                  {{#location}}
-                    <span class="room">{{location}}</span>
-                  {{/location}}
-
+          <div class="time-table time-table-unprocessed js-time-table">
+            {{#sessions}}
+            <div class="session js-session" data-start="{{ start }}" data-end="{{ end }}">
+              <div class="session-inner {{ type }}">
+                <header class="session-header">
                   {{#topic}}
-                  <p class="event-item-content">
-                    <b class="topic">{{topic}}</b>&nbsp;
-                    {{#speaker}}<span class="speaker">{{speaker}}</span>{{/speaker}}
-                  </p>
+                  <h3 class="session-header-text">{{ topic }}</h3>
                   {{/topic}}
-
-                  <div class="tracks">
-                    <div>
-                      {{#track-a}}
-                      <div class="track track-a">
-                        <h5>{{track-a}}</h5>
-                        <p>{{track-a-content}}</p>
-                      </div>
-                      {{/track-a}}
-
-                      {{#track-b}}
-                      <div class="track track-b">
-                        <h5>{{track-b}}</h5>
-                        <p>{{track-b-content}}</p>
-                      </div>
-                      {{/track-b}}
-
-                      {{#track-c}}
-                      <div class="track track-c">
-                        <h5>{{track-c}}</h5>
-                        <p>{{track-c-content}}</p>
-                      </div>
-                      {{/track-c}}
-
-                      {{#track-d}}
-                      <div class="track track-d">
-                        <h5>{{track-d}}</h5>
-                        <p>{{track-d-content}}</p>
-                      </div>
-                      {{/track-d}}
-
-                      {{#track-e}}
-                      <div class="track track-e">
-                        <h5>{{track-e}}</h5>
-                        <p>{{track-e-content}}</p>
-                      </div>
-                      {{/track-e}}
-                    </div>
-                  </div>
-                </td>
-              </tr>
-              {{/time}}
-              {{/sessions}}
-            </table>
+                  {{#speaker}}
+                  <h3 class="session-header-speaker">{{ speaker }}</h3>
+                  {{/speaker}}
+                </header>
+                <div class="session-content">
+                  {{#location}}
+                  <p class="session-content-location">{{ location }}</p>
+                  {{/location}}
+                  {{#group}}
+                  <p class="session-content-group">{{ group }}</p>
+                  {{/group}}
+                </div>
+              </div>
+            </div>
+            {{/sessions}}
           </div>
           {{/days}}
+
         </section>
       </article>
     </main>
@@ -137,6 +92,12 @@ height: 603mm;
       window.redhatSelectedDay = {{ selected-day}};
     </script>
     {{/selected-day}}
+
+    <script>
+      window.daysStr = '{{#toJSON}}days{{/toJSON}}';
+    </script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.js"></script>
     <script src="<%=baseUrl%>/templates/agenda-board/assets/javascripts/main.js"></script>
   </body>
 </html>

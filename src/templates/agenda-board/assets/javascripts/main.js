@@ -1,25 +1,66 @@
 (function (global) {
-  var __slice = [].slice;
+  var days = [].slice.call(document.getElementsByClassName('js-time-table')).map(function (dayElem) {
+    return {
+      element: dayElem,
+      sessions: [].slice.call(dayElem.getElementsByClassName('js-session')).map(function (sessionElem) {
+        return {
+          start: sessionElem.getAttribute('data-start'),
+          end: sessionElem.getAttribute('data-end'),
+          element: sessionElem
+        };
+      })
+    }
+  });
 
-  var days = document.getElementsByClassName('time-table');
-  var day = days[(global.redhatSelectedDay || 1) - 1];
-  (day && day.style || {}).display = 'block';
+  var ranges = days[redhatSelectedDay - 1].sessions.reduce(function (ranges, session) {
+    var start = moment(session.start, 'HH:mm').format('X');
+    var end = moment(session.end, 'HH:mm').format('X');
+    var existing = ranges.filter(function (range) {
+      return range.start >= start && range.end > start;
+    })[0];
+    if (existing) {
+      existing.sessions.push(session);
 
-  (function initAgenda () {
-    var $radios = __slice.call(document.querySelectorAll('#agenda input[type="radio"]'));
-    var $labels = __slice.call(document.querySelectorAll('#agenda input[type="radio"] + label'));
-    var $timeTables = __slice.call(document.querySelectorAll('.time-table'));
+      if (existing.end < end) {
+        existing.end = end;
+      }
+    } else {
+      ranges.push({
+        start: start,
+        end: end,
+        sessions: [session]
+      })
+    }
+    return ranges;
+  }, []);
 
-    $radios.forEach(function (radio, index) {
-      radio.setAttribute('id', 'day-' + index);
+  var container = document.getElementById('agenda');
+
+  ranges.forEach(function (range) {
+    var rangeRow = document.createElement('div');
+    var time = moment(range.start, 'X').format('HH:mm');
+    var timeElem = document.createElement('h3');
+    timeElem.classList.add('timetable-range-row-time');
+    timeElem.innerHTML = time;
+    rangeRow.appendChild(timeElem);
+    rangeRow.classList.add('timetable-range-row');
+    rangeRow.classList.add('timetable-range-row-sessions-' + range.sessions.length);
+    var rangeRowSessions = document.createElement('div');
+    rangeRowSessions.classList.add('timetable-range-row-sessions');
+    rangeRow.appendChild(rangeRowSessions);
+
+    range.sessions.forEach(function (session) {
+      var sessionElem = document.createElement('div');
+      sessionElem.classList.add('timetable-range-session');
+
+      sessionElem.innerHTML = session.element.innerHTML;
+      rangeRowSessions.appendChild(sessionElem);
     });
 
-    $labels.forEach(function (label, index) {
-      label.setAttribute('for', 'day-' + index);
-    });
+    container.appendChild(rangeRow);
+  });
 
-    $timeTables.forEach(function (table, index) {
-      table.classList.add('time-table-' + index);
-    });
-  })();
+  days.forEach(function (day) {
+    day.element.parentNode.removeChild(day.element);
+  })
 })(window)

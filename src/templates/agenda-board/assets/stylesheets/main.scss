@@ -34,6 +34,8 @@ html, :root {
   font-size: 14pt;
 }
 
+body { color: $color-rh-slate; }
+
 #content {
   max-width: initial;
   width: initial;
@@ -44,246 +46,112 @@ html, :root {
   height: 100%;
 
   .sko-logo {
-    width: 50%;
-  }
-}
-
-// Table
-
-$default-border-color:    $gray-light;
-$light-border-color:      $gray-lighter;
-
-table {
-  border-collapse: collapse;
-  text-align: left;
-  width: 100%;
-  margin: 0 0 $line-height;
-  border: thin solid $default-border-color;
-
-  caption, th, td {
-    vertical-align: top;
-    padding: $line-height;
-  }
-
-  caption {
-    font-weight: 600;
-    font-size: 0.8em;
-    text-transform: uppercase;
-  }
-
-  th {
-    font-weight: 600;
-  }
-
-  thead tr {
-    background-color: $gray-lighter;
-
-    &.no-wrap {
-      th {
-        vertical-align: center;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        -o-text-overflow: ellipsis;
-        line-height: $line-height + $line-height / 2;
-      }
-    }
-  }
-
-  tbody tr {
-    border-top: thin solid $default-border-color;
-
-    th {
-      background-color: $gray-lighter;
-      font-weight: 600;
-    }
-
-    &.no-wrap {
-      td, th {
-        vertical-align: center;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        -o-text-overflow: ellipsis;
-        line-height: $line-height + $line-height / 2;
-      }
-    }
-  }
-
-  tfoot {
-    color: $gray;
-    tr {
-      border-top: thin solid $default-border-color;
-    }
-  }
-
-  &.fixed {
-    table-layout: fixed;
-    box-sizing: border-box;
-    * {
-      box-sizing: border-box;
-    }
+    width: 33.333%;
   }
 }
 
 .section-agenda {
   background-color: lighten($color-rh-slate, 50%);
-
-  .container {
-    position: relative;
-  }
-
-  table,
-  table thead tr,
-  table tr:first-child {
-    border: none;
-  }
-
-  table thead th, table tbody th {
-    background-color: transparent;
-  }
 }
 
-.calendar {
-  background-color: rgba($color-rh-white, 0.5);
-  table-layout: fixed;
-
-  .time, .duration {
-    width: 25%;
-  }
-
-  .time h2 {
-    margin-bottom: 0;
-  }
-
-  .icon-user:before {
-    color:lighten($color-shade,40%)
-  }
-
-  .break {
+.break {
     background-image: linear-gradient(-45deg, #fafafa 25%, transparent 25%, transparent 50%, #fafafa 50%, #fafafa 75%, transparent 75%, transparent);
     background-size: 20px 20px;
     background-position: 0 0;
-    color: lighten($color-shade, 5%);
-
-    td {
-      font-weight: 400;
-      text-transform: uppercase;
-      letter-spacing:.1em;
-    }
-
+    color: lighten($color-rh-slate, 15%);
   }
 
-  .room {
-    display: block;
-    float: right;
-    padding: 0.5em .5em 0.25em;
-    color: darken($color-rh-white, 30%);
-    background-color: darken($color-rh-white, 2.5%);
-    border: 2px solid darken($color-rh-white, 12.5%);
-    line-height: 1.2em;
-    max-width: 24em;
-  }
+.section-agenda {
+  padding: 1em;
 }
 
-.tracks {
-  display: table;
-  table-layout: fixed;
-  width: 100%;
-  margin-top: 0;
-}
+.time-table-unprocessed { display: none; }
 
-.event-item-content + .tracks {
-  margin-top: 0.5em;
-}
+.timetable-range-row {
+  padding: 0.125em 0;
+  border-top: thin solid lighten($color-rh-slate, 55%);
+  @extend .clearfix;
+  margin: 0;
 
-.tracks > div {
-  display: table-row
-}
-
-.track {
-  display: table-cell;
-  padding-right: 1em;
-  line-height: 1.2em;
-
-  h5 { margin-bottom: 0; }
-  h5 + p { margin-top: 0; }
-}
-
-@media screen and (max-width: 72em){
-  .calendar td:nth-child(2) {
-    margin-top: -1em !important;
+  &:first-child {
+    border-top: none;
+    padding-top: 0;
   }
 }
 
-@media screen and (max-width: 40em) {
-  .tracks, .tracks > div, .track { display:block; }
+.timetable-range-row-time {
+  float: left;
+  width: 12.5%;
+  padding: 0.75rem 0.5em;
+  box-sizing: border-box;
+  margin-bottom: 0;
+
+  font-size: 1em;
+  line-height: 1em;
+  color: lighten($color-rh-slate, 10%);
 }
 
-@media screen and (max-width: 42em) {
-  .calendar tr{
-    display:block;
-    padding: $line-height/2 0;
-    width: 100%;
-  }
-
-  .calendar td,
-  .calendar th,
-  .calendar tbody,
-  .calendar {
-    box-sizing: border-box;
-    display: block;
-
-    .duration{display:none}
-    tr.headings{display:none;}
-
-    .time{
-      display:block;
-      width: 100%;
-      color:$color-shade;
-      font-size:2em;
-      font-weight:300;
-      padding-left: .5em
-    }
-
-    .room {
-      float: none;
-      width: auto;
-      max-width: initial;
-      background-color: transparent;
-      border: none;
-      padding-left: 0;
-      padding-right: 0;
-      border-bottom: thin solid lighten($color-shade, 50%);
-      margin-bottom: 0.25em;
-    }
-  }
-
-  .calendar tr {
-    position:relative;
-  }
-
-  .calendar {
-    .topic {
-      width: auto;
-    }
-
-    tr:after {
-      content:"";
-      display: block;
-      width: 100% !important;
-      float:none;
-      clear:both;
-    }
-
-    i {
-      color:$color-shade;
-      opacity:.5
-    }
-  }
+.timetable-range-row-sessions {
+  width: 87.5%;
+  float: left;
+  margin: 0;
+  font-size: 0;
 }
 
-.time-table { display: none }
+.timetable-range-session {
+  padding: 0.25rem;
+  box-sizing: border-box;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.session-inner {
+  background-color: lighten($color-rh-slate, 55%);
+  padding: 0.25rem 0.5em;
+  position: relative;
+  min-height: 1.5em;
+  @extend .clearfix;
+}
+
+.session-header-text {
+  margin: 0;
+  text-transform: none;
+}
+
+.session-content {
+  margin: 0;
+}
+
+.session-content-location {
+  font-size: 0.75em;
+  position: absolute;
+  right: 0.5em;
+  top: 0.5em;
+  background-color: lighten($color-rh-slate, 50%);
+  line-height: 1em;
+  color: lighten($color-rh-slate, 20%);
+  padding: 0.5em 0.5em 0.25em;
+}
+
+.session-content-group {
+  margin: 0;
+  text-transform: uppercase;
+  font-size: 0.75em;
+}
+
+.session-header-speaker {
+  text-transform: none;
+  font-size: 0.75em;
+  line-height: 1.5em;
+}
+
+.timetable-range-row-sessions-6 {
+  .timetable-range-session {
+    vertical-align: top;
+    display: inline-block;
+    width: 33.333%;
+  }
+}
 
 .red {
   color: $color-rh-white;
