@@ -9,12 +9,12 @@
     "days": [
     {
       "day-name": "Tuesday",
+      "date": "25 March",
       "sessions": [
       {
         "type": "break",
         "start": "8:00",
         "end": "8:30",
-        "location": "Ballroom",
         "topic": "Please make your way to the ballroom"
       },
       {
@@ -248,18 +248,21 @@
         "start": "16:00",
         "end": "16:30",
         "location": "Breakout Rooms",
+        "topic": "TBA",
         "group": "Group 1"
       },
       {
         "start": "16:00",
         "end": "16:30",
         "location": "Breakout Rooms",
+        "topic": "TBA",
         "group": "Group 2"
       },
       {
         "start": "16:00",
         "end": "16:30",
         "location": "Breakout Rooms",
+        "topic": "TBA",
         "group": "Group 3"
       },
       {
@@ -293,12 +296,14 @@
         "start": "16:30",
         "end": "17:00",
         "location": "Breakout Rooms",
+        "topic": "TBA",
         "group": "Group 2"
       },
       {
         "start": "16:30",
         "end": "17:00",
         "location": "Breakout Rooms",
+        "topic": "TBA",
         "group": "Group 3"
       },
       {
@@ -326,18 +331,21 @@
         "start": "17:00",
         "end": "17:30",
         "location": "Breakout Rooms",
+        "topic": "TBA",
         "group": "Group 1"
       },
       {
         "start": "17:00",
         "end": "17:30",
         "location": "Breakout Rooms",
+        "topic": "TBA",
         "group": "Group 2"
       },
       {
         "start": "17:00",
         "end": "17:30",
         "location": "Breakout Rooms",
+        "topic": "TBA",
         "group": "Group 3"
       },
       {
@@ -365,18 +373,21 @@
         "start": "17:30",
         "end": "18:00",
         "location": "Breakout Rooms",
+        "topic": "TBA",
         "group": "Group 1"
       },
       {
         "start": "17:30",
         "end": "18:00",
         "location": "Breakout Rooms",
+        "topic": "TBA",
         "group": "Group 2"
       },
       {
         "start": "17:30",
         "end": "18:00",
         "location": "Breakout Rooms",
+        "topic": "TBA",
         "group": "Group 3"
       },
       {

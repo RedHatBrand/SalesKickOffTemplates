@@ -33,36 +33,39 @@ height: 603mm;
     class="{{#background-image}}background-image{{/background-image}} {{artwork-option}} {{colormode}}"
     style="width: {{ width }}{{unit}}; height: {{ height }}{{unit}}">
 
-    {{^ background-image }}
+    {{^background-image }}
     <div id="artwork"></div>
-    {{/ background-image }}
+    {{/background-image}}
 
     <main>
       <article id="content">
-        <div class="brand sko">
-          <% include ../../shared/images/event-logo-lockup.svg %>
-        </div>
-
-        <section class="section-agenda" id="agenda">
+        <section class="section-agenda agenda-container two-column" id="agenda">
+          <div class="brand sko agenda-logo">
+            <% include ../../shared/images/event-logo-lockup.svg %>
+          </div>
           {{#days}}
+          <div class="agenda-day-info">
+            <h1>{{day-name}}</h1>
+            <h2>{{date}}</h2>
+          </div>
           <div class="time-table time-table-unprocessed js-time-table">
             {{#sessions}}
-            <div class="session js-session" data-start="{{ start }}" data-end="{{ end }}">
-              <div class="session-inner {{ type }}">
+            <div class="agenda-session js-session" data-start="{{ start }}" data-end="{{ end }}">
+              <div class="agenda-session-inner {{ type }}">
                 <header class="session-header">
                   {{#topic}}
-                  <h3 class="session-header-text">{{ topic }}</h3>
+                  <h3 class="agenda-session-header-text">{{ topic }}</h3>
                   {{/topic}}
                   {{#speaker}}
-                  <h3 class="session-header-speaker">{{ speaker }}</h3>
+                  <h3 class="agenda-session-header-speaker">{{ speaker }}</h3>
                   {{/speaker}}
                 </header>
-                <div class="session-content">
+                <div class="agenda-session-content">
                   {{#location}}
-                  <p class="session-content-location">{{ location }}</p>
+                  <p class="agenda-session-content-location">{{ location }}</p>
                   {{/location}}
                   {{#group}}
-                  <p class="session-content-group">{{ group }}</p>
+                  <p class="agenda-session-content-group">{{ group }}</p>
                   {{/group}}
                 </div>
               </div>
@@ -98,6 +101,6 @@ height: 603mm;
     </script>
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.js"></script>
-    <script src="<%=baseUrl%>/templates/agenda-board/assets/javascripts/main.js"></script>
+    <script src="<%=baseUrl%>/shared/javascripts/agenda.js"></script>
   </body>
 </html>

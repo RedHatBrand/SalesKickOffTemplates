@@ -1,0 +1,115 @@
+.agenda-container {
+  height: 100%;
+
+  * { margin: 0; }
+
+  .agenda-day-info {
+    font-size: 1.5em;
+
+    h1, h2 { line-height: 1em; }
+
+    h1 {
+      padding-top: 1.5rem;
+      margin-top: 1.5rem;
+      border-top: thin solid $color-rh-slate;
+    }
+
+    h2 {
+      margin-bottom: 3rem;
+    }
+  }
+
+  .agenda-logo {
+    .sko-logo {
+      width: 33.333%;
+    }
+  }
+
+  .agenda-range-row {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+  }
+
+  .agenda-range-row-start-time {
+    width: 4.5em;
+    padding: 0.75rem 0;
+    display: table-cell;
+    margin-bottom: 0;
+    vertical-align: top;
+
+    font-size: 1em;
+    line-height: 1em;
+  }
+
+  .agenda-range-row-sesions-container {
+    font-size: 0;
+    display: table-cell;
+    vertical-align: top;
+  }
+
+  .agenda-session {
+    padding: 0.25rem;
+    box-sizing: border-box;
+    font-size: 1rem;
+
+    h1, h2, h3, h4, h5, h6 {
+      text-transform: none;
+    }
+
+    &.break {
+      background-image: linear-gradient(-45deg, #fafafa 25%, transparent 25%, transparent 50%, #fafafa 50%, #fafafa 75%, transparent 75%, transparent);
+      background-size: 20px 20px;
+      background-position: 0 0;
+      color: lighten($color-rh-slate, 15%);
+    }
+  }
+
+  .agenda-range-row-sessions-2,
+  .agenda-range-row-sessions-3,
+  .agenda-range-row-sessions-4,
+  .agenda-range-row-sessions-5,
+  .agenda-range-row-sessions-6 {
+    .agenda-session {
+      vertical-align: top;
+      display: inline-block;
+      width: 50%;
+    }
+  }
+
+  .agenda-session-inner {
+    background-color: lighten($color-rh-slate, 55%);
+    padding: 0.25rem 0.5em;
+    position: relative;
+    min-height: 1.5em;
+  }
+
+  .agenda-session-content-location {
+    font-size: 0.75em;
+    line-height: 2em;
+  }
+
+  .agenda-session-content-group {
+    text-transform: uppercase;
+    font-size: 0.75em;
+    line-height: 2em;
+  }
+
+  .agenda-session-header-text + .agenda-session-header-speaker {
+    font-size: 0.75em;
+    line-height: 2em;
+  }
+
+  &.two-column {
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: column wrap;
+
+    > * {
+      flex: 0 0 auto;
+      width: 50%;
+      padding: 0 1rem;
+      box-sizing: border-box;
+    }
+  }
+}

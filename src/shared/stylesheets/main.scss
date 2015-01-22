@@ -62,12 +62,6 @@ svg {
   height: 100%;
 }
 
-.sko-logo {
-  .logotext, .location {
-    fill: #444 !important;
-  }
-}
-
 // Containers
 
 @mixin half ($pad: 2.5%) {

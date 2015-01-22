@@ -1,34 +1,5 @@
 @import '../../../../shared/stylesheets/main.scss';
-
-// ## Colours
-
-$color-primary:             #c12;
-$color-primary-light:       lighten($color-primary, 30%);
-$color-primary-dark:        darken($color-primary, 30%);
-
-$color-shade:               #576065;
-
-$color-secondary:           hsl(195,54%,55%);
-$color-secondary-light:     lighten($color-secondary, 20%);
-
-$black:                     hsl(0,0%,9%);
-$white:                     lighten($black, 93.5%);
-$gray-darker:               lighten($black, 13.5%);
-$gray-dark:                 lighten($black, 20%);
-$gray:                      lighten($black, 33.5%);
-$gray-light:                lighten($black, 75%);
-$gray-lighter:              lighten($black, 87.5%);
-
-$color-success:             hsl(85, 60%, 52%);
-$color-success-light:       lighten($color-success, 35%);
-$color-warning:             hsl(45, 83%, 73%);
-$color-warning-light:       lighten($color-warning, 35%);
-$color-danger:              hsl(357, 88%, 63%);
-$color-danger-light:        lighten($color-danger, 35%);
-$color-info:                $color-primary;
-$color-info-light:          lighten($color-info, 35%);
-
-$color-background-overlay:  rgba($black, 0.7);
+@import '../../../../shared/stylesheets/agenda.scss';
 
 html, :root {
   font-size: 14pt;
@@ -39,157 +10,46 @@ body { color: $color-rh-slate; }
 #content {
   max-width: initial;
   width: initial;
-  left: 4em;
-  right: 4em;
-  top: 5em;
-  transform: none;
+  left: 0;
+  right: 0;
+  top: auto;
+  bottom: 0;
   height: 100%;
-
-  .sko-logo {
-    width: 33.333%;
-  }
+  transform: none;
+  background-color: rgba(lighten($color-rh-slate, 50%), 0.6);
 }
 
-.section-agenda {
-  background-color: lighten($color-rh-slate, 50%);
-}
-
-.break {
-    background-image: linear-gradient(-45deg, #fafafa 25%, transparent 25%, transparent 50%, #fafafa 50%, #fafafa 75%, transparent 75%, transparent);
-    background-size: 20px 20px;
-    background-position: 0 0;
-    color: lighten($color-rh-slate, 15%);
-  }
-
-.section-agenda {
-  padding: 1em;
-}
-
-.time-table-unprocessed { display: none; }
-
-.timetable-range-row {
-  padding: 0.125em 0;
-  border-top: thin solid lighten($color-rh-slate, 55%);
-  @extend .clearfix;
-  margin: 0;
-
-  &:first-child {
-    border-top: none;
-    padding-top: 0;
-  }
-}
-
-.timetable-range-row-time {
-  float: left;
-  width: 12.5%;
-  padding: 0.75rem 0.5em;
-  box-sizing: border-box;
-  margin-bottom: 0;
-
-  font-size: 1em;
-  line-height: 1em;
-  color: lighten($color-rh-slate, 10%);
-}
-
-.timetable-range-row-sessions {
-  width: 87.5%;
-  float: left;
-  margin: 0;
-  font-size: 0;
-}
-
-.timetable-range-session {
-  padding: 0.25rem;
-  box-sizing: border-box;
-  font-size: 1rem;
-  margin: 0;
-}
-
-.session-inner {
-  background-color: lighten($color-rh-slate, 55%);
-  padding: 0.25rem 0.5em;
+.header-content {
   position: relative;
-  min-height: 1.5em;
-  @extend .clearfix;
+  padding: 2em;
 }
 
-.session-header-text {
-  margin: 0;
-  text-transform: none;
-}
-
-.session-content {
-  margin: 0;
-}
-
-.session-content-location {
-  font-size: 0.75em;
-  position: absolute;
-  right: 0.5em;
-  top: 0.5em;
-  background-color: lighten($color-rh-slate, 50%);
-  line-height: 1em;
-  color: lighten($color-rh-slate, 20%);
-  padding: 0.5em 0.5em 0.25em;
-}
-
-.session-content-group {
-  margin: 0;
-  text-transform: uppercase;
-  font-size: 0.75em;
-}
-
-.session-header-speaker {
-  text-transform: none;
-  font-size: 0.75em;
-  line-height: 1.5em;
-}
-
-.timetable-range-row-sessions-6 {
-  .timetable-range-session {
-    vertical-align: top;
-    display: inline-block;
-    width: 33.333%;
-  }
+.section-agenda {
+  padding: 4em 2.5em 5em;
 }
 
 .red {
   color: $color-rh-white;
 
+  #content {
+    background-color: transparent;
+
+    .session-inner, .session-inner h3 { color: $color-rh-black; }
+  }
+
   .section-agenda {
-    background: $color-rh-red;
+    background: transparent;
 
     h2 { color: $color-rh-white; }
   }
 
-  .time-slot-header {
-    border-bottom: thin solid $color-rh-white;
-
-    .duration {
-      color: $color-rh-white;
-    }
-  }
+  .day-info h1 { border-top-color: white; }
 }
 
 .silver {
-  .section-agenda {
-    background: darken($color-rh-white, 2.5%);
-  }
-}
-
-.background-image #content {
-  color: #444;
-
-  .brand {
-    text-align: right;
-
-    svg {
-      display: inline-block;
-    }
-  }
+  color: lighten($color-rh-black, 33%);
 
   .section-agenda {
-    color: #444;
-    h1, h2 { color: #444; }
+    background: transparent;
   }
 }

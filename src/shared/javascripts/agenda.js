@@ -40,18 +40,18 @@
     var rangeRow = document.createElement('div');
     var time = moment(range.start, 'X').format('HH:mm');
     var timeElem = document.createElement('h3');
-    timeElem.classList.add('timetable-range-row-time');
+    timeElem.classList.add('agenda-range-row-start-time');
     timeElem.innerHTML = time;
     rangeRow.appendChild(timeElem);
-    rangeRow.classList.add('timetable-range-row');
-    rangeRow.classList.add('timetable-range-row-sessions-' + range.sessions.length);
+    rangeRow.classList.add('agenda-range-row');
+    rangeRow.classList.add('agenda-range-row-sessions-' + range.sessions.length);
     var rangeRowSessions = document.createElement('div');
-    rangeRowSessions.classList.add('timetable-range-row-sessions');
+    rangeRowSessions.classList.add('agenda-range-row-sesions-container');
     rangeRow.appendChild(rangeRowSessions);
 
     range.sessions.forEach(function (session) {
       var sessionElem = document.createElement('div');
-      sessionElem.classList.add('timetable-range-session');
+      sessionElem.classList.add('agenda-session');
 
       sessionElem.innerHTML = session.element.innerHTML;
       rangeRowSessions.appendChild(sessionElem);
