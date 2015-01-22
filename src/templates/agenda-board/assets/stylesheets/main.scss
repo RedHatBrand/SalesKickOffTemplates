@@ -53,3 +53,23 @@ body { color: $color-rh-slate; }
     background: transparent;
   }
 }
+
+@media all and (max-width: 303mm) {
+  html, :root {
+    font-size: 10pt;
+  }
+}
+
+@media all and (max-width: 216mm) {
+  html, :root {
+    font-size: 7pt;
+  }
+  .agenda-smaller { font-size: 0.8em; line-height: 1.8em; }
+}
+
+@media all and (max-width: 8in) {
+  html, :root {
+    font-size: 6pt;
+  }
+  .agenda-smaller { font-size: 0.8em; line-height: 1.8em; }
+}

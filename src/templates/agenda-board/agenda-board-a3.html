@@ -1,6 +1,6 @@
 ---
-width: 426mm;
-height: 603mm;
+width: 303mm
+height: 426mm
 ---
 
 <!DOCTYPE html>
@@ -9,30 +9,8 @@ height: 603mm;
     <link rel="stylesheet" href="//redhatbrand.github.io/RedHatTemplates/global-assets/stylesheets/general/tile-pattern-fill.css" />
     <link rel="stylesheet" href="<%=baseUrl%>/shared/stylesheets/main.css" />
     <link rel="stylesheet" href="<%=baseUrl%>/templates/agenda-board/assets/stylesheets/main.css" />
-    <style type="text/css">
-      {{# background-image }}
-        .background-image main {
-          background-image:
-            url('<%=baseUrl%>/shared/images/grid-06-06.svg'),
-            url('{{{ background-image }}}');
-
-          background-repeat: no-repeat;
-          background-blend-mode: multiply;
-          background-size: cover;
-          background-position: center center;
-
-          color: white;
-        }
-
-        .logotext { fill: white; }
-        h2, .time { color: #444 !important; }
-      {{/ background-image }}
-    </style>
   </head>
-  <body
-    class="{{#background-image}}background-image{{/background-image}} {{artwork-option}} {{colormode}}"
-    style="width: {{ width }}{{unit}}; height: {{ height }}{{unit}}">
-
+  <body class="{{artwork-option}} {{colormode}}" style="width: 303mm; height: 426mm">
     {{^background-image }}
     <div id="artwork"></div>
     {{/background-image}}

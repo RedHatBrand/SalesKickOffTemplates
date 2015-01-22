@@ -1,0 +1,81 @@
+---
+width: 11in
+height: 17in
+---
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="//redhatbrand.github.io/RedHatTemplates/global-assets/stylesheets/general/tile-pattern-fill.css" />
+    <link rel="stylesheet" href="<%=baseUrl%>/shared/stylesheets/main.css" />
+    <link rel="stylesheet" href="<%=baseUrl%>/templates/agenda-board/assets/stylesheets/main.css" />
+  </head>
+  <body class="{{artwork-option}} {{colormode}}" style="width: 11in; height: 17in">
+
+    {{^background-image }}
+    <div id="artwork"></div>
+    {{/background-image}}
+
+    <main>
+      <article id="content">
+        <section class="section-agenda agenda-container two-column" id="agenda">
+          <div class="brand sko agenda-logo">
+            <% include ../../shared/images/event-logo-lockup.svg %>
+          </div>
+          {{#days}}
+          <div class="agenda-day-info js-agenda-day-info">
+            <h1>{{day-name}}</h1>
+            <h2>{{date}}</h2>
+          </div>
+          <div class="time-table time-table-unprocessed js-time-table">
+            {{#sessions}}
+            <div class="agenda-session js-session" data-start="{{ start }}" data-end="{{ end }}">
+              <div class="agenda-session-inner {{ type }}">
+                <header class="session-header">
+                  {{#topic}}
+                  <h3 class="agenda-session-header-text">{{ topic }}</h3>
+                  {{/topic}}
+                  {{#speaker}}
+                  <h3 class="agenda-session-header-speaker">{{ speaker }}</h3>
+                  {{/speaker}}
+                </header>
+                <div class="agenda-session-content">
+                  {{#location}}
+                  <p class="agenda-session-content-location">{{ location }}</p>
+                  {{/location}}
+                  {{#group}}
+                  <p class="agenda-session-content-group">{{ group }}</p>
+                  {{/group}}
+                </div>
+              </div>
+            </div>
+            {{/sessions}}
+          </div>
+          {{/days}}
+
+        </section>
+      </article>
+    </main>
+
+    {{#artwork-complexity}}
+    <script type="text/javascript">
+      window.redhatArtComplexity = {{ artwork-complexity }};
+    </script>
+    {{/artwork-complexity}}
+
+    {{^ background-image }}
+    <script src="<%=baseUrl%>/shared/javascripts/artwork.js"></script>
+    {{/ background-image }}
+
+    <script src="//redhatbrand.github.io/RedHatPatterns/red-hat-patterns.js"></script>
+
+    {{#selected-day}}
+    <script type="text/javascript">
+      window.redhatSelectedDay = {{ selected-day}};
+    </script>
+    {{/selected-day}}
+
+    <script src="<%=baseUrl%>/shared/javascripts/vendor/moment.js"></script>
+    <script src="<%=baseUrl%>/shared/javascripts/agenda.js"></script>
+  </body>
+</html>

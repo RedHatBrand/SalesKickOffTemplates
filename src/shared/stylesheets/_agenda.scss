@@ -1,3 +1,8 @@
+.agenda-smaller {
+  font-size: 0.75em;
+  line-height: 2em;
+}
+
 .agenda-container {
   height: 100%;
 
@@ -92,19 +97,16 @@
   }
 
   .agenda-session-content-location {
-    font-size: 0.75em;
-    line-height: 2em;
+    @extend .agenda-smaller;
   }
 
   .agenda-session-content-group {
     text-transform: uppercase;
-    font-size: 0.75em;
-    line-height: 2em;
+    @extend .agenda-smaller;
   }
 
   .agenda-session-header-text + .agenda-session-header-speaker {
-    font-size: 0.75em;
-    line-height: 2em;
+    @extend .agenda-smaller;
   }
 
   &.two-column {
