@@ -16,7 +16,7 @@
     var start = moment(session.start, 'HH:mm').format('X');
     var end = moment(session.end, 'HH:mm').format('X');
     var existing = ranges.filter(function (range) {
-      return range.start <= start && range.end > start;
+      return range.start == start;
     })[0];
     if (existing) {
       existing.sessions.push(session);
@@ -62,5 +62,11 @@
 
   days.forEach(function (day) {
     day.element.parentNode.removeChild(day.element);
+  });
+
+  [].slice.call(document.getElementsByClassName("js-agenda-day-info")).filter(function (_e, index) {
+    return index !== (redhatSelectedDay - 1)
+  }).forEach(function (elem) {
+    elem.style.display = 'none';
   })
 })(window)

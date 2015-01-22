@@ -44,7 +44,7 @@ height: 603mm;
             <% include ../../shared/images/event-logo-lockup.svg %>
           </div>
           {{#days}}
-          <div class="agenda-day-info">
+          <div class="agenda-day-info js-agenda-day-info">
             <h1>{{day-name}}</h1>
             <h2>{{date}}</h2>
           </div>
@@ -96,11 +96,7 @@ height: 603mm;
     </script>
     {{/selected-day}}
 
-    <script>
-      window.daysStr = '{{#toJSON}}days{{/toJSON}}';
-    </script>
-
-    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.js"></script>
+    <script src="<%=baseUrl%>/shared/javascripts/vendor/moment.js"></script>
     <script src="<%=baseUrl%>/shared/javascripts/agenda.js"></script>
   </body>
 </html>
