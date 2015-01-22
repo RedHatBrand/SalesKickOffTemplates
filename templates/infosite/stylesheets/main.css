@@ -385,7 +385,7 @@ body, .artwork-container.red {
 main {
   z-index: 3; }
 
-main:before {
+main:before, .artwork-overlay:before {
   content: '';
   position: absolute;
   left: 0;
@@ -421,6 +421,9 @@ main:before {
     .background-image #content .sko-logo text, .background-image #content .sko-logo tspan, .background-image #content .logotext, .background-image #content .logotype, .background-image #content h1, .background-image #content h2, .background-image #content h3, .background-image #content text, .background-image #content tspan, .red #content .sko-logo text, .red #content .sko-logo tspan, .red #content .logotext, .red #content .logotype, .red #content h1, .red #content h2, .red #content h3, .red #content text, .red #content tspan {
       color: #fff;
       fill: #fff !important; }
+
+.sko-logo .logotext, .sko-logo .location {
+  fill: #475055 !important; }
 
 body.red, .artwork-container.red {
   background-color: #b30000; }

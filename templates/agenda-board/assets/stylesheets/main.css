@@ -818,7 +818,7 @@ body, .artwork-container.red {
 main {
   z-index: 3; }
 
-main:before {
+main:before, .artwork-overlay:before {
   content: '';
   position: absolute;
   left: 0;
@@ -854,6 +854,9 @@ main:before {
     .background-image #content .sko-logo text, .background-image #content .sko-logo tspan, .background-image #content .logotext, .background-image #content .logotype, .background-image #content h1, .background-image #content h2, .background-image #content h3, .background-image #content text, .background-image #content tspan, .red #content .sko-logo text, .red #content .sko-logo tspan, .red #content .logotext, .red #content .logotype, .red #content h1, .red #content h2, .red #content h3, .red #content text, .red #content tspan {
       color: #fff;
       fill: #fff !important; }
+
+.sko-logo .logotext, .sko-logo .location {
+  fill: #475055 !important; }
 
 body.red, .artwork-container.red {
   background-color: #b30000; }
@@ -954,9 +957,6 @@ svg {
   display: block;
   width: 100%;
   height: 100%; }
-
-.sko-logo .logotext, .sko-logo .location {
-  fill: #444 !important; }
 
 .one-half, .container_two-logos [class*="-logo-container"], .container_headline-and-event-logo .event-logo-container, .container_headline-and-event-logo .headline-container {
   padding: 2.5%;
@@ -1169,113 +1169,148 @@ svg {
       transform: translateY(-40%); }
  }
 
+.agenda-smaller, .agenda-container .agenda-session-content-location, .agenda-container .agenda-session-content-group, .agenda-container .agenda-session-header-text + .agenda-session-header-speaker {
+  font-size: 0.75em;
+  line-height: 2em; }
+
+.agenda-container {
+  height: 100%; }
+  .agenda-container * {
+    margin: 0; }
+  .agenda-container > * {
+    margin-bottom: 0.25em; }
+  .agenda-container .agenda-day-info {
+    font-size: 1.5em; }
+    .agenda-container .agenda-day-info h1, .agenda-container .agenda-day-info h2 {
+      line-height: 1em; }
+    .agenda-container .agenda-day-info h1 {
+      padding-top: 1.5rem;
+      margin-top: 1.5rem;
+      border-top: thin solid #5E6A71; }
+    .agenda-container .agenda-day-info h2 {
+      margin-bottom: 3rem; }
+  .agenda-container .agenda-logo .sko-logo {
+    width: 33.333%; }
+  .agenda-container .agenda-range-row {
+    display: table;
+    table-layout: fixed;
+    width: 100%; }
+  .agenda-container .agenda-range-row-start-time {
+    width: 4.5em;
+    padding: 0.75rem 0;
+    display: table-cell;
+    margin-bottom: 0;
+    vertical-align: top;
+    font-size: 1em;
+    line-height: 1em; }
+  .agenda-container .agenda-range-row-sesions-container {
+    font-size: 0;
+    display: table-cell;
+    vertical-align: top; }
+  .agenda-container .agenda-session {
+    padding: 0.25rem;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: 1rem; }
+    .agenda-container .agenda-session h1, .agenda-container .agenda-session h2, .agenda-container .agenda-session h3, .agenda-container .agenda-session h4, .agenda-container .agenda-session h5, .agenda-container .agenda-session h6 {
+      text-transform: none; }
+  .agenda-container .agenda-range-row-sessions-2 .agenda-session, .agenda-container .agenda-range-row-sessions-3 .agenda-session, .agenda-container .agenda-range-row-sessions-4 .agenda-session, .agenda-container .agenda-range-row-sessions-5 .agenda-session, .agenda-container .agenda-range-row-sessions-6 .agenda-session, .agenda-container .agenda-range-row-sessions-7 .agenda-session, .agenda-container .agenda-range-row-sessions-8 .agenda-session, .agenda-container .agenda-range-row-sessions-9 .agenda-session, .agenda-container .agenda-range-row-sessions-10 .agenda-session, .agenda-container .agenda-range-row-sessions-11 .agenda-session, .agenda-container .agenda-range-row-sessions-12 .agenda-session {
+    vertical-align: top;
+    display: inline-block;
+    width: 50%; }
+  .agenda-container .agenda-session-inner {
+    background-color: #f3f4f5;
+    padding: 0.25rem 0.5em;
+    position: relative;
+    min-height: 1.5em; }
+    .agenda-container .agenda-session-inner.break {
+      background-image: linear-gradient(-45deg, #fafafa 25%, transparent 25%, transparent 50%, #fafafa 50%, #fafafa 75%, transparent 75%, transparent);
+      background-size: 20px 20px;
+      background-position: 0 0;
+      color: #839098; }
+  .agenda-container .agenda-session-content-group {
+    text-transform: uppercase; }
+  .agenda-container.two-column {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-flow: column wrap;
+    -ms-flex-flow: column wrap;
+    flex-flow: column wrap; }
+    .agenda-container.two-column > * {
+      -webkit-flex: 0 0 auto;
+      -ms-flex: 0 0 auto;
+      flex: 0 0 auto;
+      width: 50%;
+      padding: 0 1rem;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box; }
+
 html, :root {
   font-size: 14pt; }
+
+body {
+  color: #5E6A71; }
 
 #content {
   max-width: initial;
   width: initial;
-  left: 4em;
-  right: 4em;
-  top: 5em;
+  left: 0;
+  right: 0;
+  top: auto;
+  bottom: 0;
+  height: 100%;
   -webkit-transform: none;
   -ms-transform: none;
   transform: none;
-  height: 100%; }
-  #content .sko-logo {
-    width: 50%; }
+  background-color: rgba(229, 232, 233, 0.6); }
+
+.header-content {
+  position: relative;
+  padding: 2em; }
 
 .section-agenda {
-  background: #e3e6e8;
-  padding: 2em;
-  display: none;
-  height: 75%; }
-  .section-agenda h1, .section-agenda h2 {
-    display: inline-block;
-    margin-bottom: 0; }
-  .section-agenda h2 {
-    color: #08A8E5; }
-  .section-agenda h1 {
-    margin-right: 0.3em; }
-  .section-agenda p {
-    margin: 0; }
-  .section-agenda .time {
-    font-size: 2em;
-    font-weight: 300; }
-
-.agenda-content {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-flow: column wrap;
-  -ms-flex-flow: column wrap;
-  flex-flow: column wrap;
-  -webkit-align-content: flex-start;
-  -ms-flex-line-pack: start;
-  align-content: flex-start;
-  height: 95%;
-  margin-left: -1em;
-  margin-right: -1em; }
-  .agenda-content .time-slot {
-    padding: 1em;
-    margin: 0;
-    -webkit-column-break-inside: avoid;
-    break-inside: avoid-column;
-    page-break-inside: avoid;
-    -webkit-flex: 0 0 auto;
-    -ms-flex: 0 0 auto;
-    flex: 0 0 auto;
-    width: 33.333%;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box; }
-
-[class*="track-"] h6 {
-  font-size: 1em;
-  line-height: 1.5em;
-  margin: 0.5em 0; }
-
-.time-slot-header {
-  margin-bottom: 0.75em;
-  padding-bottom: 0.75em;
-  border-bottom: thin solid #aaa; }
-  .time-slot-header .time, .time-slot-header .duration {
-    display: inline-block;
-    vertical-align: baseline;
-    margin: 0;
-    margin-right: 0.5em; }
-  .time-slot-header .time {
-    font-size: 1.5em;
-    line-height: 1em; }
-  .time-slot-header .duration {
-    font-size: 1em;
-    text-transform: uppercase;
-    font-weight: bold;
-    color: #b7b7b7; }
-
-.time-slot-header + div {
-  margin-top: 0; }
+  padding: 4em 2.5em 5em; }
 
 .red {
   color: #ffffff; }
+  .red #content {
+    background-color: transparent; }
+    .red #content .session-inner, .red #content .session-inner h3 {
+      color: #111111; }
   .red .section-agenda {
-    background: #cc0000; }
+    background: transparent; }
     .red .section-agenda h2 {
       color: #ffffff; }
-  .red .time-slot-header {
-    border-bottom: thin solid #ffffff; }
-    .red .time-slot-header .duration {
-      color: #ffffff; }
+  .red .day-info h1 {
+    border-top-color: white; }
 
-.silver .section-agenda {
-  background: #f9f9f9; }
+.silver {
+  color: #656565; }
+  .silver .section-agenda {
+    background: transparent; }
 
-.background-image #content {
-  color: #444; }
-  .background-image #content .brand {
-    text-align: right; }
-    .background-image #content .brand svg {
-      display: inline-block; }
-  .background-image #content .section-agenda {
-    color: #444; }
-    .background-image #content .section-agenda h1, .background-image #content .section-agenda h2 {
-      color: #444; }
+@media all and (max-width: 303mm) {
+  html, :root {
+    font-size: 10pt; }
+ }
+
+@media all and (max-width: 216mm) {
+  html, :root {
+    font-size: 7pt; }
+
+  .agenda-smaller, .agenda-container .agenda-session-content-location, .agenda-container .agenda-session-content-group, .agenda-container .agenda-session-header-text + .agenda-session-header-speaker {
+    font-size: 0.8em;
+    line-height: 1.8em; }
+ }
+
+@media all and (max-width: 8in) {
+  html, :root {
+    font-size: 6pt; }
+
+  .agenda-smaller, .agenda-container .agenda-session-content-location, .agenda-container .agenda-session-content-group, .agenda-container .agenda-session-header-text + .agenda-session-header-speaker {
+    font-size: 0.8em;
+    line-height: 1.8em; }
+ }
