@@ -116,39 +116,42 @@ height: 100vh
     </div>
   </section>
       
-  <section class="section-agenda agenda-container two-column" id="agenda">
-    <h1>Agenda</h1>
-    {{#days}}
-    <div class="agenda-day-info js-agenda-day-info">
-      <h1>{{day-name}}</h1>
-      <h2>{{date}}</h2>
-    </div>
-    <div class="time-table time-table-unprocessed js-time-table">
-      {{#sessions}}
-      <div class="agenda-session js-session" data-start="{{ start }}" data-end="{{ end }}">
-        <div class="agenda-session-inner {{ type }}">
-          <header class="session-header">
-            {{#topic}}
-            <h3 class="agenda-session-header-text">{{ topic }}</h3>
-            {{/topic}}
-            {{#speaker}}
-            <h3 class="agenda-session-header-speaker">{{ speaker }}</h3>
-            {{/speaker}}
-          </header>
-          <div class="agenda-session-content">
-            {{#location}}
-            <p class="agenda-session-content-location">{{ location }}</p>
-            {{/location}}
-            {{#group}}
-            <p class="agenda-session-content-group">{{ group }}</p>
-            {{/group}}
-          </div>
+  <section class="section-agenda agenda-container">
+    <div class="container">
+      <div id="agenda" class="two-column">
+        <h1>Agenda</h1>
+        {{#days}}
+        <div class="agenda-day-info js-agenda-day-info">
+          <h1>{{day-name}}</h1>
+          <h2>{{date}}</h2>
         </div>
+        <div class="time-table time-table-unprocessed js-time-table">
+          {{#sessions}}
+          <div class="agenda-session js-session" data-start="{{ start }}" data-end="{{ end }}">
+            <div class="agenda-session-inner {{ type }}">
+              <header class="session-header">
+                {{#topic}}
+                <h3 class="agenda-session-header-text">{{ topic }}</h3>
+                {{/topic}}
+                {{#speaker}}
+                <h3 class="agenda-session-header-speaker">{{ speaker }}</h3>
+                {{/speaker}}
+              </header>
+              <div class="agenda-session-content">
+                {{#location}}
+                <p class="agenda-session-content-location">{{ location }}</p>
+                {{/location}}
+                {{#group}}
+                <p class="agenda-session-content-group">{{ group }}</p>
+                {{/group}}
+              </div>
+            </div>
+          </div>
+          {{/sessions}}
+        </div>
+        {{/days}}
       </div>
-      {{/sessions}}
     </div>
-    {{/days}}
-
   </section>
 
   {{#section}}
