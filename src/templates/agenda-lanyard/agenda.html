@@ -18,6 +18,9 @@ height: 152.4mm
     <main>
       <article id="content">
         <section class="section-agenda agenda-container source" id="agenda">
+          <div class="brand sko agenda-logo">
+            <% include ../../shared/images/event-logo-lockup.svg %>
+          </div>
           {{#days}}
           <div class="agenda-day-info js-agenda-day-info">
             <h1>{{day-name}}</h1>
@@ -49,7 +52,10 @@ height: 152.4mm
           </div>
           {{/days}}
         </section>
-          
+      </article>
+      
+      <article id="region-container">
+        
       </article>
     </main>
 
@@ -82,7 +88,7 @@ height: 152.4mm
                           
         var i = 0;
         while(i < panels) {
-          $("<section class='region-container'><div class='region'></div></section>").appendTo("#content");
+          $("<section class='region-content'><div class='region'></div></section>").appendTo("#region-container");
           i++;
         }
 

@@ -19,7 +19,7 @@ h2 { font-size: 1em; }
   -webkit-flow-into: article;
   flow-into: article;
 }
-.region-container .region { 
+.region-content .region { 
   -webkit-flow-from: article;
   flow-from: article;
   margin-top: 0;
@@ -42,12 +42,19 @@ h2 { font-size: 1em; }
   padding: 2em;
 }
 
-.region-container {
-  height: 152.4mm;
+#region-container {
   margin: 0;
-  box-sizing: border-box;
-  padding: 1.5em 0;
+  position: relative;
+  z-index: 20;
+  
+  .region-content {
+    box-sizing: border-box;
+    padding: 2.5em 0 1.5em 0;
+    height: 152.4mm;
 
+    .region { height: 100%; }
+  }
+  
   .brand { 
     padding: 1.5em 2.5em 0 2.5em; 
     width: 40%;
