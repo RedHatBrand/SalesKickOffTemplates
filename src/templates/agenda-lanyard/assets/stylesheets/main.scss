@@ -10,7 +10,12 @@ body {
   overflow-y: scroll;
 }
 
-main { overflow: visible; }
+main {
+  position: relative;
+  overflow: visible; 
+}
+
+#artwork { position: fixed; }
 
 h1 { font-size: 2em; }
 h2 { font-size: 1em; }
@@ -51,6 +56,7 @@ h2 { font-size: 1em; }
     box-sizing: border-box;
     padding: 2.5em 0 1.5em 0;
     height: 152.4mm;
+    margin: 0;
 
     .region { height: 100%; }
   }
@@ -62,7 +68,7 @@ h2 { font-size: 1em; }
 }
 
 .section-agenda {
-  padding: 0 2.5em 5em;
+  padding: 0 2.5em 0;
 }
 
 .red {
