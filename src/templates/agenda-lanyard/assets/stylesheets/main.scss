@@ -10,10 +10,7 @@ body {
   overflow-y: scroll;
 }
 
-main {
-  position: relative;
-  overflow: visible; 
-}
+main { position: relative; }
 
 #artwork { position: fixed; }
 
@@ -57,6 +54,7 @@ h2 { font-size: 1em; }
     padding: 2.5em 0 1.5em 0;
     height: 152.4mm;
     margin: 0;
+    overflow: hidden;
 
     .region { height: 100%; }
   }
