@@ -55,6 +55,9 @@ height: 152.4mm
         </div>
       </div>
       {{/ background-image }}
+        
+      <div id="map"></div>
+        
     </main>
 
     {{#artwork-complexity}}
@@ -68,6 +71,20 @@ height: 152.4mm
     {{/ background-image }}
 
     <script src="//redhatbrand.github.io/RedHatPatterns/red-hat-patterns.js"></script>
+    <script src="//redhatbrand.github.io/RedHatTemplates/global-assets/javascripts/vendor/jquery.js"></script>
+    <script src='<%=baseUrl%>/shared/javascripts/vendor/leaflet.js'></script>
+    <script src='<%=baseUrl%>/shared/javascripts/vendor/d3.v3.min.js'></script>
+    <script src='<%=baseUrl%>/shared/javascripts/vendor/topojson.v1.min.js'></script>
+    <script src='<%=baseUrl%>/shared/javascripts/vendor/d3-topojson.js'></script>
+    
+    <script>
+      var mapSettings = {
+        zoom: 12,
+        address: '{{ customer-location }}',
+        locationLabel: '{{ customer-location-label }}'
+      };
+    </script>
+    <script src="<%= baseUrl %>/templates/attendee/lanyard/assets/javascripts/main.js"></script>
   </body>
 </html>
 

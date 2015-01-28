@@ -30,3 +30,17 @@ h1 {
     width: 85.5%;
   }
 }
+
+#map { 
+  height: 16em; 
+  margin: 0;
+  
+  path.road {
+    stroke: hsl(240,4%,90%);
+    fill: none;
+  }
+  path.water {
+    stroke: hsl(240,4%,95%);
+    fill: hsl(240,4%,95%);
+  }
+}
