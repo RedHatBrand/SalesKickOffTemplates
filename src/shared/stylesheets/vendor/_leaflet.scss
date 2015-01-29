@@ -152,7 +152,10 @@
   transition: none;
 }
 
-svg.leaflet-zoom-animated { transform: translate(0px, -20px) !important; }
+svg.leaflet-zoom-animated { 
+  width: 105%;
+  transform: translate(-10px, -20px) !important; 
+}
 
 .leaflet-zoom-anim .leaflet-zoom-hide {
   visibility: hidden;
