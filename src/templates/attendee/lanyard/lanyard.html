@@ -2,7 +2,6 @@
 width: 101.6mm
 height: 152.4mm
 ---
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -40,21 +39,23 @@ height: 152.4mm
       <div id="content">
         <div class="brand sko"><% include ../../../shared/images/event-logo-lockup.svg %></div>
         <article>
-          <h1>{{{ name }}}</h1>
-          <h2>{{{ position }}}</h3>
-          <h3>{{{ company }}}</h2>
-        </article>
-      </div>
+          <p class="introduction">Hi, my name is
+          <h1>
+            {{ firstname }}
+          </h1>
+          <h2>{{ lastname }}</h2>
 
-      {{^ background-image }}
-      <div class="corner-shapes-bottom-right">
-        <div class="corner-shape-solid-triangle"></div>
-        <div data-red-hat-pattern="corporate" class="pattern-red corner-shape-pattern"></div>
-        <div class="corner-shape-bottom-right-logo rh-logo">
-          <% include ../../../shared/images/rh-logo-include.svg %>
+          <p>I'm a <strong>{{ position }}</strong> with <strong>{{ company }}</strong></p>
+        </article>
+
+        <div id="map"></div>
+
+        <div id="location">
+          <p>
+          <small>You can find me at <strong>{{ location }}, {{ location-country }}</strong></small>
+          </p>
         </div>
       </div>
-      {{/ background-image }}
     </main>
 
     {{#artwork-complexity}}
@@ -68,6 +69,19 @@ height: 152.4mm
     {{/ background-image }}
 
     <script src="//redhatbrand.github.io/RedHatPatterns/red-hat-patterns.js"></script>
+    <script src="//redhatbrand.github.io/RedHatTemplates/global-assets/javascripts/vendor/jquery.js"></script>
+    <script src='<%=baseUrl%>/shared/javascripts/vendor/leaflet.js'></script>
+    <script src='<%=baseUrl%>/shared/javascripts/vendor/d3.v3.min.js'></script>
+    <script src='<%=baseUrl%>/shared/javascripts/vendor/topojson.v1.min.js'></script>
+    <script src='<%=baseUrl%>/shared/javascripts/vendor/d3-topojson.js'></script>
+
+    <script>
+      var mapSettings = {
+        zoom: 10,
+        address: '{{ location }}, {{ location-country }}'
+      };
+    </script>
+    <script src="<%= baseUrl %>/templates/attendee/lanyard/assets/javascripts/main.js"></script>
   </body>
 </html>
 
