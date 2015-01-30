@@ -15,7 +15,7 @@ var url = baseUrl + '?' + queryString(params);
 
 $.ajax({
   type: 'get',
-  url: url, 
+  url: url,
   success: function (res) {
     var latLng = res.results[0].locations[0].latLng;
     var lat = latLng.lat;
@@ -30,7 +30,10 @@ function initMap (loc) {
   var map = L.map('map', {
     scrollWheelZoom: false,
     zoomControl: false,
-    attributionControl: false
+    attributionControl: false,
+    fadeAnimation: false,
+    zoomAnimation: false,
+    markerZoomAnimation: false
   });
   map.dragging.disable();
 
@@ -61,9 +64,8 @@ function initMap (loc) {
   })
   roads.addTo(map);
 
-  var icon =  L.divIcon({ 
-    className: 'marker-icon',
-    html: '<div>' + mapSettings.locationLabel + '</div>'
+  var icon =  L.divIcon({
+    className: 'marker-icon'
   });
 
   var marker = L.marker(loc, { icon: icon }).addTo(map);

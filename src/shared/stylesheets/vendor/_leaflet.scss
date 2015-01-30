@@ -7,21 +7,34 @@
 .leaflet-tile,
 .leaflet-tile-pane,
 .leaflet-tile-container,
-/*.leaflet-overlay-pane,*/
+.leaflet-overlay-pane,
 .leaflet-shadow-pane,
 .leaflet-popup-pane,
-/*.leaflet-overlay-pane svg,*/
+.leaflet-overlay-pane svg,
 .leaflet-zoom-box,
 .leaflet-image-layer,
 .leaflet-layer {
   position: absolute;
   left: 0;
   top: 0;
+  margin: 0;
 }
+
+.leaflet-overlay-pane,
+.leaflet-objects-pane {
+  margin: 0;
+}
+
+.leaflet-overlay-pane svg {
+  width: initial;
+  height: initial;
+}
+
 .leaflet-container {
   overflow: hidden;
   -ms-touch-action: none;
 }
+
 .leaflet-tile,
 .leaflet-marker-icon,
 .leaflet-marker-shadow {
@@ -152,9 +165,8 @@
   transition: none;
 }
 
-svg.leaflet-zoom-animated { 
-  width: 105%;
-  transform: translate(-10px, -20px) !important; 
+svg.leaflet-zoom-animated {
+  transform: translate(-10px, -20px) !important;
 }
 
 .leaflet-zoom-anim .leaflet-zoom-hide {
