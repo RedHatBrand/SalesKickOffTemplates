@@ -1,17 +1,54 @@
 @import '../../../../shared/stylesheets/vendor/leaflet';
+@import '../../../../shared/stylesheets/main';
+
 $color-primary: #c12;
 
 :root, html {
-  font-size: 10pt;
+  font-size: 12pt;
 }
 
 #content {
-  left: 2em;
-  right: 2em;
-  top: 2.5em;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 100%;
   transform: none;
   width: initial;
+  max-width: initial;
+  display: flex;
+  flex-flow: column nowrap;
+
+  h1 { margin: 0; margin-left: -0.06em; }
+  h2 { margin: 0; margin-left: -0.05em; }
+
+  .introduction {
+    line-height: 1em;
+    margin-bottom: 0.75em;
+  }
+
+  .brand {
+    flex: 0 0 auto;
+    padding: 2.5em 2em 1.5em;
+    margin: 0;
+  }
+  article {
+    flex: 0 0 auto;
+    padding: 2em;
+    margin: 0;
+  }
+  #map {
+    flex: 1 1 auto;
+    height: auto;
+    margin: 0;
+  }
+  #location {
+    flex: 0 0 auto;
+    padding: 1.5em 2em 1.5em;
+    margin: 0;
+  }
 }
+
+
 
 h1 {
   font-size: 3.5rem;
@@ -34,20 +71,35 @@ h1 {
   }
 }
 
-#map { 
-  height: 14em; 
-  //background-color: #C9CFD2;
+#map {
+  height: 8em;
+  background-color: $color-rh-slate;
   margin: 0;
-  transform: translate(0px, 400px);
-  
+  width: 100%;
+
+  .leaflet-overlay-pane {
+    opacity: 0.6;
+  }
+
   path.road {
-    stroke: hsl(240,4%,90%);
+    stroke: lighten($color-rh-slate, 25%);
     fill: none;
   }
   path.water {
-    stroke: hsl(240,4%,95%);
-    fill: hsl(240,4%,95%);
+    stroke: lighten($color-rh-slate, 50%);
+    fill: lighten($color-rh-slate, 50%);
   }
+}
+
+#content article {
+  background-color: rgba(lighten($color-rh-slate, 50%), 0.6);
+}
+
+#location {
+  line-height: 1em;
+  background-color: rgba(lighten($color-rh-slate, 50%), 0.8);
+
+  p { margin: 0; }
 }
 
 .marker-icon > div {
@@ -56,12 +108,13 @@ h1 {
 
 .marker-icon:before {
   content: '';
-  width: 8px;
-  height: 8px;
-  background-color: $color-primary;
+  width: 2em;
+  height: 2em;
+  background-color: $color-rh-blue;
+  border: 0.25em solid lighten($color-rh-slate, 50%);
   display: block;
   position: absolute;
   top: 50%;
-  transform: translateY(-33.333%);
+  transform: translate(-50%, -50%);
   border-radius: 100%;
 }

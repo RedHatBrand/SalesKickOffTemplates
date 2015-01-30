@@ -4,14 +4,15 @@
     "width": "101.6",
     "height": "152.4",
     "unit": "mm",
-    "name": "Brad Parker",
-    "company": "NetEngine",
-    "position": "Designer / Front-end Developer",
+    "firstname": "Bruce",
+    "lastname": "Stronge",
+    "company": "NetEngne",
+    "position": "Exeutive Director",
     "background-image": "",
     "artwork-complexity": 10,
     "artwork-option": "fractals",
     "colormode": "platinum",
-    "customer-location": "Singapore",
-    "customer-location-label": "Singapore"
+    "location": "RH - Brisbane",
+    "location-country": "Australia"
   }
 }
