@@ -53,9 +53,9 @@ height: 152.4mm
           {{/days}}
         </section>
       </article>
-      
+
       <article id="region-container">
-        
+
       </article>
     </main>
 
@@ -76,22 +76,19 @@ height: 152.4mm
       window.redhatSelectedDay = {{ selected-day}};
     </script>
     {{/selected-day}}
-    
+
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="<%=baseUrl%>/shared/javascripts/vendor/moment.js"></script>
     <script src="<%=baseUrl%>/shared/javascripts/agenda.js"></script>
-    
+
     <script>
       $( document ).ready(function() {
-        
         var panels = "{{ number-of-panels }}";
-                          
-        var i = 0;
-        while(i < panels) {
-          $("<section class='region-content'><div class='region'></div></section>").appendTo("#region-container");
-          i++;
+        while(panels--) {
+          $("<section class='region-content'>" +
+            "<div class='region'></div>" +
+          "</section>").appendTo("#region-container");
         }
-
       });
     </script>
   </body>

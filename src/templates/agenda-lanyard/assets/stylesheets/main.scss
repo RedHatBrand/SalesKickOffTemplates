@@ -5,7 +5,7 @@ html, :root {
   font-size: 8pt;
 }
 
-body { 
+body {
   color: $color-rh-slate;
   overflow-y: scroll;
 }
@@ -17,13 +17,7 @@ main { position: relative; }
 h1 { font-size: 2em; }
 h2 { font-size: 1em; }
 
-.source { 
-  -webkit-flow-into: article;
-  flow-into: article;
-}
-.region-content .region { 
-  -webkit-flow-from: article;
-  flow-from: article;
+.panel {
   margin-top: 0;
 }
 
@@ -48,7 +42,7 @@ h2 { font-size: 1em; }
   margin: 0;
   position: relative;
   z-index: 20;
-  
+
   .region-content {
     box-sizing: border-box;
     padding: 2.5em 0 1.5em 0;
@@ -58,9 +52,9 @@ h2 { font-size: 1em; }
 
     .region { height: 100%; }
   }
-  
-  .brand { 
-    padding: 1.5em 2.5em 0 2.5em; 
+
+  .brand {
+    padding: 1.5em 2.5em 0 2.5em;
     width: 40%;
   }
 }
