@@ -152,6 +152,41 @@ h1 {
   margin-top: 0;
 }
 
+.time-table {
+  padding-bottom: 3em;
+}
+
+.agenda-container .agenda-range-row-sessions-2 .agenda-session,
+.agenda-container .agenda-range-row-sessions-3 .agenda-session,
+.agenda-container .agenda-range-row-sessions-4 .agenda-session,
+.agenda-container .agenda-range-row-sessions-5 .agenda-session,
+.agenda-container .agenda-range-row-sessions-6 .agenda-session,
+.agenda-container .agenda-range-row-sessions-7 .agenda-session,
+.agenda-container .agenda-range-row-sessions-8 .agenda-session,
+.agenda-container .agenda-range-row-sessions-9 .agenda-session,
+.agenda-container .agenda-range-row-sessions-10 .agenda-session,
+.agenda-container .agenda-range-row-sessions-11 .agenda-session,
+.agenda-container .agenda-range-row-sessions-12 .agenda-session {
+  width: initial;
+  display: block;
+}
+
+// Regions stuff. There's a Polyfill provided by Adobe. It's not working at all well with this stuff.
+// So for now this only works in Browers with Native support for CSS Regions. So, Safari and Linux-y browsers
+// like Midori etc.
+
+#agenda {
+  -webkit-flow-into: panels;
+  -adobe-flow-into: panels;
+  flow-into: panels;
+}
+
+.destination {
+  -webkit-flow-from: panels;
+  -adobe-flow-from: panels;
+  flow-from: panels;
+}
+
 .region-break {
   -webkit-break-after: always;
   break-after: always;
@@ -161,6 +196,11 @@ h1 {
   region−break−after: always;
 }
 
-.time-table {
-  margin-bottom: 3em;
+.agenda-container .agenda-range-row {
+  -webkit-break-inside: avoid;
+  break-inside: avoid;
+  -webkit-page-break-inside: avoid;
+  page-break-inside: avoid;
+  −webkit−region−break−inside: avoid;
+  region−break−inside: avoid;
 }

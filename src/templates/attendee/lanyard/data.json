@@ -2,7 +2,7 @@
   "data": {
     "region": "Asia Pacific",
     "year": "FY14",
-    "number-of-panels": 12,
+    "number-of-panels": 8,
     "selected-day": 2,
     "days": [
     {
@@ -758,6 +758,7 @@
       "artwork-option": "fractals",
       "colormode": "platinum",
       "location": "RH - Brisbane",
-      "location-country": "Australia"
+      "location-country": "Australia",
+      "attendee-group": "Group 1"
   }
 }

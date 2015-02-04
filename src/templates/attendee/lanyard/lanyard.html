@@ -13,38 +13,11 @@ height: 152.4mm
         width: {{ width }}{{unit}};
         height: {{ height }}{{unit}};
       }
-
-      #agenda {
-        -webkit-flow-into: panels;
-        flow-into: panels;
-      }
-
-      .destination {
-        -webkit-flow-from: panels;
-        flow-from: panels;
-      }
-
-      {{# background-image }}
-        .background-image main {
-          background-image:
-            url('//redhatbrand.github.io/RedHatTemplates/global-assets/images/shapes/red/grid-00-00.svg'),
-            url('{{{ background-image }}}');
-
-          background-repeat: no-repeat;
-          background-blend-mode: multiply, multiply;
-          background-size: cover;
-          background-position: 0 50%, center center;
-
-          color: white;
-        }
-
-        .logotext { fill: white; }
-      {{/ background-image }}
     </style>
   </head>
   <body
     style="width: {{ width }}{{unit}}; height: {{ height }}{{unit}}"
-    class="{{#background-image}}background-image{{/background-image}} {{artwork-option}} {{colormode}}">
+    class="{{artwork-option}} {{colormode}}">
 
     <main>
       <article id="first-panel" class="panel">
@@ -80,7 +53,7 @@ height: 152.4mm
             <h2>{{date}}</h2>
           </div>
           {{#sessions}}
-          <div class="agenda-session js-session" data-start="{{ start }}" data-end="{{ end }}">
+          <div class="agenda-session js-session" data-group="{{ group }}" data-start="{{ start }}" data-end="{{ end }}">
             <div class="agenda-session-inner {{ type }}">
               <header class="session-header">
                 {{#topic}}
@@ -129,26 +102,31 @@ height: 152.4mm
         zoom: 10,
         address: '{{ location }}, {{ location-country }}'
       };
+      var attendeeGroup = '{{ attendee-group }}';
     </script>
     <script src="<%=baseUrl%>/shared/javascripts/vendor/moment.js"></script>
     <script src="<%= baseUrl %>/templates/attendee/lanyard/assets/javascripts/main.js"></script>
     <script src="<%= baseUrl %>/templates/attendee/lanyard/assets/javascripts/agenda.js"></script>
 
     <script>
-      var panels = {{ number-of-panels }};
-      panels = panels || 1;
-      while(panels--) {
-        (function addPanel () {
-          var main = document.getElementsByTagName('main')[0];
-          var article = document.createElement('article');
-          var inner = document.createElement('section');
-          article.classList.add('panel');
-          inner.classList.add('panel-inner');
-          article.appendChild(inner);
-          inner.classList.add('destination');
-          main.appendChild(article);
-        })();
-      }
+     var panels = {{ number-of-panels }};
+     panels = panels || 1;
+
+     while(panels--) {
+       addPanel()
+     }
+
+     function addPanel () {
+       var main = document.getElementsByTagName('main')[0];
+       var article = document.createElement('article');
+       var inner = document.createElement('section');
+
+       article.classList.add('panel');
+       inner.classList.add('panel-inner');
+       article.appendChild(inner);
+       inner.classList.add('destination');
+       main.appendChild(article);
+     }
     </script>
   </body>
 </html>

@@ -1,3 +1,6 @@
+// There's quite a bit of double-handling here. Could be stripped down a lot.
+// We'll replace the shared Agenda JS with this in a seperate task.
+
 (function (global) {
   var days = [].slice.call(document.getElementsByClassName('js-time-table')).map(function (dayElem) {
     return {
@@ -6,6 +9,7 @@
         return {
           start: sessionElem.getAttribute('data-start'),
           end: sessionElem.getAttribute('data-end'),
+          group: sessionElem.getAttribute('data-group'),
           element: sessionElem
         };
       })
@@ -40,24 +44,31 @@
     var container = day.element;
     day.ranges.forEach(function (range) {
       var rangeRow = document.createElement('div');
+      var rangeRowSessions = document.createElement('div');
       var time = moment(range.start, 'X').format('HH:mm');
       var timeElem = document.createElement('h3');
+
       timeElem.classList.add('agenda-range-row-start-time');
       timeElem.innerHTML = time;
-      rangeRow.appendChild(timeElem);
+
+      rangeRowSessions.classList.add('agenda-range-row-sesions-container');
+
       rangeRow.classList.add('agenda-range-row');
       rangeRow.classList.add('agenda-range-row-sessions-' + range.sessions.length);
-      var rangeRowSessions = document.createElement('div');
-      rangeRowSessions.classList.add('agenda-range-row-sesions-container');
+      rangeRow.appendChild(timeElem);
       rangeRow.appendChild(rangeRowSessions);
 
       range.sessions.forEach(function (session) {
-        var sessionElem = document.createElement('div');
-        sessionElem.classList.add('agenda-session');
+        var sessionsElem;
 
-        sessionElem.innerHTML = session.element.innerHTML;
+        if (!session.group || session.group === global.attendeeGroup) {
+          sessionElem = document.createElement('div');
+          sessionElem.classList.add('agenda-session');
+          sessionElem.innerHTML = session.element.innerHTML;
+          rangeRowSessions.appendChild(sessionElem);
+        }
+
         container.removeChild(session.element);
-        rangeRowSessions.appendChild(sessionElem);
       });
 
       container.appendChild(rangeRow);
