@@ -1,20 +1,48 @@
 @import '../../../../shared/stylesheets/vendor/leaflet';
 @import '../../../../shared/stylesheets/main';
+@import '../../../../shared/stylesheets/agenda';
 
 $color-primary: #c12;
 
 :root, html {
-  font-size: 12pt;
+  font-size: 10pt;
 }
 
-#content {
+body { overflow: auto }
+main {
+  position: relative;
+  top: initial;
+  bottom: initial;
+  left: initial;
+  right: initial;
+}
+
+.panel {
+  position: relative;
+  margin: 0;
+
+  .panel-inner {
+    position: absolute;
+    left: 1.5em;
+    right: 1.5em;
+    top: 1.5em;
+    bottom: 1.5em;
+  }
+}
+
+.panel-content {
+  position: absolute;
   left: 0;
   right: 0;
   top: 0;
-  height: 100%;
-  transform: none;
-  width: initial;
-  max-width: initial;
+  bottom: 0;
+  margin: 0;
+  z-index: 3;
+
+  * > { margin-top: 0; }
+}
+
+#first-panel .panel-content {
   display: flex;
   flex-flow: column nowrap;
 
@@ -31,7 +59,8 @@ $color-primary: #c12;
     padding: 2.5em 2em 1.5em;
     margin: 0;
   }
-  article {
+
+  section {
     flex: 0 0 auto;
     padding: 2em;
     margin: 0;
@@ -91,7 +120,7 @@ h1 {
   }
 }
 
-#content article {
+#first-panel section {
   background-color: rgba(lighten($color-rh-slate, 50%), 0.6);
 }
 
@@ -117,4 +146,61 @@ h1 {
   top: 50%;
   transform: translate(-50%, -50%);
   border-radius: 100%;
+}
+
+.agenda-day-info {
+  margin-top: 0;
+}
+
+.time-table {
+  padding-bottom: 3em;
+}
+
+.agenda-container .agenda-range-row-sessions-2 .agenda-session,
+.agenda-container .agenda-range-row-sessions-3 .agenda-session,
+.agenda-container .agenda-range-row-sessions-4 .agenda-session,
+.agenda-container .agenda-range-row-sessions-5 .agenda-session,
+.agenda-container .agenda-range-row-sessions-6 .agenda-session,
+.agenda-container .agenda-range-row-sessions-7 .agenda-session,
+.agenda-container .agenda-range-row-sessions-8 .agenda-session,
+.agenda-container .agenda-range-row-sessions-9 .agenda-session,
+.agenda-container .agenda-range-row-sessions-10 .agenda-session,
+.agenda-container .agenda-range-row-sessions-11 .agenda-session,
+.agenda-container .agenda-range-row-sessions-12 .agenda-session {
+  width: initial;
+  display: block;
+}
+
+// Regions stuff. There's a Polyfill provided by Adobe. It's not working at all well with this stuff.
+// So for now this only works in Browers with Native support for CSS Regions. So, Safari and Linux-y browsers
+// like Midori etc.
+
+#agenda {
+  -webkit-flow-into: panels;
+  -adobe-flow-into: panels;
+  flow-into: panels;
+}
+
+.destination {
+  -webkit-flow-from: panels;
+  -adobe-flow-from: panels;
+  flow-from: panels;
+}
+
+.region-break {
+  -webkit-break-after: always;
+  break-after: always;
+  -webkit-page-break-after: always;
+  page-break-after: always;
+  −webkit−region−break−after: always;
+  region−break−after: always;
+}
+
+.agenda-container .agenda-range-row {
+  -webkit-break-inside: avoid;
+  break-inside: avoid;
+  -webkit-page-break-inside: avoid;
+  page-break-inside: avoid;
+  −webkit−region−break−inside: avoid;
+  region−break−inside: avoid;
 }
