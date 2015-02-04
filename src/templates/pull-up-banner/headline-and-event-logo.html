@@ -41,7 +41,12 @@ height: 2000mm
     <main>
       <div id="content" class="container_headline-and-event-logo">
         <div class="event-logo-container">
+          {{#for-emea}}
+          <% include ../../shared/images/event-logo-lockup-emea.svg %>
+          {{/for-emea}}
+          {{^for-emea}}
           <% include ../../shared/images/event-logo-lockup.svg %>
+          {{/for-emea}}
         </div>
         <div class="headline-container">
           <h1 class="headline js-headline">{{{ headline }}}</h1>

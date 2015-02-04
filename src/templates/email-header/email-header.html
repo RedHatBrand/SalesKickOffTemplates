@@ -42,7 +42,12 @@ height: 240px
           <h1 class="headline js-headline">{{{ headline }}}</h1>
         </div>
         <div class="event-logo-container">
+          {{#for-emea}}
+          <% include ../../shared/images/event-logo-lockup-emea.svg %>
+          {{/for-emea}}
+          {{^for-emea}}
           <% include ../../shared/images/event-logo-lockup.svg %>
+          {{/for-emea}}
         </div>
       </div>
 

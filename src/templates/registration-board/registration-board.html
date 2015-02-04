@@ -44,7 +44,12 @@ height: 603mm;
         </article>
 
         <div class="brand sko">
+          {{#for-emea}}
+          <% include ../../shared/images/event-logo-lockup-emea.svg %>
+          {{/for-emea}}
+          {{^for-emea}}
           <% include ../../shared/images/event-logo-lockup.svg %>
+          {{/for-emea}}
         </div>
       </div>
 

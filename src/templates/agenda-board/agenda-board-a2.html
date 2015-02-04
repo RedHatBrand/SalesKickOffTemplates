@@ -10,7 +10,10 @@ height: 603mm
     <link rel="stylesheet" href="<%=baseUrl%>/shared/stylesheets/main.css" />
     <link rel="stylesheet" href="<%=baseUrl%>/templates/agenda-board/assets/stylesheets/main.css" />
   </head>
-  <body class="{{artwork-option}} {{colormode}}" style="width: 426mm; height: 603mm">
+  <body
+  class="{{artwork-option}} {{colormode}} for-emea-{{for-emea}}"
+    style="width: 426mm; height: 603mm">
+
     {{^background-image }}
     <div id="artwork"></div>
     {{/background-image}}
@@ -19,7 +22,12 @@ height: 603mm
       <article id="content">
         <section class="section-agenda agenda-container two-column" id="agenda">
           <div class="brand sko agenda-logo">
+            {{#for-emea}}
+            <% include ../../shared/images/event-logo-lockup-emea.svg %>
+            {{/for-emea}}
+            {{^for-emea}}
             <% include ../../shared/images/event-logo-lockup.svg %>
+            {{/for-emea}}
           </div>
           {{#days}}
           <div class="agenda-day-info js-agenda-day-info">

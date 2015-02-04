@@ -41,7 +41,12 @@ height: 2000mm
 
     <main>
       <div id="content" class="container_one-logo">
+        {{#for-emea}}
+        <% include ../../shared/images/event-logo-lockup-emea.svg %>
+        {{/for-emea}}
+        {{^for-emea}}
         <% include ../../shared/images/event-logo-lockup.svg %>
+        {{/for-emea}}
       </div>
 
       {{^ background-image }}

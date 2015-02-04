@@ -31,7 +31,7 @@ height: calc(100vh - 2em)
 
   <body
     style="width: {{ width }}%; height: {{ height }}{{unit}}"
-    class="{{#background-image}}background-image{{/background-image}} {{artwork-option}} {{colormode}}">
+    class="{{#background-image}}background-image{{/background-image}} for-emea-{{for-emea}} {{artwork-option}} {{colormode}}">
 
     {{^ background-image }}
     <div id="artwork"></div>
@@ -44,7 +44,12 @@ height: calc(100vh - 2em)
           <h1 class="headline js-headline">{{{ headline }}}</h1>
         </div>
         <div class="event-logo-container">
+          {{#for-emea}}
+          <% include ../../shared/images/event-logo-lockup-emea.svg %>
+          {{/for-emea}}
+          {{^for-emea}}
           <% include ../../shared/images/event-logo-lockup.svg %>
+          {{/for-emea}}
         </div>
       </div>
 

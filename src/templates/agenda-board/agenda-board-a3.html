@@ -19,7 +19,12 @@ height: 426mm
       <article id="content">
         <section class="section-agenda agenda-container two-column" id="agenda">
           <div class="brand sko agenda-logo">
+            {{#for-emea}}
+            <% include ../../shared/images/event-logo-lockup-emea.svg %>
+            {{/for-emea}}
+            {{^for-emea}}
             <% include ../../shared/images/event-logo-lockup.svg %>
+            {{/for-emea}}
           </div>
           {{#days}}
           <div class="agenda-day-info js-agenda-day-info">
