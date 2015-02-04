@@ -250,23 +250,19 @@ pre {
   color: white;
   background-color: dimgrey; }
 
-#artwork {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
+#artwork, .js-artwork {
+  position: relative;
   overflow: hidden;
   margin: 0; }
-  #artwork .artwork-inner {
+  #artwork .artwork-inner, .js-artwork .artwork-inner {
     position: relative; }
-    #artwork .artwork-inner:before {
+    #artwork .artwork-inner:before, .js-artwork .artwork-inner:before {
       content: '';
       display: block;
       padding-bottom: 100%; }
-  #artwork * {
+  #artwork *, .js-artwork * {
     margin: 0; }
-  #artwork .artwork-shape {
+  #artwork .artwork-shape, .js-artwork .artwork-shape {
     position: absolute;
     top: 50%;
     -webkit-transform-origin: 50% 50%;
@@ -275,21 +271,21 @@ pre {
     -webkit-transform: translate3d(-100%, -50%, 0) skewX(-45deg);
     transform: translate3d(-100%, -50%, 0) skewX(-45deg);
     margin: 0; }
-  #artwork .skew-animate-in {
+  #artwork .skew-animate-in, .js-artwork .skew-animate-in {
     -webkit-transform: translate3d(-50%, -50%, 0) skewX(-45deg);
     transform: translate3d(-50%, -50%, 0) skewX(-45deg);
     -webkit-animation-name: skew-shape-in;
     animation-name: skew-shape-in;
     -webkit-animation-timing-function: ease;
     animation-timing-function: ease; }
-  #artwork .rotate-animate-in {
+  #artwork .rotate-animate-in, .js-artwork .rotate-animate-in {
     -webkit-transform: translate3d(-50%, -50%, 0) rotate(-45deg);
     transform: translate3d(-50%, -50%, 0) rotate(-45deg);
     -webkit-animation-name: rotate-shape-in;
     animation-name: rotate-shape-in;
     -webkit-animation-timing-function: ease;
     animation-timing-function: ease; }
-  #artwork .artwork-pattern {
+  #artwork .artwork-pattern, .js-artwork .artwork-pattern {
     position: absolute;
     left: 10%;
     top: 10%;
@@ -301,11 +297,18 @@ pre {
     transform: translate(-50%, -50%) rotate(45deg);
     height: 150%;
     width: 7%; }
-    #artwork .artwork-pattern svg {
+    #artwork .artwork-pattern svg, .js-artwork .artwork-pattern svg {
       position: absolute;
       width: 100%;
       height: 100%;
       stroke-width: 0.5; }
+
+#artwork {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0; }
 
 .tile-pattern-tile {
   width: 100%;
@@ -368,7 +371,7 @@ pre {
 body, .artwork-container.red {
   background-color: #919da4; }
 
-#artwork:before {
+#artwork:before, .js-artwork:before {
   content: '';
   position: absolute;
   left: 0;
@@ -398,7 +401,7 @@ main:before, .artwork-overlay:before {
 .artwork-pattern svg {
   stroke: #9fa9af; }
 
-#artwork .artwork-shape {
+.js-artwork .artwork-shape, #artwork .artwork-shape {
   background-color: #75848d; }
 
 .corner-shape-pattern svg {
@@ -437,13 +440,13 @@ body.red, .artwork-container.red {
 .red .corner-shape-solid-triangle {
   background-color: #cc0000; }
 
-.red #artwork:before {
+.red #artwork:before, .red .js-artwork:before {
   background-image: radial-gradient(circle at center, #cc0000 0%, #cc0000 50%, rgba(204, 0, 0, 0) 100%); }
 
-.red #artwork .artwork-shape {
+.red #artwork .artwork-shape, .red .js-artwork .artwork-shape {
   background-color: maroon; }
 
-.red #artwork .artwork-pattern svg {
+.red #artwork .artwork-pattern svg, .red .js-artwork .artwork-pattern svg {
   stroke: #cc0000; }
 
 body.silver, .artwork-container.silver {
@@ -458,13 +461,13 @@ body.silver, .artwork-container.silver {
 .silver .corner-shape-solid-triangle {
   background-color: #fafafa; }
 
-.silver #artwork:before {
+.silver #artwork:before, .silver .js-artwork:before {
   background-image: radial-gradient(circle at center, #ffffff, #ffffff 50%, rgba(255, 255, 255, 0) 100%); }
 
-.silver #artwork .artwork-shape {
+.silver #artwork .artwork-shape, .silver .js-artwork .artwork-shape {
   background-color: #d9d9d9; }
 
-.silver #artwork .artwork-pattern svg {
+.silver #artwork .artwork-pattern svg, .silver .js-artwork .artwork-pattern svg {
   stroke: #ffffff; }
 
 body.background-image, .background-color main {
