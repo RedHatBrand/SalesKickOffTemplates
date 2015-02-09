@@ -6,15 +6,16 @@ height: 297mm;
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8" />
     <link rel="stylesheet" href="//redhatbrand.github.io/RedHatTemplates/global-assets/stylesheets/general/tile-pattern-fill.css" />
-    <link rel="stylesheet" href="<%=baseUrl%>/shared/stylesheets/main.css" />
-    <link rel="stylesheet" href="<%=baseUrl%>/templates/wayfinding/assets/stylesheets/main.css" />
+    <link rel="stylesheet" href="<%= baseUrl %>/shared/stylesheets/main.css" />
+    <link rel="stylesheet" href="<%= baseUrl %>/templates/wayfinding/assets/stylesheets/main.css" />
 
     <style type="text/css">
       {{# background-image }}
         .background-image main {
           background-image:
-            url('<%=baseUrl%>/shared/images/grid-06-06.svg'),
+            url('<%= baseUrl %>/shared/images/grid-06-06.svg'),
             url('{{{ background-image }}}');
 
           background-repeat: no-repeat;
@@ -26,7 +27,15 @@ height: 297mm;
         }
 
         .logotext { fill: white; }
+
+
       {{/ background-image }}
+
+      .arrow {
+        {{{ arrow-border }}} ;
+        border-width: {{{border-width}}}em;
+      }
+		  h1, h2, h3, h4 { margin-bottom: 0; }
     </style>
   </head>
   <body
@@ -38,10 +47,10 @@ height: 297mm;
     {{/ background-image }}
 
     <main>
-      <div class="arrow"></div>
+      <div class="arrow" style=" {{{arrow-color}}} "></div>
       <div id="content">
-        <div class="headline">
-          <h1>{{{ message }}}</h1>
+        <div class="headline" charset="UTF-8">
+           {{{ message }}}
         </div>
       </div>
 
@@ -60,7 +69,7 @@ height: 297mm;
     </main>
 
     {{^ background-image }}
-    <script src="<%=baseUrl%>/shared/javascripts/artwork.js"></script>
+    <script src="<%= baseUrl %>/shared/javascripts/artwork.js"></script>
     {{/ background-image }}
 
     <script src="//redhatbrand.github.io/RedHatTemplates/global-assets/javascripts/vendor/jquery.js"></script>

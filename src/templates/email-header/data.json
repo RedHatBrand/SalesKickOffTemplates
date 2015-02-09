@@ -8,6 +8,7 @@
     "artwork-complexity": "15",
     "artwork-option": "fractals",
     "colormode": "silver",
+    "text": "<h1>Hey, there</h1><p>Write some stuff in here</p>",
     "for-emea": "true"
   }
 }

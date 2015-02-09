@@ -1,0 +1,118 @@
+---
+width: 900px
+height: 240px
+---
+
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="//redhatbrand.github.io/RedHatTemplates/global-assets/stylesheets/general/tile-pattern-fill.css" />
+<link rel="stylesheet" href="<%= baseUrl %>/shared/stylesheets/main.css" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style type="text/css">
+body{
+  color: #111
+}
+text {
+  fill:#111
+}
+
+{{# background-image }}
+.background-image main {
+  background-image:
+  url('<%= baseUrl %>/shared/images/grid-06-06.svg'),
+  url('{{{ background-image }}}');
+
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
+  background-size: 200% auto, cover;
+  background-position: 100% 50%, center center;
+  color: white;
+}
+
+.logotext { fill: white; }
+{{/ background-image }}
+
+h2,h1,h3{
+  margin:0 !important ;
+  padding:0 !important;
+  line-height: 1em;
+}
+
+h3 + p { margin-top:.2em }
+h2 + p { margin-top:.2em }
+h1 + p { margin-top:.2em }
+
+.text{ font-size: 7.1vh }
+.fy16.text {
+  width: 100%;
+  position:absolute;
+  top: 45%;
+  padding-left: 5%;
+  padding-right: 10%;
+  font-weight: bold;
+}
+
+svg.sko-logo.logo.line-icon {
+  position: absolute;
+  top: 10%;
+  bottom: auto;
+  left: 0;
+  left: 5%;
+  width: 20%;
+  height: 27%;
+  margin: 0;
+  padding: 0;
+}
+
+svg.redhat-logo {
+  position: absolute;
+  top: 0%;
+  right:4%;
+  width: 23%;
+  height: 15%;
+}
+</style>
+</head>
+
+<body
+  style="width: {{width}}px; height: {{#multiply}}{{width}}*0.266{{/multiply}}px"
+  class="{{#background-image}}background-image{{/background-image}} {{artwork-option}} {{colormode}}">
+
+  {{^ background-image }}
+  <div id="artwork"></div>
+  {{/ background-image }}
+
+
+  <main>
+    <div class="fy16 text">
+      {{{ text }}}
+    </div>
+
+    {{#for-emea}}
+    <% include ../../shared/images/event-logo-lockup-emea.svg %>
+    {{/for-emea}}
+    {{^for-emea}}
+    <% include ../../shared/images/event-logo-lockup.svg %>
+    {{/for-emea}}
+
+    <% include ../../shared/images/rh-logo-include.svg %>
+  </main>
+
+  {{#artwork-complexity}}
+  <script type="text/javascript">
+  window.redhatArtComplexity = {{ artwork-complexity }};
+  </script>
+  {{/artwork-complexity}}
+
+  {{^ background-image }}
+  <script src="<%= baseUrl %>/shared/javascripts/artwork.js"></script>
+  {{/ background-image }}
+
+  <script src="//redhatbrand.github.io/RedHatPatterns/red-hat-patterns.js"></script>
+
+  <script src="//redhatbrand.github.io/RedHatTemplates/global-assets/javascripts/vendor/jquery.js"></script>
+  <script src="//redhatbrand.github.io/RedHatTemplates/global-assets/javascripts/vendor/jquery.fittext.js"></script>
+  <script src="<%= baseUrl %>/shared/javascripts/generic-fittext.js"></script>
+</body>
+</html>
