@@ -116,38 +116,51 @@ height: 100vh
     </div>
   </section>
 
-  <section class="section-agenda agenda-container">
+  <section class="section-agenda agenda-container main">
     <div class="container">
       <div id="agenda">
         <h1>Agenda</h1>
         {{#days}}
-        <div class="agenda-day-info js-agenda-day-info">
-          <h1>{{day-name}}</h1>
-          <h2>{{date}}</h2>
-        </div>
-        <div class="time-table time-table-unprocessed js-time-table">
-          {{#sessions}}
-          <div class="agenda-session js-session" data-start="{{ start }}" data-end="{{ end }}">
-            <div class="agenda-session-inner {{ type }}">
-              <header class="session-header">
-                {{#topic}}
-                <h3 class="agenda-session-header-text">{{ topic }}</h3>
-                {{/topic}}
-                {{#speaker}}
-                <h3 class="agenda-session-header-speaker">{{ speaker }}</h3>
-                {{/speaker}}
-              </header>
-              <div class="agenda-session-content">
-                {{#location}}
-                <p class="agenda-session-content-location">{{ location }}</p>
-                {{/location}}
-                {{#group}}
-                <p class="agenda-session-content-group">{{ group }}</p>
-                {{/group}}
+        <input id='{{ day-name }}' name='active-day' type='radio'>
+        <label for='{{ day-name }}'>
+          {{^day-name-translation}}
+          <span>{{ day-name }}</span>
+          {{/day-name-translation}}
+        </label>
+        {{/days}}
+
+        {{#days}}
+        <div class="js-agenda-day">
+          <div class="agenda-day-info js-agenda-day-info">
+            <h2>{{day-name}}</h2>
+            <h3>{{date}}</h3>
+          </div>
+          <div class="time-table time-table-unprocessed js-time-table">
+            {{#sessions}}
+            {{#start}}
+            <div class="agenda-session js-session" data-start="{{ start }}" data-end="{{ end }}">
+              <div class="agenda-session-inner {{ type }}">
+                <header class="session-header">
+                  {{#topic}}
+                  <h3 class="agenda-session-header-text">{{ topic }}</h3>
+                  {{/topic}}
+                  {{#speaker}}
+                  <h3 class="agenda-session-header-speaker">{{ speaker }}</h3>
+                  {{/speaker}}
+                </header>
+                <div class="agenda-session-content">
+                  {{#location}}
+                  <p class="agenda-session-content-location">{{ location }}</p>
+                  {{/location}}
+                  {{#group}}
+                  <p class="agenda-session-content-group">{{ group }}</p>
+                  {{/group}}
+                </div>
               </div>
             </div>
+            {{/start}}
+            {{/sessions}}
           </div>
-          {{/sessions}}
         </div>
         {{/days}}
       </div>
@@ -252,6 +265,6 @@ window.redhatArtComplexity = {{ artwork-complexity }};
 {{/selected-day}}
 
 <script src="<%=baseUrl%>/shared/javascripts/vendor/moment.js"></script>
-<script src="<%=baseUrl%>/shared/javascripts/agenda.js"></script>
+<script src="<%= baseUrl %>/templates/attendee/lanyard/assets/javascripts/agenda.js"></script>
 </body>
 </html>
