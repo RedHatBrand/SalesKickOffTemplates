@@ -53,7 +53,7 @@ height: 100vh
       {{/background-image}}
 
       <div class='container layer-three'>
-        <% include ../../shared/images/event-logo-lockup-complex.svg %>
+        <% include ../../shared/images/event-logo-lockup.svg %>
 
 
         <div class='event-details ' style="color:0;;background-color: transparent;">
@@ -115,10 +115,10 @@ height: 100vh
       </div>
     </div>
   </section>
-      
+
   <section class="section-agenda agenda-container">
     <div class="container">
-      <div id="agenda" class="two-column">
+      <div id="agenda">
         <h1>Agenda</h1>
         {{#days}}
         <div class="agenda-day-info js-agenda-day-info">
@@ -244,7 +244,7 @@ window.redhatArtComplexity = {{ artwork-complexity }};
 {{/artwork-complexity}}
 
 <script src="<%= baseUrl %>/shared/javascripts/artwork.js"></script>
-    
+
 {{#selected-day}}
 <script type="text/javascript">
   window.redhatSelectedDay = {{ selected-day}};

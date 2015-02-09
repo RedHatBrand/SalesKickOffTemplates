@@ -33,6 +33,9 @@
     display: table;
     table-layout: fixed;
     width: 100%;
+    margin-top: 0;
+
+    border-top: thin solid $color-rh-white;
   }
 
   .agenda-range-row-start-time {
@@ -44,6 +47,8 @@
 
     font-size: 1em;
     line-height: 1em;
+
+    color: $color-rh-slate;
   }
 
   .agenda-range-row-sesions-container {
@@ -61,6 +66,18 @@
     h1, h2, h3, h4, h5, h6 {
       text-transform: none;
     }
+  }
+
+  .agenda-session-header-text {
+    margin: 0;
+  }
+
+  .agenda-session-content {
+    margin-top: 0;
+  }
+
+  .agenda-session-content-group {
+    margin-top: 0;
   }
 
   .agenda-range-row-sessions-2,
