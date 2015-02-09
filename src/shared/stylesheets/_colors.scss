@@ -2,7 +2,7 @@ body, .artwork-container.red {
   background-color: lighten($color-rh-slate, 20%);
 }
 
-#artwork:before {
+#artwork:before, .js-artwork:before {
   content: '';
   position: absolute;
   left: 0;
@@ -35,7 +35,7 @@ main:before, .artwork-overlay:before {
 
 .artwork-pattern svg { stroke: lighten($color-rh-slate, 25%); }
 
-#artwork .artwork-shape {
+.js-artwork .artwork-shape, #artwork .artwork-shape {
   background-color: lighten($color-rh-slate, 10%);
 }
 
@@ -89,11 +89,11 @@ body.red, .artwork-container.red {
 .red .corner-shape-pattern svg { stroke: $color-rh-red; }
 .red .corner-shape-solid-triangle { background-color: $color-rh-red; }
 
-.red #artwork:before {
+.red #artwork:before, .red .js-artwork:before {
   background-image: radial-gradient(circle at center, $color-rh-red 0%, $color-rh-red 50%, rgba($color-rh-red, 0) 100%);
 }
-.red #artwork .artwork-shape { background-color: darken($color-rh-red, 15%); }
-.red #artwork .artwork-pattern svg { stroke: $color-rh-red; }
+.red #artwork .artwork-shape, .red .js-artwork .artwork-shape { background-color: darken($color-rh-red, 15%); }
+.red #artwork .artwork-pattern svg, .red .js-artwork .artwork-pattern svg { stroke: $color-rh-red; }
 
 // SILVER
 
@@ -108,11 +108,11 @@ body.silver, .artwork-container.silver  {
 .silver .corner-shape-pattern svg { stroke: darken($color-rh-white, 2%); }
 .silver .corner-shape-solid-triangle { background-color: darken($color-rh-white, 2%); }
 
-.silver #artwork:before {
+.silver #artwork:before, .silver .js-artwork:before {
   background-image: radial-gradient(circle at center, $color-rh-white, $color-rh-white 50%, rgba($color-rh-white, 0) 100%);
 }
-.silver #artwork .artwork-shape { background-color: darken($color-rh-white, 15%); }
-.silver #artwork .artwork-pattern svg { stroke: $color-rh-white; }
+.silver #artwork .artwork-shape, .silver .js-artwork .artwork-shape { background-color: darken($color-rh-white, 15%); }
+.silver #artwork .artwork-pattern svg, .silver .js-artwork .artwork-pattern svg { stroke: $color-rh-white; }
 
 // Background image
 

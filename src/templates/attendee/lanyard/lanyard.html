@@ -2,7 +2,6 @@
 width: 101.6mm
 height: 152.4mm
 ---
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -10,51 +9,75 @@ height: 152.4mm
     <link rel="stylesheet" href="<%=baseUrl%>/shared/stylesheets/main.css" />
     <link rel="stylesheet" href="<%=baseUrl%>/templates/attendee/lanyard/assets/main.css" />
     <style type="text/css">
-      {{# background-image }}
-        .background-image main {
-          background-image:
-            url('//redhatbrand.github.io/RedHatTemplates/global-assets/images/shapes/red/grid-00-00.svg'),
-            url('{{{ background-image }}}');
-
-          background-repeat: no-repeat;
-          background-blend-mode: multiply, multiply;
-          background-size: cover;
-          background-position: 0 50%, center center;
-
-          color: white;
-        }
-
-        .logotext { fill: white; }
-      {{/ background-image }}
+      .panel {
+        width: {{ width }}{{unit}};
+        height: {{ height }}{{unit}};
+      }
     </style>
   </head>
   <body
     style="width: {{ width }}{{unit}}; height: {{ height }}{{unit}}"
-    class="{{#background-image}}background-image{{/background-image}} {{artwork-option}} {{colormode}}">
-
-    {{^ background-image }}
-    <div id="artwork"></div>
-    {{/ background-image }}
+    class="{{artwork-option}} {{colormode}}">
 
     <main>
-      <div id="content">
-        <div class="brand sko"><% include ../../../shared/images/event-logo-lockup.svg %></div>
-        <article>
-          <h1>{{{ name }}}</h1>
-          <h2>{{{ position }}}</h3>
-          <h3>{{{ company }}}</h2>
-        </article>
-      </div>
+      <article id="first-panel" class="panel">
+        {{^ background-image }}
+        <div class="js-artwork"></div>
+        {{/ background-image }}
 
-      {{^ background-image }}
-      <div class="corner-shapes-bottom-right">
-        <div class="corner-shape-solid-triangle"></div>
-        <div data-red-hat-pattern="corporate" class="pattern-red corner-shape-pattern"></div>
-        <div class="corner-shape-bottom-right-logo rh-logo">
-          <% include ../../../shared/images/rh-logo-include.svg %>
+        <div class="panel-content">
+          <header class="brand sko"><% include ../../../shared/images/event-logo-lockup.svg %></header>
+          <section>
+            <p class="introduction">Hi, my name is</p>
+            <h1>
+              {{ firstname }}
+            </h1>
+            <h2>{{ lastname }}</h2>
+
+            <p>I'm a <strong>{{ position }}</strong> with <strong>{{ company }}</strong></p>
+          </section>
+          <div id="map"></div>
+          <footer id="location">
+            <p>
+            <small>You can find me at <strong>{{ location }}, {{ location-country }}</strong></small>
+            </p>
+          </footer>
         </div>
-      </div>
-      {{/ background-image }}
+      </article>
+
+      <section class="section-agenda agenda-container" id="agenda">
+        {{#days}}
+        <div class="time-table time-table-unprocessed js-time-table">
+          <div class="agenda-day-info js-agenda-day-info">
+            <h1>{{day-name}}</h1>
+            <h2>{{date}}</h2>
+          </div>
+          {{#sessions}}
+          <div class="agenda-session js-session" data-group="{{ group }}" data-start="{{ start }}" data-end="{{ end }}">
+            <div class="agenda-session-inner {{ type }}">
+              <header class="session-header">
+                {{#topic}}
+                <h3 class="agenda-session-header-text">{{ topic }}</h3>
+                {{/topic}}
+                {{#speaker}}
+                <h3 class="agenda-session-header-speaker">{{ speaker }}</h3>
+                {{/speaker}}
+              </header>
+              <div class="agenda-session-content">
+                {{#location}}
+                <p class="agenda-session-content-location">{{ location }}</p>
+                {{/location}}
+                {{#group}}
+                <p class="agenda-session-content-group">{{ group }}</p>
+                {{/group}}
+              </div>
+            </div>
+          </div>
+          {{/sessions}}
+        </div>
+        <div class="region-break"></div>
+        {{/days}}
+      </section>
     </main>
 
     {{#artwork-complexity}}
@@ -68,6 +91,43 @@ height: 152.4mm
     {{/ background-image }}
 
     <script src="//redhatbrand.github.io/RedHatPatterns/red-hat-patterns.js"></script>
+    <script src="//redhatbrand.github.io/RedHatTemplates/global-assets/javascripts/vendor/jquery.js"></script>
+    <script src='<%=baseUrl%>/shared/javascripts/vendor/leaflet.js'></script>
+    <script src='<%=baseUrl%>/shared/javascripts/vendor/d3.v3.min.js'></script>
+    <script src='<%=baseUrl%>/shared/javascripts/vendor/topojson.v1.min.js'></script>
+    <script src='<%=baseUrl%>/shared/javascripts/vendor/d3-topojson.js'></script>
+
+    <script>
+      var mapSettings = {
+        zoom: 10,
+        address: '{{ location }}, {{ location-country }}'
+      };
+      var attendeeGroup = '{{ attendee-group }}';
+    </script>
+    <script src="<%=baseUrl%>/shared/javascripts/vendor/moment.js"></script>
+    <script src="<%= baseUrl %>/templates/attendee/lanyard/assets/javascripts/main.js"></script>
+    <script src="<%= baseUrl %>/templates/attendee/lanyard/assets/javascripts/agenda.js"></script>
+
+    <script>
+     var panels = {{ number-of-panels }};
+     panels = panels || 1;
+
+     while(panels--) {
+       addPanel()
+     }
+
+     function addPanel () {
+       var main = document.getElementsByTagName('main')[0];
+       var article = document.createElement('article');
+       var inner = document.createElement('section');
+
+       article.classList.add('panel');
+       inner.classList.add('panel-inner');
+       article.appendChild(inner);
+       inner.classList.add('destination');
+       main.appendChild(article);
+     }
+    </script>
   </body>
 </html>
 

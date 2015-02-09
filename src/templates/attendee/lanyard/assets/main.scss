@@ -1,14 +1,83 @@
+@import '../../../../shared/stylesheets/vendor/leaflet';
+@import '../../../../shared/stylesheets/main';
+@import '../../../../shared/stylesheets/agenda';
+
+$color-primary: #c12;
+
 :root, html {
   font-size: 10pt;
 }
 
-#content {
-  left: 2em;
-  right: 2em;
-  top: 2.5em;
-  transform: none;
-  width: initial;
+body { overflow: auto }
+main {
+  position: relative;
+  top: initial;
+  bottom: initial;
+  left: initial;
+  right: initial;
 }
+
+.panel {
+  position: relative;
+  margin: 0;
+
+  .panel-inner {
+    position: absolute;
+    left: 1.5em;
+    right: 1.5em;
+    top: 1.5em;
+    bottom: 1.5em;
+  }
+}
+
+.panel-content {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: 0;
+  z-index: 3;
+
+  * > { margin-top: 0; }
+}
+
+#first-panel .panel-content {
+  display: flex;
+  flex-flow: column nowrap;
+
+  h1 { margin: 0; margin-left: -0.06em; }
+  h2 { margin: 0; margin-left: -0.05em; }
+
+  .introduction {
+    line-height: 1em;
+    margin-bottom: 0.75em;
+  }
+
+  .brand {
+    flex: 0 0 auto;
+    padding: 2.5em 2em 1.5em;
+    margin: 0;
+  }
+
+  section {
+    flex: 0 0 auto;
+    padding: 2em;
+    margin: 0;
+  }
+  #map {
+    flex: 1 1 auto;
+    height: auto;
+    margin: 0;
+  }
+  #location {
+    flex: 0 0 auto;
+    padding: 1.5em 2em 1.5em;
+    margin: 0;
+  }
+}
+
+
 
 h1 {
   font-size: 3.5rem;
@@ -29,4 +98,109 @@ h1 {
   .corner-shapes-bottom-right {
     width: 85.5%;
   }
+}
+
+#map {
+  height: 8em;
+  background-color: $color-rh-slate;
+  margin: 0;
+  width: 100%;
+
+  .leaflet-overlay-pane {
+    opacity: 0.6;
+  }
+
+  path.road {
+    stroke: lighten($color-rh-slate, 25%);
+    fill: none;
+  }
+  path.water {
+    stroke: lighten($color-rh-slate, 50%);
+    fill: lighten($color-rh-slate, 50%);
+  }
+}
+
+#first-panel section {
+  background-color: rgba(lighten($color-rh-slate, 50%), 0.6);
+}
+
+#location {
+  line-height: 1em;
+  background-color: rgba(lighten($color-rh-slate, 50%), 0.8);
+
+  p { margin: 0; }
+}
+
+.marker-icon > div {
+  padding-left: 100%;
+}
+
+.marker-icon:before {
+  content: '';
+  width: 2em;
+  height: 2em;
+  background-color: $color-rh-blue;
+  border: 0.25em solid lighten($color-rh-slate, 50%);
+  display: block;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 100%;
+}
+
+.agenda-day-info {
+  margin-top: 0;
+}
+
+.time-table {
+  padding-bottom: 3em;
+}
+
+.agenda-container .agenda-range-row-sessions-2 .agenda-session,
+.agenda-container .agenda-range-row-sessions-3 .agenda-session,
+.agenda-container .agenda-range-row-sessions-4 .agenda-session,
+.agenda-container .agenda-range-row-sessions-5 .agenda-session,
+.agenda-container .agenda-range-row-sessions-6 .agenda-session,
+.agenda-container .agenda-range-row-sessions-7 .agenda-session,
+.agenda-container .agenda-range-row-sessions-8 .agenda-session,
+.agenda-container .agenda-range-row-sessions-9 .agenda-session,
+.agenda-container .agenda-range-row-sessions-10 .agenda-session,
+.agenda-container .agenda-range-row-sessions-11 .agenda-session,
+.agenda-container .agenda-range-row-sessions-12 .agenda-session {
+  width: initial;
+  display: block;
+}
+
+// Regions stuff. There's a Polyfill provided by Adobe. It's not working at all well with this stuff.
+// So for now this only works in Browers with Native support for CSS Regions. So, Safari and Linux-y browsers
+// like Midori etc.
+
+#agenda {
+  -webkit-flow-into: panels;
+  -adobe-flow-into: panels;
+  flow-into: panels;
+}
+
+.destination {
+  -webkit-flow-from: panels;
+  -adobe-flow-from: panels;
+  flow-from: panels;
+}
+
+.region-break {
+  -webkit-break-after: always;
+  break-after: always;
+  -webkit-page-break-after: always;
+  page-break-after: always;
+  −webkit−region−break−after: always;
+  region−break−after: always;
+}
+
+.agenda-container .agenda-range-row {
+  -webkit-break-inside: avoid;
+  break-inside: avoid;
+  -webkit-page-break-inside: avoid;
+  page-break-inside: avoid;
+  −webkit−region−break−inside: avoid;
+  region−break−inside: avoid;
 }
