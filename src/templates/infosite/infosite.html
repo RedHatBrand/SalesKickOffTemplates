@@ -53,8 +53,12 @@ height: 100vh
       {{/background-image}}
 
       <div class='container layer-three'>
+        {{#for-emea}}
+        <% include ../../shared/images/event-logo-lockup-emea.svg %>
+        {{/for-emea}}
+        {{^for-emea}}
         <% include ../../shared/images/event-logo-lockup.svg %>
-
+        {{/for-emea}}
 
         <div class='event-details ' style="color:0;;background-color: transparent;">
           <h3 class="where" >

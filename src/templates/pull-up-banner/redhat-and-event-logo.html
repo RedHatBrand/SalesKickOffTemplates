@@ -43,7 +43,12 @@ height: 2000mm
           <% include ../../shared/images/rh-logo-include.svg %>
         </div>
         <div class="event-logo-container">
+          {{#for-emea}}
+          <% include ../../shared/images/event-logo-lockup-emea.svg %>
+          {{/for-emea}}
+          {{^for-emea}}
           <% include ../../shared/images/event-logo-lockup.svg %>
+          {{/for-emea}}
         </div>
       </div>
     </main>

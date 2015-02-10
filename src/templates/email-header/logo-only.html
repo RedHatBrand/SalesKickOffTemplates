@@ -1,6 +1,6 @@
 ---
-width: 850mm
-height: 2000mm
+width: 900px
+height: 240px
 ---
 
 <!DOCTYPE html>
@@ -8,8 +8,7 @@ height: 2000mm
   <head>
     <link rel="stylesheet" href="//redhatbrand.github.io/RedHatTemplates/global-assets/stylesheets/general/tile-pattern-fill.css" />
     <link rel="stylesheet" href="<%=baseUrl%>/shared/stylesheets/main.css" />
-    <link rel="stylesheet" href="<%=baseUrl%>/templates/generic-resizeable-print/assets/stylesheets/main.css" />
-    <link rel="stylesheet" href="<%=baseUrl%>/templates/pull-up-banner/assets/stylesheets/main.css" />
+    <link rel="stylesheet" href="<%=baseUrl%>/templates/email-header/assets/stylesheets/main.css" />
     <style type="text/css">
       {{# background-image }}
         .background-image main {
@@ -19,9 +18,8 @@ height: 2000mm
 
           background-repeat: no-repeat;
           background-blend-mode: multiply;
-          background-size: cover;
-          background-position: center center;
-
+          background-size: 200% auto, cover;
+          background-position: 100% 50%, center center;
           color: white;
         }
 
@@ -31,7 +29,7 @@ height: 2000mm
   </head>
 
   <body
-    style="width: 850mm; height: 2000mm"
+    style="width: {{width}}px; height: {{ height }}px"
     class="{{#background-image}}background-image{{/background-image}} {{artwork-option}} {{colormode}}">
 
     {{^ background-image }}
@@ -39,11 +37,7 @@ height: 2000mm
     {{/ background-image }}
 
     <main>
-      <div id="content" class="container_fy16-and-headline-and-event-logo">
-        <div class="headline-container">
-          <h2 class="fy16 js-fy16">FY16</h2>
-          <h1 class="headline js-headline">{{{ headline }}}</h1>
-        </div>
+      <div id="content" class="logo-only">
         <div class="event-logo-container">
           {{#for-emea}}
           <% include ../../shared/images/event-logo-lockup-emea.svg %>
@@ -53,16 +47,6 @@ height: 2000mm
           {{/for-emea}}
         </div>
       </div>
-
-      {{^ background-image }}
-      <div class="corner-shapes-bottom-right redhat">
-        <div class="corner-shape-solid-triangle"></div>
-        <div data-red-hat-pattern="corporate" class="pattern-red corner-shape-pattern"></div>
-        <div class="corner-shape-bottom-right-logo rh-logo">
-          <% include ../../shared/images/rh-logo-include.svg %>
-        </div>
-      </div>
-      {{/ background-image }}
     </main>
 
     {{#artwork-complexity}}
@@ -76,10 +60,5 @@ height: 2000mm
     {{/ background-image }}
 
     <script src="//redhatbrand.github.io/RedHatPatterns/red-hat-patterns.js"></script>
-
-    <script src="//redhatbrand.github.io/RedHatTemplates/global-assets/javascripts/vendor/jquery.js"></script>
-    <script src="//redhatbrand.github.io/RedHatTemplates/global-assets/javascripts/vendor/jquery.fittext.js"></script>
-    <script src="<%=baseUrl%>/shared/javascripts/generic-fittext.js"></script>
   </body>
 </html>
-

@@ -3,6 +3,7 @@
     "region": "Asia Pacific",
     "year": "FY14",
     "selected-day": 2,
+    "for-emea": "true",
     "days": [
     {
       "day-name": "Sunday",

@@ -26,7 +26,14 @@ height: 152.4mm
         {{/ background-image }}
 
         <div class="panel-content">
-          <header class="brand sko"><% include ../../../shared/images/event-logo-lockup.svg %></header>
+          <header class="brand sko">
+            {{#for-emea}}
+            <% include ../../../shared/images/event-logo-lockup-emea.svg %>
+            {{/for-emea}}
+            {{^for-emea}}
+            <% include ../../../shared/images/event-logo-lockup.svg %>
+            {{/for-emea}}
+          </header>
           <section>
             <p class="introduction">Hi, my name is</p>
             <h1>
