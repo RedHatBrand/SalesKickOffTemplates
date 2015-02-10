@@ -83,11 +83,14 @@ svg {
 
 .container_two-logos {
   width: 75%;
+  font-size: 0;
 
   [class*="-logo-container"] {
     @extend .one-half;
     padding: 5%;
-    float: left;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 1rem;
   }
 }
 
@@ -188,6 +191,7 @@ svg {
     .one-half {
       width: initial;
       float: none;
+      display: block;
     }
   }
 
@@ -204,6 +208,7 @@ svg {
   .one-half {
     width: initial;
     float: none;
+    display: block;
   }
 
   .corner-shapes-bottom-right {
@@ -229,6 +234,7 @@ svg {
     .one-half {
       width: initial;
       float: none;
+      display: block;
     }
   }
 
