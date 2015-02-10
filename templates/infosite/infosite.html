@@ -39,7 +39,7 @@
   {{/ background-image }}
 </style>
 </head>
-<body data-spy="scroll" data-target=".nav-menu" data-offset="100">
+<body class="{{darknav}}" data-spy="scroll" data-target=".nav-menu" data-offset="100">
 <div class='wrapper'>
   <header class='header' role='banner'>
     <figure class='hero artwork-container {{colormode}} {{artwork-option}} {{#background-image}}background-image{{/background-image}}'>
@@ -49,7 +49,7 @@
       {{/background-image}}
 
       <div class='container layer-three'>
-        <svg class="sko-logo logo line-icon complex-logo" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="5 6.5 315 120">
+        <svg class="sko-logo logo line-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="5 6.5 315 120">
   <g class="logomark">
     <path style="fill:#08A8E5" d="M106.3,6.5H5V108l101.3,0.2V6.5z"/>
     <path style="fill:#0782C2" d="M106.3,6.5v101.6H70L55.1,123l-15-15H5L106.3,6.5z"/>
@@ -73,6 +73,7 @@
     l-9.4,14.3c-4.7,6.5-0.7,12.8,5.7,12.1 M77.8,28.5l-12.3,9.3c-1.9,1.6-3.8,0.8-4.4-1.3c-0.2-0.6-2.9-14.6-2.9-14.6
     c-0.5-2.9-1.6-5.3-4.5-5c-3,0.3-3.1,3.5-2.7,6l3.4,16.8c1.3,7.9,8.8,9.3,12.8,4.4"/>
 </svg>
+
 
 
 
@@ -141,90 +142,55 @@
       </div>
     </div>
   </section>
-  <section class='section-agenda main' id='agenda'>
-    <div class='container'>
-      <h1>Agenda</h1>
-      {{#days}}
-      <input id='{{ day-name }}' name='active-day' type='radio'>
-      <label for='{{ day-name }}'>
 
-        {{#day-name-translation}}
-        <span>{{{day-name-translation}}}</span>
-        {{/day-name-translation}}
+  <section class="section-agenda agenda-container main">
+    <div class="container">
+      <div id="agenda">
+        <h1>Agenda</h1>
+        {{#days}}
+        <input id='{{ day-name }}' name='active-day' type='radio'>
+        <label for='{{ day-name }}'>
+          {{^day-name-translation}}
+          <span>{{ day-name }}</span>
+          {{/day-name-translation}}
+        </label>
+        {{/days}}
 
-        {{^day-name-translation}}
-        <span>{{ day-name }}</span>
-        {{/day-name-translation}}
-      </label>
-      {{/days}}
-      {{#days}}
-
-      <div class='time-table time-table-{{ day-name }}'>
-
-        <h4 style="text-align:center">{{ day-name }}  {{date}}</h4><br >
-        <table class="calendar">
-          <tr class="headings">
-            <th class="time">Timing</th>
-            <th class="topic">Topic</th>
-          </tr>
-          {{#ttable}}
-          {{#time}}
-          <tr class="{{ type }}">
-            <td class="time">{{time}}  {{#duration}}/ {{duration}} {{/duration}}</td>
-
-
-            <td class="event-item">
-              <p>
-                {{#location}}<span class="room">{{location}}</span>{{/location}}
-                {{#topic}}<b class="topic">{{topic}}</b>&nbsp;{{/topic}}
-                {{#speaker}}<span class="speaker">{{speaker}}</span>{{/speaker}}
-              </p>
-
-              <div class="tracks">
-                <div>
-                  {{#track-a}}
-                  <div class="track track-a">
-                    <h5>{{track-a}}</h5>
-                    <p>{{track-a-content}}</p>
-                  </div>
-                  {{/track-a}}
-
-                  {{#track-b}}
-                  <div class="track track-b">
-                    <h5>{{track-b}}</h5>
-                    <p>{{track-b-content}}</p>
-                  </div>
-                  {{/track-b}}
-
-                  {{#track-c}}
-                  <div class="track track-c">
-                    <h5>{{track-c}}</h5>
-                    <p>{{track-c-content}}</p>
-                  </div>
-                  {{/track-c}}
-
-                  {{#track-d}}
-                  <div class="track track-d">
-                    <h5>{{track-d}}</h5>
-                    <p>{{track-d-content}}</p>
-                  </div>
-                  {{/track-d}}
-
-                  {{#track-e}}
-                  <div class="track track-e">
-                    <h5>{{track-e}}</h5>
-                    <p>{{track-e-content}}</p>
-                  </div>
-                  {{/track-e}}
+        {{#days}}
+        <div class="js-agenda-day">
+          <div class="agenda-day-info js-agenda-day-info">
+            <h2>{{day-name}}</h2>
+            <h3>{{date}}</h3>
+          </div>
+          <div class="time-table time-table-unprocessed js-time-table">
+            {{#sessions}}
+            {{#start}}
+            <div class="agenda-session js-session" data-start="{{ start }}" data-end="{{ end }}">
+              <div class="agenda-session-inner {{ type }}">
+                <header class="session-header">
+                  {{#topic}}
+                  <h3 class="agenda-session-header-text">{{ topic }}</h3>
+                  {{/topic}}
+                  {{#speaker}}
+                  <h3 class="agenda-session-header-speaker">{{ speaker }}</h3>
+                  {{/speaker}}
+                </header>
+                <div class="agenda-session-content">
+                  {{#location}}
+                  <p class="agenda-session-content-location">{{ location }}</p>
+                  {{/location}}
+                  {{#group}}
+                  <p class="agenda-session-content-group">{{ group }}</p>
+                  {{/group}}
                 </div>
               </div>
-            </td>
-          </tr>
-          {{/time}}
-          {{/ttable}}
-        </table>
+            </div>
+            {{/start}}
+            {{/sessions}}
+          </div>
+        </div>
+        {{/days}}
       </div>
-      {{/days}}
     </div>
   </section>
 
@@ -318,5 +284,7 @@ window.redhatArtComplexity = {{ artwork-complexity }};
 {{/artwork-complexity}}
 
 <script src="//redhatbrand.github.io/SalesKickOffTemplates/shared/javascripts/artwork.js"></script>
+<script src="//redhatbrand.github.io/SalesKickOffTemplates/shared/javascripts/vendor/moment.js"></script>
+<script src="//redhatbrand.github.io/SalesKickOffTemplates/templates/attendee/lanyard/assets/javascripts/agenda.js"></script>
 </body>
 </html>
