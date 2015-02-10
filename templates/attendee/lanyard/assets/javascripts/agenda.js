@@ -2,6 +2,8 @@
 // We'll replace the shared Agenda JS with this in a seperate task.
 
 (function (global) {
+  var timeFormat = global.redHatTimeFormat || 'hh:mm a';
+
   var days = [].slice.call(document.getElementsByClassName('js-time-table')).map(function (dayElem) {
     return {
       element: dayElem,
@@ -45,7 +47,7 @@
     day.ranges.forEach(function (range) {
       var rangeRow = document.createElement('div');
       var rangeRowSessions = document.createElement('div');
-      var time = moment(range.start, 'X').format('HH:mm');
+      var time = moment(range.start, 'X').format(timeFormat);
       var timeElem = document.createElement('h3');
 
       timeElem.classList.add('agenda-range-row-start-time');
