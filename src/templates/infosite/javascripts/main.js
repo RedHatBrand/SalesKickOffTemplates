@@ -50,7 +50,7 @@ $(function() {
   (function initAgenda () {
     var $radios = $('#agenda input[type="radio"]');
     var $labels = $('#agenda input[type="radio"] + label');
-    var $timeTables = $('.time-table');
+    var $timeTables = $('.js-agenda-day');
 
     $radios.each(function (index, radio) {
       $(radio).attr('id', 'day-' + index);
@@ -61,7 +61,7 @@ $(function() {
     });
 
     $timeTables.each(function (index, table) {
-      $(table).addClass('time-table-' + index);
+      $(table).addClass('agenda-day-' + index);
     });
   })();
 });
