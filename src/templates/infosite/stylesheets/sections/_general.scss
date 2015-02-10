@@ -23,6 +23,23 @@ body {
   background-color: whitesmoke;
 }
 
+@media screen and (min-width:80em){
+  html, :root {
+    font-size: 1.125em; line-height: 1.5em;
+  }
+  .header .rh-logo {
+    width: 25%;
+    height: 20%;
+  }
+}
+
+@media screen and (min-width:100em){
+  html, :root {
+    font-size:1.5em;
+    line-height: 1.5em;
+  }
+}
+
 [class^="icon-"]:before, [class*=" icon-"]:before {
   font-family: FontAwesome;
   font-weight: normal;
@@ -246,7 +263,7 @@ section.grey:before { background-color: #5e6a71 ;opacity:.9}
   margin:.5em auto;
   position: relative;
   left: 50%;
-  margin-left: -1.75em;
+  margin-left: -1.6em;
   width: 3em;
   height:2px;
   background-color:#c00;
@@ -257,13 +274,12 @@ section.grey:before { background-color: #5e6a71 ;opacity:.9}
   font-size: 1.2em;
   font-size: 4vw;
   margin-bottom: 3rem;
-  letter-spacing: .5em;
+  letter-spacing: .25em;
+  line-height: 1.1em;
   padding-left: 0.25em;
 }
 
-.section-agenda .container {
-  padding: 0;
-}
+
 
 .main h1,.main h2,.main h3 {
   -ms-word-break: break-all;
