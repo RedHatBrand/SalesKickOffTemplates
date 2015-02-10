@@ -25,6 +25,10 @@ height: 240px
 
         .logotext { fill: white; }
       {{/ background-image }}
+
+      .text-header h1 {
+        font-size: {{ header-font-size }};
+      }
     </style>
   </head>
 
@@ -37,11 +41,8 @@ height: 240px
     {{/ background-image }}
 
     <main>
-      <div id="content">
-        <div class="headline-container">
-          <h2 class="fy16 js-fy16">FY16</h2>
-          <h1 class="headline js-headline">{{{ headline }}}</h1>
-        </div>
+      <div id="content" class="text-header">
+        {{{ text }}}
       </div>
 
       <footer>

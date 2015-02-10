@@ -30,21 +30,14 @@ height: 240px
 
   <body
     style="width: {{width}}px; height: {{ height }}px"
-    class="{{#background-image}}background-image{{/background-image}} for-emea-{{for-emea}} {{artwork-option}} {{colormode}}">
+    class="{{#background-image}}background-image{{/background-image}} {{artwork-option}} {{colormode}}">
 
     {{^ background-image }}
     <div id="artwork"></div>
     {{/ background-image }}
 
     <main>
-      <div id="content">
-        <div class="headline-container">
-          <h2 class="fy16 js-fy16">FY16</h2>
-          <h1 class="headline js-headline">{{{ headline }}}</h1>
-        </div>
-      </div>
-
-      <footer>
+      <div id="content" class="logo-only">
         <div class="event-logo-container">
           {{#for-emea}}
           <% include ../../shared/images/event-logo-lockup-emea.svg %>
@@ -53,10 +46,7 @@ height: 240px
           <% include ../../shared/images/event-logo-lockup.svg %>
           {{/for-emea}}
         </div>
-        <div class="rh-logo-container">
-          <% include ../../shared/images/rh-logo-include.svg %>
-        </div>
-      </footer>
+      </div>
     </main>
 
     {{#artwork-complexity}}
@@ -70,9 +60,5 @@ height: 240px
     {{/ background-image }}
 
     <script src="//redhatbrand.github.io/RedHatPatterns/red-hat-patterns.js"></script>
-
-    <script src="//redhatbrand.github.io/RedHatTemplates/global-assets/javascripts/vendor/jquery.js"></script>
-    <script src="//redhatbrand.github.io/RedHatTemplates/global-assets/javascripts/vendor/jquery.fittext.js"></script>
-    <script src="<%=baseUrl%>/shared/javascripts/generic-fittext.js"></script>
   </body>
 </html>
