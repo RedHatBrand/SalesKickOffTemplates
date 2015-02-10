@@ -972,10 +972,13 @@ svg {
   width: 50%; }
 
 .container_two-logos {
-  width: 75%; }
+  width: 75%;
+  font-size: 0; }
   .container_two-logos [class*="-logo-container"] {
     padding: 5%;
-    float: left; }
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 1rem; }
 
 .container_headline-and-event-logo {
   width: 75%; }
@@ -983,6 +986,13 @@ svg {
     padding: 5%; }
   .container_headline-and-event-logo .event-logo-container {
     float: right; }
+
+.fy16 {
+  font-weight: 700;
+  line-height: 0.8em;
+  margin-left: -0.08em;
+  margin-bottom: 0;
+  letter-spacing: -0.025em; }
 
 .container_fy16-and-headline-and-event-logo {
   width: 40%; }
@@ -993,16 +1003,13 @@ svg {
   .container_fy16-and-headline-and-event-logo .event-logo-container {
     margin: 0;
     width: 66.667%; }
-  .container_fy16-and-headline-and-event-logo .fy16 {
-    font-weight: 700;
-    line-height: 0.8em;
-    margin-left: -0.08em;
-    margin-bottom: 0;
-    letter-spacing: -0.025em; }
   .container_fy16-and-headline-and-event-logo .headline {
     margin-top: 0.3em; }
   .container_fy16-and-headline-and-event-logo .sko-logo text, .container_fy16-and-headline-and-event-logo .sko-logo tspan, .container_fy16-and-headline-and-event-logo .sko-logo .logomark path {
     fill: #444 !important; }
+
+.for-emea-true .container_fy16-and-headline-and-event-logo .event-logo-container {
+  width: initial; }
 
 .full-height .artwork-shape {
   top: 0 !important;
@@ -1033,7 +1040,8 @@ svg {
     width: 60%; }
     .container_headline-and-event-logo .one-half, .container_headline-and-event-logo .container_two-logos [class*="-logo-container"], .container_two-logos .container_headline-and-event-logo [class*="-logo-container"], .container_headline-and-event-logo .event-logo-container, .container_headline-and-event-logo .headline-container, .container_fy16-and-headline-and-event-logo .one-half, .container_fy16-and-headline-and-event-logo .container_two-logos [class*="-logo-container"], .container_two-logos .container_fy16-and-headline-and-event-logo [class*="-logo-container"], .container_fy16-and-headline-and-event-logo .container_headline-and-event-logo .event-logo-container, .container_headline-and-event-logo .container_fy16-and-headline-and-event-logo .event-logo-container, .container_fy16-and-headline-and-event-logo .container_headline-and-event-logo .headline-container, .container_headline-and-event-logo .container_fy16-and-headline-and-event-logo .headline-container {
       width: initial;
-      float: none; }
+      float: none;
+      display: block; }
 
   .corner-shapes-bottom-right {
     width: 60%; }
@@ -1045,7 +1053,8 @@ svg {
 
   .container_fy16-and-headline-and-event-logo .event-logo-container, .container_fy16-and-headline-and-event-logo .headline-container, .one-half, .container_two-logos [class*="-logo-container"], .container_headline-and-event-logo .event-logo-container, .container_headline-and-event-logo .headline-container {
     width: initial;
-    float: none; }
+    float: none;
+    display: block; }
 
   .corner-shapes-bottom-right {
     width: 80%; }
@@ -1062,7 +1071,8 @@ svg {
     width: 33.333%; }
     .container_headline-and-event-logo .one-half, .container_headline-and-event-logo .container_two-logos [class*="-logo-container"], .container_two-logos .container_headline-and-event-logo [class*="-logo-container"], .container_headline-and-event-logo .event-logo-container, .container_headline-and-event-logo .headline-container, .container_fy16-and-headline-and-event-logo .one-half, .container_fy16-and-headline-and-event-logo .container_two-logos [class*="-logo-container"], .container_two-logos .container_fy16-and-headline-and-event-logo [class*="-logo-container"], .container_fy16-and-headline-and-event-logo .container_headline-and-event-logo .event-logo-container, .container_headline-and-event-logo .container_fy16-and-headline-and-event-logo .event-logo-container, .container_fy16-and-headline-and-event-logo .container_headline-and-event-logo .headline-container, .container_headline-and-event-logo .container_fy16-and-headline-and-event-logo .headline-container {
       width: initial;
-      float: none; }
+      float: none;
+      display: block; }
 
   .corner-shapes-bottom-right {
     width: 60%; }
@@ -1250,6 +1260,9 @@ svg {
       padding: 0 1rem;
       -moz-box-sizing: border-box;
       box-sizing: border-box; }
+
+.for-emea-true .agenda-container .agenda-logo .sko-logo {
+  width: 66.667%; }
 
 html, :root {
   font-size: 14pt; }
