@@ -34,7 +34,8 @@ body { color: $color-rh-slate; }
   #content {
     background-color: transparent;
 
-    .session-inner, .session-inner h3 { color: $color-rh-black; }
+    .agenda-session-inner,
+    .agenda-session-inner h3 { color: $color-rh-black; }
   }
 
   .section-agenda {
