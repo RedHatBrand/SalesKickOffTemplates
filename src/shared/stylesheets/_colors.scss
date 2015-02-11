@@ -129,17 +129,17 @@ body.red, .artwork-container.red {
   }
 }
 
-.red .rh-map {
-  background-color: lighten($color-rh-black, 25%);
+.red .rh-map, .silver .rh-map {
+  background-color: lighten($color-rh-black, 66.667%);
 
   .leaflet-overlay-pane { opacity: 1 }
 
   path.road {
-    stroke: lighten($color-rh-black, 12.5%);
+    stroke: lighten($color-rh-black, 50%);
   }
   path.water {
-    stroke: lighten($color-rh-black, 12.5%);
-    fill: lighten($color-rh-black, 12.5%);
+    stroke: lighten($color-rh-black, 50%);
+    fill: lighten($color-rh-black, 50%);
   }
 }
 

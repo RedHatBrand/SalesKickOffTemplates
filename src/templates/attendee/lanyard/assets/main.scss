@@ -86,7 +86,7 @@ h1 {
 }
 
 .brand svg { width: 66.667%; }
-.for-emea-true { width: 75%; }
+.for-emea-true .brand svg { width: 80%; }
 
 .corner-shapes-bottom-right .corner-shape-pattern svg {
   stroke-width: 0.2pt;
@@ -117,7 +117,6 @@ h1 {
   #location {
     background-color: white;
     color: lighten($color-rh-black, 12.5%);
-    color: lighten($color-rh-black, 12.5%);
 
     h1, h2, h3, h4, h5 {
       color: lighten($color-rh-black, 12.5%);
@@ -128,6 +127,39 @@ h1 {
     border-top: thin solid $color-rh-white;
   }
 }
+
+.silver {
+  #first-panel section,
+  #location {
+    background-color: rgba(white, 0.5);
+  }
+
+  .agenda-container .agenda-session-inner {
+    background-color: $color-rh-white;
+
+    &.break {
+      background-color: darken($color-rh-white, 2.5%);
+    }
+  }
+}
+
+body.red #first-panel { background-color: $color-rh-red; }
+body.red {
+  background-color: $color-rh-white;
+  h1, h2, h3, h4, h5, h6 {
+    color: $color-rh-red;
+  }
+
+  .agenda-container .agenda-session-inner {
+    background-color: darken($color-rh-white, 5%);
+  }
+
+  .agenda-day-info h2,
+  h3.agenda-range-row-start-time {
+    color: lighten($color-rh-black, 12.5%);
+  }
+}
+.red main::before { background-image: none; }
 
 #location {
   line-height: 1em;
