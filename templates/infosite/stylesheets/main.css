@@ -428,10 +428,28 @@ main:before, .artwork-overlay:before {
 .sko-logo .logotext, .sko-logo .location {
   fill: #475055 !important; }
 
+.rh-map {
+  background-color: #5E6A71; }
+  .rh-map .leaflet-overlay-pane {
+    opacity: 0.6; }
+  .rh-map path.road {
+    stroke: #9fa9af;
+    fill: none; }
+  .rh-map path.water {
+    stroke: #e5e8e9;
+    fill: #e5e8e9; }
+
+marker-icon > div {
+  padding-left: 100%; }
+
+.marker-icon:before {
+  background-color: #0088CE;
+  border: 0.25em solid #e5e8e9; }
+
 body.red, .artwork-container.red {
   background-color: #b30000; }
 
-.red main:before, .artwork-container.red:before {
+.red main:before, .artwork-container.red:before, .red .artwork-overlay:before {
   background-image: radial-gradient(circle at center, #cc0000, rgba(204, 0, 0, 0) 100%); }
 
 .red .corner-shape-pattern svg {
@@ -448,6 +466,23 @@ body.red, .artwork-container.red {
 
 .red #artwork .artwork-pattern svg, .red .js-artwork .artwork-pattern svg {
   stroke: #cc0000; }
+
+.red .logotype, .red .logotext, .red .location {
+  fill: white !important; }
+
+.red .rh-map, .silver .rh-map {
+  background-color: #bbbbbb; }
+  .red .rh-map .leaflet-overlay-pane, .silver .rh-map .leaflet-overlay-pane {
+    opacity: 1; }
+  .red .rh-map path.road, .silver .rh-map path.road {
+    stroke: #919191; }
+  .red .rh-map path.water, .silver .rh-map path.water {
+    stroke: #919191;
+    fill: #919191; }
+
+.red .marker-icon:before {
+  background-color: #0088CE;
+  border: 0.25em solid #ffffff; }
 
 body.silver, .artwork-container.silver {
   background-color: #f2f2f2; }
@@ -1971,12 +2006,12 @@ aside h4 {
   color: #c12; }
 
 ::-moz-selection {
-  color: white !important;
+  color: white;
   background: #576065;
   text-shadow: 0; }
 
 ::selection {
-  color: white !important;
+  color: white;
   background: #576065;
   text-shadow: 0; }
 
@@ -1989,6 +2024,11 @@ html {
 
 body {
   background-color: whitesmoke; }
+
+[class^="icon-"], [class*=" icon-"] {
+  display: inline-block;
+  width: 1em;
+  text-align: center; }
 
 @media screen and (min-width: 80em) {
   html, :root {
@@ -2148,7 +2188,7 @@ section.blank, section.light, section.dark, section.grey {
 
 section.light .container, section.dark .container, section.grey .container {
   position: relative;
-  z-index: 2 !important; }
+  z-index: 2; }
 
 section.blank:before {
   display: none; }
@@ -2179,7 +2219,7 @@ section.grey .container {
 
 section.blank {
   background-color: transparent;
-  background-image: none !important; }
+  background-image: none; }
 
 section.light:before {
   background-color: white;
@@ -2208,7 +2248,7 @@ section.grey:before {
   font-size: 1.2em;
   font-size: 4vw;
   margin-bottom: 3rem;
-  letter-spacing: 0.25em;
+  letter-spacing: 0.125em;
   line-height: 1.1em;
   padding-left: 0.25em; }
 
@@ -2220,6 +2260,26 @@ section.grey:before {
   -moz-hyphens: auto;
   -ms-hyphens: auto;
   hyphens: auto; }
+
+.platinum .sko-logo .logotext, .platinum .sko-logo .location, .background-image .sko-logo .logotext, .background-image .sko-logo .location {
+  fill: white; }
+
+.custom-background a {
+  background-color: transparent;
+  color: white;
+  display: inline;
+  padding: 0;
+  margin: 0;
+  border-bottom: 0.25em solid #c00; }
+
+.custom-background.light a, .custom-background.blank a {
+  color: #282c2e; }
+
+.custom-background a:hover {
+  color: #c00; }
+
+.platinum .logotext, .platinum text {
+  fill: #fff; }
 
 .section-agenda {
   background-color: #f0f0f0; }
@@ -2283,8 +2343,9 @@ section.grey:before {
   position: relative;
   min-height: 1.5em; }
   .agenda-container .agenda-session-inner.break {
-    background-image: linear-gradient(-45deg, #fafafa 25%, transparent 25%, transparent 50%, #fafafa 50%, #fafafa 75%, transparent 75%, transparent);
-    background-size: 20px 20px;
+    background-image: url('/shared/images/stripes.svg');
+    background-size: auto auto;
+    background-repeat: no-repeat;
     background-position: 0 0;
     color: #839098; }
 .agenda-container .agenda-session-content-group {
@@ -2362,6 +2423,110 @@ input#day-0:checked ~ .agenda-day-0, input#day-1:checked ~ .agenda-day-1, input#
 input#day-0:checked ~ label[for="day-0"], input#day-1:checked ~ label[for="day-1"], input#day-2:checked ~ label[for="day-2"], input#day-3:checked ~ label[for="day-3"], input#day-4:checked ~ label[for="day-4"], input#day-5:checked ~ label[for="day-5"], input#day-6:checked ~ label[for="day-6"] {
   background-color: #c12;
   color: white; }
+
+.section-agenda [class^="icon-"], .section-agenda [class^="icon-"] {
+  opacity: 0.4; }
+
+@media screen and (max-width: 400px) {
+  .agenda-container .agenda-range-row-sessions-2 .agenda-session, .agenda-container .agenda-range-row-sessions-3 .agenda-session, .agenda-container .agenda-range-row-sessions-4 .agenda-session, .agenda-container .agenda-range-row-sessions-5 .agenda-session, .agenda-container .agenda-range-row-sessions-6 .agenda-session, .agenda-container .agenda-range-row-sessions-7 .agenda-session, .agenda-container .agenda-range-row-sessions-8 .agenda-session, .agenda-container .agenda-range-row-sessions-9 .agenda-session, .agenda-container .agenda-range-row-sessions-10 .agenda-session, .agenda-container .agenda-range-row-sessions-11 .agenda-session, .agenda-container .agenda-range-row-sessions-12 .agenda-session {
+    width: initial;
+    display: block; }
+ }
+
+.agenda-container .agenda-range-row {
+  border-top: thin solid #ccc; }
+
+.agenda-container .agenda-session-inner {
+  background-color: transparent; }
+
+.agenda-container .agenda-session-header-text {
+  float: left; }
+
+.agenda-session-header-speaker {
+  float: left;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+  color: #333;
+  font-size: 0.75em; }
+
+.agenda-container .agenda-session-inner.break {
+  opacity: 0.75;
+  font-weight: 300;
+  padding: 0 0.75em;
+  padding-bottom: 0.666em;
+  line-height: 1em; }
+
+.agenda-container .agenda-session-inner.break h3 {
+  padding-top: 0.4em;
+  font-weight: 600;
+  font-size: 0.8em;
+  opacity: 1;
+  color: currentcolor;
+  text-transform: uppercase;
+  letter-spacing: 0.1em; }
+
+.agenda-container .agenda-range-row-start-time {
+  width: 6em;
+  color: currentcolor;
+  opacity: 0.75;
+  font-weight: 600; }
+
+.agenda-session-inner .agenda-session-content-location, .agenda-session-inner .agenda-session-header-speaker {
+  float: none;
+  clear: both;
+  width: 100%;
+  font-size: 0.75em; }
+
+.agenda-range-row-sessions-6 {
+  padding-bottom: 0.25em; }
+
+.agenda-container .agenda-range-row-sessions-6 > div > .agenda-session {
+  width: 33.33%; }
+
+.agenda-range-row-sessions-6 > div > div > div {
+  font-size: 0.85em;
+  background-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0.1em 0.15em rgba(0, 0, 0, 0.1);
+  min-height: 5em; }
+
+@media screen and (max-width: 40em) {
+  .agenda-range-row div, .agenda-range-row {
+    display: block;
+    clear: both;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    max-width: 100%;
+    clear: both; }
+
+  .agenda-container .agenda-range-row-start-time {
+    font-size: 2em;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    padding-top: 1em; }
+
+  .agenda-container .agenda-range-row-sessions-6 > div > .agenda-session {
+    width: 100%; }
+
+  .agenda-container .agenda-range-row-sessions-6 > div > .agenda-session {
+    min-height: auto;
+    width: 100%; }
+ }
+
+@media screen and (min-width: 50em) {
+  .agenda-range-row-sessions-10 {
+    padding-bottom: 0.25em; }
+
+  .agenda-container .agenda-range-row-sessions-10 > div > .agenda-session {
+    width: 25%; }
+
+  .agenda-range-row-sessions-10 > div > div > div {
+    font-size: 0.85em;
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0.1em 0.15em rgba(0, 0, 0, 0.1);
+    min-height: 5em; }
+ }
 
 .section-faq ol {
   -webkit-column-count: 2;

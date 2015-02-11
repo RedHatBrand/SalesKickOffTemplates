@@ -861,10 +861,28 @@ main:before, .artwork-overlay:before {
 .sko-logo .logotext, .sko-logo .location {
   fill: #475055 !important; }
 
+.rh-map {
+  background-color: #5E6A71; }
+  .rh-map .leaflet-overlay-pane {
+    opacity: 0.6; }
+  .rh-map path.road {
+    stroke: #9fa9af;
+    fill: none; }
+  .rh-map path.water {
+    stroke: #e5e8e9;
+    fill: #e5e8e9; }
+
+marker-icon > div {
+  padding-left: 100%; }
+
+.marker-icon:before {
+  background-color: #0088CE;
+  border: 0.25em solid #e5e8e9; }
+
 body.red, .artwork-container.red {
   background-color: #b30000; }
 
-.red main:before, .artwork-container.red:before {
+.red main:before, .artwork-container.red:before, .red .artwork-overlay:before {
   background-image: radial-gradient(circle at center, #cc0000, rgba(204, 0, 0, 0) 100%); }
 
 .red .corner-shape-pattern svg {
@@ -881,6 +899,23 @@ body.red, .artwork-container.red {
 
 .red #artwork .artwork-pattern svg, .red .js-artwork .artwork-pattern svg {
   stroke: #cc0000; }
+
+.red .logotype, .red .logotext, .red .location {
+  fill: white !important; }
+
+.red .rh-map, .silver .rh-map {
+  background-color: #bbbbbb; }
+  .red .rh-map .leaflet-overlay-pane, .silver .rh-map .leaflet-overlay-pane {
+    opacity: 1; }
+  .red .rh-map path.road, .silver .rh-map path.road {
+    stroke: #919191; }
+  .red .rh-map path.water, .silver .rh-map path.water {
+    stroke: #919191;
+    fill: #919191; }
+
+.red .marker-icon:before {
+  background-color: #0088CE;
+  border: 0.25em solid #ffffff; }
 
 body.silver, .artwork-container.silver {
   background-color: #f2f2f2; }
@@ -1198,8 +1233,7 @@ svg {
       line-height: 1em; }
     .agenda-container .agenda-day-info h1 {
       padding-top: 1.5rem;
-      margin-top: 1.5rem;
-      border-top: thin solid #5E6A71; }
+      margin-top: 1.5rem; }
     .agenda-container .agenda-day-info h2 {
       margin-bottom: 3rem; }
   .agenda-container .agenda-logo .sko-logo {
@@ -1209,8 +1243,8 @@ svg {
     table-layout: fixed;
     width: 100%; }
   .agenda-container .agenda-range-row-start-time {
-    width: 4.5em;
-    padding: 0.75rem 0;
+    width: 4.75em;
+    padding: 0.75rem 0.5rem 0.75rem 0;
     display: table-cell;
     margin-bottom: 0;
     vertical-align: top;
@@ -1237,8 +1271,8 @@ svg {
     position: relative;
     min-height: 1.5em; }
     .agenda-container .agenda-session-inner.break {
-      background-image: linear-gradient(-45deg, #fafafa 25%, transparent 25%, transparent 50%, #fafafa 50%, #fafafa 75%, transparent 75%, transparent);
-      background-size: 20px 20px;
+      background-image: url('/shared/images/stripes.svg');
+      background-size: auto auto;
       background-position: 0 0;
       color: #839098; }
   .agenda-container .agenda-session-content-group {
@@ -1263,6 +1297,16 @@ svg {
 
 .for-emea-true .agenda-container .agenda-logo .sko-logo {
   width: 66.667%; }
+
+.red {
+  color: #ffffff; }
+  .red .agenda-session-inner, .red .agenda-session-inner h3 {
+    color: #111111; }
+  .red h2 {
+    color: #ffffff; }
+
+.silver {
+  color: #656565; }
 
 html, :root {
   font-size: 14pt; }
@@ -1294,7 +1338,7 @@ body {
   color: #ffffff; }
   .red #content {
     background-color: transparent; }
-    .red #content .session-inner, .red #content .session-inner h3 {
+    .red #content .agenda-session-inner, .red #content .agenda-session-inner h3 {
       color: #111111; }
   .red .section-agenda {
     background: transparent; }

@@ -13,10 +13,10 @@
   </head>
   <body
     style="width: {{ width }}{{unit}}; height: {{ height }}{{unit}}"
-    class="{{artwork-option}} {{colormode}}">
+    class="{{artwork-option}} {{colormode}} for-emea-{{true}}">
 
     <main>
-      <article id="first-panel" class="panel">
+      <article id="first-panel" class="panel artwork-overlay">
         {{^ background-image }}
         <div class="js-artwork"></div>
         {{/ background-image }}
@@ -249,7 +249,7 @@ C143.1,90.8,142.7,91.3,142.1,91.6L142.1,91.6z"/>
 
             <p>I'm a <strong>{{ position }}</strong> with <strong>{{ company }}</strong></p>
           </section>
-          <div id="map"></div>
+          <div id="map" class="rh-map"></div>
           <footer id="location">
             <p>
             <small>You can find me at <strong>{{ location }}, {{ location-country }}</strong></small>
@@ -322,8 +322,8 @@ C143.1,90.8,142.7,91.3,142.1,91.6L142.1,91.6z"/>
     <script src="//redhatbrand.github.io/SalesKickOffTemplates/templates/attendee/lanyard/assets/javascripts/agenda.js"></script>
 
     <script>
-     var panels = {{ number-of-panels }};
-     panels = panels || 1;
+     var panels = '{{ number-of-panels }}';
+     panels = parseInt(panels) || 1;
 
      while(panels--) {
        addPanel()

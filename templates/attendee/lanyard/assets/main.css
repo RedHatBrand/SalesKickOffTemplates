@@ -1256,10 +1256,28 @@ main:before, .artwork-overlay:before {
 .sko-logo .logotext, .sko-logo .location {
   fill: #475055 !important; }
 
+.rh-map {
+  background-color: #5E6A71; }
+  .rh-map .leaflet-overlay-pane {
+    opacity: 0.6; }
+  .rh-map path.road {
+    stroke: #9fa9af;
+    fill: none; }
+  .rh-map path.water {
+    stroke: #e5e8e9;
+    fill: #e5e8e9; }
+
+marker-icon > div {
+  padding-left: 100%; }
+
+.marker-icon:before {
+  background-color: #0088CE;
+  border: 0.25em solid #e5e8e9; }
+
 body.red, .artwork-container.red {
   background-color: #b30000; }
 
-.red main:before, .artwork-container.red:before {
+.red main:before, .artwork-container.red:before, .red .artwork-overlay:before {
   background-image: radial-gradient(circle at center, #cc0000, rgba(204, 0, 0, 0) 100%); }
 
 .red .corner-shape-pattern svg {
@@ -1276,6 +1294,23 @@ body.red, .artwork-container.red {
 
 .red #artwork .artwork-pattern svg, .red .js-artwork .artwork-pattern svg {
   stroke: #cc0000; }
+
+.red .logotype, .red .logotext, .red .location {
+  fill: white !important; }
+
+.red .rh-map, .silver .rh-map {
+  background-color: #bbbbbb; }
+  .red .rh-map .leaflet-overlay-pane, .silver .rh-map .leaflet-overlay-pane {
+    opacity: 1; }
+  .red .rh-map path.road, .silver .rh-map path.road {
+    stroke: #919191; }
+  .red .rh-map path.water, .silver .rh-map path.water {
+    stroke: #919191;
+    fill: #919191; }
+
+.red .marker-icon:before {
+  background-color: #0088CE;
+  border: 0.25em solid #ffffff; }
 
 body.silver, .artwork-container.silver {
   background-color: #f2f2f2; }
@@ -1593,8 +1628,7 @@ svg {
       line-height: 1em; }
     .agenda-container .agenda-day-info h1 {
       padding-top: 1.5rem;
-      margin-top: 1.5rem;
-      border-top: thin solid #5E6A71; }
+      margin-top: 1.5rem; }
     .agenda-container .agenda-day-info h2 {
       margin-bottom: 3rem; }
   .agenda-container .agenda-logo .sko-logo {
@@ -1604,8 +1638,8 @@ svg {
     table-layout: fixed;
     width: 100%; }
   .agenda-container .agenda-range-row-start-time {
-    width: 4.5em;
-    padding: 0.75rem 0;
+    width: 4.75em;
+    padding: 0.75rem 0.5rem 0.75rem 0;
     display: table-cell;
     margin-bottom: 0;
     vertical-align: top;
@@ -1632,8 +1666,8 @@ svg {
     position: relative;
     min-height: 1.5em; }
     .agenda-container .agenda-session-inner.break {
-      background-image: linear-gradient(-45deg, #fafafa 25%, transparent 25%, transparent 50%, #fafafa 50%, #fafafa 75%, transparent 75%, transparent);
-      background-size: 20px 20px;
+      background-image: url('/shared/images/stripes.svg');
+      background-size: auto auto;
       background-position: 0 0;
       color: #839098; }
   .agenda-container .agenda-session-content-group {
@@ -1659,6 +1693,16 @@ svg {
 .for-emea-true .agenda-container .agenda-logo .sko-logo {
   width: 66.667%; }
 
+.red {
+  color: #ffffff; }
+  .red .agenda-session-inner, .red .agenda-session-inner h3 {
+    color: #111111; }
+  .red h2 {
+    color: #ffffff; }
+
+.silver {
+  color: #656565; }
+
 :root, html {
   font-size: 10pt; }
 
@@ -1671,6 +1715,9 @@ main {
   bottom: initial;
   left: initial;
   right: initial; }
+
+main:before {
+  background-image: none; }
 
 .panel {
   position: relative;
@@ -1741,6 +1788,9 @@ h1 {
 .brand svg {
   width: 66.667%; }
 
+.for-emea-true .brand svg {
+  width: 80%; }
+
 .corner-shapes-bottom-right .corner-shape-pattern svg {
   stroke-width: 0.2pt; }
 
@@ -1754,20 +1804,41 @@ h1 {
 
 #map {
   height: 8em;
-  background-color: #5E6A71;
   margin: 0;
   width: 100%; }
-  #map .leaflet-overlay-pane {
-    opacity: 0.6; }
-  #map path.road {
-    stroke: #9fa9af;
-    fill: none; }
-  #map path.water {
-    stroke: #e5e8e9;
-    fill: #e5e8e9; }
 
 #first-panel section {
   background-color: rgba(229, 232, 233, 0.6); }
+
+.red #first-panel section, .red #location {
+  background-color: white;
+  color: #313131; }
+  .red #first-panel section h1, .red #first-panel section h2, .red #first-panel section h3, .red #first-panel section h4, .red #first-panel section h5, .red #location h1, .red #location h2, .red #location h3, .red #location h4, .red #location h5 {
+    color: #313131; }
+.red #first-panel section {
+  border-top: thin solid #ffffff; }
+
+.silver #first-panel section, .silver #location {
+  background-color: rgba(255, 255, 255, 0.5); }
+.silver .agenda-container .agenda-session-inner {
+  background-color: #ffffff; }
+  .silver .agenda-container .agenda-session-inner.break {
+    background-color: #f9f9f9; }
+
+body.red #first-panel {
+  background-color: #cc0000; }
+
+body.red {
+  background-color: #ffffff; }
+  body.red h1, body.red h2, body.red h3, body.red h4, body.red h5, body.red h6 {
+    color: #cc0000; }
+  body.red .agenda-container .agenda-session-inner {
+    background-color: #f2f2f2; }
+  body.red .agenda-day-info h2, body.red h3.agenda-range-row-start-time {
+    color: #313131; }
+
+.red main::before {
+  background-image: none; }
 
 #location {
   line-height: 1em;
@@ -1782,8 +1853,6 @@ h1 {
   content: '';
   width: 2em;
   height: 2em;
-  background-color: #0088CE;
-  border: 0.25em solid #e5e8e9;
   display: block;
   position: absolute;
   top: 50%;
