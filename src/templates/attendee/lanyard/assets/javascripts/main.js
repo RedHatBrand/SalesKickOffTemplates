@@ -1,6 +1,6 @@
-var baseUrl = 'http://www.mapquestapi.com/geocoding/v1/address';
+var baseUrl = 'http://open.mapquestapi.com/geocoding/v1/address';
 var params = {
-  key: 'Fmjtd%7Cluurnu6ylu%2C8x%3Do5-9wrn1r',
+  key: 'Fmjtd%7Cluurn96z2l%2Cr2%3Do5-9w8agr',
   outFormat: 'json',
   location:  window.encodeURIComponent(mapSettings.address)
 };
@@ -12,12 +12,14 @@ function queryString (params) {
 }
 
 var url = baseUrl + '?' + queryString(params);
+console.log(url);
 
 $.ajax({
   type: 'get',
   url: url,
   success: function (res) {
-    var latLng = res.results[0].locations[0].latLng;
+    var loc = res.results[0].locations[0]
+    var latLng = (loc && loc.latLng) || { lat: 27.4679, lng: 153.0278 };
     var lat = latLng.lat;
     var lon = latLng.lng;
 

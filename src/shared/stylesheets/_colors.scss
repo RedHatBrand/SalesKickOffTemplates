@@ -76,13 +76,39 @@ main:before, .artwork-overlay:before {
   }
 }
 
+.rh-map {
+  background-color: $color-rh-slate;
+
+  .leaflet-overlay-pane {
+    opacity: 0.6;
+  }
+
+  path.road {
+    stroke: lighten($color-rh-slate, 25%);
+    fill: none;
+  }
+  path.water {
+    stroke: lighten($color-rh-slate, 50%);
+    fill: lighten($color-rh-slate, 50%);
+  }
+}
+
+marker-icon > div {
+  padding-left: 100%;
+}
+
+.marker-icon:before {
+  background-color: $color-rh-blue;
+  border: 0.25em solid lighten($color-rh-slate, 50%);
+}
+
 // RED
 
 body.red, .artwork-container.red {
   background-color: darken($color-rh-red, 5%);
 }
 
-.red main:before, .artwork-container.red:before {
+.red main:before, .artwork-container.red:before, .red .artwork-overlay:before {
   background-image: radial-gradient(circle at center, $color-rh-red, rgba($color-rh-red, 0) 100%);
 }
 
@@ -94,6 +120,33 @@ body.red, .artwork-container.red {
 }
 .red #artwork .artwork-shape, .red .js-artwork .artwork-shape { background-color: darken($color-rh-red, 15%); }
 .red #artwork .artwork-pattern svg, .red .js-artwork .artwork-pattern svg { stroke: $color-rh-red; }
+
+.red {
+  .logotype,
+  .logotext,
+  .location {
+    fill: white !important;
+  }
+}
+
+.red .rh-map {
+  background-color: lighten($color-rh-black, 25%);
+
+  .leaflet-overlay-pane { opacity: 1 }
+
+  path.road {
+    stroke: lighten($color-rh-black, 12.5%);
+  }
+  path.water {
+    stroke: lighten($color-rh-black, 12.5%);
+    fill: lighten($color-rh-black, 12.5%);
+  }
+}
+
+.red .marker-icon:before {
+  background-color: $color-rh-blue;
+  border: 0.25em solid $color-rh-white;
+}
 
 // SILVER
 

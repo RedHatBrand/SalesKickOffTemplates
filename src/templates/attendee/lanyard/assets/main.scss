@@ -16,6 +16,7 @@ main {
   left: initial;
   right: initial;
 }
+main:before { background-image: none; }
 
 .panel {
   position: relative;
@@ -85,6 +86,7 @@ h1 {
 }
 
 .brand svg { width: 66.667%; }
+.for-emea-true { width: 75%; }
 
 .corner-shapes-bottom-right .corner-shape-pattern svg {
   stroke-width: 0.2pt;
@@ -102,26 +104,29 @@ h1 {
 
 #map {
   height: 8em;
-  background-color: $color-rh-slate;
   margin: 0;
   width: 100%;
-
-  .leaflet-overlay-pane {
-    opacity: 0.6;
-  }
-
-  path.road {
-    stroke: lighten($color-rh-slate, 25%);
-    fill: none;
-  }
-  path.water {
-    stroke: lighten($color-rh-slate, 50%);
-    fill: lighten($color-rh-slate, 50%);
-  }
 }
 
 #first-panel section {
   background-color: rgba(lighten($color-rh-slate, 50%), 0.6);
+}
+
+.red {
+  #first-panel section,
+  #location {
+    background-color: white;
+    color: lighten($color-rh-black, 12.5%);
+    color: lighten($color-rh-black, 12.5%);
+
+    h1, h2, h3, h4, h5 {
+      color: lighten($color-rh-black, 12.5%);
+    }
+  }
+
+  #first-panel section {
+    border-top: thin solid $color-rh-white;
+  }
 }
 
 #location {
@@ -139,8 +144,6 @@ h1 {
   content: '';
   width: 2em;
   height: 2em;
-  background-color: $color-rh-blue;
-  border: 0.25em solid lighten($color-rh-slate, 50%);
   display: block;
   position: absolute;
   top: 50%;

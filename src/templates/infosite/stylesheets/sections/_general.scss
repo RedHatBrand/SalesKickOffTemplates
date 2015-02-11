@@ -5,7 +5,7 @@
 
 // use it
 @include selection {
-  color: white !important;
+  color: white;
   background: $color-shade;
   text-shadow: 0;
 }
@@ -21,6 +21,12 @@ html {
 
 body {
   background-color: whitesmoke;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  display: inline-block;
+  width: 1em;
+  text-align: center;
 }
 
 @media screen and (min-width:80em){
@@ -222,7 +228,7 @@ section.light .container,
 section.dark .container,
 section.grey .container {
   position:relative;
-  z-index:2 !important;
+  z-index:2;
 }
 
 section.blank:before {
@@ -250,7 +256,7 @@ section.grey .container { background-color:transparent; color:#fff;}
 
 section.blank {
   background-color: transparent;
-  background-image: none !important;
+  background-image: none;
 }
 
 section.light:before { background-color: white; opacity:.9}
@@ -274,12 +280,10 @@ section.grey:before { background-color: #5e6a71 ;opacity:.9}
   font-size: 1.2em;
   font-size: 4vw;
   margin-bottom: 3rem;
-  letter-spacing: .25em;
+  letter-spacing: 0.125em;
   line-height: 1.1em;
   padding-left: 0.25em;
 }
-
-
 
 .main h1,.main h2,.main h3 {
   -ms-word-break: break-all;
@@ -291,4 +295,35 @@ section.grey:before { background-color: #5e6a71 ;opacity:.9}
   -ms-hyphens: auto;
   hyphens: auto;
 }
+
+.platinum,
+.background-image {
+  .sko-logo .logotext, .sko-logo .location {
+    fill: white;
+  }
+}
+
+.custom-background a {
+  background-color: transparent;
+  color: white;
+  display: inline;
+  padding: 0;
+  margin: 0;
+  border-bottom: 0.25em solid #c00;
+}
+
+.custom-background.light a, .custom-background.blank a {
+  color: #282c2e;
+}
+
+.custom-background a:hover {
+  color: #c00;
+}
+
+.platinum .logotext, .platinum text{
+  fill: #fff;
+}
+
+
+
 

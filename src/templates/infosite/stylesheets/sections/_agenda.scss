@@ -8,7 +8,6 @@
 }
 
 .agenda-container {
-
   > * { margin-bottom: 0.25em; }
 
   .agenda-day-info {
@@ -107,8 +106,9 @@
     min-height: 1.5em;
 
     &.break {
-      background-image: linear-gradient(-45deg, #fafafa 25%, transparent 25%, transparent 50%, #fafafa 50%, #fafafa 75%, transparent 75%, transparent);
-      background-size: 20px 20px;
+      background-image: url('/shared/images/stripes.svg');
+      background-size: auto auto;
+      background-repeat: no-repeat;
       background-position: 0 0;
       color: lighten($color-rh-slate, 15%);
     }
@@ -233,4 +233,135 @@ input#day-5:checked ~ label[for="day-5"],
 input#day-6:checked ~ label[for="day-6"] {
   background-color: $color-primary;
   color: white;
+}
+
+// Andy's stuff... to merge
+
+.section-agenda [class^="icon-"],
+.section-agenda [class^="icon-"] {
+  opacity: 0.4;
+}
+
+@media screen and (max-width: 400px) {
+  .agenda-container .agenda-range-row-sessions-2 .agenda-session,
+  .agenda-container .agenda-range-row-sessions-3 .agenda-session,
+  .agenda-container .agenda-range-row-sessions-4 .agenda-session,
+  .agenda-container .agenda-range-row-sessions-5 .agenda-session,
+  .agenda-container .agenda-range-row-sessions-6 .agenda-session,
+  .agenda-container .agenda-range-row-sessions-7 .agenda-session,
+  .agenda-container .agenda-range-row-sessions-8 .agenda-session,
+  .agenda-container .agenda-range-row-sessions-9 .agenda-session,
+  .agenda-container .agenda-range-row-sessions-10 .agenda-session,
+  .agenda-container .agenda-range-row-sessions-11 .agenda-session,
+  .agenda-container .agenda-range-row-sessions-12 .agenda-session {
+    width: initial;
+    display: block;
+  }
+}
+
+.agenda-container .agenda-range-row{
+  border-top: thin solid #ccc;
+}
+
+.agenda-container .agenda-session-inner {
+  background-color: transparent;
+}
+.agenda-container .agenda-session-header-text {
+  float:left;
+}
+
+.agenda-session-header-speaker {
+  float:left;
+  font-weight: 600;
+  text-transform:uppercase;
+  letter-spacing:0.025em;
+  color:#333;
+  font-size: 0.75em;
+}
+
+.agenda-container .agenda-session-inner.break {
+  opacity:.75;
+  font-weight: 300;
+  padding: 0 .75em;
+  padding-bottom: 0.666em;
+  line-height: 1em;
+}
+
+.agenda-container .agenda-session-inner.break h3 {
+  padding-top: .4em;
+  font-weight: 600;
+  font-size: .8em;
+  opacity: 1;
+  color: currentcolor;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+}
+
+.agenda-container .agenda-range-row-start-time {
+  width: 6em;
+  color: currentcolor;
+  opacity: 0.75;
+  font-weight: 600;
+}
+
+.agenda-session-inner .agenda-session-content-location,
+.agenda-session-inner .agenda-session-header-speaker {
+  float: none;
+  clear: both;
+  width: 100%;
+  font-size: .75em;
+}
+
+.agenda-range-row-sessions-6 {
+  padding-bottom: .25em;
+}
+
+.agenda-container .agenda-range-row-sessions-6 > div > .agenda-session {
+  width: 33.33% ;
+}
+
+.agenda-range-row-sessions-6 > div > div > div {
+  font-size:.85em;
+  background-color: rgba(255,255,255,0.5);
+  box-shadow: 0 .1em .15em  rgba(0,0,0,0.1);
+  min-height: 5em;
+}
+
+@media screen and (max-width: 40em){
+  .agenda-range-row div,
+  .agenda-range-row {
+    display:block;
+    clear:both;
+    margin:0;
+    padding:0;
+    width: 100% ;
+    max-width: 100% ;
+    clear:both;
+  }
+  .agenda-container .agenda-range-row-start-time { font-size: 2em;
+    font-weight: 300;
+    letter-spacing: .1em;
+    padding-top:1em;
+  }
+  .agenda-container .agenda-range-row-sessions-6 > div > .agenda-session {
+    width: 100%;
+  }
+  .agenda-container .agenda-range-row-sessions-6 > div > .agenda-session {
+    min-height: auto;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 50em){
+  .agenda-range-row-sessions-10 {
+    padding-bottom: 0.25em;
+  }
+  .agenda-container .agenda-range-row-sessions-10 > div > .agenda-session {
+    width: 25%;
+  }
+  .agenda-range-row-sessions-10 > div > div > div {
+    font-size:.85em;;background-color: rgba(255,255,255,0.5);
+    box-shadow: 0 .1em .15em  rgba(0,0,0,0.1);
+    min-height: 5em;
+  }
 }
