@@ -759,6 +759,7 @@
       "colormode": "red",
       "location": "Brisbane, Queensland",
       "location-country": "Australia",
-      "attendee-group": "Group 1"
+      "attendee-group": "Group 1",
+      "employee-id": 12345
   }
 }
