@@ -1,4 +1,4 @@
-var baseUrl = 'http://open.mapquestapi.com/geocoding/v1/address';
+var baseUrl = '//open.mapquestapi.com/geocoding/v1/address';
 var params = {
   key: 'Fmjtd%7Cluurn96z2l%2Cr2%3Do5-9w8agr',
   outFormat: 'json',
@@ -12,7 +12,6 @@ function queryString (params) {
 }
 
 var url = baseUrl + '?' + queryString(params);
-console.log(url);
 
 $.ajax({
   type: 'get',
