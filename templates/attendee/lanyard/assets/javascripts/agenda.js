@@ -62,15 +62,15 @@
 
       range.sessions.forEach(function (session) {
         var sessionsElem;
-
-        if (!session.group || session.group === global.attendeeGroup) {
-          sessionElem = document.createElement('div');
-          sessionElem.classList.add('agenda-session');
-          sessionElem.innerHTML = session.element.innerHTML;
-          rangeRowSessions.appendChild(sessionElem);
-        }
-
+        
         container.removeChild(session.element);
+        
+        if (global.attendeeGroup && session.group && session.group !== global.attendeeGroup) return;
+        
+        sessionElem = document.createElement('div');
+        sessionElem.classList.add('agenda-session');
+        sessionElem.innerHTML = session.element.innerHTML;
+        rangeRowSessions.appendChild(sessionElem);
       });
 
       container.appendChild(rangeRow);
