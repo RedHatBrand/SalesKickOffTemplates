@@ -114,43 +114,52 @@ main{background-color:#fff}
 </head>
 <body style="width: 90mm; height: 140mm" class="{{artwork-option}} {{colormode}}">
 <main>
-  <section class="section-agenda agenda-container" id="agenda">
-    {{#days}}
-    <div class="time-table time-table-unprocessed js-time-table">
-      <div class="agenda-day-info js-agenda-day-info">
-        <h1 charset="utf-8">{{day-name}}</h1>
-        <h2>{{date}}</h2>
-      </div>
-      {{#sessions}}
-      {{#start}}
-      <div class="agenda-session js-session" data-group="{{ group }}" data-start="{{ start }}" data-end="{{ end }}">
-        <div class="agenda-session-inner {{ type }}">
-          <header class="session-header">
-            {{#topic}}
-            <h3 class="agenda-session-header-text">{{ topic }}</h3>
-            {{/topic}}
-            {{#speaker}}
-            <h3 class="agenda-session-header-speaker">{{ speaker }}</h3>
-            {{/speaker}}
-          </header>
-          <div class="agenda-session-content">
-            {{#location}}
-            <p class="agenda-session-content-location">{{ location }}</p>
-            {{/location}}
-            {{#group}}
-            <p class="agenda-session-content-group">{{ group }}</p>
-            {{/group}}
-          </div>
-        </div>
-      </div>
-      {{/start}}
-      {{/sessions}}
-    </div>
-    <div class="region-break"></div>
-    {{/days}}
-  </section>
+  <article id="first-panel" class="panel">
+    <div class="js-artwork artwork"></div>
 
-  <article id="last-panel"></article>
+    <div class="panel-content">
+      <header class="brand sko">
+        {{#for-emea}}
+        <% include ../../../shared/images/event-logo-lockup-emea.svg %>
+        {{/for-emea}}
+        {{^for-emea}}
+        <% include ../../../shared/images/event-logo-lockup.svg %>
+        {{/for-emea}}
+      </header>
+      <section>
+        <p class="introduction blurb"><span>{{greeting}}</span></p>
+        {{#firstname}}
+        <h1 id="fullname">
+          {{ firstname }} {{ lastname }}</h1>
+
+        {{/firstname}}
+
+        {{^firstname}}
+        <h1 id="fullname">
+          {{ name }}
+        </h1>
+        {{/firstname}}
+
+        <p class="blurb">
+          <span>I'm a</span> <strong>{{ position }}</strong>
+          <br />
+          <span>with </span><strong>{{ company }}</strong>
+        </p>
+      </section>
+      <div id="map" class="rh-map"></div>
+      <footer id="location">
+        <p>based in <strong>{{ location }}</strong>
+        </p>
+      </footer>
+    </div>
+  </article>
+
+  <article id="last-panel" class="panel artwork-container {{ colormode }}">
+    <div class="js-artwork artwork"></div>
+    <section class="panel-content">
+      <div id="qrcode"></div>
+    </section>
+  </article>
 </main>
 
   {{#artwork-complexity}}
@@ -162,34 +171,34 @@ main{background-color:#fff}
   <script src="<%= baseUrl %>/shared/javascripts/artwork.js"></script>
   <script src="//redhatbrand.github.io/RedHatPatterns/red-hat-patterns.js"></script>
   <script src="//redhatbrand.github.io/RedHatTemplates/global-assets/javascripts/vendor/jquery.js"></script>
+  <script src='<%= baseUrl %>/shared/javascripts/vendor/leaflet.js'></script>
+  <script src='<%= baseUrl %>/shared/javascripts/vendor/d3.v3.min.js'></script>
+  <script src='<%= baseUrl %>/shared/javascripts/vendor/topojson.v1.min.js'></script>
+  <script src='<%= baseUrl %>/shared/javascripts/vendor/d3-topojson.js'></script>
 
+  <script>
+    window.mapSettings = {
+      zoom: '{{map-scale}}' || 12,
+      address: '{{ location }}, {{ location-country }}'
+    };
+    window.attendeeGroup = '{{ attendee-group }}';
+  </script>
   <script src="<%= baseUrl %>/shared/javascripts/vendor/moment.js"></script>
   <script src="<%= baseUrl %>/templates/attendee/lanyard/assets/javascripts/main.js"></script>
   <script src="<%= baseUrl %>/templates/attendee/lanyard/assets/javascripts/agenda.js"></script>
-
+  <script src="//cdnjs.cloudflare.com/ajax/libs/FitText.js/1.1/jquery.fittext.min.js"></script>
   <script>
-    var panels = {{ number-of-panels }};
-    var main = document.getElementsByTagName('main')[0];
-    var lastPanel = document.getElementById('last-panel');
+    jQuery("#fullname").fitText(0.8, { minFontSize: '20px', maxFontSize: '40px' });
+  </script>
 
-    panels = panels || 1;
-
-    while(panels--) {
-      addPanel()
-    }
-
-    function addPanel () {
-      var article = document.createElement('article');
-      var inner = document.createElement('section');
-
-      article.classList.add('panel');
-      inner.classList.add('panel-inner');
-      article.appendChild(inner);
-      inner.classList.add('destination');
-      main.appendChild(article);
-
-      main.insertBefore(article, lastPanel);
-    }
+  <script src="<%= baseUrl %>/shared/javascripts/vendor/qrcode.min.js"></script>
+  <script type="text/javascript">
+    new QRCode(document.getElementById("qrcode"), {
+      text: "{{ employee-id }}",
+      useSVG: true,
+      width: 600,
+      height: 600
+    });
   </script>
 </body>
 </html>

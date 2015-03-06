@@ -1,0 +1,316 @@
+@import '../../../../shared/stylesheets/vendor/leaflet';
+@import '../../../../shared/stylesheets/main';
+@import '../../../../shared/stylesheets/agenda';
+
+$color-primary: #c12;
+
+:root, html {
+  font-size: 8pt;
+}
+
+body { overflow: auto }
+main {
+  position: relative;
+  top: initial;
+  bottom: initial;
+  left: initial;
+  right: initial;
+}
+main:before { background-image: none; }
+
+.panel {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+
+  .panel-inner {
+    position: absolute;
+    left: 1.5em;
+    right: 1.5em;
+    top: 1.5em;
+    bottom: 1.5em;
+  }
+}
+
+.panel-content {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: 0;
+  z-index: 3;
+
+  * > { margin-top: 0; }
+}
+
+#first-panel .panel-content {
+  display: flex;
+  flex-flow: column nowrap;
+
+  h1 { margin: 0; margin-left: -0.06em; }
+  h2 { margin: 0; margin-left: -0.05em; }
+
+  .introduction {
+    line-height: 1em;
+    margin-bottom: 0.75em;
+  }
+
+  .brand {
+    flex: 0 0 auto;
+    padding: 2.5em 2em 1.5em;
+    margin: 0;
+  }
+
+  section {
+    flex: 0 0 auto;
+    padding: 2em;
+    margin: 0;
+  }
+  #map {
+    flex: 1 1 auto;
+    height: auto;
+    margin: 0;
+  }
+  #location {
+    flex: 0 0 auto;
+    padding: 1.5em 2em 1.5em;
+    margin: 0;
+  }
+}
+
+
+
+h1 {
+  font-size: 3.5rem;
+  line-height: 3.5rem;
+}
+
+.brand svg { width: 66.667%; }
+.for-emea-true .brand svg { width: 80%; }
+
+.corner-shapes-bottom-right .corner-shape-pattern svg {
+  stroke-width: 0.2pt;
+}
+
+.background-image #content .brand {
+  text-align: left;
+}
+
+@media (orientation: portrait) {
+  .corner-shapes-bottom-right {
+    width: 85.5%;
+  }
+}
+
+#map {
+  height: 8em;
+  margin: 0;
+  width: 100%;
+}
+
+#first-panel section {
+  background-color: rgba(lighten($color-rh-slate, 50%), 0.6);
+}
+
+.red {
+  #first-panel section,
+  #location {
+    background-color: white;
+    color: lighten($color-rh-black, 12.5%);
+
+    h1, h2, h3, h4, h5 {
+      color: lighten($color-rh-black, 12.5%);
+    }
+  }
+
+  #first-panel section {
+    border-top: thin solid $color-rh-white;
+  }
+}
+
+.silver {
+  #first-panel section,
+  #location {
+    background-color: rgba(white, 0.5);
+  }
+
+  .agenda-container .agenda-session-inner {
+    background-color: $color-rh-white;
+
+    &.break {
+      background-color: darken($color-rh-white, 2.5%);
+    }
+  }
+}
+
+body.red #first-panel { background-color: $color-rh-red; }
+body.red {
+  background-color: $color-rh-white;
+  h1, h2, h3, h4, h5, h6 {
+    color: $color-rh-red;
+  }
+
+  .agenda-container .agenda-session-inner {
+    background-color: darken($color-rh-white, 5%);
+  }
+
+  .agenda-day-info h2,
+  h3.agenda-range-row-start-time {
+    color: lighten($color-rh-black, 12.5%);
+  }
+}
+.red main::before { background-image: none; }
+
+#location {
+  line-height: 1em;
+  background-color: rgba(lighten($color-rh-slate, 50%), 0.8);
+
+  p { margin: 0; }
+}
+
+.marker-icon > div {
+  padding-left: 100%;
+}
+
+.marker-icon:before {
+  content: '';
+  width: 2em;
+  height: 2em;
+  display: block;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 100%;
+}
+
+.agenda-day-info {
+  margin-top: 0;
+}
+
+.time-table {
+  padding-bottom: 3em;
+}
+
+.agenda-container .agenda-range-row-sessions-2 .agenda-session,
+.agenda-container .agenda-range-row-sessions-3 .agenda-session,
+.agenda-container .agenda-range-row-sessions-4 .agenda-session,
+.agenda-container .agenda-range-row-sessions-5 .agenda-session,
+.agenda-container .agenda-range-row-sessions-6 .agenda-session,
+.agenda-container .agenda-range-row-sessions-7 .agenda-session,
+.agenda-container .agenda-range-row-sessions-8 .agenda-session,
+.agenda-container .agenda-range-row-sessions-9 .agenda-session,
+.agenda-container .agenda-range-row-sessions-10 .agenda-session,
+.agenda-container .agenda-range-row-sessions-11 .agenda-session,
+.agenda-container .agenda-range-row-sessions-12 .agenda-session {
+  width: initial;
+  display: block;
+}
+
+// Regions stuff. There's a Polyfill provided by Adobe. It's not working at all well with this stuff.
+// So for now this only works in Browers with Native support for CSS Regions. So, Safari and Linux-y browsers
+// like Midori etc.
+
+#agenda {
+  -webkit-flow-into: panels;
+  -adobe-flow-into: panels;
+  flow-into: panels;
+}
+
+.destination {
+  -webkit-flow-from: panels;
+  -adobe-flow-from: panels;
+  flow-from: panels;
+}
+
+.region-break {
+  -webkit-break-after: always;
+  break-after: always;
+  -webkit-page-break-after: always;
+  page-break-after: always;
+  −webkit−region−break−after: always;
+  region−break−after: always;
+}
+
+// .agenda-container .agenda-range-row {
+//   display: block;
+// }
+//
+// .agenda-container .agenda-range-row-start-time {
+//   display: block;
+// }
+//
+// .agenda-container .agenda-range-row-sesions-container {
+//   display: block;
+// }
+//
+// .agenda-container .agenda-session {
+//   display: block;
+// }
+
+.agenda-container
+.agenda-range-row-sessions-2
+.agenda-session,
+.agenda-container
+.agenda-range-row-sessions-3
+.agenda-session,
+.agenda-container
+.agenda-range-row-sessions-4
+.agenda-session,
+.agenda-container
+.agenda-range-row-sessions-5
+.agenda-session,
+.agenda-container
+.agenda-range-row-sessions-6
+.agenda-session,
+.agenda-container
+.agenda-range-row-sessions-7
+.agenda-session,
+.agenda-container
+.agenda-range-row-sessions-8
+.agenda-session,
+.agenda-container
+.agenda-range-row-sessions-9
+.agenda-session,
+.agenda-container
+.agenda-range-row-sessions-10
+.agenda-session,
+.agenda-container
+.agenda-range-row-sessions-11
+.agenda-session,
+.agenda-container
+.agenda-range-row-sessions-12
+.agenda-session {
+  display: inline-block;
+  width: 50%;
+}
+
+.agenda-session-header-speaker {
+  line-height: 1.25em;
+}
+
+.agenda-container .agenda-range-row {
+  -webkit-break-inside: avoid;
+  break-inside: avoid;
+  -webkit-page-break-inside: avoid;
+  page-break-inside: avoid;
+  −webkit−region−break−inside: avoid;
+  region−break−inside: avoid;
+}
+
+.agenda-container .agenda-range-row-start-time {
+  width: 5rem;
+}
+
+.agenda-container .agenda-session-inner {
+  padding: 0.4rem 0.5rem;
+}
+
+.agenda-session-header-text {
+  line-height: 1.25rem;
+}
+
+.agenda-smaller, .agenda-container .agenda-session-content-location, .agenda-container .agenda-session-content-group, .agenda-container .agenda-session-header-text + .agenda-session-header-speaker {
+  line-height: 1.25rem;
+}
+
