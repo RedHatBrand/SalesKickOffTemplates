@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="//redhatbrand.github.io/RedHatTemplates/global-assets/stylesheets/general/tile-pattern-fill.css" />
+<link rel="stylesheet" href="//redhatbrand.github.io/SalesKickOffTemplates/shared/stylesheets/main.css?v2" />
+<link rel="stylesheet" href="//redhatbrand.github.io/SalesKickOffTemplates/templates/attendee/lanyard/assets/main.css?v2" />
+<style type="text/css">
+  *{ -webkit-text-rendering: geometricPrecision !important; }
+
+  .panel {
+    width: 90mm;
+    height: 140mm;
+  }
+
+  #fullname{font-size: 15em;}
+
+  body p.introduction{
+    font-size:.81em !important;
+    width:auto !important;
+    display:inline-block;
+    font-weight: 900;
+    letter-spacing: 0em !important;
+  }
+
+  .brand svg { width: 50% !important }
+  .for-emea-true .brand svg { width: 66.667% !important }
+
+  body  div.leaflet-map-pane {
+    -webkit-transform: translate3d(0, 0, 0) !important
+  }
+  #first-panel .panel-content section {
+    font-size: 1.2em; padding: 0 2em 4em 2em
+  }
+
+  #map {
+    opacity: .5 !important;
+    background-color:rgba(0,0,0,0.3);
+    position:absolute !important;
+    height: 100% !important; background-color: ; top:0; right:0; bottom:0; left:0; z-index:  -1}
+
+.agenda-container .agenda-session-inner.break {
+  background-image: url('//redhatbrand.github.io/SalesKickOffTemplates/shared/images/stripes.svg');
+}
+.red text,  .red  .logotype,.red  .logotext,
+.platinum text,  .platinum  .logotype,.platinum  .logotext{fill :#fff !important}
+#first-panel section p{margin:0 !important;  line-height: 1em; text-transform: uppercase;font-size: 1.6em;}
+#first-panel{overflow:hidden !important;}
+main{background-color:#fff}
+.red #first-panel section,
+.platinum #first-panel section {background-color:transparent; color: white;
+  /*text-shadow: 0 .3em .5em rgba(10,20,40,0.15)*/}
+  .platinum .js-artwork:before{opacity:.4; position:absolute; top:0; bottom:0; height: 100%;
+    background-image:radial-gradient(circle at center,  #ffffff 0%, #75848d 100%);}
+  .red .js-artwork{opacity:0.5 !important; background-image: none !important}
+  #first-panel p:last-child{position:absolute; bottom:2em; left: 1em;}
+  #location{position:absolute; bottom:0em; width: 100%; left: 1em;}
+
+  #first-panel{position:relative !important;}
+  .full-height .artwork-shape{margin-left: 50%;}
+  .platinum .rh-map path.water{fill:#414d54 !important; stroke:#414d54 !important}
+  .red .rh-map path.water {fill:#900 !important; stroke:#900 !important}
+  .red .rh-map path.road {fill: none !important; stroke:#900 !important}
+  .red .rh-map{background-color:#c00 !important}
+  .agenda-day-info h1{color:#c00 !important}
+  .red .platinum {background-color: white;}
+  .platinum #first-panel{background-color: #a1adb4;}
+  .red #first-panel{background-color: #c00;}
+  .platinum #location, .red #location{background-color:transparent; color: white; text-align:center;}
+  .platinum .agenda-day-info,
+  .red .agenda-day-info{ color: #000; }
+  .platinum h3.agenda-range-row-start-time { color: #000; }
+  .blurb span{color:#000;opacity:.95; text-shadow:none;}
+  .red .blurb span{opacity:1; color:white;}
+  .platinum .blurb span{color:#c3c6c9}
+  .red #first-panel section, .red #first-panel section h1{ color:#fff; border:none !important}
+
+  .red .logomark path{fill: #fff !important}
+  .red .line-icon .whirly-gig {stroke:#c00 !important; stroke-width: .15em}
+
+    .panel {
+      position: relative;
+    }
+
+    .artwork {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+    }
+
+    #qrcode {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      padding: 1em;
+      background-color: white;
+    }
+
+    #qrcode img {
+      margin: 0;
+      width:200px;
+      height:200px;
+    }
+</style>
+<meta charset="utf-8" />
+
+</head>
+<body style="width: 90mm; height: 140mm" class="{{artwork-option}} {{colormode}}">
+<main>
+  <section class="section-agenda agenda-container" id="agenda">
+    {{#days}}
+    <div class="time-table time-table-unprocessed js-time-table">
+      <div class="agenda-day-info js-agenda-day-info">
+        <h1 charset="utf-8">{{day-name}}</h1>
+        <h2>{{date}}</h2>
+      </div>
+      {{#sessions}}
+      {{#start}}
+      <div class="agenda-session js-session" data-group="{{ group }}" data-start="{{ start }}" data-end="{{ end }}">
+        <div class="agenda-session-inner {{ type }}">
+          <header class="session-header">
+            {{#topic}}
+            <h3 class="agenda-session-header-text">{{ topic }}</h3>
+            {{/topic}}
+            {{#speaker}}
+            <h3 class="agenda-session-header-speaker">{{ speaker }}</h3>
+            {{/speaker}}
+          </header>
+          <div class="agenda-session-content">
+            {{#location}}
+            <p class="agenda-session-content-location">{{ location }}</p>
+            {{/location}}
+            {{#group}}
+            <p class="agenda-session-content-group">{{ group }}</p>
+            {{/group}}
+          </div>
+        </div>
+      </div>
+      {{/start}}
+      {{/sessions}}
+    </div>
+    <div class="region-break"></div>
+    {{/days}}
+  </section>
+
+  <article id="last-panel"></article>
+</main>
+
+  {{#artwork-complexity}}
+  <script type="text/javascript">
+    window.redhatArtComplexity = {{ artwork-complexity }};
+  </script>
+  {{/artwork-complexity}}
+
+  <script src="//redhatbrand.github.io/SalesKickOffTemplates/shared/javascripts/artwork.js"></script>
+  <script src="//redhatbrand.github.io/RedHatPatterns/red-hat-patterns.js"></script>
+  <script src="//redhatbrand.github.io/RedHatTemplates/global-assets/javascripts/vendor/jquery.js"></script>
+
+  <script src="//redhatbrand.github.io/SalesKickOffTemplates/shared/javascripts/vendor/moment.js"></script>
+  <script src="//redhatbrand.github.io/SalesKickOffTemplates/templates/attendee/lanyard/assets/javascripts/main.js"></script>
+  <script src="//redhatbrand.github.io/SalesKickOffTemplates/templates/attendee/lanyard/assets/javascripts/agenda.js"></script>
+
+  <script>
+    var panels = {{ number-of-panels }};
+    var main = document.getElementsByTagName('main')[0];
+    var lastPanel = document.getElementById('last-panel');
+
+    panels = panels || 1;
+
+    while(panels--) {
+      addPanel()
+    }
+
+    function addPanel () {
+      var article = document.createElement('article');
+      var inner = document.createElement('section');
+
+      article.classList.add('panel');
+      inner.classList.add('panel-inner');
+      article.appendChild(inner);
+      inner.classList.add('destination');
+      main.appendChild(article);
+
+      main.insertBefore(article, lastPanel);
+    }
+  </script>
+</body>
+</html>

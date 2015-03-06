@@ -360,42 +360,6 @@ C143.1,90.8,142.7,91.3,142.1,91.6L142.1,91.6z"/>
     </div>
   </article>
 
-  <section class="section-agenda agenda-container" id="agenda">
-    {{#days}}
-    <div class="time-table time-table-unprocessed js-time-table">
-      <div class="agenda-day-info js-agenda-day-info">
-        <h1 charset="utf-8">{{day-name}}</h1>
-        <h2>{{date}}</h2>
-      </div>
-      {{#sessions}}
-      {{#start}}
-      <div class="agenda-session js-session" data-group="{{ group }}" data-start="{{ start }}" data-end="{{ end }}">
-        <div class="agenda-session-inner {{ type }}">
-          <header class="session-header">
-            {{#topic}}
-            <h3 class="agenda-session-header-text">{{ topic }}</h3>
-            {{/topic}}
-            {{#speaker}}
-            <h3 class="agenda-session-header-speaker">{{ speaker }}</h3>
-            {{/speaker}}
-          </header>
-          <div class="agenda-session-content">
-            {{#location}}
-            <p class="agenda-session-content-location">{{ location }}</p>
-            {{/location}}
-            {{#group}}
-            <p class="agenda-session-content-group">{{ group }}</p>
-            {{/group}}
-          </div>
-        </div>
-      </div>
-      {{/start}}
-      {{/sessions}}
-    </div>
-    <div class="region-break"></div>
-    {{/days}}
-  </section>
-
   <article id="last-panel" class="panel artwork-container {{ colormode }}">
     <div class="js-artwork artwork"></div>
     <section class="panel-content">
@@ -431,31 +395,6 @@ C143.1,90.8,142.7,91.3,142.1,91.6L142.1,91.6z"/>
   <script src="//cdnjs.cloudflare.com/ajax/libs/FitText.js/1.1/jquery.fittext.min.js"></script>
   <script>
     jQuery("#fullname").fitText(0.8, { minFontSize: '20px', maxFontSize: '40px' });
-  </script>
-
-  <script>
-    var panels = {{ number-of-panels }};
-    var main = document.getElementsByTagName('main')[0];
-    var lastPanel = document.getElementById('last-panel');
-
-    panels = panels || 1;
-
-    while(panels--) {
-      addPanel()
-    }
-
-    function addPanel () {
-      var article = document.createElement('article');
-      var inner = document.createElement('section');
-
-      article.classList.add('panel');
-      inner.classList.add('panel-inner');
-      article.appendChild(inner);
-      inner.classList.add('destination');
-      main.appendChild(article);
-
-      main.insertBefore(article, lastPanel);
-    }
   </script>
 
   <script src="//redhatbrand.github.io/SalesKickOffTemplates/shared/javascripts/vendor/qrcode.min.js"></script>
