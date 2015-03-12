@@ -1,3 +1,5 @@
+$color-rh-red-print: rgb(227, 38, 53);
+
 body, .artwork-container.red {
   background-color: lighten($color-rh-slate, 20%);
 }
@@ -130,6 +132,7 @@ body.red, .artwork-container.red {
 }
 
 .red .rh-map, .silver .rh-map {
+  opacity: 0.5;
   background-color: lighten($color-rh-black, 66.667%);
 
   .leaflet-overlay-pane { opacity: 1 }
@@ -146,6 +149,25 @@ body.red, .artwork-container.red {
 .red .marker-icon:before {
   background-color: $color-rh-blue;
   border: 0.25em solid $color-rh-white;
+}
+
+@media print {
+  body.red, .artwork-container.red {
+    background-color: darken($color-rh-red-print, 5%);
+  }
+
+  .red main:before, .artwork-container.red:before, .red .artwork-overlay:before {
+    background-image: radial-gradient(circle at center, $color-rh-red-print, rgba($color-rh-red-print, 0) 100%);
+  }
+
+  .red .corner-shape-pattern svg { stroke: $color-rh-red-print; }
+  .red .corner-shape-solid-triangle { background-color: $color-rh-red-print; }
+
+  .red #artwork:before, .red .js-artwork:before {
+    background-image: radial-gradient(circle at center, $color-rh-red-print 0%, $color-rh-red-print 50%, rgba($color-rh-red-print, 0) 100%);
+  }
+  .red #artwork .artwork-shape, .red .js-artwork .artwork-shape { background-color: darken($color-rh-red-print, 15%); }
+  .red #artwork .artwork-pattern svg, .red .js-artwork .artwork-pattern svg { stroke: $color-rh-red-print; }
 }
 
 // SILVER
@@ -166,6 +188,41 @@ body.silver, .artwork-container.silver  {
 }
 .silver #artwork .artwork-shape, .silver .js-artwork .artwork-shape { background-color: darken($color-rh-white, 15%); }
 .silver #artwork .artwork-pattern svg, .silver .js-artwork .artwork-pattern svg { stroke: $color-rh-white; }
+
+// Special
+
+body.special, .artwork-container.special  {
+  background-color: $color-rh-black;
+}
+
+.special main:before, .artwork-container.special:before {
+  background-image: radial-gradient(circle at center, lighten($color-rh-black, 30%), rgba(lighten($color-rh-white, 30%), 0) 100%);
+}
+
+.special .corner-shape-pattern svg { stroke: lighten($color-rh-black, 5%); }
+.special .corner-shape-solid-triangle { background-color: $color-rh-black; }
+
+.special #artwork:before, .special .js-artwork:before {
+  background-image: radial-gradient(circle at center, lighten($color-rh-black, 25%), rgba(lighten($color-rh-black, 25%), 0) 100%);
+}
+.special #artwork .artwork-shape, .special .js-artwork .artwork-shape { background-color: lighten($color-rh-black, 5%); }
+.special #artwork .artwork-pattern svg, .special .js-artwork .artwork-pattern svg { stroke: lighten($color-rh-black, 25%); }
+
+.special .rh-map {
+  background-color: $color-rh-black;
+
+  .leaflet-overlay-pane {
+     opacity: 0.75;
+  }
+
+  path.road {
+    stroke: lighten($color-rh-black, 12%);
+  }
+  path.water {
+    stroke: $color-rh-black;
+    fill: $color-rh-black;
+  }
+}
 
 // Background image
 

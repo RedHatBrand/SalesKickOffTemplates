@@ -10,19 +10,33 @@ height: 140mm
 <link rel="stylesheet" href="<%= baseUrl %>/templates/attendee/lanyard/assets/main.css?v2" />
 <style type="text/css">
   *{ -webkit-text-rendering: geometricPrecision !important; }
-
-  .panel {
-    width: 90mm;
-    height: 140mm;
+  html, :root, body {
+    font-family: 'Interstate-Light';
+    font-weight: normal;
   }
 
-  #fullname{font-size: 15em;}
+  strong {
+    font-family: 'Interstate-Regular';
+    font-weight: normal;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Overpass';
+  }
+
+  .panel {
+    width: 96mm;
+    height: 145.7mm;
+  }
+
+  #fullname{ font-size: 15em; }
 
   body p.introduction{
     font-size:.81em !important;
     width:auto !important;
     display:inline-block;
-    font-weight: 900;
+    font-weight: normal;
+    font-family: 'Interstate-Regular';
     letter-spacing: 0em !important;
   }
 
@@ -37,27 +51,32 @@ height: 140mm
   }
 
   #map {
-    opacity: .5 !important;
     background-color:rgba(0,0,0,0.3);
     position:absolute !important;
     height: 100% !important; background-color: ; top:0; right:0; bottom:0; left:0; z-index:  -1}
 
 .agenda-container .agenda-session-inner.break {
-  background-image: url('<%= baseUrl %>/shared/images/stripes.svg');
+  background-image: url('//redhatbrand.github.io/SalesKickOffTemplates/shared/images/stripes.svg');
 }
-.red text,  .red  .logotype,.red  .logotext,
+.special text, .special .logotype, .special .logotext,
+.red text, .red  .logotype, .red .logotext,
 .platinum text,  .platinum  .logotype,.platinum  .logotext{fill :#fff !important}
+
 #first-panel section p{margin:0 !important;  line-height: 1em; text-transform: uppercase;font-size: 1.6em;}
 #first-panel{overflow:hidden !important;}
 main{background-color:#fff}
-.red #first-panel section,
-.platinum #first-panel section {background-color:transparent; color: white;
-  /*text-shadow: 0 .3em .5em rgba(10,20,40,0.15)*/}
-  .platinum .js-artwork:before{opacity:.4; position:absolute; top:0; bottom:0; height: 100%;
+.special #first-panel section, .special .blurb span,
+.red #first-panel section, .special .blurb span,
+.platinum #first-panel section, .special .blurb span {
+  background-color:transparent;
+  color: white;
+}
+body.special { color: white }
+.platinum .js-artwork:before{opacity:.4; position:absolute; top:0; bottom:0; height: 100%;
     background-image:radial-gradient(circle at center,  #ffffff 0%, #75848d 100%);}
-  .red .js-artwork{opacity:0.5 !important; background-image: none !important}
-  #first-panel p:last-child{position:absolute; bottom:2em; left: 1em;}
-  #location{position:absolute; bottom:0em; width: 100%; left: 1em;}
+.red .js-artwork{opacity:0.5 !important; background-image: none !important}
+#first-panel section p:last-child{position:absolute; bottom:2em; left: 1em;}
+#location{position:absolute; bottom:0em; width: 100%; left: 1em;}
 
   #first-panel{position:relative !important;}
   .full-height .artwork-shape{margin-left: 50%;}
@@ -108,6 +127,46 @@ main{background-color:#fff}
       width:200px;
       height:200px;
     }
+
+  /* Adds bleed */
+  #first-panel .panel-content .brand {
+  	padding: calc(2.5rem + 3mm) calc(2rem + 3mm) 1.5em;
+  }
+
+  #first-panel .panel-content section {
+    padding: 0 calc(2rem + 3mm) 4em;
+  }
+
+  #first-panel section p:last-child {
+  	left: initial;
+    bottom: calc(4rem + 3mm);
+  }
+
+  #location {
+  	left: 0;
+    padding: calc(2rem + 3mm);
+    box-sizing: border-box;
+  	text-align: left;
+  }
+
+  #first-panel .panel-content #location {
+  	padding: calc(2rem + 3mm);
+  }
+
+  .red #location { text-align: left; }
+  .platinum #location { text-align: left; }
+  svg.emea-logo { display: none }
+  .for-emea-true svg.default-logo { display: none }
+  .for-emea-true svg.emea-logo { display: block }
+
+  .special main:before, .artwork-container.special:before {
+  	background-color:black !important;
+    background-image:none ;
+    opacity:0.8
+  }
+  .special #first-panel section, .special #location {
+  	background-color: transparent;
+  }
 </style>
 <meta charset="utf-8" />
 
@@ -178,7 +237,7 @@ main{background-color:#fff}
 
   <script>
     window.mapSettings = {
-      zoom: '{{map-scale}}' || 12,
+      zoom: '{{map-scale}}' || 6,
       address: '{{ location }}, {{ location-country }}'
     };
     window.attendeeGroup = '{{ attendee-group }}';
