@@ -904,6 +904,7 @@ body.red, .artwork-container.red {
   fill: white !important; }
 
 .red .rh-map, .silver .rh-map {
+  opacity: 0.5;
   background-color: #bbbbbb; }
   .red .rh-map .leaflet-overlay-pane, .silver .rh-map .leaflet-overlay-pane {
     opacity: 1; }
@@ -960,6 +961,37 @@ body.silver, .artwork-container.silver {
 
 .silver #artwork .artwork-pattern svg, .silver .js-artwork .artwork-pattern svg {
   stroke: #ffffff; }
+
+body.special, .artwork-container.special {
+  background-color: #111111; }
+
+.special main:before, .artwork-container.special:before {
+  background-image: radial-gradient(circle at center, #5e5e5e, rgba(255, 255, 255, 0) 100%); }
+
+.special .corner-shape-pattern svg {
+  stroke: #1e1e1e; }
+
+.special .corner-shape-solid-triangle {
+  background-color: #111111; }
+
+.special #artwork:before, .special .js-artwork:before {
+  background-image: radial-gradient(circle at center, #515151, rgba(81, 81, 81, 0) 100%); }
+
+.special #artwork .artwork-shape, .special .js-artwork .artwork-shape {
+  background-color: #1e1e1e; }
+
+.special #artwork .artwork-pattern svg, .special .js-artwork .artwork-pattern svg {
+  stroke: #515151; }
+
+.special .rh-map {
+  background-color: #111111; }
+  .special .rh-map .leaflet-overlay-pane {
+    opacity: 0.75; }
+  .special .rh-map path.road {
+    stroke: #303030; }
+  .special .rh-map path.water {
+    stroke: #111111;
+    fill: #111111; }
 
 body.background-image, .background-color main {
   background-color: white; }
