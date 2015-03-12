@@ -484,6 +484,29 @@ body.red, .artwork-container.red {
   background-color: #0088CE;
   border: 0.25em solid #ffffff; }
 
+@media print {
+  body.red, .artwork-container.red {
+    background-color: #d41b2a; }
+
+  .red main:before, .artwork-container.red:before, .red .artwork-overlay:before {
+    background-image: radial-gradient(circle at center, #e32635, rgba(227, 38, 53, 0) 100%); }
+
+  .red .corner-shape-pattern svg {
+    stroke: #e32635; }
+
+  .red .corner-shape-solid-triangle {
+    background-color: #e32635; }
+
+  .red #artwork:before, .red .js-artwork:before {
+    background-image: radial-gradient(circle at center, #e32635 0%, #e32635 50%, rgba(227, 38, 53, 0) 100%); }
+
+  .red #artwork .artwork-shape, .red .js-artwork .artwork-shape {
+    background-color: #a71621; }
+
+  .red #artwork .artwork-pattern svg, .red .js-artwork .artwork-pattern svg {
+    stroke: #e32635; }
+ }
+
 body.silver, .artwork-container.silver {
   background-color: #f2f2f2; }
 
